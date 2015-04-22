@@ -4,10 +4,8 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
-      <itemPath>../main.h</itemPath>
       <itemPath>../vscp_projdefs.h</itemPath>
       <itemPath>../vscp_compiler.h</itemPath>
-      <itemPath>../smartrelay.h</itemPath>
       <itemPath>../ECAN.h</itemPath>
       <itemPath>../ECAN.def</itemPath>
       <itemPath>../../../../../vscp_firmware/pic/common/eeprom.h</itemPath>
@@ -15,6 +13,7 @@
       <itemPath>../../../../../vscp_software/src/vscp/common/vscp_class.h</itemPath>
       <itemPath>../../../../../vscp_software/src/vscp/common/vscp_type.h</itemPath>
       <itemPath>../version.h</itemPath>
+      <itemPath>../odessa.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -78,7 +77,7 @@
       </makeCustomizationType>
       <HI-TECH-COMP>
         <property key="asmlist" value="true"/>
-        <property key="define-macros" value="DEBUG;EEADRH"/>
+        <property key="define-macros" value="DEBUG"/>
         <property key="extra-include-directories"
                   value="..\;..\..\vscp_firmware\pic\common;..\..\vscp_firmware\common;..\..\vscp_software\src\vscp\common"/>
         <property key="identifier-length" value="255"/>
@@ -321,7 +320,7 @@
       </item>
       <HI-TECH-COMP>
         <property key="asmlist" value="true"/>
-        <property key="define-macros" value="RELEASE;EEADRH"/>
+        <property key="define-macros" value="RELEASE"/>
         <property key="extra-include-directories"
                   value="..\;..\..\vscp_firmware\pic\common;..\..\vscp_firmware\common;..\..\vscp_software\src\vscp\common"/>
         <property key="identifier-length" value="255"/>

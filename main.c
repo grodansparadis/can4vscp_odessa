@@ -42,7 +42,7 @@
 #include <vscp_firmware.h>
 #include <vscp_class.h>
 #include <vscp_type.h>
-#include "smartrelay.h"
+#include "odessa.h"
 #include "version.h"
 
 
@@ -113,15 +113,18 @@
 
 #endif
 
-// Startup code from c018.c
-//void _startup(void);
+// Parameters
+void actionSet( uint8_t dmflags, uint8_t param );
+void actionClr( uint8_t dmflags, uint8_t param );
+void actionSetAll( uint8_t dmflags, uint8_t param );
+void actionClrAll( uint8_t dmflags, uint8_t param );
 
 // Calculate and st required filter and mask
 // for the current decision matrix
 void calculateSetFilterMask( void );
 
 // The device URL (max 32 characters including null termination)
-const uint8_t vscp_deviceURL[] = "www.eurosource.se/odessa_010.xml";
+const uint8_t vscp_deviceURL[] = "www.eurosource.se/odessa001.xml";
 
 volatile unsigned long measurement_clock; // Clock for measurments
 
@@ -325,7 +328,6 @@ void main()
 
 void init()
 {
-
     //uint8_t msgdata[ 8 ];
 
     // Initialize data
@@ -449,14 +451,22 @@ void init_app_eeprom(void)
 {
     unsigned char i, j;
 
-    writeEEPROM( VSCP_EEPROM_END + REG_RELAY_ZONE, 0 );
-    writeEEPROM( VSCP_EEPROM_END + REG_RELAY_SUBZONE, 0 );
-
+    writeEEPROM( VSCP_EEPROM_END + REG_ZONE, 0 );
+    writeEEPROM( VSCP_EEPROM_END + REG_SUBZONE, 0 );
+    
+    for ( i=3; i<21; i++ ) {
+        writeEEPROM( VSCP_EEPROM_END + REG_PIN3_SUBZONE + (i-3), i );
+    }
+    
+    writeEEPROM( VSCP_EEPROM_END + REG_CONTROL0, 0 );
+    writeEEPROM( VSCP_EEPROM_END + REG_CONTROL1, 0 );
+    writeEEPROM( VSCP_EEPROM_END + REG_CONTROL2, 0 );
+    
     // * * * Decision Matrix * * *
     // All elements disabled.
     for ( i = 0; i < DESCION_MATRIX_ROWS; i++ ) {
         for ( j = 0; j < 8; j++ ) {
-            writeEEPROM( VSCP_EEPROM_END + REG_DESCION_MATRIX + i * 8 + j, 0 );
+            writeEEPROM( VSCP_EEPROM_END + REG_FIRST_PAGE_END + REG_DESCION_MATRIX + i * 8 + j, 0 );
         }
     }
 
@@ -566,7 +576,7 @@ void vscp_writeNicknamePermanent(uint8_t nickname)
 
 uint8_t vscp_getZone(void)
 {
-    return readEEPROM( VSCP_EEPROM_END + REG_RELAY_ZONE );
+    return readEEPROM( VSCP_EEPROM_END + REG_ZONE );
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -575,7 +585,7 @@ uint8_t vscp_getZone(void)
 
 uint8_t vscp_getSubzone(void)
 {
-    return readEEPROM( VSCP_EEPROM_END + REG_RELAY_SUBZONE );
+    return readEEPROM( VSCP_EEPROM_END + REG_SUBZONE );
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -586,8 +596,8 @@ uint8_t vscp_getSubzone(void)
 
 void doWork(void)
 {
-    // Do work here
     if ( VSCP_STATE_ACTIVE == vscp_node_state ) {
+        // Do work here
 		;
     }
 }
@@ -602,14 +612,46 @@ uint8_t vscp_readAppReg(uint8_t reg)
 
     rv = 0x00; // default read
 
-    // Zone
-    if ( reg == 0x00 ) {
-        rv = readEEPROM(VSCP_EEPROM_END + REG_RELAY_ZONE);
-	}
-    // SubZone
-	else if ( reg == 0x01 ) {
-        rv = readEEPROM(VSCP_EEPROM_END + REG_RELAY_SUBZONE);
-	}
+    // * * *  Page = 0
+    if ( 0 == vscp_page_select ) {
+        // Zone
+        if ( reg == 0x00 ) {
+            rv = readEEPROM(VSCP_EEPROM_END + REG_ZONE);
+        }
+        // SubZone
+        else if ( reg == 0x01 ) {
+            rv = readEEPROM(VSCP_EEPROM_END + REG_SUBZONE);
+        }
+        // SubZone for pins
+        else if ( ( reg >= REG_PIN3_SUBZONE ) && ( reg <= REG_PIN20_SUBZONE ) ) {
+            rv = readEEPROM( VSCP_EEPROM_END + REG_PIN3_SUBZONE + 
+                                ( reg - REG_PIN3_SUBZONE ) );
+        }
+        // Control reg 0
+        else if ( reg == REG_CONTROL0 ) {
+            rv = readEEPROM(VSCP_EEPROM_END + REG_CONTROL0);
+        }
+        // Control reg 1
+        else if ( reg == REG_CONTROL1 ) {
+            rv = readEEPROM(VSCP_EEPROM_END + REG_CONTROL1);
+        }
+        // Control reg 2
+        else if ( reg == REG_CONTROL2 ) {
+            rv = readEEPROM(VSCP_EEPROM_END + REG_CONTROL2);
+            rv &= 0x03; // Take away unused bits
+        }
+    }
+    // * * *  Page = 1
+    else if ( 1 == vscp_page_select ) {
+        
+        // DM
+        if ( ( reg >= REG_DESCION_MATRIX ) && ( reg <= ( REG_DESCION_MATRIX + 
+                ( 8 * DESCION_MATRIX_ROWS ) ) ) ) {
+            rv = readEEPROM(VSCP_EEPROM_END + VSCP_EEPROM_END + 
+                    REG_FIRST_PAGE_END + ( reg - REG_DESCION_MATRIX ) );
+        }
+        
+    }
 
     return rv;
 
@@ -627,16 +669,57 @@ uint8_t vscp_writeAppReg( uint8_t reg, uint8_t val )
 
     rv = ~val; // error return
 
-	// Zone
-    if ( reg == REG_RELAY_ZONE ) {
-		writeEEPROM(VSCP_EEPROM_END + REG_RELAY_ZONE, val);
-        rv = readEEPROM(VSCP_EEPROM_END + REG_RELAY_ZONE);
-	}
-	else if ( reg == REG_RELAY_SUBZONE ) {
-        // SubZone
-        writeEEPROM(VSCP_EEPROM_END + REG_RELAY_SUBZONE, val);
-        rv = readEEPROM(VSCP_EEPROM_END + REG_RELAY_SUBZONE);
-	}
+    // * * *  Page = 0
+    if ( 0 == vscp_page_select ) {
+        
+        // Zone
+        if ( reg == REG_ZONE ) {
+            writeEEPROM(VSCP_EEPROM_END + REG_ZONE, val);
+            rv = readEEPROM(VSCP_EEPROM_END + REG_ZONE);
+        }
+        else if ( reg == REG_SUBZONE ) {
+            // SubZone
+            writeEEPROM(VSCP_EEPROM_END + REG_SUBZONE, val);
+            rv = readEEPROM(VSCP_EEPROM_END + REG_SUBZONE);
+        }
+        // SubZone for pins
+        else if ( ( reg >= REG_PIN3_SUBZONE ) && ( reg <= REG_PIN20_SUBZONE ) ) {
+            writeEEPROM(VSCP_EEPROM_END + REG_PIN3_SUBZONE + 
+                                ( reg - REG_PIN3_SUBZONE ), val);
+            rv = readEEPROM( VSCP_EEPROM_END + REG_PIN3_SUBZONE + 
+                                ( reg - REG_PIN3_SUBZONE ) );
+        }
+        // Control reg 0
+        else if ( reg == REG_CONTROL0 ) {
+            writeEEPROM(VSCP_EEPROM_END + REG_CONTROL0, val);
+            rv = readEEPROM(VSCP_EEPROM_END + REG_CONTROL0);
+        }
+        // Control reg 1
+        else if ( reg == REG_CONTROL1 ) {
+            writeEEPROM(VSCP_EEPROM_END + REG_CONTROL1, val);
+            rv = readEEPROM(VSCP_EEPROM_END + REG_CONTROL1);
+        }
+        // Control reg 2
+        else if ( reg == REG_CONTROL2 ) {
+            writeEEPROM(VSCP_EEPROM_END + REG_CONTROL2, val);
+            rv = readEEPROM(VSCP_EEPROM_END + REG_CONTROL2);
+            rv &= 0x03; // Take away unused bits
+        }
+    
+    }
+	// * * *  Page = 1
+    else if ( 1 == vscp_page_select ) {
+        
+        // DM
+        if ( ( reg >= REG_DESCION_MATRIX ) && ( reg <= ( REG_DESCION_MATRIX + 
+                ( 8 * DESCION_MATRIX_ROWS ) ) ) ) {
+            writeEEPROM(VSCP_EEPROM_END + VSCP_EEPROM_END + 
+                    REG_FIRST_PAGE_END + ( reg - REG_DESCION_MATRIX ), val);
+            rv = readEEPROM(VSCP_EEPROM_END + VSCP_EEPROM_END + 
+                    REG_FIRST_PAGE_END + ( reg - REG_DESCION_MATRIX ) );
+        }
+        
+    }
 
     return rv;
 }
@@ -647,7 +730,6 @@ uint8_t vscp_writeAppReg( uint8_t reg, uint8_t val )
 
 void sendDMatrixInfo(void)
 {
-
     vscp_omsg.priority = VSCP_PRIORITY_MEDIUM;
     vscp_omsg.flags = VSCP_VALID_MSG + 2;
     vscp_omsg.vscp_class = VSCP_CLASS1_PROTOCOL;
@@ -671,8 +753,8 @@ void SendInformationEvent( unsigned char idx,
     uint8_t data[3];
 
     data[ 0 ] = idx; // Register
-    data[ 1 ] = readEEPROM( VSCP_EEPROM_END + REG_RELAY0_ZONE + 2*idx );
-    data[ 2 ] = readEEPROM( VSCP_EEPROM_END + REG_RELAY0_SUBZONE + 2*idx );
+    data[ 1 ] = readEEPROM( 0 );
+    data[ 2 ] = readEEPROM( 0 );
     sendVSCPFrame( eventClass,
                     eventTypeId,
                     vscp_nickname,
@@ -684,7 +766,7 @@ void SendInformationEvent( unsigned char idx,
 ///////////////////////////////////////////////////////////////////////////////
 // Do decision Matrix handling
 // 
-// The routine expects vscp_imsg to contain a vaild incoming event
+// The routine expects vscp_imsg to contain a valid incoming event
 //
 
 void doDM(void)
@@ -716,16 +798,16 @@ void doDM(void)
             // Check if zone should match and if so if it match
             if ( dmflags & VSCP_DM_FLAG_CHECK_ZONE ) {
                 if ( 255 != vscp_imsg.data[ 1 ] ) {
-                    if ( vscp_imsg.data[ 1 ] != readEEPROM( VSCP_EEPROM_END + REG_RELAY_ZONE ) ) {
+                    if ( vscp_imsg.data[ 1 ] != readEEPROM( VSCP_EEPROM_END + REG_ZONE ) ) {
                         continue;
                     }
                 }
             }
 
-            // Check if subzone should match and if so if it match
+            // Check if sub zone should match and if so if it match
             if ( dmflags & VSCP_DM_FLAG_CHECK_SUBZONE ) {
                 if ( 255 != vscp_imsg.data[ 1 ] ) {
-                    if ( vscp_imsg.data[ 1 ] != readEEPROM( VSCP_EEPROM_END + REG_RELAY_ZONE ) ) {
+                    if ( vscp_imsg.data[ 1 ] != readEEPROM( VSCP_EEPROM_END + REG_ZONE ) ) {
                         continue;
                     }
                 }
@@ -752,42 +834,81 @@ void doDM(void)
 
             if ( !( ( class_filter ^ vscp_imsg.vscp_class ) & class_mask ) &&
                     !( ( type_filter ^ vscp_imsg.vscp_type ) & type_mask ) ) {
-/*
+
                 // OK Trigger this action
                 switch ( readEEPROM( VSCP_EEPROM_END + REG_DESCION_MATRIX + (8 * i) + VSCP_DM_POS_ACTION ) ) {
 
-                    case ACTION_ON: // Enable relays in arg. bitarry
-                        doActionOn( dmflags, readEEPROM( VSCP_EEPROM_END + REG_DESCION_MATRIX + (8 * i) + VSCP_DM_POS_ACTIONPARAM ) );
+                    case ACTION_NOOP: // Do nothing
+                        break;
+                        
+                    case ACTION_SET: // Set pin to active state
+                        actionSet( dmflags, readEEPROM( VSCP_EEPROM_END + REG_DESCION_MATRIX + (8 * i) + VSCP_DM_POS_ACTIONPARAM ) );
                         break;
 
-                    case ACTION_OFF: // Disable relays in arg. bitarry
-                        doActionOff( dmflags, readEEPROM( VSCP_EEPROM_END + REG_DESCION_MATRIX + (8 * i) + VSCP_DM_POS_ACTIONPARAM ) );
+                    case ACTION_CLR: // Set pin to inactive state
+                        actionClr( dmflags, readEEPROM( VSCP_EEPROM_END + REG_DESCION_MATRIX + (8 * i) + VSCP_DM_POS_ACTIONPARAM ) );
                         break;
 
-                    case ACTION_PULSE: // Pulse relays in arg. bitarry, zone, subzone
-                        doActionPulse( dmflags, readEEPROM( VSCP_EEPROM_END + REG_DESCION_MATRIX + (8 * i) + VSCP_DM_POS_ACTIONPARAM ) );
+                    case ACTION_SETALL: // Activate all pins
+                        actionSetAll( dmflags, readEEPROM( VSCP_EEPROM_END + REG_DESCION_MATRIX + (8 * i) + VSCP_DM_POS_ACTIONPARAM ) );
                         break;
 
-                    case ACTION_STATUS: // Send status for all relays
-                        doActionStatus( dmflags, readEEPROM( VSCP_EEPROM_END + REG_DESCION_MATRIX + (8 * i) + VSCP_DM_POS_ACTIONPARAM ) );
-                        break;
-
-                    case ACTION_DISABLE: // Disable realys in bitarray
-                        doActionDisable( dmflags, readEEPROM( VSCP_EEPROM_END + REG_DESCION_MATRIX + (8 * i) + VSCP_DM_POS_ACTIONPARAM ) );
-                        break;
-
-                    case ACTION_TOGGLE: // Toggle relay(s)
-                        doActionToggle( dmflags, readEEPROM( VSCP_EEPROM_END + REG_DESCION_MATRIX + (8 * i) + VSCP_DM_POS_ACTIONPARAM ) );
+                    case ACTION_CLRALL: // Inactivate all pins
+                        actionClrAll( dmflags, readEEPROM( VSCP_EEPROM_END + REG_DESCION_MATRIX + (8 * i) + VSCP_DM_POS_ACTIONPARAM ) );
                         break;
 
                 } // case
-*/ 
+ 
             } // Filter/mask
         } // Row enabled
     } // for each row
 }
 
 
+///////////////////////////////////////////////////////////////////////////////
+// actionSet
+// 
+// Do action SET
+//
+
+void actionSet( uint8_t dmflags, uint8_t param )
+{
+    
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// actionClr
+// 
+// Do action CLR
+//
+
+void actionClr( uint8_t dmflags, uint8_t param )
+{
+    
+}
+
+
+///////////////////////////////////////////////////////////////////////////////
+// actionSetAll
+// 
+// Do action SETALL
+//
+
+void actionSetAll( uint8_t dmflags, uint8_t param )
+{
+    
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// actionClrAll
+// 
+// Do action CLRALL
+//
+
+void actionClrAll( uint8_t dmflags, uint8_t param )
+{
+    
+}
 
 
 ///////////////////////////////////////////////////////////////////////////////
