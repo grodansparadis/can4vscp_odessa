@@ -47,44 +47,6 @@
 
 
 // http://gputils.sourceforge.net/html-help/PIC18F26K80-conf.html
-#if defined(RELEASE)
-
-#pragma config WDTEN = ON, WDTPS = 128
-#pragma config FOSC = EC3
-#pragma config BOREN = BOACTIVE
-#pragma config STVREN = ON
-#pragma config BORV = 3
-#pragma config LVP = ON
-#pragma config CPB = ON
-#pragma config BBSIZ = 2048
-#pragma config WRTD  = OFF
-
-#pragma config EBTR0 = OFF
-#pragma config EBTR1 = OFF
-#pragma config EBTR2 = OFF
-#pragma config EBTR3 = OFF
-
-#pragma config EBTRB = OFF
-
-#else
-/*
-#pragma config WDTEN = OFF
-#pragma config FOSC = INTIO2
-#pragma config PWRTEN  = ON
-#pragma config BOREN = ON
-#pragma config STVREN = ON
-#pragma config BORV = 3
-//#pragma config LVP = OFF
-#pragma config CPB = OFF
-#pragma config WRTD  = OFF
-
-#pragma config EBTR0 = OFF
-#pragma config EBTR1 = OFF
-#pragma config EBTR2 = OFF
-#pragma config EBTR3 = OFF
-
-#pragma config EBTRB = OFF
-*/
 
 // CONFIG1L
 #pragma config SOSCSEL = DIG    // RC0/RC is I/O
@@ -93,8 +55,9 @@
 #pragma config XINST = OFF      // No extended instruction set
 
 // CONFIG2H
-#pragma config WDTEN = OFF      // WDT disabled in hardware; SWDTEN bit disabled.
 #pragma config WDTPS = 1048576  // Watchdog prescaler
+#pragma config BOREN = SBORDIS  // Brown out enabled
+#pragma config BORV  = 1        // 2.7V
 
 // CONFIG3H
 #pragma config CANMX = PORTB    // ECAN TX and RX pins are located on RB2 and RB3, respectively.
@@ -105,19 +68,23 @@
 #pragma config STVREN = ON      // Stack Overflow Reset enabled
 #pragma config BBSIZ = BB2K     // Boot block size 2K
 
-#pragma config WDTEN = OFF      // Watchdog off
+#ifdef DEBUG
+#pragma config WDTEN = OFF      // WDT disabled in hardware; SWDTEN bit disabled.
+#else
+#pragma config WDTEN = OFF      // WDT enabled in hardware; 
+#endif
 #pragma config XINST = OFF      // No extended instruction set
-#pragma config WDTEN = OFF      // No watchdog enabled
 #pragma config FOSC = HS2       // Crystal 10 MHz
 #pragma config PLLCFG = ON      // 4 x PLL
 
-#endif
 
-// Parameters
+// Prototypes
 void actionSet( uint8_t dmflags, uint8_t param );
 void actionClr( uint8_t dmflags, uint8_t param );
 void actionSetAll( uint8_t dmflags, uint8_t param );
 void actionClrAll( uint8_t dmflags, uint8_t param );
+uint8_t writeControlReg( uint8_t ctrlreg, uint8_t val );
+uint8_t readControlReg( uint8_t ctrlreg );
 
 // Calculate and st required filter and mask
 // for the current decision matrix
@@ -213,6 +180,11 @@ void main()
 
     vscp_init();    // Initialize the VSCP functionality
 
+    // Restore outputs
+    writeControlReg( CONTROL0, readEEPROM( VSCP_EEPROM_END + REG_CONTROL0 ) );
+    writeControlReg( CONTROL1, readEEPROM( VSCP_EEPROM_END + REG_CONTROL1 ) );
+    writeControlReg( CONTROL2, readEEPROM( VSCP_EEPROM_END + REG_CONTROL2 ) );
+    
     while ( 1 ) {   // Loop Forever
 
         ClrWdt();   // Feed the dog
@@ -334,33 +306,37 @@ void init()
     init_app_ram();
 
     // Initialize the uP
+    
+    // All AD channels to I/O
+    ANCON0 = 0;
+    ANCON1 = 0;
 
     // PORTA
-    // RA0/AN0  - Analog input
-    // RA1/AN1  - Analog input
-    // RA2/AN2  - Analog input
-    // RA3/AN3  - Analog input
+    // RA0/AN0  - Output
+    // RA1/AN1  - Output
+    // RA2/AN2  - Output
+    // RA3/AN3  - Output
     // RA4      - Unused/VCAP
-    // RA5/AN4  - Analog input
+    // RA5/AN4  - Output
     TRISA = 0x00;
     PORTA = 0x00;
 
     // PortB
 
-    // RB0/AN10     - General I/O - INT0
-    // RB1/AN8      - General I/O - INT1
+    // RB0/AN10     - Output - INT0
+    // RB1/AN8      - Output - INT1
     // RB2 CAN TX   - Must be set to input
     // RB3 CAN RX   - Must be set to input
-    // RB4/AN9      - General I/O      
-    // RB5/LVPGM    - General I/O
-    // RB6/PGC      - General I/O
-    // RB7/PGD      - General I/O
+    // RB4/AN9      - Output I/O      
+    // RB5/LVPGM    - Output I/O
+    // RB6/PGC      - Output I/O
+    // RB7/PGD      - Output I/O
     TRISB = 0b00001100;
     PORTB = 0x00;
 
     // RC0 - Input  - Init. button
     // RC1 - Output - Status LED - Default off
-    // RC2 - Output - General I/O
+    // RC2 - Output
     // RC3 - Output - SCK1/SCL
     // RC4 - Output - SDI1/SDA
     // RC5 - Output - SDO1/SDO
@@ -434,7 +410,7 @@ void init_app_ram( void )
 {
     uint8_t i;
 
-    measurement_clock = 0;      // start a new meaurement cycle
+    measurement_clock = 0;      // start a new measurement cycle
 
     seconds = 0;
     minutes = 0;
@@ -597,7 +573,7 @@ uint8_t vscp_getSubzone(void)
 void doWork(void)
 {
     if ( VSCP_STATE_ACTIVE == vscp_node_state ) {
-        // Do work here
+        // Do work when active here
 		;
     }
 }
@@ -629,22 +605,22 @@ uint8_t vscp_readAppReg(uint8_t reg)
         }
         // Control reg 0
         else if ( reg == REG_CONTROL0 ) {
-            rv = readEEPROM(VSCP_EEPROM_END + REG_CONTROL0);
+            rv = readControlReg( 0 );
         }
         // Control reg 1
         else if ( reg == REG_CONTROL1 ) {
-            rv = readEEPROM(VSCP_EEPROM_END + REG_CONTROL1);
+            rv = readControlReg( 1 );
         }
         // Control reg 2
         else if ( reg == REG_CONTROL2 ) {
-            rv = readEEPROM(VSCP_EEPROM_END + REG_CONTROL2);
+            rv = readControlReg( 2 );
             rv &= 0x03; // Take away unused bits
         }
     }
     // * * *  Page = 1
     else if ( 1 == vscp_page_select ) {
         
-        // DM
+        // DM REG_FIRST_PAGE_END + REG_DESCION_MATRIX + i * 8 + j
         if ( ( reg >= REG_DESCION_MATRIX ) && ( reg <= ( REG_DESCION_MATRIX + 
                 ( 8 * DESCION_MATRIX_ROWS ) ) ) ) {
             rv = readEEPROM(VSCP_EEPROM_END + VSCP_EEPROM_END + 
@@ -664,8 +640,6 @@ uint8_t vscp_readAppReg(uint8_t reg)
 uint8_t vscp_writeAppReg( uint8_t reg, uint8_t val )
 {
     uint8_t rv;
-    BOOL bInfoEvent = FALSE;
-    BOOL bOn = FALSE;
 
     rv = ~val; // error return
 
@@ -692,17 +666,17 @@ uint8_t vscp_writeAppReg( uint8_t reg, uint8_t val )
         // Control reg 0
         else if ( reg == REG_CONTROL0 ) {
             writeEEPROM(VSCP_EEPROM_END + REG_CONTROL0, val);
-            rv = readEEPROM(VSCP_EEPROM_END + REG_CONTROL0);
+            rv = writeControlReg( CONTROL0, val );
         }
         // Control reg 1
         else if ( reg == REG_CONTROL1 ) {
             writeEEPROM(VSCP_EEPROM_END + REG_CONTROL1, val);
-            rv = readEEPROM(VSCP_EEPROM_END + REG_CONTROL1);
+            rv = writeControlReg( CONTROL1, val );
         }
         // Control reg 2
         else if ( reg == REG_CONTROL2 ) {
             writeEEPROM(VSCP_EEPROM_END + REG_CONTROL2, val);
-            rv = readEEPROM(VSCP_EEPROM_END + REG_CONTROL2);
+            rv = writeControlReg( CONTROL2, val );
             rv &= 0x03; // Take away unused bits
         }
     
@@ -723,6 +697,93 @@ uint8_t vscp_writeAppReg( uint8_t reg, uint8_t val )
 
     return rv;
 }
+
+///////////////////////////////////////////////////////////////////////////////
+// writeControlReg
+//
+
+uint8_t writeControlReg( uint8_t ctrlreg, uint8_t val )
+{
+    uint8_t rv = 0;
+    
+    switch ( ctrlreg ) {
+    
+        case CONTROL0:
+            PORTCbits.RC7 = ( val & 0x01 ) ? 1 : 0;
+            PORTCbits.RC6 = ( val & 0x02 ) ? 1 : 0;
+            PORTCbits.RC3 = ( val & 0x04 ) ? 1 : 0;
+            PORTCbits.RC4 = ( val & 0x08 ) ? 1 : 0;
+            PORTCbits.RC5 = ( val & 0x10 ) ? 1 : 0;
+            PORTAbits.RA0 = ( val & 0x20 ) ? 1 : 0;
+            PORTAbits.RA1 = ( val & 0x40 ) ? 1 : 0;
+            PORTAbits.RA2 = ( val & 0x80 ) ? 1 : 0;
+            rv = readControlReg( CONTROL0 );
+            break;
+            
+        case CONTROL1:
+            PORTAbits.RA3 = ( val & 0x01 ) ? 1 : 0;
+            PORTAbits.RA5 = ( val & 0x02 ) ? 1 : 0;
+            // Pin 13 no connect
+            // Pin 14 RESET
+            PORTBbits.RB4 = ( val & 0x10 ) ? 1 : 0;
+            PORTCbits.RC2 = ( val & 0x20 ) ? 1 : 0;
+            PORTBbits.RB1 = ( val & 0x40 ) ? 1 : 0;
+            PORTBbits.RB0 = ( val & 0x80 ) ? 1 : 0;
+            rv = readControlReg( CONTROL1 );
+            break;
+            
+        case CONTROL2:
+            PORTBbits.RB6 = ( val & 0x01 ) ? 1 : 0;
+            PORTBbits.RB5 = ( val & 0x02 ) ? 1 : 0;
+            rv = readControlReg( CONTROL2 );
+            break;    
+    }
+    
+    return rv;
+}
+
+
+///////////////////////////////////////////////////////////////////////////////
+// readControlReg
+//
+
+uint8_t readControlReg( uint8_t ctrlreg )
+{
+    uint8_t rv = 0;
+    
+    switch ( ctrlreg ) {
+    
+        case CONTROL0:
+            rv = ( PORTCbits.RC7 << 0 ) +
+                    ( PORTCbits.RC6 << 1 ) + 
+                    ( PORTCbits.RC3 << 2 ) +
+                    ( PORTCbits.RC4 << 3 ) +
+                    ( PORTCbits.RC5 << 4 ) +
+                    ( PORTAbits.RA0 << 5 ) +
+                    ( PORTAbits.RA1 << 6 ) +
+                    ( PORTAbits.RA2 << 7 );
+            break;
+            
+        case CONTROL1:
+            rv = ( PORTAbits.RA3 << 0 ) +
+                    ( PORTAbits.RA5  << 1 ) +
+                    // Pin 13 no connect
+                    // Pin 14 RESET
+                    ( PORTBbits.RB4 << 4 ) +
+                    ( PORTCbits.RC2 << 5 ) +
+                    ( PORTBbits.RB1 << 6 ) +
+                    ( PORTBbits.RB0 << 7 );
+            break;
+            
+        case CONTROL2:
+            rv = ( PORTBbits.RB6 << 0 ) +
+                    ( PORTBbits.RB5 << 1 );
+            break;    
+    }
+    
+    return rv;
+}
+
 
 ///////////////////////////////////////////////////////////////////////////////
 // Send Decision Matrix Information
@@ -872,8 +933,93 @@ void doDM(void)
 //
 
 void actionSet( uint8_t dmflags, uint8_t param )
-{
+{    
+    // We should check sub zone
+    if ( param & 0x80 ) {
+        
+        param &= 0x80;
+        
+        if ( readEEPROM( VSCP_EEPROM_END + REG_PIN3_SUBZONE + (param - 3) ) 
+                != vscp_imsg.data[ 2 ] )  {
+                return;
+        }
+    }
     
+    switch ( param ) {
+        
+        case 3:
+            PORTCbits.RC7 = 1;
+            break;
+       
+        case 4:
+            PORTCbits.RC6 = 1;
+            break;
+            
+        case 5:
+            PORTCbits.RC3 = 1;
+            break;
+            
+        case 6:
+            PORTCbits.RC4 = 1;
+            break;
+            
+        case 7:
+            PORTCbits.RC5 = 1;
+            break;
+            
+        case 8:
+            PORTAbits.RA0 = 1;
+            break;
+            
+        case 9:
+            PORTAbits.RA1 = 1;
+            break;
+            
+        case 10:
+            PORTAbits.RA2 = 1;
+            break;
+            
+        case 11:
+            PORTAbits.RA3 = 1;
+            break;
+            
+        case 12:
+            PORTAbits.RA5 = 1;
+            break;
+            
+        case 13:
+            // Pin 13 no connect
+            break;
+            
+        case 14:
+            // Pin 14 RESET
+            break;
+            
+        case 15:
+            PORTBbits.RB4 = 1;
+            break;
+            
+        case 16:
+            PORTCbits.RC2 = 1;
+            break;
+            
+        case 17:
+            PORTBbits.RB1 = 1;
+            break;
+        
+        case 18:
+            PORTBbits.RB0 = 1;
+            break;
+            
+        case 19:
+            PORTBbits.RB6 = 1;
+            break;
+            
+        case 20:
+            PORTBbits.RB5 = 1;
+            break;            
+                        
+    }
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -884,7 +1030,92 @@ void actionSet( uint8_t dmflags, uint8_t param )
 
 void actionClr( uint8_t dmflags, uint8_t param )
 {
+    // We should check sub zone
+    if ( param & 0x80 ) {
+        
+        param &= 0x80;
+        
+        if ( readEEPROM( VSCP_EEPROM_END + REG_PIN3_SUBZONE + (param - 3) ) 
+                != vscp_imsg.data[ 2 ] )  {
+                return;
+        }
+    }
     
+    switch ( param ) {
+        
+        case 3:
+            PORTCbits.RC7 = 0;
+            break;
+       
+        case 4:
+            PORTCbits.RC6 = 0;
+            break;
+            
+        case 5:
+            PORTCbits.RC3 = 0;
+            break;
+            
+        case 6:
+            PORTCbits.RC4 = 0;
+            break;
+            
+        case 7:
+            PORTCbits.RC5 = 0;
+            break;
+            
+        case 8:
+            PORTAbits.RA0 = 0;
+            break;
+            
+        case 9:
+            PORTAbits.RA1 = 0;
+            break;
+            
+        case 10:
+            PORTAbits.RA2 = 0;
+            break;
+            
+        case 11:
+            PORTAbits.RA3 = 0;
+            break;
+            
+        case 12:
+            PORTAbits.RA5 = 0;
+            break;
+            
+        case 13:
+            // Pin 13 no connect
+            break;
+            
+        case 14:
+            // Pin 14 RESET
+            break;
+            
+        case 15:
+            PORTBbits.RB4 = 0;
+            break;
+            
+        case 16:
+            PORTCbits.RC2 = 0;
+            break;
+            
+        case 17:
+            PORTBbits.RB1 = 0;
+            break;
+        
+        case 18:
+            PORTBbits.RB0 = 0;
+            break;
+            
+        case 19:
+            PORTBbits.RB6 = 0;
+            break;
+            
+        case 20:
+            PORTBbits.RB5 = 0;
+            break;            
+                        
+    }
 }
 
 
@@ -896,7 +1127,9 @@ void actionClr( uint8_t dmflags, uint8_t param )
 
 void actionSetAll( uint8_t dmflags, uint8_t param )
 {
-    
+    PORTA = 0xff;
+    PORTB = 0xff;
+    PORTC = 0xff;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -907,7 +1140,9 @@ void actionSetAll( uint8_t dmflags, uint8_t param )
 
 void actionClrAll( uint8_t dmflags, uint8_t param )
 {
-    
+    PORTA = 0x00;
+    PORTB = 0x00;
+    PORTC = 0x00;
 }
 
 

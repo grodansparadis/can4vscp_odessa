@@ -2,9 +2,6 @@
  * 	VSCP (Very Simple Control Protocol) 
  * 	http://www.vscp.org
  *
- * 	2005-03-16
- * 	akhe@eurosource.se
- *
  *  Copyright (C) 1995-2015 Ake Hedman, Grodans Paradis AB
  *  <akhe@grodansparadis.com>
  *
@@ -30,13 +27,13 @@
  * ******************************************************************************
 */
 
-#ifndef KELVIN_SMART_VERSION_H
-#define KELVIN_SMART_VERSION_H
+#ifndef ODESSA_VERSION_H
+#define ODESSA_VERSION_H
 
 // Firmware version
 
 #define FIRMWARE_MAJOR_VERSION		1
-#define FIRMWARE_MINOR_VERSION		1
+#define FIRMWARE_MINOR_VERSION		0
 #define FIRMWARE_SUB_MINOR_VERSION	0
 
 

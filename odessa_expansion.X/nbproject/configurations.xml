@@ -77,7 +77,7 @@
       </makeCustomizationType>
       <HI-TECH-COMP>
         <property key="asmlist" value="true"/>
-        <property key="define-macros" value="DEBUG"/>
+        <property key="define-macros" value=""/>
         <property key="extra-include-directories"
                   value="..\;..\..\vscp_firmware\pic\common;..\..\vscp_firmware\common;..\..\vscp_software\src\vscp\common"/>
         <property key="identifier-length" value="255"/>

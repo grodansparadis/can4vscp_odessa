@@ -106,28 +106,28 @@
 #define REG_ZONE                    0
 #define REG_SUBZONE                 1
 
-#define REG_PIN3_SUBZONE            2
-#define REG_PIN4_SUBZONE            3
-#define REG_PIN5_SUBZONE            4
-#define REG_PIN6_SUBZONE            5
-#define REG_PIN7_SUBZONE            6
-#define REG_PIN8_SUBZONE            7
-#define REG_PIN9_SUBZONE            8
-#define REG_PIN10_SUBZONE           9
-#define REG_PIN11_SUBZONE           10
-#define REG_PIN12_SUBZONE           11
-#define REG_PIN13_SUBZONE           12
-#define REG_PIN14_SUBZONE           13
-#define REG_PIN15_SUBZONE           14
-#define REG_PIN16_SUBZONE           15
-#define REG_PIN17_SUBZONE           16
-#define REG_PIN18_SUBZONE           17
-#define REG_PIN19_SUBZONE           18
-#define REG_PIN20_SUBZONE           19
+#define REG_CONTROL0                2
+#define REG_CONTROL1                3
+#define REG_CONTROL2                4
 
-#define REG_CONTROL0                20
-#define REG_CONTROL1                21
-#define REG_CONTROL2                22
+#define REG_PIN3_SUBZONE            5
+#define REG_PIN4_SUBZONE            6
+#define REG_PIN5_SUBZONE            7
+#define REG_PIN6_SUBZONE            8
+#define REG_PIN7_SUBZONE            9
+#define REG_PIN8_SUBZONE            10
+#define REG_PIN9_SUBZONE            11
+#define REG_PIN10_SUBZONE           12
+#define REG_PIN11_SUBZONE           13
+#define REG_PIN12_SUBZONE           14
+#define REG_PIN13_SUBZONE           15
+#define REG_PIN14_SUBZONE           16
+#define REG_PIN15_SUBZONE           17
+#define REG_PIN16_SUBZONE           18
+#define REG_PIN17_SUBZONE           19
+#define REG_PIN18_SUBZONE           20
+#define REG_PIN19_SUBZONE           21
+#define REG_PIN20_SUBZONE           22
 
 #define REG_FIRST_PAGE_END          23
 // * * *  Registers - Page=1  * * *
@@ -147,6 +147,13 @@
 #define ACTION_CLR                  2
 #define ACTION_SETALL               3
 #define ACTION_CLRALL               4
+
+
+// * * * Control registers
+#define CONTROL0                    0
+#define CONTROL1                    1
+#define CONTROL2                    2
+
 
 // Function Prototypes
 

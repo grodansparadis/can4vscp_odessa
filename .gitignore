@@ -68,3 +68,10 @@
 *.p1
 *.d
 *.pre
+/odessa_expansion.X/dist/Debug/debug/*.cmf
+/odessa_expansion.X/dist/Debug/debug/*.hxl
+/odessa_expansion.X/dist/Debug/debug/*.lst
+/odessa_expansion.X/dist/Debug/debug/*.map
+/odessa_expansion.X/dist/Debug/debug/*.rlf
+/odessa_expansion.X/dist/Debug/debug/*.sdb
+/odessa_expansion.X/dist/Debug/debug/*.sym
