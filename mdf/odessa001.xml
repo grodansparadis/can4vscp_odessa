@@ -415,7 +415,7 @@
 		<rowcnt>8</rowcnt>			 
 					
     	<action code="0x00">				
-      	<name lang="en">NOOP)</name>
+      	<name lang="en">NOOP</name>
         	<description lang="en">
 			No operation  	
         	</description>        	

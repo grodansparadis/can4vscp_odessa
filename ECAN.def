@@ -44,7 +44,7 @@
 // PROPSEG value - Value must be between 1-8 inclusive.
 #define ECAN_PROPSEG_VAL 5
 //
-// Use freely progrmable PHSEG2 or calculated value.
+// Use freely programable PHSEG2 or calculated value.
 #define ECAN_PHSEG2_MODE_VAL ECAN_PHSEG2_MODE_PROGRAMMABLE
 //
 // Bus Sample Mode
@@ -152,8 +152,8 @@
 // RXF1 Filter Type
 #define ECAN_RXF1_MSG_TYPE_VAL ECAN_MSG_XTD
 //
-// RXF1 Value   CLASS=0x1E, TYPE=0x1A  CONTROL, SYNC
-#define ECAN_RXF1_VAL 0x001E1A00L
+// RXF1 Value   Everything
+#define ECAN_RXF1_VAL 0x00000000L
 //
 // RXF1 Buffer Link
 #define ECAN_RXF1_BUFFER_VAL RXB0
@@ -377,9 +377,9 @@
 // RXM0 Value
 #define ECAN_RXM0_VAL 0x01FF0000L
 //
-// RXM1 Type   Sync request - CLASS=0x1E Type=0x1A
+// RXM1 Type   Everything
 #define ECAN_RXM1_MSG_TYPE ECAN_MSG_XTD
 //
 // RXM1 Value
-#define ECAN_RXM1_VAL 0x01FFFF00L
+#define ECAN_RXM1_VAL 0x00000000L
 #endif

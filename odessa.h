@@ -133,10 +133,8 @@
 // * * *  Registers - Page=1  * * *
 
 // Decision Matrix
-#define REG_DESCION_MATRIX          0    // Start of matrix, page 1
-//      8 rows
-#define DESCION_MATRIX_ROWS         8
-
+#define REG_DESCION_MATRIX          0   // Start of matrix, page 1
+#define DESCION_MATRIX_ROWS         8   // Rows in DM
 #define DESCION_MATRIX_PAGE         1
 
 // --------------------------------------------------------------------------------

@@ -623,8 +623,8 @@ uint8_t vscp_readAppReg(uint8_t reg)
         // DM REG_FIRST_PAGE_END + REG_DESCION_MATRIX + i * 8 + j
         if ( ( reg >= REG_DESCION_MATRIX ) && ( reg <= ( REG_DESCION_MATRIX + 
                 ( 8 * DESCION_MATRIX_ROWS ) ) ) ) {
-            rv = readEEPROM(VSCP_EEPROM_END + VSCP_EEPROM_END + 
-                    REG_FIRST_PAGE_END + ( reg - REG_DESCION_MATRIX ) );
+            rv = readEEPROM(VSCP_EEPROM_END + REG_FIRST_PAGE_END + 
+                    ( reg - REG_DESCION_MATRIX ) );
         }
         
     }
@@ -687,10 +687,10 @@ uint8_t vscp_writeAppReg( uint8_t reg, uint8_t val )
         // DM
         if ( ( reg >= REG_DESCION_MATRIX ) && ( reg <= ( REG_DESCION_MATRIX + 
                 ( 8 * DESCION_MATRIX_ROWS ) ) ) ) {
-            writeEEPROM(VSCP_EEPROM_END + VSCP_EEPROM_END + 
-                    REG_FIRST_PAGE_END + ( reg - REG_DESCION_MATRIX ), val);
-            rv = readEEPROM(VSCP_EEPROM_END + VSCP_EEPROM_END + 
-                    REG_FIRST_PAGE_END + ( reg - REG_DESCION_MATRIX ) );
+            writeEEPROM(VSCP_EEPROM_END + REG_FIRST_PAGE_END + 
+                        ( reg - REG_DESCION_MATRIX ), val);
+            rv = readEEPROM(VSCP_EEPROM_END + REG_FIRST_PAGE_END + 
+                        ( reg - REG_DESCION_MATRIX ) );
         }
         
     }
@@ -738,7 +738,7 @@ uint8_t writeControlReg( uint8_t ctrlreg, uint8_t val )
             rv = readControlReg( CONTROL2 );
             break;    
     }
-    
+  
     return rv;
 }
 
@@ -812,10 +812,11 @@ void SendInformationEvent( unsigned char idx,
                             unsigned char eventTypeId )
 {
     uint8_t data[3];
-
+    idx -= 3;
+    
     data[ 0 ] = idx; // Register
-    data[ 1 ] = readEEPROM( 0 );
-    data[ 2 ] = readEEPROM( 0 );
+    data[ 1 ] = readEEPROM( VSCP_EEPROM_END + REG_ZONE );
+    data[ 2 ] = readEEPROM( VSCP_EEPROM_END + REG_PIN3_SUBZONE + idx );
     sendVSCPFrame( eventClass,
                     eventTypeId,
                     vscp_nickname,
@@ -845,14 +846,16 @@ void doDM(void)
     for (i = 0; i < DESCION_MATRIX_ROWS; i++) {
 
         // Get DM flags for this row
-        dmflags = readEEPROM( VSCP_EEPROM_END + REG_DESCION_MATRIX + 1 + (8 * i) );
+        dmflags = readEEPROM( VSCP_EEPROM_END + REG_FIRST_PAGE_END + 
+                                    REG_DESCION_MATRIX + 1 + (8 * i) );
 
         // Is the DM row enabled?
         if ( dmflags & VSCP_DM_FLAG_ENABLED ) {
 
             // Should the originating id be checked and if so is it the same?
             if ( ( dmflags & VSCP_DM_FLAG_CHECK_OADDR ) &&
-                    ( vscp_imsg.oaddr != readEEPROM( VSCP_EEPROM_END + REG_DESCION_MATRIX + (8 * i) ) ) ) {
+                    ( vscp_imsg.oaddr != readEEPROM( VSCP_EEPROM_END + REG_FIRST_PAGE_END + 
+                                                        REG_DESCION_MATRIX + (8 * i) ) ) ) {
                 continue;
             }
 
@@ -875,47 +878,61 @@ void doDM(void)
             }
             
             class_filter = ( dmflags & VSCP_DM_FLAG_CLASS_FILTER)*256 +
-                    readEEPROM( VSCP_EEPROM_END +
-                    REG_DESCION_MATRIX +
-                    (8 * i) +
-                    VSCP_DM_POS_CLASSFILTER);
+                    readEEPROM( VSCP_EEPROM_END + REG_FIRST_PAGE_END + 
+                                REG_DESCION_MATRIX +
+                                (8 * i) +
+                                VSCP_DM_POS_CLASSFILTER);
             class_mask = ( dmflags & VSCP_DM_FLAG_CLASS_MASK)*256 +
-                    readEEPROM( VSCP_EEPROM_END +
-                    REG_DESCION_MATRIX +
-                    (8 * i) +
-                    VSCP_DM_POS_CLASSMASK);
-            type_filter = readEEPROM( VSCP_EEPROM_END +
-                    REG_DESCION_MATRIX +
-                    (8 * i) +
-                    VSCP_DM_POS_TYPEFILTER);
-            type_mask = readEEPROM( VSCP_EEPROM_END +
-                    REG_DESCION_MATRIX +
-                    (8 * i) +
-                    VSCP_DM_POS_TYPEMASK);
+                    readEEPROM( VSCP_EEPROM_END + REG_FIRST_PAGE_END + 
+                                    REG_DESCION_MATRIX +
+                                    (8 * i) +
+                                    VSCP_DM_POS_CLASSMASK);
+            type_filter = readEEPROM( VSCP_EEPROM_END + REG_FIRST_PAGE_END + 
+                                        REG_DESCION_MATRIX + 
+                                        (8 * i) +
+                                        VSCP_DM_POS_TYPEFILTER);
+            type_mask = readEEPROM( VSCP_EEPROM_END + REG_FIRST_PAGE_END + 
+                                        REG_DESCION_MATRIX +
+                                        (8 * i) +
+                                        VSCP_DM_POS_TYPEMASK);
 
             if ( !( ( class_filter ^ vscp_imsg.vscp_class ) & class_mask ) &&
                     !( ( type_filter ^ vscp_imsg.vscp_type ) & type_mask ) ) {
 
                 // OK Trigger this action
-                switch ( readEEPROM( VSCP_EEPROM_END + REG_DESCION_MATRIX + (8 * i) + VSCP_DM_POS_ACTION ) ) {
+                switch ( readEEPROM( VSCP_EEPROM_END + REG_FIRST_PAGE_END + 
+                                        REG_DESCION_MATRIX + (8 * i) + 
+                                        VSCP_DM_POS_ACTION ) ) {
 
                     case ACTION_NOOP: // Do nothing
                         break;
                         
                     case ACTION_SET: // Set pin to active state
-                        actionSet( dmflags, readEEPROM( VSCP_EEPROM_END + REG_DESCION_MATRIX + (8 * i) + VSCP_DM_POS_ACTIONPARAM ) );
+                        actionSet( dmflags, 
+                                readEEPROM( VSCP_EEPROM_END + REG_FIRST_PAGE_END + 
+                                                REG_DESCION_MATRIX + (8 * i) + 
+                                                VSCP_DM_POS_ACTIONPARAM ) );
                         break;
 
                     case ACTION_CLR: // Set pin to inactive state
-                        actionClr( dmflags, readEEPROM( VSCP_EEPROM_END + REG_DESCION_MATRIX + (8 * i) + VSCP_DM_POS_ACTIONPARAM ) );
+                        actionClr( dmflags, 
+                                readEEPROM( VSCP_EEPROM_END + REG_FIRST_PAGE_END + 
+                                                REG_DESCION_MATRIX + (8 * i) + 
+                                                VSCP_DM_POS_ACTIONPARAM ) );
                         break;
 
                     case ACTION_SETALL: // Activate all pins
-                        actionSetAll( dmflags, readEEPROM( VSCP_EEPROM_END + REG_DESCION_MATRIX + (8 * i) + VSCP_DM_POS_ACTIONPARAM ) );
+                        actionSetAll( dmflags, 
+                                readEEPROM( VSCP_EEPROM_END + REG_FIRST_PAGE_END + 
+                                                REG_DESCION_MATRIX + (8 * i) + 
+                                                VSCP_DM_POS_ACTIONPARAM ) );
                         break;
 
                     case ACTION_CLRALL: // Inactivate all pins
-                        actionClrAll( dmflags, readEEPROM( VSCP_EEPROM_END + REG_DESCION_MATRIX + (8 * i) + VSCP_DM_POS_ACTIONPARAM ) );
+                        actionClrAll( dmflags, 
+                                readEEPROM( VSCP_EEPROM_END + REG_FIRST_PAGE_END + 
+                                                REG_DESCION_MATRIX + (8 * i) + 
+                                                VSCP_DM_POS_ACTIONPARAM ) );
                         break;
 
                 } // case
@@ -937,13 +954,20 @@ void actionSet( uint8_t dmflags, uint8_t param )
     // We should check sub zone
     if ( param & 0x80 ) {
         
-        param &= 0x80;
+        param &= 0x7f;
         
         if ( readEEPROM( VSCP_EEPROM_END + REG_PIN3_SUBZONE + (param - 3) ) 
                 != vscp_imsg.data[ 2 ] )  {
                 return;
         }
     }
+    
+    if ( param < 3) return;
+    if ( param > 20 ) return;
+    
+    SendInformationEvent( param, 
+                            VSCP_CLASS1_INFORMATION, 
+                            VSCP_TYPE_INFORMATION_ON );
     
     switch ( param ) {
         
@@ -1033,13 +1057,20 @@ void actionClr( uint8_t dmflags, uint8_t param )
     // We should check sub zone
     if ( param & 0x80 ) {
         
-        param &= 0x80;
+        param &= 0x7f;
         
         if ( readEEPROM( VSCP_EEPROM_END + REG_PIN3_SUBZONE + (param - 3) ) 
                 != vscp_imsg.data[ 2 ] )  {
                 return;
         }
     }
+    
+    if ( param < 3) return;
+    if ( param > 20 ) return;
+    
+    SendInformationEvent( param, 
+                            VSCP_CLASS1_INFORMATION, 
+                            VSCP_TYPE_INFORMATION_OFF );
     
     switch ( param ) {
         
@@ -1130,6 +1161,12 @@ void actionSetAll( uint8_t dmflags, uint8_t param )
     PORTA = 0xff;
     PORTB = 0xff;
     PORTC = 0xff;
+    
+    for ( int i=3; i<21; i++ ) {   
+        SendInformationEvent( i, 
+                                VSCP_CLASS1_INFORMATION, 
+                                VSCP_TYPE_INFORMATION_ON );
+    }
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -1143,6 +1180,12 @@ void actionClrAll( uint8_t dmflags, uint8_t param )
     PORTA = 0x00;
     PORTB = 0x00;
     PORTC = 0x00;
+    
+    for ( int i=3; i<21; i++ ) {   
+        SendInformationEvent( i, 
+                                VSCP_CLASS1_INFORMATION, 
+                                VSCP_TYPE_INFORMATION_OFF );
+    }
 }
 
 

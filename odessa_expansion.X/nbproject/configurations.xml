@@ -10,10 +10,10 @@
       <itemPath>../ECAN.def</itemPath>
       <itemPath>../../../../../vscp_firmware/pic/common/eeprom.h</itemPath>
       <itemPath>../../../../../vscp_firmware/common/vscp_firmware.h</itemPath>
-      <itemPath>../../../../../vscp_software/src/vscp/common/vscp_class.h</itemPath>
-      <itemPath>../../../../../vscp_software/src/vscp/common/vscp_type.h</itemPath>
       <itemPath>../version.h</itemPath>
       <itemPath>../odessa.h</itemPath>
+      <itemPath>../../vscp_software/src/vscp/common/vscp_class.h</itemPath>
+      <itemPath>../../vscp_software/src/vscp/common/vscp_type.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -39,6 +39,7 @@
     <Elem>../</Elem>
     <Elem>../../vscp_firmware/common</Elem>
     <Elem>../../vscp_firmware/pic/common</Elem>
+    <Elem>../../vscp_software/src/vscp/common</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
