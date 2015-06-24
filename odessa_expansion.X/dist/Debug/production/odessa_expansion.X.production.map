@@ -5,7 +5,7 @@ Linker command line:
 --edf=C:\Program Files (x86)\Microchip\xc8\v1.21\dat\en_msgs.txt -cs \
   -h+dist/Debug/production\odessa_expansion.X.production.sym \
   --cmf=dist/Debug/production\odessa_expansion.X.production.cmf -z \
-  -Q18F26K80 -oC:\Users\GRODAN~1\AppData\Local\Temp\s6ng.6 \
+  -Q18F26K80 -oC:\Users\GRODAN~1\AppData\Local\Temp\sh0.6 \
   -Mdist/Debug/production/odessa_expansion.X.production.map -E1 -ver=XC8 \
   -ACODE=00h-0FFFFh -ACONST=00h-0FFFFh -ASMALLCONST=0F00h-0FFFhx241 \
   -AMEDIUMCONST=0F00h-0FFFFh -ACOMRAM=01h-05Fh -AABS1=00h-0E40h \
@@ -25,7 +25,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE \
-  C:\Users\GRODAN~1\AppData\Local\Temp\s6ng.obj \
+  C:\Users\GRODAN~1\AppData\Local\Temp\sh0.obj \
   dist/Debug/production\odessa_expansion.X.production.obj 
 
 Object code version is 3.11
@@ -38,7 +38,7 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\GRODAN~1\AppData\Local\Temp\s6ng.obj
+C:\Users\GRODAN~1\AppData\Local\Temp\sh0.obj
                 end_init                             B6       B6        4        C       0
                 reset_vec                             0        0        4        0       0
                 idloc                            200000   200000        8   200000       0
@@ -518,7 +518,7 @@ __CFG_PLLCFG$ON                          (abs)        000000
 __CFG_RETEN$OFF                          (abs)        000000
 __CFG_SOSCSEL$DIG                        (abs)        000000
 __CFG_STVREN$ON                          (abs)        000000
-__CFG_WDTEN$OFF                          (abs)        000000
+__CFG_WDTEN$ON                           (abs)        000000
 __CFG_WDTPS$1048576                      (abs)        000000
 __CFG_XINST$OFF                          (abs)        000000
 __ECANPointBuffer                        text59       0028A0
@@ -1292,7 +1292,7 @@ FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 167 in file "../main.c"
+		line 168 in file "../main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1337,7 +1337,7 @@ Total ram usage:        0 bytes
 
  *************** function _doWork *****************
  Defined at:
-		line 574 in file "../main.c"
+		line 575 in file "../main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1367,7 +1367,7 @@ Total ram usage:        0 bytes
 
  *************** function _doApplicationOneSecondWork *****************
  Defined at:
-		line 456 in file "../main.c"
+		line 457 in file "../main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1460,7 +1460,7 @@ Total ram usage:        2 bytes
 
  *************** function _vscp_getSubzone *****************
  Defined at:
-		line 563 in file "../main.c"
+		line 564 in file "../main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1490,7 +1490,7 @@ Total ram usage:        0 bytes
 
  *************** function _vscp_getZone *****************
  Defined at:
-		line 554 in file "../main.c"
+		line 555 in file "../main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1550,7 +1550,7 @@ Total ram usage:        0 bytes
 
  *************** function _doDM *****************
  Defined at:
-		line 835 in file "../main.c"
+		line 836 in file "../main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1589,7 +1589,7 @@ Total ram usage:       15 bytes
 
  *************** function _actionClrAll *****************
  Defined at:
-		line 1179 in file "../main.c"
+		line 1180 in file "../main.c"
  Parameters:    Size  Location     Type
   dmflags         1    wreg     unsigned char 
   param           1   78[COMRAM] unsigned char 
@@ -1621,7 +1621,7 @@ Total ram usage:        3 bytes
 
  *************** function _actionSetAll *****************
  Defined at:
-		line 1160 in file "../main.c"
+		line 1161 in file "../main.c"
  Parameters:    Size  Location     Type
   dmflags         1    wreg     unsigned char 
   param           1   78[COMRAM] unsigned char 
@@ -1653,7 +1653,7 @@ Total ram usage:        3 bytes
 
  *************** function _actionClr *****************
  Defined at:
-		line 1056 in file "../main.c"
+		line 1057 in file "../main.c"
  Parameters:    Size  Location     Type
   dmflags         1    wreg     unsigned char 
   param           1   78[COMRAM] unsigned char 
@@ -1685,7 +1685,7 @@ Total ram usage:        1 bytes
 
  *************** function _actionSet *****************
  Defined at:
-		line 953 in file "../main.c"
+		line 954 in file "../main.c"
  Parameters:    Size  Location     Type
   dmflags         1    wreg     unsigned char 
   param           1   78[COMRAM] unsigned char 
@@ -1717,7 +1717,7 @@ Total ram usage:        1 bytes
 
  *************** function _SendInformationEvent *****************
  Defined at:
-		line 813 in file "../main.c"
+		line 814 in file "../main.c"
  Parameters:    Size  Location     Type
   idx             1    wreg     unsigned char 
   eventClass      1   20[BANK0 ] unsigned char 
@@ -1921,7 +1921,7 @@ Total ram usage:        7 bytes
 
  *************** function _vscp_restoreDefaults *****************
  Defined at:
-		line 1428 in file "../main.c"
+		line 1429 in file "../main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1952,7 +1952,7 @@ Total ram usage:        0 bytes
 
  *************** function _init_app_eeprom *****************
  Defined at:
-		line 427 in file "../main.c"
+		line 428 in file "../main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1984,7 +1984,7 @@ Total ram usage:        4 bytes
 
  *************** function _vscp_setUserID *****************
  Defined at:
-		line 1262 in file "../main.c"
+		line 1263 in file "../main.c"
  Parameters:    Size  Location     Type
   idx             1    wreg     unsigned char 
   data            1   10[COMRAM] unsigned char 
@@ -2015,7 +2015,7 @@ Total ram usage:        2 bytes
 
  *************** function _vscp_setManufacturerId *****************
  Defined at:
-		line 507 in file "../main.c"
+		line 508 in file "../main.c"
  Parameters:    Size  Location     Type
   idx             1    wreg     unsigned char 
   data            1   10[COMRAM] unsigned char 
@@ -2046,7 +2046,7 @@ Total ram usage:        2 bytes
 
  *************** function _vscp_setGUID *****************
  Defined at:
-		line 495 in file "../main.c"
+		line 496 in file "../main.c"
  Parameters:    Size  Location     Type
   idx             1    wreg     unsigned char 
   data            1   10[COMRAM] unsigned char 
@@ -2077,7 +2077,7 @@ Total ram usage:        2 bytes
 
  *************** function _vscp_writeAppReg *****************
  Defined at:
-		line 641 in file "../main.c"
+		line 642 in file "../main.c"
  Parameters:    Size  Location     Type
   reg             1    wreg     unsigned char 
   val             1   20[COMRAM] unsigned char 
@@ -2112,7 +2112,7 @@ Total ram usage:        3 bytes
 
  *************** function _writeControlReg *****************
  Defined at:
-		line 706 in file "../main.c"
+		line 707 in file "../main.c"
  Parameters:    Size  Location     Type
   ctrlreg         1    wreg     unsigned char 
   val             1   16[COMRAM] unsigned char 
@@ -2223,7 +2223,7 @@ Total ram usage:       17 bytes
 
  *************** function _vscp_getRegisterPagesUsed *****************
  Defined at:
-		line 1439 in file "../main.c"
+		line 1440 in file "../main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2253,7 +2253,7 @@ Total ram usage:        0 bytes
 
  *************** function _vscp_getFamilyType *****************
  Defined at:
-		line 1420 in file "../main.c"
+		line 1421 in file "../main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2283,7 +2283,7 @@ Total ram usage:        4 bytes
 
  *************** function _vscp_getFamilyCode *****************
  Defined at:
-		line 1411 in file "../main.c"
+		line 1412 in file "../main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2313,7 +2313,7 @@ Total ram usage:        4 bytes
 
  *************** function _vscp_getBufferSize *****************
  Defined at:
-		line 1291 in file "../main.c"
+		line 1292 in file "../main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2343,7 +2343,7 @@ Total ram usage:        0 bytes
 
  *************** function _vscp_getBootLoaderAlgorithm *****************
  Defined at:
-		line 1282 in file "../main.c"
+		line 1283 in file "../main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2373,7 +2373,7 @@ Total ram usage:        0 bytes
 
  *************** function _vscp_getManufacturerId *****************
  Defined at:
-		line 1273 in file "../main.c"
+		line 1274 in file "../main.c"
  Parameters:    Size  Location     Type
   idx             1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -2404,7 +2404,7 @@ Total ram usage:        1 bytes
 
  *************** function _vscp_getUserID *****************
  Defined at:
-		line 1253 in file "../main.c"
+		line 1254 in file "../main.c"
  Parameters:    Size  Location     Type
   idx             1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -2435,7 +2435,7 @@ Total ram usage:        1 bytes
 
  *************** function _vscp_getMDF_URL *****************
  Defined at:
-		line 1244 in file "../main.c"
+		line 1245 in file "../main.c"
  Parameters:    Size  Location     Type
   idx             1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -2466,7 +2466,7 @@ Total ram usage:        2 bytes
 
  *************** function _vscp_getGUID *****************
  Defined at:
-		line 1232 in file "../main.c"
+		line 1233 in file "../main.c"
  Parameters:    Size  Location     Type
   idx             1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -2498,7 +2498,7 @@ Total ram usage:        1 bytes
 
  *************** function _vscp_getSubMinorVersion *****************
  Defined at:
-		line 1221 in file "../main.c"
+		line 1222 in file "../main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2528,7 +2528,7 @@ Total ram usage:        0 bytes
 
  *************** function _vscp_getMinorVersion *****************
  Defined at:
-		line 1212 in file "../main.c"
+		line 1213 in file "../main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2558,7 +2558,7 @@ Total ram usage:        0 bytes
 
  *************** function _vscp_getMajorVersion *****************
  Defined at:
-		line 1203 in file "../main.c"
+		line 1204 in file "../main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2681,7 +2681,7 @@ Total ram usage:        0 bytes
 
  *************** function _vscp_readNicknamePermanent *****************
  Defined at:
-		line 536 in file "../main.c"
+		line 537 in file "../main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2774,7 +2774,7 @@ Total ram usage:        0 bytes
 
  *************** function _vscp_getMatrixInfo *****************
  Defined at:
-		line 1394 in file "../main.c"
+		line 1395 in file "../main.c"
  Parameters:    Size  Location     Type
   pData           1    wreg     PTR unsigned char 
 		 -> vscp_omsg(13), 
@@ -2807,7 +2807,7 @@ Total ram usage:        1 bytes
 
  *************** function _vscp_goBootloaderMode *****************
  Defined at:
-		line 1378 in file "../main.c"
+		line 1379 in file "../main.c"
  Parameters:    Size  Location     Type
   algorithm       1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -2935,7 +2935,7 @@ Total ram usage:        1 bytes
 
  *************** function _sendVSCPFrame *****************
  Defined at:
-		line 1453 in file "../main.c"
+		line 1454 in file "../main.c"
  Parameters:    Size  Location     Type
   vscpclass       2   62[COMRAM] unsigned short 
   vscptype        1   64[COMRAM] unsigned char 
@@ -2972,7 +2972,7 @@ Total ram usage:       32 bytes
 
  *************** function _sendCANFrame *****************
  Defined at:
-		line 1498 in file "../main.c"
+		line 1499 in file "../main.c"
  Parameters:    Size  Location     Type
   id              4   54[COMRAM] unsigned long 
   dlc             1   58[COMRAM] unsigned char 
@@ -3122,7 +3122,7 @@ Total ram usage:        1 bytes
 
  *************** function _getVSCPFrame *****************
  Defined at:
-		line 1477 in file "../main.c"
+		line 1478 in file "../main.c"
  Parameters:    Size  Location     Type
   pvscpclass      1    wreg     PTR unsigned short 
 		 -> vscp_imsg(14), 
@@ -3165,7 +3165,7 @@ Total ram usage:       14 bytes
 
  *************** function _getCANFrame *****************
  Defined at:
-		line 1519 in file "../main.c"
+		line 1520 in file "../main.c"
  Parameters:    Size  Location     Type
   pid             1    wreg     PTR unsigned long 
 		 -> getVSCPFrame@id(4), 
@@ -3352,7 +3352,7 @@ Total ram usage:        0 bytes
 
  *************** function _vscp_setControlByte *****************
  Defined at:
-		line 1337 in file "../main.c"
+		line 1338 in file "../main.c"
  Parameters:    Size  Location     Type
   ctrl            1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -3382,7 +3382,7 @@ Total ram usage:        1 bytes
 
  *************** function _vscp_setSegmentCRC *****************
  Defined at:
-		line 1328 in file "../main.c"
+		line 1329 in file "../main.c"
  Parameters:    Size  Location     Type
   crc             1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -3415,7 +3415,7 @@ Total ram usage:        1 bytes
 
  *************** function _vscp_getSegmentCRC *****************
  Defined at:
-		line 1319 in file "../main.c"
+		line 1320 in file "../main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -3489,7 +3489,7 @@ Total ram usage:        3 bytes
 
  *************** function _vscp_writeNicknamePermanent *****************
  Defined at:
-		line 545 in file "../main.c"
+		line 546 in file "../main.c"
  Parameters:    Size  Location     Type
   nickname        1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -3563,7 +3563,7 @@ Total ram usage:        3 bytes
 
  *************** function _init *****************
  Defined at:
-		line 302 in file "../main.c"
+		line 303 in file "../main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -3686,7 +3686,7 @@ Total ram usage:        1 bytes
 
  *************** function _init_app_ram *****************
  Defined at:
-		line 410 in file "../main.c"
+		line 411 in file "../main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -3748,7 +3748,7 @@ Total ram usage:        4 bytes
 
  *************** function _readControlReg *****************
  Defined at:
-		line 751 in file "../main.c"
+		line 752 in file "../main.c"
  Parameters:    Size  Location     Type
   ctrlreg         1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -3780,7 +3780,7 @@ Total ram usage:        9 bytes
 
  *************** function _vscp_readAppReg *****************
  Defined at:
-		line 586 in file "../main.c"
+		line 587 in file "../main.c"
  Parameters:    Size  Location     Type
   reg             1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -3813,7 +3813,7 @@ Total ram usage:        2 bytes
 
  *************** function _interrupt_at_low_vector *****************
  Defined at:
-		line 111 in file "../main.c"
+		line 112 in file "../main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type

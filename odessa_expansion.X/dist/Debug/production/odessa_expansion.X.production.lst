@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC18 PRO Macro Assembler V1.21 build 54009 
-                                                                                               Fri Apr 24 15:44:15 2015
+                                                                                               Wed May 20 22:40:25 2015
 
 Microchip Technology Omniscient Code Generator (PRO mode) build 54009
      1                           	processor	18F26K80
@@ -1104,7 +1104,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   1098 ;;
   1099 ;; *************** function _main *****************
   1100 ;; Defined at:
-  1101 ;;		line 167 in file "../main.c"
+  1101 ;;		line 168 in file "../main.c"
   1102 ;; Parameters:    Size  Location     Type
   1103 ;;		None
   1104 ;; Auto vars:     Size  Location     Type
@@ -1159,30 +1159,30 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   1147  001EA6                     _main:
   1148                           	opt stack 22
   1149                           
-  1150                           ;main.c: 168: init();
+  1150                           ;main.c: 169: init();
   1151                           
   1152                           ;incstack = 0
   1153                           ;incstack = 0
   1154  001EA6  EC7E  F015         	call	_init	;wreg free
   1155                           
-  1156                           ;main.c: 172: if ( !vscp_check_pstorage() ) {
+  1156                           ;main.c: 173: if ( !vscp_check_pstorage() ) {
   1157  001EAA  ECAE  F016         	call	_vscp_check_pstorage	;wreg free
   1158  001EAE  0900               	iorlw	0
   1159  001EB0  E104               	bnz	l6893
   1160                           
-  1161                           ;main.c: 175: init_app_eeprom();
+  1161                           ;main.c: 176: init_app_eeprom();
   1162  001EB2  EC66  F013         	call	_init_app_eeprom	;wreg free
   1163                           
-  1164                           ;main.c: 176: init_app_ram();
+  1164                           ;main.c: 177: init_app_ram();
   1165  001EB6  EC7A  F017         	call	_init_app_ram	;wreg free
   1166  001EBA                     l6893:
   1167                           
-  1168                           ;main.c: 179: }
-  1169                           ;main.c: 181: vscp_init();
+  1168                           ;main.c: 180: }
+  1169                           ;main.c: 182: vscp_init();
   1170  001EBA  EC1C  F015         	call	_vscp_init	;wreg free
   1171                           
   1172                           ; BSR set to: 0
-  1173                           ;main.c: 184: writeControlReg( 0, readEEPROM( 0x21 + 2 ) );
+  1173                           ;main.c: 185: writeControlReg( 0, readEEPROM( 0x21 + 2 ) );
   1174  001EBE  6A09               	clrf	?_readEEPROM+1,c
   1175  001EC0  0E23               	movlw	35
   1176  001EC2  6E08               	movwf	?_readEEPROM,c
@@ -1191,7 +1191,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   1179  001ECA  0E00               	movlw	0
   1180  001ECC  EC4C  F00D         	call	_writeControlReg
   1181                           
-  1182                           ;main.c: 185: writeControlReg( 1, readEEPROM( 0x21 + 3 ) );
+  1182                           ;main.c: 186: writeControlReg( 1, readEEPROM( 0x21 + 3 ) );
   1183  001ED0  6A09               	clrf	?_readEEPROM+1,c
   1184  001ED2  0E24               	movlw	36
   1185  001ED4  6E08               	movwf	?_readEEPROM,c
@@ -1200,7 +1200,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   1188  001EDC  0E01               	movlw	1
   1189  001EDE  EC4C  F00D         	call	_writeControlReg
   1190                           
-  1191                           ;main.c: 186: writeControlReg( 2, readEEPROM( 0x21 + 4 ) );
+  1191                           ;main.c: 187: writeControlReg( 2, readEEPROM( 0x21 + 4 ) );
   1192  001EE2  6A09               	clrf	?_readEEPROM+1,c
   1193  001EE4  0E25               	movlw	37
   1194  001EE6  6E08               	movwf	?_readEEPROM,c
@@ -1211,8 +1211,8 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   1199  001EF4                     l145:
   1200  001EF4  0004               	clrwdt		;# 
   1201                           
-  1202                           ;main.c: 192: if ( ( vscp_initbtncnt > 250 ) &&
-  1203                           ;main.c: 193: ( 0x01 != vscp_node_state ) ) {
+  1202                           ;main.c: 193: if ( ( vscp_initbtncnt > 250 ) &&
+  1203                           ;main.c: 194: ( 0x01 != vscp_node_state ) ) {
   1204  001EF6  0EFA               	movlw	250
   1205  001EF8  0100               	movlb	0	; () banked
   1206  001EFA  656E               	cpfsgt	_vscp_initbtncnt& (0+255),b	;volatile
@@ -1223,11 +1223,11 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   1211  001F00  E00A               	bz	l6909
   1212                           
   1213                           ; BSR set to: 0
-  1214                           ;main.c: 196: vscp_nickname = 0xff;
+  1214                           ;main.c: 197: vscp_nickname = 0xff;
   1215  001F02  6970               	setf	_vscp_nickname& (0+255),b
   1216                           
   1217                           ; BSR set to: 0
-  1218                           ;main.c: 197: writeEEPROM( 0x01, 0xff );
+  1218                           ;main.c: 198: writeEEPROM( 0x01, 0xff );
   1219  001F04  6A09               	clrf	?_writeEEPROM+1,c
   1220  001F06  0E01               	movlw	1
   1221  001F08  6E08               	movwf	?_writeEEPROM,c
@@ -1235,91 +1235,91 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   1223  001F0C  680A               	setf	?_writeEEPROM+2,c
   1224  001F0E  EC59  F016         	call	_writeEEPROM	;wreg free
   1225                           
-  1226                           ;main.c: 198: vscp_init();
+  1226                           ;main.c: 199: vscp_init();
   1227  001F12  EC1C  F015         	call	_vscp_init	;wreg free
   1228  001F16                     l6909:
   1229                           
   1230                           ; BSR set to: 0
-  1231                           ;main.c: 200: }
-  1232                           ;main.c: 203: vscp_imsg.flags = 0;
+  1231                           ;main.c: 201: }
+  1232                           ;main.c: 204: vscp_imsg.flags = 0;
   1233  001F16  6B75               	clrf	_vscp_imsg& (0+255),b
   1234                           
   1235                           ; BSR set to: 0
-  1236                           ;main.c: 204: vscp_getEvent();
+  1236                           ;main.c: 205: vscp_getEvent();
   1237  001F18  ECE1  F015         	call	_vscp_getEvent	;wreg free
   1238                           
-  1239                           ;main.c: 206: switch ( vscp_node_state ) {
+  1239                           ;main.c: 207: switch ( vscp_node_state ) {
   1240  001F1C  D01C               	goto	l6933
   1241  001F1E                     l6913:
   1242                           
   1243                           ; BSR set to: 0
-  1244                           ;main.c: 211: if (0xff == vscp_nickname) {
+  1244                           ;main.c: 212: if (0xff == vscp_nickname) {
   1245  001F1E  2970               	incf	_vscp_nickname& (0+255),w,b
   1246  001F20  E103               	bnz	l6917
   1247                           
   1248                           ; BSR set to: 0
-  1249                           ;main.c: 213: vscp_node_state = 0x01;
+  1249                           ;main.c: 214: vscp_node_state = 0x01;
   1250  001F22  0E01               	movlw	1
   1251  001F24  6F71               	movwf	_vscp_node_state& (0+255),b
   1252                           
-  1253                           ;main.c: 214: } else {
+  1253                           ;main.c: 215: } else {
   1254  001F26  D023               	goto	l6935
   1255  001F28                     l6917:
   1256                           
   1257                           ; BSR set to: 0
-  1258                           ;main.c: 216: vscp_node_state = 0x03;
+  1258                           ;main.c: 217: vscp_node_state = 0x03;
   1259  001F28  0E03               	movlw	3
   1260  001F2A  6F71               	movwf	_vscp_node_state& (0+255),b
   1261  001F2C                     l6919:
   1262                           
   1263                           ; BSR set to: 0
-  1264                           ;main.c: 217: vscp_goActiveState();
+  1264                           ;main.c: 218: vscp_goActiveState();
   1265  001F2C  ECDC  F016         	call	_vscp_goActiveState	;wreg free
   1266  001F30  D01E               	goto	l6935
   1267  001F32                     l6921:
   1268                           
   1269                           ; BSR set to: 0
-  1270                           ;main.c: 222: vscp_handleProbeState();
+  1270                           ;main.c: 223: vscp_handleProbeState();
   1271  001F32  ECAF  F012         	call	_vscp_handleProbeState	;wreg free
   1272                           
-  1273                           ;main.c: 223: break;
+  1273                           ;main.c: 224: break;
   1274  001F36  D01B               	goto	l6935
   1275  001F38                     l154:
   1276                           
   1277                           ; BSR set to: 0
-  1278                           ;main.c: 232: if (vscp_imsg.flags & 0x80) {
+  1278                           ;main.c: 233: if (vscp_imsg.flags & 0x80) {
   1279  001F38  AF75               	btfss	_vscp_imsg& (0+255),7,b
   1280  001F3A  D019               	goto	l6935
   1281                           
   1282                           ; BSR set to: 0
-  1283                           ;main.c: 234: if ( 0 == vscp_imsg.vscp_class ) {
+  1283                           ;main.c: 235: if ( 0 == vscp_imsg.vscp_class ) {
   1284  001F3C  5178               	movf	(_vscp_imsg+3)& (0+255),w,b
   1285  001F3E  1177               	iorwf	(_vscp_imsg+2)& (0+255),w,b
   1286  001F40  B4D8               	btfsc	status,2,c
   1287                           
   1288                           ; BSR set to: 0
-  1289                           ;main.c: 237: vscp_handleProtocolEvent();
+  1289                           ;main.c: 238: vscp_handleProtocolEvent();
   1290  001F42  EC91  F007         	call	_vscp_handleProtocolEvent	;wreg free
   1291                           
-  1292                           ;main.c: 239: }
-  1293                           ;main.c: 241: doDM();
+  1292                           ;main.c: 240: }
+  1293                           ;main.c: 242: doDM();
   1294  001F46  EC87  F00A         	call	_doDM	;wreg free
   1295  001F4A  D011               	goto	l6935
   1296  001F4C                     l6929:
   1297                           
   1298                           ; BSR set to: 0
-  1299                           ;main.c: 247: vscp_error();
+  1299                           ;main.c: 248: vscp_error();
   1300  001F4C  ECB7  F017         	call	_vscp_error	;wreg free
   1301                           
-  1302                           ;main.c: 248: break;
+  1302                           ;main.c: 249: break;
   1303  001F50  D00E               	goto	l6935
   1304  001F52                     l158:
   1305                           
   1306                           ; BSR set to: 0
-  1307                           ;main.c: 251: vscp_node_state = 0x00;
+  1307                           ;main.c: 252: vscp_node_state = 0x00;
   1308  001F52  6B71               	clrf	_vscp_node_state& (0+255),b
   1309                           
-  1310                           ;main.c: 252: break;
+  1310                           ;main.c: 253: break;
   1311  001F54  D00C               	goto	l6935
   1312  001F56                     l6933:
   1313  001F56  0100               	movlb	0	; () banked
@@ -1343,7 +1343,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   1331  001F6C  D7F2               	goto	l158
   1332  001F6E                     l6935:
   1333                           
-  1334                           ;main.c: 257: if ( measurement_clock > 1000 ) {
+  1334                           ;main.c: 258: if ( measurement_clock > 1000 ) {
   1335  001F6E  0EE9               	movlw	233
   1336  001F70  0100               	movlb	0	; () banked
   1337  001F72  5D60               	subwf	_measurement_clock& (0+255),w,b	;volatile
@@ -1356,65 +1356,65 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   1344  001F80  E30C               	bnc	l6947
   1345                           
   1346                           ; BSR set to: 0
-  1347                           ;main.c: 259: measurement_clock = 0;
+  1347                           ;main.c: 260: measurement_clock = 0;
   1348  001F82  6B60               	clrf	_measurement_clock& (0+255),b	;volatile
   1349  001F84  6B61               	clrf	(_measurement_clock+1)& (0+255),b	;volatile
   1350  001F86  6B62               	clrf	(_measurement_clock+2)& (0+255),b	;volatile
   1351  001F88  6B63               	clrf	(_measurement_clock+3)& (0+255),b	;volatile
   1352                           
   1353                           ; BSR set to: 0
-  1354                           ;main.c: 261: sendTimer++;
+  1354                           ;main.c: 262: sendTimer++;
   1355  001F8A  2A55               	incf	_sendTimer,f,c
   1356                           
   1357                           ; BSR set to: 0
-  1358                           ;main.c: 264: vscp_doOneSecondWork();
+  1358                           ;main.c: 265: vscp_doOneSecondWork();
   1359  001F8C  ECF4  F014         	call	_vscp_doOneSecondWork	;wreg free
   1360                           
   1361                           ; BSR set to: 0
-  1362                           ;main.c: 268: if ( 0x03 == vscp_node_state ) {
+  1362                           ;main.c: 269: if ( 0x03 == vscp_node_state ) {
   1363  001F90  5171               	movf	_vscp_node_state& (0+255),w,b
   1364  001F92  0A03               	xorlw	3
   1365  001F94  B4D8               	btfsc	status,2,c
   1366                           
   1367                           ; BSR set to: 0
-  1368                           ;main.c: 271: doApplicationOneSecondWork();
+  1368                           ;main.c: 272: doApplicationOneSecondWork();
   1369  001F96  ECBA  F017         	call	_doApplicationOneSecondWork	;wreg free
   1370  001F9A                     l6947:
   1371                           
   1372                           ; BSR set to: 0
-  1373                           ;main.c: 273: }
-  1374                           ;main.c: 275: }
-  1375                           ;main.c: 278: if ( seconds > 59 ) {
+  1373                           ;main.c: 274: }
+  1374                           ;main.c: 276: }
+  1375                           ;main.c: 279: if ( seconds > 59 ) {
   1376  001F9A  0E3B               	movlw	59
   1377  001F9C  656A               	cpfsgt	_seconds& (0+255),b
   1378  001F9E  D00B               	goto	l6963
   1379                           
   1380                           ; BSR set to: 0
-  1381                           ;main.c: 280: seconds = 0;
+  1381                           ;main.c: 281: seconds = 0;
   1382  001FA0  6B6A               	clrf	_seconds& (0+255),b
   1383                           
   1384                           ; BSR set to: 0
-  1385                           ;main.c: 281: minutes++;
+  1385                           ;main.c: 282: minutes++;
   1386  001FA2  2B69               	incf	_minutes& (0+255),f,b
   1387                           
   1388                           ; BSR set to: 0
-  1389                           ;main.c: 283: if ( minutes > 59 ) {
+  1389                           ;main.c: 284: if ( minutes > 59 ) {
   1390  001FA4  0E3B               	movlw	59
   1391  001FA6  6569               	cpfsgt	_minutes& (0+255),b
   1392  001FA8  D002               	goto	l6959
   1393                           
   1394                           ; BSR set to: 0
-  1395                           ;main.c: 284: minutes = 0;
+  1395                           ;main.c: 285: minutes = 0;
   1396  001FAA  6B69               	clrf	_minutes& (0+255),b
   1397                           
   1398                           ; BSR set to: 0
-  1399                           ;main.c: 285: hours++;
+  1399                           ;main.c: 286: hours++;
   1400  001FAC  2B68               	incf	_hours& (0+255),f,b
   1401  001FAE                     l6959:
   1402                           
   1403                           ; BSR set to: 0
-  1404                           ;main.c: 286: }
-  1405                           ;main.c: 288: if ( hours > 23 ) hours = 0;
+  1404                           ;main.c: 287: }
+  1405                           ;main.c: 289: if ( hours > 23 ) hours = 0;
   1406  001FAE  0E17               	movlw	23
   1407  001FB0  6568               	cpfsgt	_hours& (0+255),b
   1408  001FB2  D001               	goto	l6963
@@ -1424,8 +1424,8 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   1412  001FB6                     l6963:
   1413                           
   1414                           ; BSR set to: 0
-  1415                           ;main.c: 290: }
-  1416                           ;main.c: 292: doWork();
+  1415                           ;main.c: 291: }
+  1416                           ;main.c: 293: doWork();
   1417  001FB6  ECB9  F017         	call	_doWork	;wreg free
   1418  001FBA  D79C               	goto	l145
   1419  001FBC                     __end_of_main:
@@ -1452,7 +1452,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   1440                           
   1441 ;; *************** function _doWork *****************
   1442 ;; Defined at:
-  1443 ;;		line 574 in file "../main.c"
+  1443 ;;		line 575 in file "../main.c"
   1444 ;; Parameters:    Size  Location     Type
   1445 ;;		None
   1446 ;; Auto vars:     Size  Location     Type
@@ -1523,7 +1523,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   1506                           
   1507 ;; *************** function _doApplicationOneSecondWork *****************
   1508 ;; Defined at:
-  1509 ;;		line 456 in file "../main.c"
+  1509 ;;		line 457 in file "../main.c"
   1510 ;; Parameters:    Size  Location     Type
   1511 ;;		None
   1512 ;; Auto vars:     Size  Location     Type
@@ -1854,7 +1854,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   1820                           
   1821 ;; *************** function _vscp_getSubzone *****************
   1822 ;; Defined at:
-  1823 ;;		line 563 in file "../main.c"
+  1823 ;;		line 564 in file "../main.c"
   1824 ;; Parameters:    Size  Location     Type
   1825 ;;		None
   1826 ;; Auto vars:     Size  Location     Type
@@ -1894,7 +1894,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   1855                           	opt stack 26
   1856                           
   1857                           ; BSR set to: 0
-  1858                           ;main.c: 564: return readEEPROM( 0x21 + 1 );
+  1858                           ;main.c: 565: return readEEPROM( 0x21 + 1 );
   1859                           
   1860                           ; BSR set to: 0
   1861                           ;incstack = 0
@@ -1927,7 +1927,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   1888                           
   1889 ;; *************** function _vscp_getZone *****************
   1890 ;; Defined at:
-  1891 ;;		line 554 in file "../main.c"
+  1891 ;;		line 555 in file "../main.c"
   1892 ;; Parameters:    Size  Location     Type
   1893 ;;		None
   1894 ;; Auto vars:     Size  Location     Type
@@ -1967,7 +1967,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   1923                           	opt stack 26
   1924                           
   1925                           ; BSR set to: 0
-  1926                           ;main.c: 555: return readEEPROM( 0x21 + 0 );
+  1926                           ;main.c: 556: return readEEPROM( 0x21 + 0 );
   1927                           
   1928                           ;incstack = 0
   1929                           ;incstack = 0
@@ -2068,7 +2068,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   2019                           
   2020 ;; *************** function _doDM *****************
   2021 ;; Defined at:
-  2022 ;;		line 835 in file "../main.c"
+  2022 ;;		line 836 in file "../main.c"
   2023 ;; Parameters:    Size  Location     Type
   2024 ;;		None
   2025 ;; Auto vars:     Size  Location     Type
@@ -2117,13 +2117,13 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   2062  00150E                     _doDM:
   2063                           	opt stack 22
   2064                           
-  2065                           ;main.c: 836: unsigned char i;
-  2066                           ;main.c: 837: unsigned char dmflags;
-  2067                           ;main.c: 838: unsigned short class_filter;
-  2068                           ;main.c: 839: unsigned short class_mask;
-  2069                           ;main.c: 840: unsigned char type_filter;
-  2070                           ;main.c: 841: unsigned char type_mask;
-  2071                           ;main.c: 844: if ( 0 == vscp_imsg.vscp_class ) return;
+  2065                           ;main.c: 837: unsigned char i;
+  2066                           ;main.c: 838: unsigned char dmflags;
+  2067                           ;main.c: 839: unsigned short class_filter;
+  2068                           ;main.c: 840: unsigned short class_mask;
+  2069                           ;main.c: 841: unsigned char type_filter;
+  2070                           ;main.c: 842: unsigned char type_mask;
+  2071                           ;main.c: 845: if ( 0 == vscp_imsg.vscp_class ) return;
   2072                           
   2073                           ;incstack = 0
   2074                           ;incstack = 0
@@ -2134,13 +2134,13 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   2079  001516  0012               	return	
   2080                           
   2081                           ; BSR set to: 0
-  2082                           ;main.c: 846: for (i = 0; i < 8; i++) {
+  2082                           ;main.c: 847: for (i = 0; i < 8; i++) {
   2083  001518  6BB4               	clrf	doDM@i& (0+255),b
   2084  00151A                     l7397:
   2085                           
   2086                           ; BSR set to: 0
-  2087                           ;main.c: 849: dmflags = readEEPROM( 0x21 + 23 +
-  2088                           ;main.c: 850: 0 + 1 + (8 * i) );
+  2087                           ;main.c: 850: dmflags = readEEPROM( 0x21 + 23 +
+  2088                           ;main.c: 851: 0 + 1 + (8 * i) );
   2089  00151A  51B4               	movf	doDM@i& (0+255),w,b
   2090  00151C  D8E2               	call	PL2	;call to abstracted procedure
   2091  00151E  0E39               	movlw	57
@@ -2154,14 +2154,14 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   2099  001530  6FB3               	movwf	doDM@dmflags& (0+255),b
   2100                           
   2101                           ; BSR set to: 0
-  2102                           ;main.c: 853: if ( dmflags & 0x80 ) {
+  2102                           ;main.c: 854: if ( dmflags & 0x80 ) {
   2103  001532  AFB3               	btfss	doDM@dmflags& (0+255),7,b
   2104  001534  D0D0               	goto	l7451
   2105                           
   2106                           ; BSR set to: 0
-  2107                           ;main.c: 856: if ( ( dmflags & 0x40 ) &&
-  2108                           ;main.c: 857: ( vscp_imsg.oaddr != readEEPROM( 0x21 + 23 +
-  2109                           ;main.c: 858: 0 + (8 * i) ) ) ) {
+  2107                           ;main.c: 857: if ( ( dmflags & 0x40 ) &&
+  2108                           ;main.c: 858: ( vscp_imsg.oaddr != readEEPROM( 0x21 + 23 +
+  2109                           ;main.c: 859: 0 + (8 * i) ) ) ) {
   2110  001536  ADB3               	btfss	doDM@dmflags& (0+255),6,b
   2111  001538  D00E               	goto	l289
   2112                           
@@ -2181,18 +2181,18 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   2126  001556                     l289:
   2127                           
   2128                           ; BSR set to: 0
-  2129                           ;main.c: 860: }
-  2130                           ;main.c: 863: if ( dmflags & 0x10 ) {
+  2129                           ;main.c: 861: }
+  2130                           ;main.c: 864: if ( dmflags & 0x10 ) {
   2131  001556  A9B3               	btfss	doDM@dmflags& (0+255),4,b
   2132  001558  D00B               	goto	l291
   2133                           
   2134                           ; BSR set to: 0
-  2135                           ;main.c: 864: if ( 255 != vscp_imsg.data[ 1 ] ) {
+  2135                           ;main.c: 865: if ( 255 != vscp_imsg.data[ 1 ] ) {
   2136  00155A  297C               	incf	(_vscp_imsg+7)& (0+255),w,b
   2137  00155C  E009               	bz	l291
   2138                           
   2139                           ; BSR set to: 0
-  2140                           ;main.c: 865: if ( vscp_imsg.data[ 1 ] != readEEPROM( 0x21 + 0 ) ) {
+  2140                           ;main.c: 866: if ( vscp_imsg.data[ 1 ] != readEEPROM( 0x21 + 0 ) ) {
   2141  00155E  6A09               	clrf	?_readEEPROM+1,c
   2142  001560  0E21               	movlw	33
   2143  001562  6E08               	movwf	?_readEEPROM,c
@@ -2203,20 +2203,20 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   2148  001570                     l291:
   2149                           
   2150                           ; BSR set to: 0
-  2151                           ;main.c: 867: }
-  2152                           ;main.c: 868: }
-  2153                           ;main.c: 869: }
-  2154                           ;main.c: 872: if ( dmflags & 0x08 ) {
+  2151                           ;main.c: 868: }
+  2152                           ;main.c: 869: }
+  2153                           ;main.c: 870: }
+  2154                           ;main.c: 873: if ( dmflags & 0x08 ) {
   2155  001570  A7B3               	btfss	doDM@dmflags& (0+255),3,b
   2156  001572  D00B               	goto	l7419
   2157                           
   2158                           ; BSR set to: 0
-  2159                           ;main.c: 873: if ( 255 != vscp_imsg.data[ 1 ] ) {
+  2159                           ;main.c: 874: if ( 255 != vscp_imsg.data[ 1 ] ) {
   2160  001574  297C               	incf	(_vscp_imsg+7)& (0+255),w,b
   2161  001576  E009               	bz	l7419
   2162                           
   2163                           ; BSR set to: 0
-  2164                           ;main.c: 874: if ( vscp_imsg.data[ 1 ] != readEEPROM( 0x21 + 0 ) ) {
+  2164                           ;main.c: 875: if ( vscp_imsg.data[ 1 ] != readEEPROM( 0x21 + 0 ) ) {
   2165  001578  6A09               	clrf	?_readEEPROM+1,c
   2166  00157A  0E21               	movlw	33
   2167  00157C  6E08               	movwf	?_readEEPROM,c
@@ -2227,14 +2227,14 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   2172  00158A                     l7419:
   2173                           
   2174                           ; BSR set to: 0
-  2175                           ;main.c: 876: }
-  2176                           ;main.c: 877: }
-  2177                           ;main.c: 878: }
-  2178                           ;main.c: 880: class_filter = ( dmflags & 0x01)*256 +
-  2179                           ;main.c: 881: readEEPROM( 0x21 + 23 +
-  2180                           ;main.c: 882: 0 +
-  2181                           ;main.c: 883: (8 * i) +
-  2182                           ;main.c: 884: 3);
+  2175                           ;main.c: 877: }
+  2176                           ;main.c: 878: }
+  2177                           ;main.c: 879: }
+  2178                           ;main.c: 881: class_filter = ( dmflags & 0x01)*256 +
+  2179                           ;main.c: 882: readEEPROM( 0x21 + 23 +
+  2180                           ;main.c: 883: 0 +
+  2181                           ;main.c: 884: (8 * i) +
+  2182                           ;main.c: 885: 3);
   2183  00158A  51B4               	movf	doDM@i& (0+255),w,b
   2184  00158C  0D08               	mullw	8
   2185  00158E  0E3B               	movlw	59
@@ -2257,11 +2257,11 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   2202  0015B2  21A8               	addwfc	(??_doDM+2)& (0+255),w,b
   2203  0015B4  6FAA               	movwf	(doDM@class_filter+1)& (0+255),b
   2204                           
-  2205                           ;main.c: 885: class_mask = ( dmflags & 0x02)*256 +
-  2206                           ;main.c: 886: readEEPROM( 0x21 + 23 +
-  2207                           ;main.c: 887: 0 +
-  2208                           ;main.c: 888: (8 * i) +
-  2209                           ;main.c: 889: 2);
+  2205                           ;main.c: 886: class_mask = ( dmflags & 0x02)*256 +
+  2206                           ;main.c: 887: readEEPROM( 0x21 + 23 +
+  2207                           ;main.c: 888: 0 +
+  2208                           ;main.c: 889: (8 * i) +
+  2209                           ;main.c: 890: 2);
   2210  0015B6  51B4               	movf	doDM@i& (0+255),w,b
   2211  0015B8  0D08               	mullw	8
   2212  0015BA  0E3A               	movlw	58
@@ -2285,10 +2285,10 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   2230  0015E0  6FAC               	movwf	(doDM@class_mask+1)& (0+255),b
   2231                           
   2232                           ; BSR set to: 0
-  2233                           ;main.c: 890: type_filter = readEEPROM( 0x21 + 23 +
-  2234                           ;main.c: 891: 0 +
-  2235                           ;main.c: 892: (8 * i) +
-  2236                           ;main.c: 893: 5);
+  2233                           ;main.c: 891: type_filter = readEEPROM( 0x21 + 23 +
+  2234                           ;main.c: 892: 0 +
+  2235                           ;main.c: 893: (8 * i) +
+  2236                           ;main.c: 894: 5);
   2237  0015E2  51B4               	movf	doDM@i& (0+255),w,b
   2238  0015E4  D87E               	call	PL2	;call to abstracted procedure
   2239  0015E6  0E3D               	movlw	61
@@ -2302,10 +2302,10 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   2247  0015F8  6FAD               	movwf	doDM@type_filter& (0+255),b
   2248                           
   2249                           ; BSR set to: 0
-  2250                           ;main.c: 894: type_mask = readEEPROM( 0x21 + 23 +
-  2251                           ;main.c: 895: 0 +
-  2252                           ;main.c: 896: (8 * i) +
-  2253                           ;main.c: 897: 4);
+  2250                           ;main.c: 895: type_mask = readEEPROM( 0x21 + 23 +
+  2251                           ;main.c: 896: 0 +
+  2252                           ;main.c: 897: (8 * i) +
+  2253                           ;main.c: 898: 4);
   2254  0015FA  51B4               	movf	doDM@i& (0+255),w,b
   2255  0015FC  D872               	call	PL2	;call to abstracted procedure
   2256  0015FE  0E3C               	movlw	60
@@ -2319,8 +2319,8 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   2264  001610  6FAE               	movwf	doDM@type_mask& (0+255),b
   2265                           
   2266                           ; BSR set to: 0
-  2267                           ;main.c: 899: if ( !( ( class_filter ^ vscp_imsg.vscp_class ) & class_mask ) &&
-  2268                           ;main.c: 900: !( ( type_filter ^ vscp_imsg.vscp_type ) & type_mask ) ) {
+  2267                           ;main.c: 900: if ( !( ( class_filter ^ vscp_imsg.vscp_class ) & class_mask ) &&
+  2268                           ;main.c: 901: !( ( type_filter ^ vscp_imsg.vscp_type ) & type_mask ) ) {
   2269  001612  EE20  F077         	lfsr	2,_vscp_imsg+2
   2270  001616  CFDE F0A6          	movff	postinc2,??_doDM
   2271  00161A  CFDD F0A7          	movff	postdec2,??_doDM+1
@@ -2344,10 +2344,10 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   2289  00163C  D04C               	goto	l7451
   2290  00163E                     l7431:
   2291                           
-  2292                           ;main.c: 911: actionSet( dmflags,
-  2293                           ;main.c: 912: readEEPROM( 0x21 + 23 +
-  2294                           ;main.c: 913: 0 + (8 * i) +
-  2295                           ;main.c: 914: 7 ) );
+  2292                           ;main.c: 912: actionSet( dmflags,
+  2293                           ;main.c: 913: readEEPROM( 0x21 + 23 +
+  2294                           ;main.c: 914: 0 + (8 * i) +
+  2295                           ;main.c: 915: 7 ) );
   2296  00163E  0100               	movlb	0	; () banked
   2297  001640  51B4               	movf	doDM@i& (0+255),w,b
   2298  001642  D84F               	call	PL2	;call to abstracted procedure
@@ -2357,22 +2357,22 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   2302  00164C  6FAF               	movwf	_doDM$1986& (0+255),b
   2303                           
   2304                           ; BSR set to: 0
-  2305                           ;main.c: 911: actionSet( dmflags,
-  2306                           ;main.c: 912: readEEPROM( 0x21 + 23 +
-  2307                           ;main.c: 913: 0 + (8 * i) +
-  2308                           ;main.c: 914: 7 ) );
+  2305                           ;main.c: 912: actionSet( dmflags,
+  2306                           ;main.c: 913: readEEPROM( 0x21 + 23 +
+  2307                           ;main.c: 914: 0 + (8 * i) +
+  2308                           ;main.c: 915: 7 ) );
   2309  00164E  C0AF  F04F         	movff	_doDM$1986,?_actionSet
   2310  001652  51B3               	movf	doDM@dmflags& (0+255),w,b
   2311  001654  EC47  F012         	call	_actionSet
   2312                           
-  2313                           ;main.c: 915: break;
+  2313                           ;main.c: 916: break;
   2314  001658  D03E               	goto	l7451
   2315  00165A                     l7435:
   2316                           
-  2317                           ;main.c: 918: actionClr( dmflags,
-  2318                           ;main.c: 919: readEEPROM( 0x21 + 23 +
-  2319                           ;main.c: 920: 0 + (8 * i) +
-  2320                           ;main.c: 921: 7 ) );
+  2317                           ;main.c: 919: actionClr( dmflags,
+  2318                           ;main.c: 920: readEEPROM( 0x21 + 23 +
+  2319                           ;main.c: 921: 0 + (8 * i) +
+  2320                           ;main.c: 922: 7 ) );
   2321  00165A  0100               	movlb	0	; () banked
   2322  00165C  51B4               	movf	doDM@i& (0+255),w,b
   2323  00165E  D841               	call	PL2	;call to abstracted procedure
@@ -2382,22 +2382,22 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   2327  001668  6FB0               	movwf	_doDM$1987& (0+255),b
   2328                           
   2329                           ; BSR set to: 0
-  2330                           ;main.c: 918: actionClr( dmflags,
-  2331                           ;main.c: 919: readEEPROM( 0x21 + 23 +
-  2332                           ;main.c: 920: 0 + (8 * i) +
-  2333                           ;main.c: 921: 7 ) );
+  2330                           ;main.c: 919: actionClr( dmflags,
+  2331                           ;main.c: 920: readEEPROM( 0x21 + 23 +
+  2332                           ;main.c: 921: 0 + (8 * i) +
+  2333                           ;main.c: 922: 7 ) );
   2334  00166A  C0B0  F04F         	movff	_doDM$1987,?_actionClr
   2335  00166E  51B3               	movf	doDM@dmflags& (0+255),w,b
   2336  001670  ECDF  F011         	call	_actionClr
   2337                           
-  2338                           ;main.c: 922: break;
+  2338                           ;main.c: 923: break;
   2339  001674  D030               	goto	l7451
   2340  001676                     l7439:
   2341                           
-  2342                           ;main.c: 925: actionSetAll( dmflags,
-  2343                           ;main.c: 926: readEEPROM( 0x21 + 23 +
-  2344                           ;main.c: 927: 0 + (8 * i) +
-  2345                           ;main.c: 928: 7 ) );
+  2342                           ;main.c: 926: actionSetAll( dmflags,
+  2343                           ;main.c: 927: readEEPROM( 0x21 + 23 +
+  2344                           ;main.c: 928: 0 + (8 * i) +
+  2345                           ;main.c: 929: 7 ) );
   2346  001676  0100               	movlb	0	; () banked
   2347  001678  51B4               	movf	doDM@i& (0+255),w,b
   2348  00167A  D833               	call	PL2	;call to abstracted procedure
@@ -2407,22 +2407,22 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   2352  001684  6FB1               	movwf	_doDM$1988& (0+255),b
   2353                           
   2354                           ; BSR set to: 0
-  2355                           ;main.c: 925: actionSetAll( dmflags,
-  2356                           ;main.c: 926: readEEPROM( 0x21 + 23 +
-  2357                           ;main.c: 927: 0 + (8 * i) +
-  2358                           ;main.c: 928: 7 ) );
+  2355                           ;main.c: 926: actionSetAll( dmflags,
+  2356                           ;main.c: 927: readEEPROM( 0x21 + 23 +
+  2357                           ;main.c: 928: 0 + (8 * i) +
+  2358                           ;main.c: 929: 7 ) );
   2359  001686  C0B1  F04F         	movff	_doDM$1988,?_actionSetAll
   2360  00168A  51B3               	movf	doDM@dmflags& (0+255),w,b
   2361  00168C  ECB1  F015         	call	_actionSetAll
   2362                           
-  2363                           ;main.c: 929: break;
+  2363                           ;main.c: 930: break;
   2364  001690  D022               	goto	l7451
   2365  001692                     l7443:
   2366                           
-  2367                           ;main.c: 932: actionClrAll( dmflags,
-  2368                           ;main.c: 933: readEEPROM( 0x21 + 23 +
-  2369                           ;main.c: 934: 0 + (8 * i) +
-  2370                           ;main.c: 935: 7 ) );
+  2367                           ;main.c: 933: actionClrAll( dmflags,
+  2368                           ;main.c: 934: readEEPROM( 0x21 + 23 +
+  2369                           ;main.c: 935: 0 + (8 * i) +
+  2370                           ;main.c: 936: 7 ) );
   2371  001692  0100               	movlb	0	; () banked
   2372  001694  51B4               	movf	doDM@i& (0+255),w,b
   2373  001696  D825               	call	PL2	;call to abstracted procedure
@@ -2432,15 +2432,15 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   2377  0016A0  6FB2               	movwf	_doDM$1989& (0+255),b
   2378                           
   2379                           ; BSR set to: 0
-  2380                           ;main.c: 932: actionClrAll( dmflags,
-  2381                           ;main.c: 933: readEEPROM( 0x21 + 23 +
-  2382                           ;main.c: 934: 0 + (8 * i) +
-  2383                           ;main.c: 935: 7 ) );
+  2380                           ;main.c: 933: actionClrAll( dmflags,
+  2381                           ;main.c: 934: readEEPROM( 0x21 + 23 +
+  2382                           ;main.c: 935: 0 + (8 * i) +
+  2383                           ;main.c: 936: 7 ) );
   2384  0016A2  C0B2  F04F         	movff	_doDM$1989,?_actionClrAll
   2385  0016A6  51B3               	movf	doDM@dmflags& (0+255),w,b
   2386  0016A8  EC99  F015         	call	_actionClrAll
   2387                           
-  2388                           ;main.c: 936: break;
+  2388                           ;main.c: 937: break;
   2389  0016AC  D014               	goto	l7451
   2390  0016AE                     l7449:
   2391                           
@@ -2531,7 +2531,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   2476                           
   2477 ;; *************** function _actionClrAll *****************
   2478 ;; Defined at:
-  2479 ;;		line 1179 in file "../main.c"
+  2479 ;;		line 1180 in file "../main.c"
   2480 ;; Parameters:    Size  Location     Type
   2481 ;;  dmflags         1    wreg     unsigned char 
   2482 ;;  param           1   78[COMRAM] unsigned char 
@@ -2574,30 +2574,30 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   2513                           	opt stack 22
   2514                           
   2515                           ; BSR set to: 0
-  2516                           ;main.c: 1180: PORTA = 0x00;
+  2516                           ;main.c: 1181: PORTA = 0x00;
   2517                           
   2518                           ; BSR set to: 0
   2519                           ;incstack = 0
   2520                           ;incstack = 0
   2521  002B32  6A80               	clrf	3968,c	;volatile
   2522                           
-  2523                           ;main.c: 1181: PORTB = 0x00;
+  2523                           ;main.c: 1182: PORTB = 0x00;
   2524  002B34  6A81               	clrf	3969,c	;volatile
   2525                           
-  2526                           ;main.c: 1182: PORTC = 0x00;
+  2526                           ;main.c: 1183: PORTC = 0x00;
   2527  002B36  6A82               	clrf	3970,c	;volatile
   2528                           
   2529                           ; BSR set to: 0
-  2530                           ;main.c: 1184: for ( int i=3; i<21; i++ ) {
+  2530                           ;main.c: 1185: for ( int i=3; i<21; i++ ) {
   2531  002B38  6A51               	clrf	actionClrAll@i+1,c
   2532  002B3A  0E03               	movlw	3
   2533  002B3C  6E50               	movwf	actionClrAll@i,c
   2534  002B3E                     l6485:
   2535                           
   2536                           ; BSR set to: 0
-  2537                           ;main.c: 1185: SendInformationEvent( i,
-  2538                           ;main.c: 1186: 20,
-  2539                           ;main.c: 1187: 4 );
+  2537                           ;main.c: 1186: SendInformationEvent( i,
+  2538                           ;main.c: 1187: 20,
+  2539                           ;main.c: 1188: 4 );
   2540  002B3E  0E14               	movlw	20
   2541  002B40  6FA4               	movwf	?_SendInformationEvent& (0+255),b
   2542  002B42  0E04               	movlw	4
@@ -2643,7 +2643,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   2582                           
   2583 ;; *************** function _actionSetAll *****************
   2584 ;; Defined at:
-  2585 ;;		line 1160 in file "../main.c"
+  2585 ;;		line 1161 in file "../main.c"
   2586 ;; Parameters:    Size  Location     Type
   2587 ;;  dmflags         1    wreg     unsigned char 
   2588 ;;  param           1   78[COMRAM] unsigned char 
@@ -2686,30 +2686,30 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   2619                           	opt stack 22
   2620                           
   2621                           ; BSR set to: 0
-  2622                           ;main.c: 1161: PORTA = 0xff;
+  2622                           ;main.c: 1162: PORTA = 0xff;
   2623                           
   2624                           ; BSR set to: 0
   2625                           ;incstack = 0
   2626                           ;incstack = 0
   2627  002B62  6880               	setf	3968,c	;volatile
   2628                           
-  2629                           ;main.c: 1162: PORTB = 0xff;
+  2629                           ;main.c: 1163: PORTB = 0xff;
   2630  002B64  6881               	setf	3969,c	;volatile
   2631                           
-  2632                           ;main.c: 1163: PORTC = 0xff;
+  2632                           ;main.c: 1164: PORTC = 0xff;
   2633  002B66  6882               	setf	3970,c	;volatile
   2634                           
   2635                           ; BSR set to: 0
-  2636                           ;main.c: 1165: for ( int i=3; i<21; i++ ) {
+  2636                           ;main.c: 1166: for ( int i=3; i<21; i++ ) {
   2637  002B68  6A51               	clrf	actionSetAll@i+1,c
   2638  002B6A  0E03               	movlw	3
   2639  002B6C  6E50               	movwf	actionSetAll@i,c
   2640  002B6E                     l6471:
   2641                           
   2642                           ; BSR set to: 0
-  2643                           ;main.c: 1166: SendInformationEvent( i,
-  2644                           ;main.c: 1167: 20,
-  2645                           ;main.c: 1168: 3 );
+  2643                           ;main.c: 1167: SendInformationEvent( i,
+  2644                           ;main.c: 1168: 20,
+  2645                           ;main.c: 1169: 3 );
   2646  002B6E  0E14               	movlw	20
   2647  002B70  6FA4               	movwf	?_SendInformationEvent& (0+255),b
   2648  002B72  0E03               	movlw	3
@@ -2755,7 +2755,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   2688                           
   2689 ;; *************** function _actionClr *****************
   2690 ;; Defined at:
-  2691 ;;		line 1056 in file "../main.c"
+  2691 ;;		line 1057 in file "../main.c"
   2692 ;; Parameters:    Size  Location     Type
   2693 ;;  dmflags         1    wreg     unsigned char 
   2694 ;;  param           1   78[COMRAM] unsigned char 
@@ -2798,7 +2798,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   2725                           	opt stack 22
   2726                           
   2727                           ; BSR set to: 0
-  2728                           ;main.c: 1058: if ( param & 0x80 ) {
+  2728                           ;main.c: 1059: if ( param & 0x80 ) {
   2729                           
   2730                           ; BSR set to: 0
   2731                           ;incstack = 0
@@ -2807,12 +2807,12 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   2734  0023C0  D00D               	goto	l6449
   2735                           
   2736                           ; BSR set to: 0
-  2737                           ;main.c: 1060: param &= 0x7f;
+  2737                           ;main.c: 1061: param &= 0x7f;
   2738  0023C2  9E4F               	bcf	actionClr@param,7,c
   2739                           
   2740                           ; BSR set to: 0
-  2741                           ;main.c: 1062: if ( readEEPROM( 0x21 + 5 + (param - 3) )
-  2742                           ;main.c: 1063: != vscp_imsg.data[ 2 ] ) {
+  2741                           ;main.c: 1063: if ( readEEPROM( 0x21 + 5 + (param - 3) )
+  2742                           ;main.c: 1064: != vscp_imsg.data[ 2 ] ) {
   2743  0023C4  0E23               	movlw	35
   2744  0023C6  244F               	addwf	actionClr@param,w,c
   2745  0023C8  6E08               	movwf	?_readEEPROM,c
@@ -2827,9 +2827,9 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   2754  0023DC                     l6449:
   2755                           
   2756                           ; BSR set to: 0
-  2757                           ;main.c: 1065: }
-  2758                           ;main.c: 1066: }
-  2759                           ;main.c: 1068: if ( param < 3) return;
+  2757                           ;main.c: 1066: }
+  2758                           ;main.c: 1067: }
+  2759                           ;main.c: 1069: if ( param < 3) return;
   2760  0023DC  0E03               	movlw	3
   2761  0023DE  604F               	cpfslt	actionClr@param,c
   2762  0023E0  D001               	goto	l6453
@@ -2837,7 +2837,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   2764  0023E4                     l6453:
   2765                           
   2766                           ; BSR set to: 0
-  2767                           ;main.c: 1069: if ( param > 20 ) return;
+  2767                           ;main.c: 1070: if ( param > 20 ) return;
   2768  0023E4  0E14               	movlw	20
   2769  0023E6  644F               	cpfsgt	actionClr@param,c
   2770  0023E8  D001               	goto	l6457
@@ -2845,9 +2845,9 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   2772  0023EC                     l6457:
   2773                           
   2774                           ; BSR set to: 0
-  2775                           ;main.c: 1071: SendInformationEvent( param,
-  2776                           ;main.c: 1072: 20,
-  2777                           ;main.c: 1073: 4 );
+  2775                           ;main.c: 1072: SendInformationEvent( param,
+  2776                           ;main.c: 1073: 20,
+  2777                           ;main.c: 1074: 4 );
   2778  0023EC  0E14               	movlw	20
   2779  0023EE  6FA4               	movwf	?_SendInformationEvent& (0+255),b
   2780  0023F0  0E04               	movlw	4
@@ -2855,135 +2855,135 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   2782  0023F4  504F               	movf	actionClr@param,w,c
   2783  0023F6  ECC9  F014         	call	_SendInformationEvent
   2784                           
-  2785                           ;main.c: 1075: switch ( param ) {
+  2785                           ;main.c: 1076: switch ( param ) {
   2786  0023FA  D020               	goto	l6461
   2787  0023FC                     l340:
   2788                           
   2789                           ; BSR set to: 0
-  2790                           ;main.c: 1078: PORTCbits.RC7 = 0;
+  2790                           ;main.c: 1079: PORTCbits.RC7 = 0;
   2791  0023FC  9E82               	bcf	3970,7,c	;volatile
   2792                           
-  2793                           ;main.c: 1079: break;
+  2793                           ;main.c: 1080: break;
   2794  0023FE  0012               	return	
   2795  002400                     l342:
   2796                           
   2797                           ; BSR set to: 0
-  2798                           ;main.c: 1082: PORTCbits.RC6 = 0;
+  2798                           ;main.c: 1083: PORTCbits.RC6 = 0;
   2799  002400  9C82               	bcf	3970,6,c	;volatile
   2800                           
-  2801                           ;main.c: 1083: break;
+  2801                           ;main.c: 1084: break;
   2802  002402  0012               	return	
   2803  002404                     l343:
   2804                           
   2805                           ; BSR set to: 0
-  2806                           ;main.c: 1086: PORTCbits.RC3 = 0;
+  2806                           ;main.c: 1087: PORTCbits.RC3 = 0;
   2807  002404  9682               	bcf	3970,3,c	;volatile
   2808                           
-  2809                           ;main.c: 1087: break;
+  2809                           ;main.c: 1088: break;
   2810  002406  0012               	return	
   2811  002408                     l344:
   2812                           
   2813                           ; BSR set to: 0
-  2814                           ;main.c: 1090: PORTCbits.RC4 = 0;
+  2814                           ;main.c: 1091: PORTCbits.RC4 = 0;
   2815  002408  9882               	bcf	3970,4,c	;volatile
   2816                           
-  2817                           ;main.c: 1091: break;
+  2817                           ;main.c: 1092: break;
   2818  00240A  0012               	return	
   2819  00240C                     l345:
   2820                           
   2821                           ; BSR set to: 0
-  2822                           ;main.c: 1094: PORTCbits.RC5 = 0;
+  2822                           ;main.c: 1095: PORTCbits.RC5 = 0;
   2823  00240C  9A82               	bcf	3970,5,c	;volatile
   2824                           
-  2825                           ;main.c: 1095: break;
+  2825                           ;main.c: 1096: break;
   2826  00240E  0012               	return	
   2827  002410                     l346:
   2828                           
   2829                           ; BSR set to: 0
-  2830                           ;main.c: 1098: PORTAbits.RA0 = 0;
+  2830                           ;main.c: 1099: PORTAbits.RA0 = 0;
   2831  002410  9080               	bcf	3968,0,c	;volatile
   2832                           
-  2833                           ;main.c: 1099: break;
+  2833                           ;main.c: 1100: break;
   2834  002412  0012               	return	
   2835  002414                     l347:
   2836                           
   2837                           ; BSR set to: 0
-  2838                           ;main.c: 1102: PORTAbits.RA1 = 0;
+  2838                           ;main.c: 1103: PORTAbits.RA1 = 0;
   2839  002414  9280               	bcf	3968,1,c	;volatile
   2840                           
-  2841                           ;main.c: 1103: break;
+  2841                           ;main.c: 1104: break;
   2842  002416  0012               	return	
   2843  002418                     l348:
   2844                           
   2845                           ; BSR set to: 0
-  2846                           ;main.c: 1106: PORTAbits.RA2 = 0;
+  2846                           ;main.c: 1107: PORTAbits.RA2 = 0;
   2847  002418  9480               	bcf	3968,2,c	;volatile
   2848                           
-  2849                           ;main.c: 1107: break;
+  2849                           ;main.c: 1108: break;
   2850  00241A  0012               	return	
   2851  00241C                     l349:
   2852                           
   2853                           ; BSR set to: 0
-  2854                           ;main.c: 1110: PORTAbits.RA3 = 0;
+  2854                           ;main.c: 1111: PORTAbits.RA3 = 0;
   2855  00241C  9680               	bcf	3968,3,c	;volatile
   2856                           
-  2857                           ;main.c: 1111: break;
+  2857                           ;main.c: 1112: break;
   2858  00241E  0012               	return	
   2859  002420                     l350:
   2860                           
   2861                           ; BSR set to: 0
-  2862                           ;main.c: 1114: PORTAbits.RA5 = 0;
+  2862                           ;main.c: 1115: PORTAbits.RA5 = 0;
   2863  002420  9A80               	bcf	3968,5,c	;volatile
   2864                           
-  2865                           ;main.c: 1115: break;
+  2865                           ;main.c: 1116: break;
   2866  002422  0012               	return	
   2867  002424                     l353:
   2868                           
   2869                           ; BSR set to: 0
-  2870                           ;main.c: 1126: PORTBbits.RB4 = 0;
+  2870                           ;main.c: 1127: PORTBbits.RB4 = 0;
   2871  002424  9881               	bcf	3969,4,c	;volatile
   2872                           
-  2873                           ;main.c: 1127: break;
+  2873                           ;main.c: 1128: break;
   2874  002426  0012               	return	
   2875  002428                     l354:
   2876                           
   2877                           ; BSR set to: 0
-  2878                           ;main.c: 1130: PORTCbits.RC2 = 0;
+  2878                           ;main.c: 1131: PORTCbits.RC2 = 0;
   2879  002428  9482               	bcf	3970,2,c	;volatile
   2880                           
-  2881                           ;main.c: 1131: break;
+  2881                           ;main.c: 1132: break;
   2882  00242A  0012               	return	
   2883  00242C                     l355:
   2884                           
   2885                           ; BSR set to: 0
-  2886                           ;main.c: 1134: PORTBbits.RB1 = 0;
+  2886                           ;main.c: 1135: PORTBbits.RB1 = 0;
   2887  00242C  9281               	bcf	3969,1,c	;volatile
   2888                           
-  2889                           ;main.c: 1135: break;
+  2889                           ;main.c: 1136: break;
   2890  00242E  0012               	return	
   2891  002430                     l356:
   2892                           
   2893                           ; BSR set to: 0
-  2894                           ;main.c: 1138: PORTBbits.RB0 = 0;
+  2894                           ;main.c: 1139: PORTBbits.RB0 = 0;
   2895  002430  9081               	bcf	3969,0,c	;volatile
   2896                           
-  2897                           ;main.c: 1139: break;
+  2897                           ;main.c: 1140: break;
   2898  002432  0012               	return	
   2899  002434                     l357:
   2900                           
   2901                           ; BSR set to: 0
-  2902                           ;main.c: 1142: PORTBbits.RB6 = 0;
+  2902                           ;main.c: 1143: PORTBbits.RB6 = 0;
   2903  002434  9C81               	bcf	3969,6,c	;volatile
   2904                           
-  2905                           ;main.c: 1143: break;
+  2905                           ;main.c: 1144: break;
   2906  002436  0012               	return	
   2907  002438                     l358:
   2908                           
   2909                           ; BSR set to: 0
-  2910                           ;main.c: 1146: PORTBbits.RB5 = 0;
+  2910                           ;main.c: 1147: PORTBbits.RB5 = 0;
   2911  002438  9A81               	bcf	3969,5,c	;volatile
   2912                           
-  2913                           ;main.c: 1147: break;
+  2913                           ;main.c: 1148: break;
   2914  00243A  0012               	return	
   2915  00243C                     l6461:
   2916                           
@@ -3060,7 +3060,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   2987                           
   2988 ;; *************** function _actionSet *****************
   2989 ;; Defined at:
-  2990 ;;		line 953 in file "../main.c"
+  2990 ;;		line 954 in file "../main.c"
   2991 ;; Parameters:    Size  Location     Type
   2992 ;;  dmflags         1    wreg     unsigned char 
   2993 ;;  param           1   78[COMRAM] unsigned char 
@@ -3103,7 +3103,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   3024                           	opt stack 22
   3025                           
   3026                           ; BSR set to: 0
-  3027                           ;main.c: 955: if ( param & 0x80 ) {
+  3027                           ;main.c: 956: if ( param & 0x80 ) {
   3028                           
   3029                           ; BSR set to: 0
   3030                           ;incstack = 0
@@ -3112,12 +3112,12 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   3033  002490  D00D               	goto	l6427
   3034                           
   3035                           ; BSR set to: 0
-  3036                           ;main.c: 957: param &= 0x7f;
+  3036                           ;main.c: 958: param &= 0x7f;
   3037  002492  9E4F               	bcf	actionSet@param,7,c
   3038                           
   3039                           ; BSR set to: 0
-  3040                           ;main.c: 959: if ( readEEPROM( 0x21 + 5 + (param - 3) )
-  3041                           ;main.c: 960: != vscp_imsg.data[ 2 ] ) {
+  3040                           ;main.c: 960: if ( readEEPROM( 0x21 + 5 + (param - 3) )
+  3041                           ;main.c: 961: != vscp_imsg.data[ 2 ] ) {
   3042  002494  0E23               	movlw	35
   3043  002496  244F               	addwf	actionSet@param,w,c
   3044  002498  6E08               	movwf	?_readEEPROM,c
@@ -3132,9 +3132,9 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   3053  0024AC                     l6427:
   3054                           
   3055                           ; BSR set to: 0
-  3056                           ;main.c: 962: }
-  3057                           ;main.c: 963: }
-  3058                           ;main.c: 965: if ( param < 3) return;
+  3056                           ;main.c: 963: }
+  3057                           ;main.c: 964: }
+  3058                           ;main.c: 966: if ( param < 3) return;
   3059  0024AC  0E03               	movlw	3
   3060  0024AE  604F               	cpfslt	actionSet@param,c
   3061  0024B0  D001               	goto	l6431
@@ -3142,7 +3142,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   3063  0024B4                     l6431:
   3064                           
   3065                           ; BSR set to: 0
-  3066                           ;main.c: 966: if ( param > 20 ) return;
+  3066                           ;main.c: 967: if ( param > 20 ) return;
   3067  0024B4  0E14               	movlw	20
   3068  0024B6  644F               	cpfsgt	actionSet@param,c
   3069  0024B8  D001               	goto	l6435
@@ -3150,9 +3150,9 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   3071  0024BC                     l6435:
   3072                           
   3073                           ; BSR set to: 0
-  3074                           ;main.c: 968: SendInformationEvent( param,
-  3075                           ;main.c: 969: 20,
-  3076                           ;main.c: 970: 3 );
+  3074                           ;main.c: 969: SendInformationEvent( param,
+  3075                           ;main.c: 970: 20,
+  3076                           ;main.c: 971: 3 );
   3077  0024BC  0E14               	movlw	20
   3078  0024BE  6FA4               	movwf	?_SendInformationEvent& (0+255),b
   3079  0024C0  0E03               	movlw	3
@@ -3160,135 +3160,135 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   3081  0024C4  504F               	movf	actionSet@param,w,c
   3082  0024C6  ECC9  F014         	call	_SendInformationEvent
   3083                           
-  3084                           ;main.c: 972: switch ( param ) {
+  3084                           ;main.c: 973: switch ( param ) {
   3085  0024CA  D020               	goto	l6439
   3086  0024CC                     l313:
   3087                           
   3088                           ; BSR set to: 0
-  3089                           ;main.c: 975: PORTCbits.RC7 = 1;
+  3089                           ;main.c: 976: PORTCbits.RC7 = 1;
   3090  0024CC  8E82               	bsf	3970,7,c	;volatile
   3091                           
-  3092                           ;main.c: 976: break;
+  3092                           ;main.c: 977: break;
   3093  0024CE  0012               	return	
   3094  0024D0                     l315:
   3095                           
   3096                           ; BSR set to: 0
-  3097                           ;main.c: 979: PORTCbits.RC6 = 1;
+  3097                           ;main.c: 980: PORTCbits.RC6 = 1;
   3098  0024D0  8C82               	bsf	3970,6,c	;volatile
   3099                           
-  3100                           ;main.c: 980: break;
+  3100                           ;main.c: 981: break;
   3101  0024D2  0012               	return	
   3102  0024D4                     l316:
   3103                           
   3104                           ; BSR set to: 0
-  3105                           ;main.c: 983: PORTCbits.RC3 = 1;
+  3105                           ;main.c: 984: PORTCbits.RC3 = 1;
   3106  0024D4  8682               	bsf	3970,3,c	;volatile
   3107                           
-  3108                           ;main.c: 984: break;
+  3108                           ;main.c: 985: break;
   3109  0024D6  0012               	return	
   3110  0024D8                     l317:
   3111                           
   3112                           ; BSR set to: 0
-  3113                           ;main.c: 987: PORTCbits.RC4 = 1;
+  3113                           ;main.c: 988: PORTCbits.RC4 = 1;
   3114  0024D8  8882               	bsf	3970,4,c	;volatile
   3115                           
-  3116                           ;main.c: 988: break;
+  3116                           ;main.c: 989: break;
   3117  0024DA  0012               	return	
   3118  0024DC                     l318:
   3119                           
   3120                           ; BSR set to: 0
-  3121                           ;main.c: 991: PORTCbits.RC5 = 1;
+  3121                           ;main.c: 992: PORTCbits.RC5 = 1;
   3122  0024DC  8A82               	bsf	3970,5,c	;volatile
   3123                           
-  3124                           ;main.c: 992: break;
+  3124                           ;main.c: 993: break;
   3125  0024DE  0012               	return	
   3126  0024E0                     l319:
   3127                           
   3128                           ; BSR set to: 0
-  3129                           ;main.c: 995: PORTAbits.RA0 = 1;
+  3129                           ;main.c: 996: PORTAbits.RA0 = 1;
   3130  0024E0  8080               	bsf	3968,0,c	;volatile
   3131                           
-  3132                           ;main.c: 996: break;
+  3132                           ;main.c: 997: break;
   3133  0024E2  0012               	return	
   3134  0024E4                     l320:
   3135                           
   3136                           ; BSR set to: 0
-  3137                           ;main.c: 999: PORTAbits.RA1 = 1;
+  3137                           ;main.c: 1000: PORTAbits.RA1 = 1;
   3138  0024E4  8280               	bsf	3968,1,c	;volatile
   3139                           
-  3140                           ;main.c: 1000: break;
+  3140                           ;main.c: 1001: break;
   3141  0024E6  0012               	return	
   3142  0024E8                     l321:
   3143                           
   3144                           ; BSR set to: 0
-  3145                           ;main.c: 1003: PORTAbits.RA2 = 1;
+  3145                           ;main.c: 1004: PORTAbits.RA2 = 1;
   3146  0024E8  8480               	bsf	3968,2,c	;volatile
   3147                           
-  3148                           ;main.c: 1004: break;
+  3148                           ;main.c: 1005: break;
   3149  0024EA  0012               	return	
   3150  0024EC                     l322:
   3151                           
   3152                           ; BSR set to: 0
-  3153                           ;main.c: 1007: PORTAbits.RA3 = 1;
+  3153                           ;main.c: 1008: PORTAbits.RA3 = 1;
   3154  0024EC  8680               	bsf	3968,3,c	;volatile
   3155                           
-  3156                           ;main.c: 1008: break;
+  3156                           ;main.c: 1009: break;
   3157  0024EE  0012               	return	
   3158  0024F0                     l323:
   3159                           
   3160                           ; BSR set to: 0
-  3161                           ;main.c: 1011: PORTAbits.RA5 = 1;
+  3161                           ;main.c: 1012: PORTAbits.RA5 = 1;
   3162  0024F0  8A80               	bsf	3968,5,c	;volatile
   3163                           
-  3164                           ;main.c: 1012: break;
+  3164                           ;main.c: 1013: break;
   3165  0024F2  0012               	return	
   3166  0024F4                     l326:
   3167                           
   3168                           ; BSR set to: 0
-  3169                           ;main.c: 1023: PORTBbits.RB4 = 1;
+  3169                           ;main.c: 1024: PORTBbits.RB4 = 1;
   3170  0024F4  8881               	bsf	3969,4,c	;volatile
   3171                           
-  3172                           ;main.c: 1024: break;
+  3172                           ;main.c: 1025: break;
   3173  0024F6  0012               	return	
   3174  0024F8                     l327:
   3175                           
   3176                           ; BSR set to: 0
-  3177                           ;main.c: 1027: PORTCbits.RC2 = 1;
+  3177                           ;main.c: 1028: PORTCbits.RC2 = 1;
   3178  0024F8  8482               	bsf	3970,2,c	;volatile
   3179                           
-  3180                           ;main.c: 1028: break;
+  3180                           ;main.c: 1029: break;
   3181  0024FA  0012               	return	
   3182  0024FC                     l328:
   3183                           
   3184                           ; BSR set to: 0
-  3185                           ;main.c: 1031: PORTBbits.RB1 = 1;
+  3185                           ;main.c: 1032: PORTBbits.RB1 = 1;
   3186  0024FC  8281               	bsf	3969,1,c	;volatile
   3187                           
-  3188                           ;main.c: 1032: break;
+  3188                           ;main.c: 1033: break;
   3189  0024FE  0012               	return	
   3190  002500                     l329:
   3191                           
   3192                           ; BSR set to: 0
-  3193                           ;main.c: 1035: PORTBbits.RB0 = 1;
+  3193                           ;main.c: 1036: PORTBbits.RB0 = 1;
   3194  002500  8081               	bsf	3969,0,c	;volatile
   3195                           
-  3196                           ;main.c: 1036: break;
+  3196                           ;main.c: 1037: break;
   3197  002502  0012               	return	
   3198  002504                     l330:
   3199                           
   3200                           ; BSR set to: 0
-  3201                           ;main.c: 1039: PORTBbits.RB6 = 1;
+  3201                           ;main.c: 1040: PORTBbits.RB6 = 1;
   3202  002504  8C81               	bsf	3969,6,c	;volatile
   3203                           
-  3204                           ;main.c: 1040: break;
+  3204                           ;main.c: 1041: break;
   3205  002506  0012               	return	
   3206  002508                     l331:
   3207                           
   3208                           ; BSR set to: 0
-  3209                           ;main.c: 1043: PORTBbits.RB5 = 1;
+  3209                           ;main.c: 1044: PORTBbits.RB5 = 1;
   3210  002508  8A81               	bsf	3969,5,c	;volatile
   3211                           
-  3212                           ;main.c: 1044: break;
+  3212                           ;main.c: 1045: break;
   3213  00250A  0012               	return	
   3214  00250C                     l6439:
   3215                           
@@ -3365,7 +3365,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   3286                           
   3287 ;; *************** function _SendInformationEvent *****************
   3288 ;; Defined at:
-  3289 ;;		line 813 in file "../main.c"
+  3289 ;;		line 814 in file "../main.c"
   3290 ;; Parameters:    Size  Location     Type
   3291 ;;  idx             1    wreg     unsigned char 
   3292 ;;  eventClass      1   20[BANK0 ] unsigned char 
@@ -3419,24 +3419,24 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   3334  002992  CFE8 F04E          	movff	wreg,SendInformationEvent@idx
   3335                           
   3336                           ; BSR set to: 0
-  3337                           ;main.c: 814: uint8_t data[3];
-  3338                           ;main.c: 815: idx -= 3;
+  3337                           ;main.c: 815: uint8_t data[3];
+  3338                           ;main.c: 816: idx -= 3;
   3339  002996  0E03               	movlw	3
   3340  002998  5E4E               	subwf	SendInformationEvent@idx,f,c
   3341                           
   3342                           ; BSR set to: 0
-  3343                           ;main.c: 817: data[ 0 ] = idx;
+  3343                           ;main.c: 818: data[ 0 ] = idx;
   3344  00299A  C04E  F04B         	movff	SendInformationEvent@idx,SendInformationEvent@data
   3345                           
   3346                           ; BSR set to: 0
-  3347                           ;main.c: 818: data[ 1 ] = readEEPROM( 0x21 + 0 );
+  3347                           ;main.c: 819: data[ 1 ] = readEEPROM( 0x21 + 0 );
   3348  00299E  6A09               	clrf	?_readEEPROM+1,c
   3349  0029A0  0E21               	movlw	33
   3350  0029A2  6E08               	movwf	?_readEEPROM,c
   3351  0029A4  EC68  F017         	call	_readEEPROM	;wreg free
   3352  0029A8  6E4C               	movwf	SendInformationEvent@data+1,c
   3353                           
-  3354                           ;main.c: 819: data[ 2 ] = readEEPROM( 0x21 + 5 + idx );
+  3354                           ;main.c: 820: data[ 2 ] = readEEPROM( 0x21 + 5 + idx );
   3355  0029AA  0E26               	movlw	38
   3356  0029AC  244E               	addwf	SendInformationEvent@idx,w,c
   3357  0029AE  6E08               	movwf	?_readEEPROM,c
@@ -3446,12 +3446,12 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   3361  0029B6  EC68  F017         	call	_readEEPROM	;wreg free
   3362  0029BA  6E4D               	movwf	SendInformationEvent@data+2,c
   3363                           
-  3364                           ;main.c: 820: sendVSCPFrame( eventClass,
-  3365                           ;main.c: 821: eventTypeId,
-  3366                           ;main.c: 822: vscp_nickname,
-  3367                           ;main.c: 823: 0x03,
-  3368                           ;main.c: 824: 3,
-  3369                           ;main.c: 825: data );
+  3364                           ;main.c: 821: sendVSCPFrame( eventClass,
+  3365                           ;main.c: 822: eventTypeId,
+  3366                           ;main.c: 823: vscp_nickname,
+  3367                           ;main.c: 824: 0x03,
+  3368                           ;main.c: 825: 3,
+  3369                           ;main.c: 826: data );
   3370  0029BC  0100               	movlb	0	; () banked
   3371  0029BE  C0A4  F03F         	movff	SendInformationEvent@eventClass,?_sendVSCPFrame
   3372  0029C2  6A40               	clrf	?_sendVSCPFrame+1,c
@@ -5352,7 +5352,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   5242                           
   5243 ;; *************** function _vscp_restoreDefaults *****************
   5244 ;; Defined at:
-  5245 ;;		line 1428 in file "../main.c"
+  5245 ;;		line 1429 in file "../main.c"
   5246 ;; Parameters:    Size  Location     Type
   5247 ;;		None
   5248 ;; Auto vars:     Size  Location     Type
@@ -5393,13 +5393,13 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   5278                           	opt stack 24
   5279                           
   5280                           ; BSR set to: 0
-  5281                           ;main.c: 1429: init_app_eeprom();
+  5281                           ;main.c: 1430: init_app_eeprom();
   5282                           
   5283                           ;incstack = 0
   5284                           ;incstack = 0
   5285  002F66  EC66  F013         	call	_init_app_eeprom	;wreg free
   5286                           
-  5287                           ;main.c: 1430: init_app_ram();
+  5287                           ;main.c: 1431: init_app_ram();
   5288  002F6A  EF7A  F017         	goto	_init_app_ram	;wreg free
   5289  002F6E                     __end_of_vscp_restoreDefaults:
   5290                           	opt stack 0
@@ -5425,7 +5425,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   5310                           
   5311 ;; *************** function _init_app_eeprom *****************
   5312 ;; Defined at:
-  5313 ;;		line 427 in file "../main.c"
+  5313 ;;		line 428 in file "../main.c"
   5314 ;; Parameters:    Size  Location     Type
   5315 ;;		None
   5316 ;; Auto vars:     Size  Location     Type
@@ -5466,8 +5466,8 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   5346  0026CC                     _init_app_eeprom:
   5347                           	opt stack 24
   5348                           
-  5349                           ;main.c: 428: unsigned char i, j;
-  5350                           ;main.c: 430: writeEEPROM( 0x21 + 0, 0 );
+  5349                           ;main.c: 429: unsigned char i, j;
+  5350                           ;main.c: 431: writeEEPROM( 0x21 + 0, 0 );
   5351                           
   5352                           ; BSR set to: 0
   5353                           ;incstack = 0
@@ -5479,7 +5479,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   5359  0026D4  6A0A               	clrf	?_writeEEPROM+2,c
   5360  0026D6  EC59  F016         	call	_writeEEPROM	;wreg free
   5361                           
-  5362                           ;main.c: 431: writeEEPROM( 0x21 + 1, 0 );
+  5362                           ;main.c: 432: writeEEPROM( 0x21 + 1, 0 );
   5363  0026DA  6A09               	clrf	?_writeEEPROM+1,c
   5364  0026DC  0E22               	movlw	34
   5365  0026DE  6E08               	movwf	?_writeEEPROM,c
@@ -5487,12 +5487,12 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   5367  0026E2  6A0A               	clrf	?_writeEEPROM+2,c
   5368  0026E4  EC59  F016         	call	_writeEEPROM	;wreg free
   5369                           
-  5370                           ;main.c: 433: for ( i=3; i<21; i++ ) {
+  5370                           ;main.c: 434: for ( i=3; i<21; i++ ) {
   5371  0026E8  0E03               	movlw	3
   5372  0026EA  6E0E               	movwf	init_app_eeprom@i,c
   5373  0026EC                     l3809:
   5374                           
-  5375                           ;main.c: 434: writeEEPROM( 0x21 + 5 + (i-3), i );
+  5375                           ;main.c: 435: writeEEPROM( 0x21 + 5 + (i-3), i );
   5376  0026EC  0E23               	movlw	35
   5377  0026EE  240E               	addwf	init_app_eeprom@i,w,c
   5378  0026F0  6E08               	movwf	?_writeEEPROM,c
@@ -5506,8 +5506,8 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   5386  002704  640E               	cpfsgt	init_app_eeprom@i,c
   5387  002706  D7F2               	goto	l3809
   5388                           
-  5389                           ;main.c: 435: }
-  5390                           ;main.c: 437: writeEEPROM( 0x21 + 2, 0 );
+  5389                           ;main.c: 436: }
+  5390                           ;main.c: 438: writeEEPROM( 0x21 + 2, 0 );
   5391  002708  6A09               	clrf	?_writeEEPROM+1,c
   5392  00270A  0E23               	movlw	35
   5393  00270C  6E08               	movwf	?_writeEEPROM,c
@@ -5515,7 +5515,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   5395  002710  6A0A               	clrf	?_writeEEPROM+2,c
   5396  002712  EC59  F016         	call	_writeEEPROM	;wreg free
   5397                           
-  5398                           ;main.c: 438: writeEEPROM( 0x21 + 3, 0 );
+  5398                           ;main.c: 439: writeEEPROM( 0x21 + 3, 0 );
   5399  002716  6A09               	clrf	?_writeEEPROM+1,c
   5400  002718  0E24               	movlw	36
   5401  00271A  6E08               	movwf	?_writeEEPROM,c
@@ -5523,7 +5523,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   5403  00271E  6A0A               	clrf	?_writeEEPROM+2,c
   5404  002720  EC59  F016         	call	_writeEEPROM	;wreg free
   5405                           
-  5406                           ;main.c: 439: writeEEPROM( 0x21 + 4, 0 );
+  5406                           ;main.c: 440: writeEEPROM( 0x21 + 4, 0 );
   5407  002724  6A09               	clrf	?_writeEEPROM+1,c
   5408  002726  0E25               	movlw	37
   5409  002728  6E08               	movwf	?_writeEEPROM,c
@@ -5531,15 +5531,15 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   5411  00272C  6A0A               	clrf	?_writeEEPROM+2,c
   5412  00272E  EC59  F016         	call	_writeEEPROM	;wreg free
   5413                           
-  5414                           ;main.c: 443: for ( i = 0; i < 8; i++ ) {
+  5414                           ;main.c: 444: for ( i = 0; i < 8; i++ ) {
   5415  002732  6A0E               	clrf	init_app_eeprom@i,c
   5416  002734                     l177:
   5417                           
-  5418                           ;main.c: 444: for ( j = 0; j < 8; j++ ) {
+  5418                           ;main.c: 445: for ( j = 0; j < 8; j++ ) {
   5419  002734  6A0D               	clrf	init_app_eeprom@j,c
   5420  002736                     l3827:
   5421                           
-  5422                           ;main.c: 445: writeEEPROM( 0x21 + 23 + 0 + i * 8 + j, 0 );
+  5422                           ;main.c: 446: writeEEPROM( 0x21 + 23 + 0 + i * 8 + j, 0 );
   5423  002736  500D               	movf	init_app_eeprom@j,w,c
   5424  002738  C00E  F00B         	movff	init_app_eeprom@i,??_init_app_eeprom
   5425  00273C  6A0C               	clrf	(??_init_app_eeprom+1)& (0+255),c
@@ -5596,7 +5596,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   5476                           
   5477 ;; *************** function _vscp_setUserID *****************
   5478 ;; Defined at:
-  5479 ;;		line 1262 in file "../main.c"
+  5479 ;;		line 1263 in file "../main.c"
   5480 ;; Parameters:    Size  Location     Type
   5481 ;;  idx             1    wreg     unsigned char 
   5482 ;;  data            1   10[COMRAM] unsigned char 
@@ -5642,7 +5642,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   5517  002E2A  CFE8 F00C          	movff	wreg,vscp_setUserID@idx
   5518                           
   5519                           ; BSR set to: 0
-  5520                           ;main.c: 1263: writeEEPROM( idx + 0x04, data );
+  5520                           ;main.c: 1264: writeEEPROM( idx + 0x04, data );
   5521  002E2E  0E04               	movlw	4
   5522  002E30  240C               	addwf	vscp_setUserID@idx,w,c
   5523  002E32  6E08               	movwf	?_writeEEPROM,c
@@ -5675,7 +5675,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   5550                           
   5551 ;; *************** function _vscp_setManufacturerId *****************
   5552 ;; Defined at:
-  5553 ;;		line 507 in file "../main.c"
+  5553 ;;		line 508 in file "../main.c"
   5554 ;; Parameters:    Size  Location     Type
   5555 ;;  idx             1    wreg     unsigned char 
   5556 ;;  data            1   10[COMRAM] unsigned char 
@@ -5721,7 +5721,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   5591  002CFC  CFE8 F00C          	movff	wreg,vscp_setManufacturerId@idx
   5592                           
   5593                           ; BSR set to: 0
-  5594                           ;main.c: 508: if ( idx>7 ) return;
+  5594                           ;main.c: 509: if ( idx>7 ) return;
   5595  002D00  0E07               	movlw	7
   5596  002D02  640C               	cpfsgt	vscp_setManufacturerId@idx,c
   5597  002D04  D001               	goto	l4619
@@ -5729,7 +5729,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   5599  002D08                     l4619:
   5600                           
   5601                           ; BSR set to: 0
-  5602                           ;main.c: 509: writeEEPROM(0x09 + idx, data);
+  5602                           ;main.c: 510: writeEEPROM(0x09 + idx, data);
   5603  002D08  0E09               	movlw	9
   5604  002D0A  240C               	addwf	vscp_setManufacturerId@idx,w,c
   5605  002D0C  6E08               	movwf	?_writeEEPROM,c
@@ -5762,7 +5762,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   5632                           
   5633 ;; *************** function _vscp_setGUID *****************
   5634 ;; Defined at:
-  5635 ;;		line 495 in file "../main.c"
+  5635 ;;		line 496 in file "../main.c"
   5636 ;; Parameters:    Size  Location     Type
   5637 ;;  idx             1    wreg     unsigned char 
   5638 ;;  data            1   10[COMRAM] unsigned char 
@@ -5808,7 +5808,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   5673  002D1C  CFE8 F00C          	movff	wreg,vscp_setGUID@idx
   5674                           
   5675                           ; BSR set to: 0
-  5676                           ;main.c: 496: if ( idx>15 ) return;
+  5676                           ;main.c: 497: if ( idx>15 ) return;
   5677  002D20  0E0F               	movlw	15
   5678  002D22  640C               	cpfsgt	vscp_setGUID@idx,c
   5679  002D24  D001               	goto	l4613
@@ -5816,7 +5816,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   5681  002D28                     l4613:
   5682                           
   5683                           ; BSR set to: 0
-  5684                           ;main.c: 497: writeEEPROM(0x11 + idx, data);
+  5684                           ;main.c: 498: writeEEPROM(0x11 + idx, data);
   5685  002D28  0E11               	movlw	17
   5686  002D2A  240C               	addwf	vscp_setGUID@idx,w,c
   5687  002D2C  6E08               	movwf	?_writeEEPROM,c
@@ -5849,7 +5849,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   5714                           
   5715 ;; *************** function _vscp_writeAppReg *****************
   5716 ;; Defined at:
-  5717 ;;		line 641 in file "../main.c"
+  5717 ;;		line 642 in file "../main.c"
   5718 ;; Parameters:    Size  Location     Type
   5719 ;;  reg             1    wreg     unsigned char 
   5720 ;;  val             1   20[COMRAM] unsigned char 
@@ -5899,30 +5899,30 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   5759  0020D0  CFE8 F017          	movff	wreg,vscp_writeAppReg@reg
   5760                           
   5761                           ; BSR set to: 0
-  5762                           ;main.c: 642: uint8_t rv;
-  5763                           ;main.c: 644: rv = ~val;
+  5762                           ;main.c: 643: uint8_t rv;
+  5763                           ;main.c: 645: rv = ~val;
   5764  0020D4  1C15               	comf	vscp_writeAppReg@val,w,c
   5765  0020D6  6E16               	movwf	vscp_writeAppReg@rv,c
   5766                           
-  5767                           ;main.c: 647: if ( 0 == vscp_page_select ) {
+  5767                           ;main.c: 648: if ( 0 == vscp_page_select ) {
   5768  0020D8  5053               	movf	_vscp_page_select+1,w,c
   5769  0020DA  1052               	iorwf	_vscp_page_select,w,c
   5770  0020DC  E164               	bnz	l6385
   5771                           
   5772                           ; BSR set to: 0
-  5773                           ;main.c: 650: if ( reg == 0 ) {
+  5773                           ;main.c: 651: if ( reg == 0 ) {
   5774  0020DE  6617               	tstfsz	vscp_writeAppReg@reg,c
   5775  0020E0  D00D               	goto	l6355
   5776                           
   5777                           ; BSR set to: 0
-  5778                           ;main.c: 651: writeEEPROM(0x21 + 0, val);
+  5778                           ;main.c: 652: writeEEPROM(0x21 + 0, val);
   5779  0020E2  6A09               	clrf	?_writeEEPROM+1,c
   5780  0020E4  0E21               	movlw	33
   5781  0020E6  6E08               	movwf	?_writeEEPROM,c
   5782  0020E8  C015  F00A         	movff	vscp_writeAppReg@val,?_writeEEPROM+2
   5783  0020EC  EC59  F016         	call	_writeEEPROM	;wreg free
   5784                           
-  5785                           ;main.c: 652: rv = readEEPROM(0x21 + 0);
+  5785                           ;main.c: 653: rv = readEEPROM(0x21 + 0);
   5786  0020F0  6A09               	clrf	?_readEEPROM+1,c
   5787  0020F2  0E21               	movlw	33
   5788  0020F4  6E08               	movwf	?_readEEPROM,c
@@ -5931,19 +5931,19 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   5791  0020FC                     l6355:
   5792                           
   5793                           ; BSR set to: 0
-  5794                           ;main.c: 654: else if ( reg == 1 ) {
+  5794                           ;main.c: 655: else if ( reg == 1 ) {
   5795  0020FC  0417               	decf	vscp_writeAppReg@reg,w,c
   5796  0020FE  E10D               	bnz	l6359
   5797                           
   5798                           ; BSR set to: 0
-  5799                           ;main.c: 656: writeEEPROM(0x21 + 1, val);
+  5799                           ;main.c: 657: writeEEPROM(0x21 + 1, val);
   5800  002100  6A09               	clrf	?_writeEEPROM+1,c
   5801  002102  0E22               	movlw	34
   5802  002104  6E08               	movwf	?_writeEEPROM,c
   5803  002106  C015  F00A         	movff	vscp_writeAppReg@val,?_writeEEPROM+2
   5804  00210A  EC59  F016         	call	_writeEEPROM	;wreg free
   5805                           
-  5806                           ;main.c: 657: rv = readEEPROM(0x21 + 1);
+  5806                           ;main.c: 658: rv = readEEPROM(0x21 + 1);
   5807  00210E  6A09               	clrf	?_readEEPROM+1,c
   5808  002110  0E22               	movlw	34
   5809  002112  6E08               	movwf	?_readEEPROM,c
@@ -5952,7 +5952,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   5812  00211A                     l6359:
   5813                           
   5814                           ; BSR set to: 0
-  5815                           ;main.c: 660: else if ( ( reg >= 5 ) && ( reg <= 22 ) ) {
+  5815                           ;main.c: 661: else if ( ( reg >= 5 ) && ( reg <= 22 ) ) {
   5816  00211A  0E04               	movlw	4
   5817  00211C  6417               	cpfsgt	vscp_writeAppReg@reg,c
   5818  00211E  D010               	goto	l6365
@@ -5963,14 +5963,14 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   5823  002124  D00D               	goto	l6365
   5824                           
   5825                           ; BSR set to: 0
-  5826                           ;main.c: 661: writeEEPROM(0x21 + 5 +
-  5827                           ;main.c: 662: ( reg - 5 ), val);
+  5826                           ;main.c: 662: writeEEPROM(0x21 + 5 +
+  5827                           ;main.c: 663: ( reg - 5 ), val);
   5828  002126  0E21               	movlw	33
   5829  002128  D853               	call	PL30	;call to abstracted procedure
   5830  00212A  EC59  F016         	call	_writeEEPROM	;wreg free
   5831                           
-  5832                           ;main.c: 663: rv = readEEPROM( 0x21 + 5 +
-  5833                           ;main.c: 664: ( reg - 5 ) );
+  5832                           ;main.c: 664: rv = readEEPROM( 0x21 + 5 +
+  5833                           ;main.c: 665: ( reg - 5 ) );
   5834  00212E  0E21               	movlw	33
   5835  002130  2417               	addwf	vscp_writeAppReg@reg,w,c
   5836  002132  6E08               	movwf	?_readEEPROM,c
@@ -5982,20 +5982,20 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   5842  002140                     l6365:
   5843                           
   5844                           ; BSR set to: 0
-  5845                           ;main.c: 667: else if ( reg == 2 ) {
+  5845                           ;main.c: 668: else if ( reg == 2 ) {
   5846  002140  5017               	movf	vscp_writeAppReg@reg,w,c
   5847  002142  0A02               	xorlw	2
   5848  002144  E10D               	bnz	l6371
   5849                           
   5850                           ; BSR set to: 0
-  5851                           ;main.c: 668: writeEEPROM(0x21 + 2, val);
+  5851                           ;main.c: 669: writeEEPROM(0x21 + 2, val);
   5852  002146  6A09               	clrf	?_writeEEPROM+1,c
   5853  002148  0E23               	movlw	35
   5854  00214A  6E08               	movwf	?_writeEEPROM,c
   5855  00214C  C015  F00A         	movff	vscp_writeAppReg@val,?_writeEEPROM+2
   5856  002150  EC59  F016         	call	_writeEEPROM	;wreg free
   5857                           
-  5858                           ;main.c: 669: rv = writeControlReg( 0, val );
+  5858                           ;main.c: 670: rv = writeControlReg( 0, val );
   5859  002154  C015  F011         	movff	vscp_writeAppReg@val,?_writeControlReg
   5860  002158  0E00               	movlw	0
   5861  00215A  EC4C  F00D         	call	_writeControlReg
@@ -6003,20 +6003,20 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   5863  002160                     l6371:
   5864                           
   5865                           ; BSR set to: 0
-  5866                           ;main.c: 672: else if ( reg == 3 ) {
+  5866                           ;main.c: 673: else if ( reg == 3 ) {
   5867  002160  5017               	movf	vscp_writeAppReg@reg,w,c
   5868  002162  0A03               	xorlw	3
   5869  002164  E10D               	bnz	l6377
   5870                           
   5871                           ; BSR set to: 0
-  5872                           ;main.c: 673: writeEEPROM(0x21 + 3, val);
+  5872                           ;main.c: 674: writeEEPROM(0x21 + 3, val);
   5873  002166  6A09               	clrf	?_writeEEPROM+1,c
   5874  002168  0E24               	movlw	36
   5875  00216A  6E08               	movwf	?_writeEEPROM,c
   5876  00216C  C015  F00A         	movff	vscp_writeAppReg@val,?_writeEEPROM+2
   5877  002170  EC59  F016         	call	_writeEEPROM	;wreg free
   5878                           
-  5879                           ;main.c: 674: rv = writeControlReg( 1, val );
+  5879                           ;main.c: 675: rv = writeControlReg( 1, val );
   5880  002174  C015  F011         	movff	vscp_writeAppReg@val,?_writeControlReg
   5881  002178  0E01               	movlw	1
   5882  00217A  EC4C  F00D         	call	_writeControlReg
@@ -6024,53 +6024,53 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   5884  002180                     l6377:
   5885                           
   5886                           ; BSR set to: 0
-  5887                           ;main.c: 677: else if ( reg == 4 ) {
+  5887                           ;main.c: 678: else if ( reg == 4 ) {
   5888  002180  5017               	movf	vscp_writeAppReg@reg,w,c
   5889  002182  0A04               	xorlw	4
   5890  002184  E123               	bnz	l6391
   5891                           
   5892                           ; BSR set to: 0
-  5893                           ;main.c: 678: writeEEPROM(0x21 + 4, val);
+  5893                           ;main.c: 679: writeEEPROM(0x21 + 4, val);
   5894  002186  6A09               	clrf	?_writeEEPROM+1,c
   5895  002188  0E25               	movlw	37
   5896  00218A  6E08               	movwf	?_writeEEPROM,c
   5897  00218C  C015  F00A         	movff	vscp_writeAppReg@val,?_writeEEPROM+2
   5898  002190  EC59  F016         	call	_writeEEPROM	;wreg free
   5899                           
-  5900                           ;main.c: 679: rv = writeControlReg( 2, val );
+  5900                           ;main.c: 680: rv = writeControlReg( 2, val );
   5901  002194  C015  F011         	movff	vscp_writeAppReg@val,?_writeControlReg
   5902  002198  0E02               	movlw	2
   5903  00219A  EC4C  F00D         	call	_writeControlReg
   5904  00219E  6E16               	movwf	vscp_writeAppReg@rv,c
   5905                           
-  5906                           ;main.c: 680: rv &= 0x03;
+  5906                           ;main.c: 681: rv &= 0x03;
   5907  0021A0  0E03               	movlw	3
   5908  0021A2  1616               	andwf	vscp_writeAppReg@rv,f,c
   5909  0021A4  D013               	goto	l6391
   5910  0021A6                     l6385:
   5911                           
   5912                           ; BSR set to: 0
-  5913                           ;main.c: 685: else if ( 1 == vscp_page_select ) {
+  5913                           ;main.c: 686: else if ( 1 == vscp_page_select ) {
   5914  0021A6  0452               	decf	_vscp_page_select,w,c
   5915  0021A8  1053               	iorwf	_vscp_page_select+1,w,c
   5916  0021AA  E110               	bnz	l6391
   5917                           
   5918                           ; BSR set to: 0
-  5919                           ;main.c: 688: if ( ( reg >= 0 ) && ( reg <= ( 0 +
-  5920                           ;main.c: 689: ( 8 * 8 ) ) ) ) {
+  5919                           ;main.c: 689: if ( ( reg >= 0 ) && ( reg <= ( 0 +
+  5920                           ;main.c: 690: ( 8 * 8 ) ) ) ) {
   5921  0021AC  0E41               	movlw	65
   5922  0021AE  6017               	cpfslt	vscp_writeAppReg@reg,c
   5923  0021B0  D00D               	goto	l6391
   5924                           
   5925                           ; BSR set to: 0
-  5926                           ;main.c: 690: writeEEPROM(0x21 + 23 +
-  5927                           ;main.c: 691: ( reg - 0 ), val);
+  5926                           ;main.c: 691: writeEEPROM(0x21 + 23 +
+  5927                           ;main.c: 692: ( reg - 0 ), val);
   5928  0021B2  0E38               	movlw	56
   5929  0021B4  D80D               	call	PL30	;call to abstracted procedure
   5930  0021B6  EC59  F016         	call	_writeEEPROM	;wreg free
   5931                           
-  5932                           ;main.c: 692: rv = readEEPROM(0x21 + 23 +
-  5933                           ;main.c: 693: ( reg - 0 ) );
+  5932                           ;main.c: 693: rv = readEEPROM(0x21 + 23 +
+  5933                           ;main.c: 694: ( reg - 0 ) );
   5934  0021BA  0E38               	movlw	56
   5935  0021BC  2417               	addwf	vscp_writeAppReg@reg,w,c
   5936  0021BE  6E08               	movwf	?_readEEPROM,c
@@ -6082,9 +6082,9 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   5942  0021CA  6E16               	movwf	vscp_writeAppReg@rv,c
   5943  0021CC                     l6391:
   5944                           
-  5945                           ;main.c: 694: }
-  5946                           ;main.c: 696: }
-  5947                           ;main.c: 698: return rv;
+  5945                           ;main.c: 695: }
+  5946                           ;main.c: 697: }
+  5947                           ;main.c: 699: return rv;
   5948  0021CC  5016               	movf	vscp_writeAppReg@rv,w,c
   5949  0021CE  0012               	return	
   5950  0021D0                     __end_of_vscp_writeAppReg:
@@ -6122,7 +6122,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   5982                           
   5983 ;; *************** function _writeControlReg *****************
   5984 ;; Defined at:
-  5985 ;;		line 706 in file "../main.c"
+  5985 ;;		line 707 in file "../main.c"
   5986 ;; Parameters:    Size  Location     Type
   5987 ;;  ctrlreg         1    wreg     unsigned char 
   5988 ;;  val             1   16[COMRAM] unsigned char 
@@ -6169,15 +6169,15 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   6024                           ;writeControlReg@ctrlreg stored from wreg
   6025  001A98  CFE8 F013          	movff	wreg,writeControlReg@ctrlreg
   6026                           
-  6027                           ;main.c: 707: uint8_t rv = 0;
+  6027                           ;main.c: 708: uint8_t rv = 0;
   6028  001A9C  6A14               	clrf	writeControlReg@rv,c
   6029                           
-  6030                           ;main.c: 709: switch ( ctrlreg ) {
+  6030                           ;main.c: 710: switch ( ctrlreg ) {
   6031  001A9E  D0B9               	goto	l3869
   6032  001AA0                     l3855:
   6033  001AA0  0E01               	movlw	1
   6034                           
-  6035                           ;main.c: 712: PORTCbits.RC7 = ( val & 0x01 ) ? 1 : 0;
+  6035                           ;main.c: 713: PORTCbits.RC7 = ( val & 0x01 ) ? 1 : 0;
   6036  001AA2  A011               	btfss	writeControlReg@val,0,c
   6037  001AA4  0E00               	movlw	0
   6038  001AA6  6E12               	movwf	??_writeControlReg& (0+255),c
@@ -6190,7 +6190,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   6045  001AB4  6E82               	movwf	3970,c	;volatile
   6046  001AB6  0E01               	movlw	1
   6047                           
-  6048                           ;main.c: 713: PORTCbits.RC6 = ( val & 0x02 ) ? 1 : 0;
+  6048                           ;main.c: 714: PORTCbits.RC6 = ( val & 0x02 ) ? 1 : 0;
   6049  001AB8  A211               	btfss	writeControlReg@val,1,c
   6050  001ABA  0E00               	movlw	0
   6051  001ABC  6E12               	movwf	??_writeControlReg& (0+255),c
@@ -6204,7 +6204,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   6059  001ACC  6E82               	movwf	3970,c	;volatile
   6060  001ACE  0E01               	movlw	1
   6061                           
-  6062                           ;main.c: 714: PORTCbits.RC3 = ( val & 0x04 ) ? 1 : 0;
+  6062                           ;main.c: 715: PORTCbits.RC3 = ( val & 0x04 ) ? 1 : 0;
   6063  001AD0  A411               	btfss	writeControlReg@val,2,c
   6064  001AD2  0E00               	movlw	0
   6065  001AD4  6E12               	movwf	??_writeControlReg& (0+255),c
@@ -6218,7 +6218,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   6073  001AE4  6E82               	movwf	3970,c	;volatile
   6074  001AE6  0E01               	movlw	1
   6075                           
-  6076                           ;main.c: 715: PORTCbits.RC4 = ( val & 0x08 ) ? 1 : 0;
+  6076                           ;main.c: 716: PORTCbits.RC4 = ( val & 0x08 ) ? 1 : 0;
   6077  001AE8  A611               	btfss	writeControlReg@val,3,c
   6078  001AEA  0E00               	movlw	0
   6079  001AEC  6E12               	movwf	??_writeControlReg& (0+255),c
@@ -6230,7 +6230,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   6085  001AF8  6E82               	movwf	3970,c	;volatile
   6086  001AFA  0E01               	movlw	1
   6087                           
-  6088                           ;main.c: 716: PORTCbits.RC5 = ( val & 0x10 ) ? 1 : 0;
+  6088                           ;main.c: 717: PORTCbits.RC5 = ( val & 0x10 ) ? 1 : 0;
   6089  001AFC  A811               	btfss	writeControlReg@val,4,c
   6090  001AFE  0E00               	movlw	0
   6091  001B00  6E12               	movwf	??_writeControlReg& (0+255),c
@@ -6243,7 +6243,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   6098  001B0E  6E82               	movwf	3970,c	;volatile
   6099  001B10  0E01               	movlw	1
   6100                           
-  6101                           ;main.c: 717: PORTAbits.RA0 = ( val & 0x20 ) ? 1 : 0;
+  6101                           ;main.c: 718: PORTAbits.RA0 = ( val & 0x20 ) ? 1 : 0;
   6102  001B12  AA11               	btfss	writeControlReg@val,5,c
   6103  001B14  0E00               	movlw	0
   6104  001B16  6E12               	movwf	??_writeControlReg& (0+255),c
@@ -6254,7 +6254,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   6109  001B20  6E80               	movwf	3968,c	;volatile
   6110  001B22  0E01               	movlw	1
   6111                           
-  6112                           ;main.c: 718: PORTAbits.RA1 = ( val & 0x40 ) ? 1 : 0;
+  6112                           ;main.c: 719: PORTAbits.RA1 = ( val & 0x40 ) ? 1 : 0;
   6113  001B24  AC11               	btfss	writeControlReg@val,6,c
   6114  001B26  0E00               	movlw	0
   6115  001B28  6E12               	movwf	??_writeControlReg& (0+255),c
@@ -6266,7 +6266,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   6121  001B34  6E80               	movwf	3968,c	;volatile
   6122  001B36  0E01               	movlw	1
   6123                           
-  6124                           ;main.c: 719: PORTAbits.RA2 = ( val & 0x80 ) ? 1 : 0;
+  6124                           ;main.c: 720: PORTAbits.RA2 = ( val & 0x80 ) ? 1 : 0;
   6125  001B38  AE11               	btfss	writeControlReg@val,7,c
   6126  001B3A  0E00               	movlw	0
   6127  001B3C  6E12               	movwf	??_writeControlReg& (0+255),c
@@ -6278,14 +6278,14 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   6133  001B48  1812               	xorwf	??_writeControlReg,w,c
   6134  001B4A  6E80               	movwf	3968,c	;volatile
   6135                           
-  6136                           ;main.c: 720: rv = readControlReg( 0 );
+  6136                           ;main.c: 721: rv = readControlReg( 0 );
   6137  001B4C  0E00               	movlw	0
   6138  001B4E  EC73  F011         	call	_readControlReg
   6139  001B52  D05D               	goto	L13
   6140  001B54                     l3859:
   6141  001B54  0E01               	movlw	1
   6142                           
-  6143                           ;main.c: 724: PORTAbits.RA3 = ( val & 0x01 ) ? 1 : 0;
+  6143                           ;main.c: 725: PORTAbits.RA3 = ( val & 0x01 ) ? 1 : 0;
   6144  001B56  A011               	btfss	writeControlReg@val,0,c
   6145  001B58  0E00               	movlw	0
   6146  001B5A  6E12               	movwf	??_writeControlReg& (0+255),c
@@ -6299,7 +6299,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   6154  001B6A  6E80               	movwf	3968,c	;volatile
   6155  001B6C  0E01               	movlw	1
   6156                           
-  6157                           ;main.c: 725: PORTAbits.RA5 = ( val & 0x02 ) ? 1 : 0;
+  6157                           ;main.c: 726: PORTAbits.RA5 = ( val & 0x02 ) ? 1 : 0;
   6158  001B6E  A211               	btfss	writeControlReg@val,1,c
   6159  001B70  0E00               	movlw	0
   6160  001B72  6E12               	movwf	??_writeControlReg& (0+255),c
@@ -6312,7 +6312,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   6167  001B80  6E80               	movwf	3968,c	;volatile
   6168  001B82  0E01               	movlw	1
   6169                           
-  6170                           ;main.c: 728: PORTBbits.RB4 = ( val & 0x10 ) ? 1 : 0;
+  6170                           ;main.c: 729: PORTBbits.RB4 = ( val & 0x10 ) ? 1 : 0;
   6171  001B84  A811               	btfss	writeControlReg@val,4,c
   6172  001B86  0E00               	movlw	0
   6173  001B88  6E12               	movwf	??_writeControlReg& (0+255),c
@@ -6324,7 +6324,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   6179  001B94  6E81               	movwf	3969,c	;volatile
   6180  001B96  0E01               	movlw	1
   6181                           
-  6182                           ;main.c: 729: PORTCbits.RC2 = ( val & 0x20 ) ? 1 : 0;
+  6182                           ;main.c: 730: PORTCbits.RC2 = ( val & 0x20 ) ? 1 : 0;
   6183  001B98  AA11               	btfss	writeControlReg@val,5,c
   6184  001B9A  0E00               	movlw	0
   6185  001B9C  6E12               	movwf	??_writeControlReg& (0+255),c
@@ -6337,7 +6337,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   6192  001BAA  6E82               	movwf	3970,c	;volatile
   6193  001BAC  0E01               	movlw	1
   6194                           
-  6195                           ;main.c: 730: PORTBbits.RB1 = ( val & 0x40 ) ? 1 : 0;
+  6195                           ;main.c: 731: PORTBbits.RB1 = ( val & 0x40 ) ? 1 : 0;
   6196  001BAE  AC11               	btfss	writeControlReg@val,6,c
   6197  001BB0  0E00               	movlw	0
   6198  001BB2  6E12               	movwf	??_writeControlReg& (0+255),c
@@ -6349,7 +6349,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   6204  001BBE  6E81               	movwf	3969,c	;volatile
   6205  001BC0  0E01               	movlw	1
   6206                           
-  6207                           ;main.c: 731: PORTBbits.RB0 = ( val & 0x80 ) ? 1 : 0;
+  6207                           ;main.c: 732: PORTBbits.RB0 = ( val & 0x80 ) ? 1 : 0;
   6208  001BC2  AE11               	btfss	writeControlReg@val,7,c
   6209  001BC4  0E00               	movlw	0
   6210  001BC6  6E12               	movwf	??_writeControlReg& (0+255),c
@@ -6359,14 +6359,14 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   6214  001BCE  1812               	xorwf	??_writeControlReg,w,c
   6215  001BD0  6E81               	movwf	3969,c	;volatile
   6216                           
-  6217                           ;main.c: 732: rv = readControlReg( 1 );
+  6217                           ;main.c: 733: rv = readControlReg( 1 );
   6218  001BD2  0E01               	movlw	1
   6219  001BD4  EC73  F011         	call	_readControlReg
   6220  001BD8  D01A               	goto	L13
   6221  001BDA                     l3863:
   6222  001BDA  0E01               	movlw	1
   6223                           
-  6224                           ;main.c: 736: PORTBbits.RB6 = ( val & 0x01 ) ? 1 : 0;
+  6224                           ;main.c: 737: PORTBbits.RB6 = ( val & 0x01 ) ? 1 : 0;
   6225  001BDC  A011               	btfss	writeControlReg@val,0,c
   6226  001BDE  0E00               	movlw	0
   6227  001BE0  6E12               	movwf	??_writeControlReg& (0+255),c
@@ -6380,7 +6380,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   6235  001BF0  6E81               	movwf	3969,c	;volatile
   6236  001BF2  0E01               	movlw	1
   6237                           
-  6238                           ;main.c: 737: PORTBbits.RB5 = ( val & 0x02 ) ? 1 : 0;
+  6238                           ;main.c: 738: PORTBbits.RB5 = ( val & 0x02 ) ? 1 : 0;
   6239  001BF4  A211               	btfss	writeControlReg@val,1,c
   6240  001BF6  0E00               	movlw	0
   6241  001BF8  6E12               	movwf	??_writeControlReg& (0+255),c
@@ -6392,13 +6392,13 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   6247  001C04  1812               	xorwf	??_writeControlReg,w,c
   6248  001C06  6E81               	movwf	3969,c	;volatile
   6249                           
-  6250                           ;main.c: 738: rv = readControlReg( 2 );
+  6250                           ;main.c: 739: rv = readControlReg( 2 );
   6251  001C08  0E02               	movlw	2
   6252  001C0A  EC73  F011         	call	_readControlReg
   6253  001C0E                     L13:
   6254  001C0E  6E14               	movwf	writeControlReg@rv,c
   6255                           
-  6256                           ;main.c: 739: break;
+  6256                           ;main.c: 740: break;
   6257  001C10  D007               	goto	l3871
   6258  001C12                     l3869:
   6259  001C12  5013               	movf	writeControlReg@ctrlreg,w,c
@@ -6416,7 +6416,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   6271  001C1E  E0DD               	bz	l3863
   6272  001C20                     l3871:
   6273                           
-  6274                           ;main.c: 742: return rv;
+  6274                           ;main.c: 743: return rv;
   6275  001C20  5014               	movf	writeControlReg@rv,w,c
   6276  001C22  0012               	return	
   6277  001C24                     __end_of_writeControlReg:
@@ -6975,7 +6975,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   6820                           
   6821 ;; *************** function _vscp_getRegisterPagesUsed *****************
   6822 ;; Defined at:
-  6823 ;;		line 1439 in file "../main.c"
+  6823 ;;		line 1440 in file "../main.c"
   6824 ;; Parameters:    Size  Location     Type
   6825 ;;		None
   6826 ;; Auto vars:     Size  Location     Type
@@ -7017,7 +7017,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   6857                           ; BSR set to: 0
   6858                           
   6859                           ; BSR set to: 0
-  6860                           ;main.c: 1440: return 1;
+  6860                           ;main.c: 1441: return 1;
   6861                           
   6862                           ;incstack = 0
   6863                           ;incstack = 0
@@ -7046,7 +7046,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   6886                           
   6887 ;; *************** function _vscp_getFamilyType *****************
   6888 ;; Defined at:
-  6889 ;;		line 1420 in file "../main.c"
+  6889 ;;		line 1421 in file "../main.c"
   6890 ;; Parameters:    Size  Location     Type
   6891 ;;		None
   6892 ;; Auto vars:     Size  Location     Type
@@ -7086,7 +7086,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   6921                           	opt stack 26
   6922                           
   6923                           ; BSR set to: 0
-  6924                           ;main.c: 1421: return 0;
+  6924                           ;main.c: 1422: return 0;
   6925                           
   6926                           ; BSR set to: 0
   6927                           ;incstack = 0
@@ -7122,7 +7122,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   6957                           
   6958 ;; *************** function _vscp_getFamilyCode *****************
   6959 ;; Defined at:
-  6960 ;;		line 1411 in file "../main.c"
+  6960 ;;		line 1412 in file "../main.c"
   6961 ;; Parameters:    Size  Location     Type
   6962 ;;		None
   6963 ;; Auto vars:     Size  Location     Type
@@ -7162,7 +7162,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   6992                           	opt stack 26
   6993                           
   6994                           ; BSR set to: 0
-  6995                           ;main.c: 1412: return 0L;
+  6995                           ;main.c: 1413: return 0L;
   6996                           
   6997                           ; BSR set to: 0
   6998                           ;incstack = 0
@@ -7198,7 +7198,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   7028                           
   7029 ;; *************** function _vscp_getBufferSize *****************
   7030 ;; Defined at:
-  7031 ;;		line 1291 in file "../main.c"
+  7031 ;;		line 1292 in file "../main.c"
   7032 ;; Parameters:    Size  Location     Type
   7033 ;;		None
   7034 ;; Auto vars:     Size  Location     Type
@@ -7240,7 +7240,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   7065                           ; BSR set to: 0
   7066                           
   7067                           ; BSR set to: 0
-  7068                           ;main.c: 1292: return 8;
+  7068                           ;main.c: 1293: return 8;
   7069                           
   7070                           ; BSR set to: 0
   7071                           ;incstack = 0
@@ -7270,7 +7270,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   7095                           
   7096 ;; *************** function _vscp_getBootLoaderAlgorithm *****************
   7097 ;; Defined at:
-  7098 ;;		line 1282 in file "../main.c"
+  7098 ;;		line 1283 in file "../main.c"
   7099 ;; Parameters:    Size  Location     Type
   7100 ;;		None
   7101 ;; Auto vars:     Size  Location     Type
@@ -7312,7 +7312,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   7132                           ; BSR set to: 0
   7133                           
   7134                           ; BSR set to: 0
-  7135                           ;main.c: 1283: return 0x01;
+  7135                           ;main.c: 1284: return 0x01;
   7136                           
   7137                           ; BSR set to: 0
   7138                           ;incstack = 0
@@ -7342,7 +7342,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   7162                           
   7163 ;; *************** function _vscp_getManufacturerId *****************
   7164 ;; Defined at:
-  7165 ;;		line 1273 in file "../main.c"
+  7165 ;;		line 1274 in file "../main.c"
   7166 ;; Parameters:    Size  Location     Type
   7167 ;;  idx             1    wreg     unsigned char 
   7168 ;; Auto vars:     Size  Location     Type
@@ -7388,7 +7388,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   7203                           ;vscp_getManufacturerId@idx stored from wreg
   7204  002E70  CFE8 F00B          	movff	wreg,vscp_getManufacturerId@idx
   7205                           
-  7206                           ;main.c: 1274: return readEEPROM( 0x09 + idx );
+  7206                           ;main.c: 1275: return readEEPROM( 0x09 + idx );
   7207  002E74  0E09               	movlw	9
   7208  002E76  240B               	addwf	vscp_getManufacturerId@idx,w,c
   7209  002E78  6E08               	movwf	?_readEEPROM,c
@@ -7420,7 +7420,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   7235                           
   7236 ;; *************** function _vscp_getUserID *****************
   7237 ;; Defined at:
-  7238 ;;		line 1253 in file "../main.c"
+  7238 ;;		line 1254 in file "../main.c"
   7239 ;; Parameters:    Size  Location     Type
   7240 ;;  idx             1    wreg     unsigned char 
   7241 ;; Auto vars:     Size  Location     Type
@@ -7465,7 +7465,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   7275                           ;vscp_getUserID@idx stored from wreg
   7276  002E84  CFE8 F00B          	movff	wreg,vscp_getUserID@idx
   7277                           
-  7278                           ;main.c: 1254: return readEEPROM( 0x04 + idx );
+  7278                           ;main.c: 1255: return readEEPROM( 0x04 + idx );
   7279  002E88  0E04               	movlw	4
   7280  002E8A  240B               	addwf	vscp_getUserID@idx,w,c
   7281  002E8C  6E08               	movwf	?_readEEPROM,c
@@ -7497,7 +7497,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   7307                           
   7308 ;; *************** function _vscp_getMDF_URL *****************
   7309 ;; Defined at:
-  7310 ;;		line 1244 in file "../main.c"
+  7310 ;;		line 1245 in file "../main.c"
   7311 ;; Parameters:    Size  Location     Type
   7312 ;;  idx             1    wreg     unsigned char 
   7313 ;; Auto vars:     Size  Location     Type
@@ -7543,7 +7543,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   7348  002DF4  CFE8 F009          	movff	wreg,vscp_getMDF_URL@idx
   7349                           
   7350                           ; BSR set to: 0
-  7351                           ;main.c: 1245: return vscp_deviceURL[ idx ];
+  7351                           ;main.c: 1246: return vscp_deviceURL[ idx ];
   7352  002DF8  5009               	movf	vscp_getMDF_URL@idx,w,c
   7353  002DFA  0F00               	addlw	low _vscp_deviceURL
   7354  002DFC  6E08               	movwf	??_vscp_getMDF_URL& (0+255),c
@@ -7581,7 +7581,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   7386                           
   7387 ;; *************** function _vscp_getGUID *****************
   7388 ;; Defined at:
-  7389 ;;		line 1232 in file "../main.c"
+  7389 ;;		line 1233 in file "../main.c"
   7390 ;; Parameters:    Size  Location     Type
   7391 ;;  idx             1    wreg     unsigned char 
   7392 ;; Auto vars:     Size  Location     Type
@@ -7628,7 +7628,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   7428                           ;vscp_getGUID@idx stored from wreg
   7429  002E98  CFE8 F00B          	movff	wreg,vscp_getGUID@idx
   7430                           
-  7431                           ;main.c: 1233: return readEEPROM( 0x11 + idx );
+  7431                           ;main.c: 1234: return readEEPROM( 0x11 + idx );
   7432  002E9C  0E11               	movlw	17
   7433  002E9E  240B               	addwf	vscp_getGUID@idx,w,c
   7434  002EA0  6E08               	movwf	?_readEEPROM,c
@@ -7660,7 +7660,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   7460                           
   7461 ;; *************** function _vscp_getSubMinorVersion *****************
   7462 ;; Defined at:
-  7463 ;;		line 1221 in file "../main.c"
+  7463 ;;		line 1222 in file "../main.c"
   7464 ;; Parameters:    Size  Location     Type
   7465 ;;		None
   7466 ;; Auto vars:     Size  Location     Type
@@ -7702,7 +7702,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   7497                           ; BSR set to: 0
   7498                           
   7499                           ; BSR set to: 0
-  7500                           ;main.c: 1222: return 0;
+  7500                           ;main.c: 1223: return 0;
   7501                           
   7502                           ;incstack = 0
   7503                           ;incstack = 0
@@ -7731,7 +7731,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   7526                           
   7527 ;; *************** function _vscp_getMinorVersion *****************
   7528 ;; Defined at:
-  7529 ;;		line 1212 in file "../main.c"
+  7529 ;;		line 1213 in file "../main.c"
   7530 ;; Parameters:    Size  Location     Type
   7531 ;;		None
   7532 ;; Auto vars:     Size  Location     Type
@@ -7773,7 +7773,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   7563                           ; BSR set to: 0
   7564                           
   7565                           ; BSR set to: 0
-  7566                           ;main.c: 1213: return 0;
+  7566                           ;main.c: 1214: return 0;
   7567                           
   7568                           ; BSR set to: 0
   7569                           ;incstack = 0
@@ -7803,7 +7803,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   7593                           
   7594 ;; *************** function _vscp_getMajorVersion *****************
   7595 ;; Defined at:
-  7596 ;;		line 1203 in file "../main.c"
+  7596 ;;		line 1204 in file "../main.c"
   7597 ;; Parameters:    Size  Location     Type
   7598 ;;		None
   7599 ;; Auto vars:     Size  Location     Type
@@ -7845,7 +7845,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   7630                           ; BSR set to: 0
   7631                           
   7632                           ; BSR set to: 0
-  7633                           ;main.c: 1204: return 1;
+  7633                           ;main.c: 1205: return 1;
   7634                           
   7635                           ; BSR set to: 0
   7636                           ;incstack = 0
@@ -8244,7 +8244,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   8013                           
   8014 ;; *************** function _vscp_readNicknamePermanent *****************
   8015 ;; Defined at:
-  8016 ;;		line 536 in file "../main.c"
+  8016 ;;		line 537 in file "../main.c"
   8017 ;; Parameters:    Size  Location     Type
   8018 ;;		None
   8019 ;; Auto vars:     Size  Location     Type
@@ -8283,7 +8283,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   8047  002F52                     _vscp_readNicknamePermanent:
   8048                           	opt stack 24
   8049                           
-  8050                           ;main.c: 537: return readEEPROM( 0x01 );
+  8050                           ;main.c: 538: return readEEPROM( 0x01 );
   8051                           
   8052                           ; BSR set to: 0
   8053                           ;incstack = 0
@@ -8525,7 +8525,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   8279                           
   8280 ;; *************** function _vscp_getMatrixInfo *****************
   8281 ;; Defined at:
-  8282 ;;		line 1394 in file "../main.c"
+  8282 ;;		line 1395 in file "../main.c"
   8283 ;; Parameters:    Size  Location     Type
   8284 ;;  pData           1    wreg     PTR unsigned char 
   8285 ;;		 -> vscp_omsg(13), 
@@ -8568,25 +8568,25 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   8317                           	opt stack 27
   8318                           
   8319                           ; BSR set to: 0
-  8320                           ;main.c: 1395: uint8_t i;
-  8321                           ;main.c: 1397: vscp_omsg.data[ 0 ] = 7;
+  8320                           ;main.c: 1396: uint8_t i;
+  8321                           ;main.c: 1398: vscp_omsg.data[ 0 ] = 7;
   8322                           
   8323                           ;incstack = 0
   8324                           ;incstack = 0
   8325  002D3C  0E07               	movlw	7
   8326  002D3E  6F88               	movwf	(_vscp_omsg+5)& (0+255),b
   8327                           
-  8328                           ;main.c: 1398: vscp_omsg.data[ 1 ] = 72;
+  8328                           ;main.c: 1399: vscp_omsg.data[ 1 ] = 72;
   8329  002D40  0E48               	movlw	72
   8330  002D42  6F89               	movwf	(_vscp_omsg+6)& (0+255),b
   8331                           
-  8332                           ;main.c: 1401: for ( i = 2; i < 8; i++ ) {
+  8332                           ;main.c: 1402: for ( i = 2; i < 8; i++ ) {
   8333  002D44  0E02               	movlw	2
   8334  002D46  6E08               	movwf	vscp_getMatrixInfo@i,c
   8335  002D48                     l4893:
   8336                           
   8337                           ; BSR set to: 0
-  8338                           ;main.c: 1402: vscp_omsg.data[ i ] = 0;
+  8338                           ;main.c: 1403: vscp_omsg.data[ i ] = 0;
   8339  002D48  5008               	movf	vscp_getMatrixInfo@i,w,c
   8340  002D4A  0F88               	addlw	low (_vscp_omsg+5)
   8341  002D4C  6ED9               	movwf	fsr2l,c
@@ -8625,7 +8625,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   8374                           
   8375 ;; *************** function _vscp_goBootloaderMode *****************
   8376 ;; Defined at:
-  8377 ;;		line 1378 in file "../main.c"
+  8377 ;;		line 1379 in file "../main.c"
   8378 ;; Parameters:    Size  Location     Type
   8379 ;;  algorithm       1    wreg     unsigned char 
   8380 ;; Auto vars:     Size  Location     Type
@@ -8671,13 +8671,13 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   8415  002E10  CFE8 F00B          	movff	wreg,vscp_goBootloaderMode@algorithm
   8416                           
   8417                           ; BSR set to: 0
-  8418                           ;main.c: 1379: if ( 0x01 != algorithm ) return;
+  8418                           ;main.c: 1380: if ( 0x01 != algorithm ) return;
   8419  002E14  040B               	decf	vscp_goBootloaderMode@algorithm,w,c
   8420  002E16  A4D8               	btfss	status,2,c
   8421  002E18  0012               	return	
   8422                           
   8423                           ; BSR set to: 0
-  8424                           ;main.c: 1383: writeEEPROM(0x00, 0xff);
+  8424                           ;main.c: 1384: writeEEPROM(0x00, 0xff);
   8425  002E1A  6A09               	clrf	?_writeEEPROM+1,c
   8426  002E1C  6A08               	clrf	?_writeEEPROM,c
   8427  002E1E  0EFF               	movlw	255
@@ -9190,7 +9190,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   8916                           
   8917 ;; *************** function _sendVSCPFrame *****************
   8918 ;; Defined at:
-  8919 ;;		line 1453 in file "../main.c"
+  8919 ;;		line 1454 in file "../main.c"
   8920 ;; Parameters:    Size  Location     Type
   8921 ;;  vscpclass       2   62[COMRAM] unsigned short 
   8922 ;;  vscptype        1   64[COMRAM] unsigned char 
@@ -9238,10 +9238,10 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   8958                           	opt stack 22
   8959                           
   8960                           ; BSR set to: 0
-  8961                           ;main.c: 1454: uint32_t id = ( (uint32_t)priority << 26 ) |
-  8962                           ;main.c: 1455: ( (uint32_t)vscpclass << 16 ) |
-  8963                           ;main.c: 1456: ( (uint32_t)vscptype << 8 ) |
-  8964                           ;main.c: 1457: nodeid;
+  8961                           ;main.c: 1455: uint32_t id = ( (uint32_t)priority << 26 ) |
+  8962                           ;main.c: 1456: ( (uint32_t)vscpclass << 16 ) |
+  8963                           ;main.c: 1457: ( (uint32_t)vscptype << 8 ) |
+  8964                           ;main.c: 1458: nodeid;
   8965                           
   8966                           ; BSR set to: 0
   8967                           ;incstack = 0
@@ -9312,7 +9312,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   9032  0026A2  6E4A               	movwf	sendVSCPFrame@id+3,c
   9033                           
   9034                           ; BSR set to: 0
-  9035                           ;main.c: 1459: if ( !sendCANFrame( id, size, pData ) ) {
+  9035                           ;main.c: 1460: if ( !sendCANFrame( id, size, pData ) ) {
   9036  0026A4  C047  F037         	movff	sendVSCPFrame@id,?_sendCANFrame
   9037  0026A8  C048  F038         	movff	sendVSCPFrame@id+1,?_sendCANFrame+1
   9038  0026AC  C049  F039         	movff	sendVSCPFrame@id+2,?_sendCANFrame+2
@@ -9325,15 +9325,15 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   9045  0026C6  E101               	bnz	l6415
   9046                           
   9047                           ; BSR set to: 0
-  9048                           ;main.c: 1460: return 0;
+  9048                           ;main.c: 1461: return 0;
   9049  0026C8  0C00               	retlw	0
   9050  0026CA                     l6415:
   9051                           
   9052                           ; BSR set to: 0
   9053                           
   9054                           ; BSR set to: 0
-  9055                           ;main.c: 1461: }
-  9056                           ;main.c: 1463: return 1;
+  9055                           ;main.c: 1462: }
+  9056                           ;main.c: 1464: return 1;
   9057  0026CA  0C01               	retlw	1
   9058  0026CC                     __end_of_sendVSCPFrame:
   9059                           	opt stack 0
@@ -9359,7 +9359,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   9079                           
   9080 ;; *************** function _sendCANFrame *****************
   9081 ;; Defined at:
-  9082 ;;		line 1498 in file "../main.c"
+  9082 ;;		line 1499 in file "../main.c"
   9083 ;; Parameters:    Size  Location     Type
   9084 ;;  id              4   54[COMRAM] unsigned long 
   9085 ;;  dlc             1   58[COMRAM] unsigned char 
@@ -9402,21 +9402,21 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   9117                           	opt stack 22
   9118                           
   9119                           ; BSR set to: 0
-  9120                           ;main.c: 1499: uint8_t rv = 0;
+  9120                           ;main.c: 1500: uint8_t rv = 0;
   9121                           
   9122                           ; BSR set to: 0
   9123                           ;incstack = 0
   9124                           ;incstack = 0
   9125  002ABC  6A3E               	clrf	sendCANFrame@rv,c
   9126                           
-  9127                           ;main.c: 1500: sendTimer = 0;
+  9127                           ;main.c: 1501: sendTimer = 0;
   9128  002ABE  6A55               	clrf	_sendTimer,c
   9129                           
-  9130                           ;main.c: 1502: while ( sendTimer < 1 ) {
+  9130                           ;main.c: 1503: while ( sendTimer < 1 ) {
   9131  002AC0  D017               	goto	l6513
   9132  002AC2                     l6509:
   9133                           
-  9134                           ;main.c: 1503: if ( ECANSendMessage( id, pdata, dlc, ECAN_TX_XTD_FRAME ) ) {
+  9134                           ;main.c: 1504: if ( ECANSendMessage( id, pdata, dlc, ECAN_TX_XTD_FRAME ) ) {
   9135  002AC2  C037  F012         	movff	sendCANFrame@id,?_ECANSendMessage
   9136  002AC6  C038  F013         	movff	sendCANFrame@id+1,?_ECANSendMessage+1
   9137  002ACA  C039  F014         	movff	sendCANFrame@id+2,?_ECANSendMessage+2
@@ -9430,25 +9430,25 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   9145  002AE6  0900               	iorlw	0
   9146  002AE8  E003               	bz	l6513
   9147                           
-  9148                           ;main.c: 1504: rv = 1;
+  9148                           ;main.c: 1505: rv = 1;
   9149  002AEA  0E01               	movlw	1
   9150  002AEC  6E3E               	movwf	sendCANFrame@rv,c
   9151                           
-  9152                           ;main.c: 1505: break;
+  9152                           ;main.c: 1506: break;
   9153  002AEE  D002               	goto	l454
   9154  002AF0                     l6513:
   9155  002AF0  5055               	movf	_sendTimer,w,c
   9156  002AF2  E0E7               	bz	l6509
   9157  002AF4                     l454:
   9158                           
-  9159                           ;main.c: 1506: }
-  9160                           ;main.c: 1507: }
-  9161                           ;main.c: 1509: vscp_omsg.flags = 0;
+  9159                           ;main.c: 1507: }
+  9160                           ;main.c: 1508: }
+  9161                           ;main.c: 1510: vscp_omsg.flags = 0;
   9162  002AF4  0100               	movlb	0	; () banked
   9163  002AF6  6B83               	clrf	_vscp_omsg& (0+255),b
   9164                           
   9165                           ; BSR set to: 0
-  9166                           ;main.c: 1511: return rv;
+  9166                           ;main.c: 1512: return rv;
   9167  002AF8  503E               	movf	sendCANFrame@rv,w,c
   9168                           
   9169                           ; BSR set to: 0
@@ -10177,7 +10177,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   9876                           
   9877 ;; *************** function _getVSCPFrame *****************
   9878 ;; Defined at:
-  9879 ;;		line 1477 in file "../main.c"
+  9879 ;;		line 1478 in file "../main.c"
   9880 ;; Parameters:    Size  Location     Type
   9881 ;;  pvscpclass      1    wreg     PTR unsigned short 
   9882 ;;		 -> vscp_imsg(14), 
@@ -10236,8 +10236,8 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   9929  00291E  CFE8 F027          	movff	wreg,getVSCPFrame@pvscpclass
   9930                           
   9931                           ; BSR set to: 0
-  9932                           ;main.c: 1478: uint32_t id;
-  9933                           ;main.c: 1480: if ( !getCANFrame(&id, pSize, pData) ) {
+  9932                           ;main.c: 1479: uint32_t id;
+  9933                           ;main.c: 1481: if ( !getCANFrame(&id, pSize, pData) ) {
   9934  002922  C021  F01A         	movff	getVSCPFrame@pSize,?_getCANFrame
   9935  002926  C022  F01B         	movff	getVSCPFrame@pData,?_getCANFrame+1
   9936  00292A  0E28               	movlw	getVSCPFrame@id& (0+255)
@@ -10245,24 +10245,24 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   9938  002930  0900               	iorlw	0
   9939  002932  E101               	bnz	l4929
   9940                           
-  9941                           ;main.c: 1481: return 0;
+  9941                           ;main.c: 1482: return 0;
   9942  002934  0C00               	retlw	0
   9943  002936                     l4929:
   9944                           
-  9945                           ;main.c: 1482: }
-  9946                           ;main.c: 1484: *pNodeId = id & 0x0ff;
+  9945                           ;main.c: 1483: }
+  9946                           ;main.c: 1485: *pNodeId = id & 0x0ff;
   9947  002936  501F               	movf	getVSCPFrame@pNodeId,w,c
   9948  002938  6ED9               	movwf	fsr2l,c
   9949  00293A  6ADA               	clrf	fsr2h,c
   9950  00293C  C028  FFDF         	movff	getVSCPFrame@id,indf2
   9951                           
-  9952                           ;main.c: 1485: *pvscptype = (id >> 8) & 0xff;
+  9952                           ;main.c: 1486: *pvscptype = (id >> 8) & 0xff;
   9953  002940  501E               	movf	getVSCPFrame@pvscptype,w,c
   9954  002942  6ED9               	movwf	fsr2l,c
   9955  002944  6ADA               	clrf	fsr2h,c
   9956  002946  C029  FFDF         	movff	getVSCPFrame@id+1,indf2
   9957                           
-  9958                           ;main.c: 1486: *pvscpclass = (id >> 16) & 0x1ff;
+  9958                           ;main.c: 1487: *pvscpclass = (id >> 16) & 0x1ff;
   9959  00294A  502A               	movf	(getVSCPFrame@id+2)& (0+255),w,c
   9960  00294C  6E23               	movwf	??_getVSCPFrame& (0+255),c
   9961  00294E  0E01               	movlw	1
@@ -10274,7 +10274,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   9967  00295A  C023  FFDE         	movff	??_getVSCPFrame,postinc2
   9968  00295E  C024  FFDD         	movff	??_getVSCPFrame+1,postdec2
   9969                           
-  9970                           ;main.c: 1487: *pPriority = (uint16_t) (0x07 & (id >> 26));
+  9970                           ;main.c: 1488: *pPriority = (uint16_t) (0x07 & (id >> 26));
   9971  002962  5020               	movf	getVSCPFrame@pPriority,w,c
   9972  002964  6ED9               	movwf	fsr2l,c
   9973  002966  6ADA               	clrf	fsr2h,c
@@ -10297,7 +10297,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
   9990  00298C  0B07               	andlw	7
   9991  00298E  6EDF               	movwf	indf2,c
   9992                           
-  9993                           ;main.c: 1489: return 1;
+  9993                           ;main.c: 1490: return 1;
   9994  002990  0C01               	retlw	1
   9995  002992                     __end_of_getVSCPFrame:
   9996                           	opt stack 0
@@ -10323,7 +10323,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
  10016                           
  10017 ;; *************** function _getCANFrame *****************
  10018 ;; Defined at:
- 10019 ;;		line 1519 in file "../main.c"
+ 10019 ;;		line 1520 in file "../main.c"
  10020 ;; Parameters:    Size  Location     Type
  10021 ;;  pid             1    wreg     PTR unsigned long 
  10022 ;;		 -> getVSCPFrame@id(4), 
@@ -10376,14 +10376,14 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
  10063  002C8C  CFE8 F01C          	movff	wreg,getCANFrame@pid
  10064                           
  10065                           ; BSR set to: 0
- 10066                           ;main.c: 1520: ECAN_RX_MSG_FLAGS flags;
- 10067                           ;main.c: 1524: if (vscp_imsg.flags & 0x80) return 0;
+ 10066                           ;main.c: 1521: ECAN_RX_MSG_FLAGS flags;
+ 10067                           ;main.c: 1525: if (vscp_imsg.flags & 0x80) return 0;
  10068  002C90  BF75               	btfsc	_vscp_imsg& (0+255),7,b
  10069  002C92                     l4941:
  10070  002C92  0C00               	retlw	0
  10071                           
  10072                           ; BSR set to: 0
- 10073                           ;main.c: 1526: if ( ECANReceiveMessage( pid, pdata, pdlc, &flags) ) {
+ 10073                           ;main.c: 1527: if ( ECANReceiveMessage( pid, pdata, pdlc, &flags) ) {
  10074  002C94  C01B  F00F         	movff	getCANFrame@pdata,?_ECANReceiveMessage
  10075  002C98  C01A  F010         	movff	getCANFrame@pdlc,?_ECANReceiveMessage+1
  10076  002C9C  0E1D               	movlw	low getCANFrame@flags
@@ -10393,14 +10393,14 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
  10080  002CA6  0900               	iorlw	0
  10081  002CA8  E0F4               	bz	l4941
  10082                           
- 10083                           ;main.c: 1529: if (flags & ECAN_RX_RTR_FRAME) return 0;
+ 10083                           ;main.c: 1530: if (flags & ECAN_RX_RTR_FRAME) return 0;
  10084  002CAA  AC1D               	btfss	getCANFrame@flags,6,c
  10085                           
- 10086                           ;main.c: 1532: if (!(flags & ECAN_RX_XTD_FRAME)) return 0;
+ 10086                           ;main.c: 1533: if (!(flags & ECAN_RX_XTD_FRAME)) return 0;
  10087  002CAC  AA1D               	btfss	getCANFrame@flags,5,c
  10088  002CAE  0C00               	retlw	0
  10089                           
- 10090                           ;main.c: 1534: return 1;
+ 10090                           ;main.c: 1535: return 1;
  10091  002CB0  0C01               	retlw	1
  10092  002CB2                     __end_of_getCANFrame:
  10093                           	opt stack 0
@@ -11490,7 +11490,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
  11157                           
  11158 ;; *************** function _vscp_setControlByte *****************
  11159 ;; Defined at:
- 11160 ;;		line 1337 in file "../main.c"
+ 11160 ;;		line 1338 in file "../main.c"
  11161 ;; Parameters:    Size  Location     Type
  11162 ;;  ctrl            1    wreg     unsigned char 
  11163 ;; Auto vars:     Size  Location     Type
@@ -11534,7 +11534,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
  11196                           ;vscp_setControlByte@ctrl stored from wreg
  11197  002EAC  CFE8 F00B          	movff	wreg,vscp_setControlByte@ctrl
  11198                           
- 11199                           ;main.c: 1338: writeEEPROM(0x03, ctrl);
+ 11199                           ;main.c: 1339: writeEEPROM(0x03, ctrl);
  11200  002EB0  6A09               	clrf	?_writeEEPROM+1,c
  11201  002EB2  0E03               	movlw	3
  11202  002EB4  6E08               	movwf	?_writeEEPROM,c
@@ -11564,7 +11564,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
  11226                           
  11227 ;; *************** function _vscp_setSegmentCRC *****************
  11228 ;; Defined at:
- 11229 ;;		line 1328 in file "../main.c"
+ 11229 ;;		line 1329 in file "../main.c"
  11230 ;; Parameters:    Size  Location     Type
  11231 ;;  crc             1    wreg     unsigned char 
  11232 ;; Auto vars:     Size  Location     Type
@@ -11611,7 +11611,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
  11268                           ;vscp_setSegmentCRC@crc stored from wreg
  11269  002EBE  CFE8 F00B          	movff	wreg,vscp_setSegmentCRC@crc
  11270                           
- 11271                           ;main.c: 1329: writeEEPROM( 0x02, crc );
+ 11271                           ;main.c: 1330: writeEEPROM( 0x02, crc );
  11272  002EC2  6A09               	clrf	?_writeEEPROM+1,c
  11273  002EC4  0E02               	movlw	2
  11274  002EC6  6E08               	movwf	?_writeEEPROM,c
@@ -11641,7 +11641,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
  11298                           
  11299 ;; *************** function _vscp_getSegmentCRC *****************
  11300 ;; Defined at:
- 11301 ;;		line 1319 in file "../main.c"
+ 11301 ;;		line 1320 in file "../main.c"
  11302 ;; Parameters:    Size  Location     Type
  11303 ;;		None
  11304 ;; Auto vars:     Size  Location     Type
@@ -11681,7 +11681,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
  11333  002F5C                     _vscp_getSegmentCRC:
  11334                           	opt stack 25
  11335                           
- 11336                           ;main.c: 1320: return readEEPROM( 0x02 );
+ 11336                           ;main.c: 1321: return readEEPROM( 0x02 );
  11337                           
  11338                           ;incstack = 0
  11339                           ;incstack = 0
@@ -11811,7 +11811,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
  11458                           
  11459 ;; *************** function _vscp_writeNicknamePermanent *****************
  11460 ;; Defined at:
- 11461 ;;		line 545 in file "../main.c"
+ 11461 ;;		line 546 in file "../main.c"
  11462 ;; Parameters:    Size  Location     Type
  11463 ;;  nickname        1    wreg     unsigned char 
  11464 ;; Auto vars:     Size  Location     Type
@@ -11859,7 +11859,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
  11501                           ;vscp_writeNicknamePermanent@nickname stored from wreg
  11502  002EE2  CFE8 F00B          	movff	wreg,vscp_writeNicknamePermanent@nickname
  11503                           
- 11504                           ;main.c: 546: writeEEPROM( 0x01, nickname );
+ 11504                           ;main.c: 547: writeEEPROM( 0x01, nickname );
  11505  002EE6  6A09               	clrf	?_writeEEPROM+1,c
  11506  002EE8  0E01               	movlw	1
  11507  002EEA  6E08               	movwf	?_writeEEPROM,c
@@ -12006,7 +12006,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
  11643                           
  11644 ;; *************** function _init *****************
  11645 ;; Defined at:
- 11646 ;;		line 302 in file "../main.c"
+ 11646 ;;		line 303 in file "../main.c"
  11647 ;; Parameters:    Size  Location     Type
  11648 ;;		None
  11649 ;; Auto vars:     Size  Location     Type
@@ -12049,54 +12049,54 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
  11680  002AFC                     _init:
  11681                           	opt stack 26
  11682                           
- 11683                           ;main.c: 306: init_app_ram();
+ 11683                           ;main.c: 307: init_app_ram();
  11684                           
  11685                           ;incstack = 0
  11686                           ;incstack = 0
  11687  002AFC  EC7A  F017         	call	_init_app_ram	;wreg free
  11688                           
  11689                           ; BSR set to: 0
- 11690                           ;main.c: 311: ANCON0 = 0;
+ 11690                           ;main.c: 312: ANCON0 = 0;
  11691  002B00  010F               	movlb	15	; () banked
  11692  002B02  6B5D               	clrf	93,b	;volatile
  11693                           
  11694                           ; BSR set to: 15
- 11695                           ;main.c: 312: ANCON1 = 0;
+ 11695                           ;main.c: 313: ANCON1 = 0;
  11696  002B04  6B5C               	clrf	92,b	;volatile
  11697                           
  11698                           ; BSR set to: 15
- 11699                           ;main.c: 321: TRISA = 0x00;
+ 11699                           ;main.c: 322: TRISA = 0x00;
  11700  002B06  6A92               	clrf	3986,c	;volatile
  11701                           
  11702                           ; BSR set to: 15
- 11703                           ;main.c: 322: PORTA = 0x00;
+ 11703                           ;main.c: 323: PORTA = 0x00;
  11704  002B08  6A80               	clrf	3968,c	;volatile
  11705                           
  11706                           ; BSR set to: 15
- 11707                           ;main.c: 334: TRISB = 0b00001100;
+ 11707                           ;main.c: 335: TRISB = 0b00001100;
  11708  002B0A  0E0C               	movlw	12
  11709  002B0C  6E93               	movwf	3987,c	;volatile
  11710                           
  11711                           ; BSR set to: 15
- 11712                           ;main.c: 335: PORTB = 0x00;
+ 11712                           ;main.c: 336: PORTB = 0x00;
  11713  002B0E  6A81               	clrf	3969,c	;volatile
  11714                           
  11715                           ; BSR set to: 15
- 11716                           ;main.c: 345: TRISC = 0b00000001;
+ 11716                           ;main.c: 346: TRISC = 0b00000001;
  11717  002B10  0E01               	movlw	1
  11718  002B12  6E94               	movwf	3988,c	;volatile
  11719                           
  11720                           ; BSR set to: 15
- 11721                           ;main.c: 346: PORTC = 0x00;
+ 11721                           ;main.c: 347: PORTC = 0x00;
  11722  002B14  6A82               	clrf	3970,c	;volatile
  11723                           
  11724                           ; BSR set to: 15
- 11725                           ;main.c: 372: OpenTimer0( 0b11111111 & 0b10111111 & 0b11011111 & 0b11110010 );
+ 11725                           ;main.c: 373: OpenTimer0( 0b11111111 & 0b10111111 & 0b11011111 & 0b11110010 );
  11726  002B16  0E92               	movlw	146
  11727  002B18  ECEB  F016         	call	_OpenTimer0
  11728                           
  11729                           ; BSR set to: 15
- 11730                           ;main.c: 373: WriteTimer0( 0xfb1d );
+ 11730                           ;main.c: 374: WriteTimer0( 0xfb1d );
  11731  002B1C  0EFB               	movlw	251
  11732  002B1E  6E09               	movwf	?_WriteTimer0+1,c
  11733  002B20  0E1D               	movlw	29
@@ -12104,13 +12104,13 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
  11735  002B24  EC83  F017         	call	_WriteTimer0	;wreg free
  11736                           
  11737                           ; BSR set to: 15
- 11738                           ;main.c: 376: ECANInitialize();
+ 11738                           ;main.c: 377: ECANInitialize();
  11739  002B28  EC0B  F014         	call	_ECANInitialize	;wreg free
  11740                           
- 11741                           ;main.c: 397: INTCONbits.PEIE = 1;
+ 11741                           ;main.c: 398: INTCONbits.PEIE = 1;
  11742  002B2C  8CF2               	bsf	intcon,6,c	;volatile
  11743                           
- 11744                           ;main.c: 400: INTCONbits.GIE = 1;
+ 11744                           ;main.c: 401: INTCONbits.GIE = 1;
  11745  002B2E  8EF2               	bsf	intcon,7,c	;volatile
  11746  002B30  0012               	return	
  11747  002B32                     __end_of_init:
@@ -12596,7 +12596,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
  12202                           
  12203 ;; *************** function _init_app_ram *****************
  12204 ;; Defined at:
- 12205 ;;		line 410 in file "../main.c"
+ 12205 ;;		line 411 in file "../main.c"
  12206 ;; Parameters:    Size  Location     Type
  12207 ;;		None
  12208 ;; Auto vars:     Size  Location     Type
@@ -12637,8 +12637,8 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
  12238  002EF4                     _init_app_ram:
  12239                           	opt stack 25
  12240                           
- 12241                           ;main.c: 411: uint8_t i;
- 12242                           ;main.c: 413: measurement_clock = 0;
+ 12241                           ;main.c: 412: uint8_t i;
+ 12242                           ;main.c: 414: measurement_clock = 0;
  12243                           
  12244                           ; BSR set to: 15
  12245                           ;incstack = 0
@@ -12649,13 +12649,13 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
  12250  002EFA  6B62               	clrf	(_measurement_clock+2)& (0+255),b	;volatile
  12251  002EFC  6B63               	clrf	(_measurement_clock+3)& (0+255),b	;volatile
  12252                           
- 12253                           ;main.c: 415: seconds = 0;
+ 12253                           ;main.c: 416: seconds = 0;
  12254  002EFE  6B6A               	clrf	_seconds& (0+255),b
  12255                           
- 12256                           ;main.c: 416: minutes = 0;
+ 12256                           ;main.c: 417: minutes = 0;
  12257  002F00  6B69               	clrf	_minutes& (0+255),b
  12258                           
- 12259                           ;main.c: 417: hours = 0;
+ 12259                           ;main.c: 418: hours = 0;
  12260  002F02  6B68               	clrf	_hours& (0+255),b
  12261                           
  12262                           ; BSR set to: 0
@@ -12759,7 +12759,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
  12355                           
  12356 ;; *************** function _readControlReg *****************
  12357 ;; Defined at:
- 12358 ;;		line 751 in file "../main.c"
+ 12358 ;;		line 752 in file "../main.c"
  12359 ;; Parameters:    Size  Location     Type
  12360 ;;  ctrlreg         1    wreg     unsigned char 
  12361 ;; Auto vars:     Size  Location     Type
@@ -12806,21 +12806,21 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
  12397                           ;readControlReg@ctrlreg stored from wreg
  12398  0022E6  CFE8 F00F          	movff	wreg,readControlReg@ctrlreg
  12399                           
- 12400                           ;main.c: 752: uint8_t rv = 0;
+ 12400                           ;main.c: 753: uint8_t rv = 0;
  12401  0022EA  6A10               	clrf	readControlReg@rv,c
  12402                           
- 12403                           ;main.c: 754: switch ( ctrlreg ) {
+ 12403                           ;main.c: 755: switch ( ctrlreg ) {
  12404  0022EC  D060               	goto	l4687
  12405  0022EE                     l4679:
  12406                           
- 12407                           ;main.c: 757: rv = ( PORTCbits.RC7 << 0 ) +
- 12408                           ;main.c: 758: ( PORTCbits.RC6 << 1 ) +
- 12409                           ;main.c: 759: ( PORTCbits.RC3 << 2 ) +
- 12410                           ;main.c: 760: ( PORTCbits.RC4 << 3 ) +
- 12411                           ;main.c: 761: ( PORTCbits.RC5 << 4 ) +
- 12412                           ;main.c: 762: ( PORTAbits.RA0 << 5 ) +
- 12413                           ;main.c: 763: ( PORTAbits.RA1 << 6 ) +
- 12414                           ;main.c: 764: ( PORTAbits.RA2 << 7 );
+ 12407                           ;main.c: 758: rv = ( PORTCbits.RC7 << 0 ) +
+ 12408                           ;main.c: 759: ( PORTCbits.RC6 << 1 ) +
+ 12409                           ;main.c: 760: ( PORTCbits.RC3 << 2 ) +
+ 12410                           ;main.c: 761: ( PORTCbits.RC4 << 3 ) +
+ 12411                           ;main.c: 762: ( PORTCbits.RC5 << 4 ) +
+ 12412                           ;main.c: 763: ( PORTAbits.RA0 << 5 ) +
+ 12413                           ;main.c: 764: ( PORTAbits.RA1 << 6 ) +
+ 12414                           ;main.c: 765: ( PORTAbits.RA2 << 7 );
  12415  0022EE  3482               	rlcf	3970,w,c	;volatile
  12416  0022F0  36E8               	rlcf	wreg,f,c
  12417  0022F2  0B01               	andlw	1
@@ -12864,12 +12864,12 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
  12455  00234A  D01F               	goto	L42
  12456  00234C                     l4681:
  12457                           
- 12458                           ;main.c: 768: rv = ( PORTAbits.RA3 << 0 ) +
- 12459                           ;main.c: 769: ( PORTAbits.RA5 << 1 ) +
- 12460                           ;main.c: 772: ( PORTBbits.RB4 << 4 ) +
- 12461                           ;main.c: 773: ( PORTCbits.RC2 << 5 ) +
- 12462                           ;main.c: 774: ( PORTBbits.RB1 << 6 ) +
- 12463                           ;main.c: 775: ( PORTBbits.RB0 << 7 );
+ 12458                           ;main.c: 769: rv = ( PORTAbits.RA3 << 0 ) +
+ 12459                           ;main.c: 770: ( PORTAbits.RA5 << 1 ) +
+ 12460                           ;main.c: 773: ( PORTBbits.RB4 << 4 ) +
+ 12461                           ;main.c: 774: ( PORTCbits.RC2 << 5 ) +
+ 12462                           ;main.c: 775: ( PORTBbits.RB1 << 6 ) +
+ 12463                           ;main.c: 776: ( PORTBbits.RB0 << 7 );
  12464  00234C  3080               	rrcf	3968,w,c	;volatile
  12465  00234E  32E8               	rrcf	wreg,f,c
  12466  002350  32E8               	rrcf	wreg,f,c
@@ -12905,8 +12905,8 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
  12496  002392  D00A               	goto	L43
  12497  002394                     l4683:
  12498                           
- 12499                           ;main.c: 779: rv = ( PORTBbits.RB6 << 0 ) +
- 12500                           ;main.c: 780: ( PORTBbits.RB5 << 1 );
+ 12499                           ;main.c: 780: rv = ( PORTBbits.RB6 << 0 ) +
+ 12500                           ;main.c: 781: ( PORTBbits.RB5 << 1 );
  12501  002394  3881               	swapf	3969,w,c	;volatile
  12502  002396  32E8               	rrcf	wreg,f,c
  12503  002398  32E8               	rrcf	wreg,f,c
@@ -12921,7 +12921,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
  12512  0023A8  2408               	addwf	??_readControlReg,w,c
  12513  0023AA  6E10               	movwf	readControlReg@rv,c
  12514                           
- 12515                           ;main.c: 781: break;
+ 12515                           ;main.c: 782: break;
  12516  0023AC  D006               	goto	l4689
  12517  0023AE                     l4687:
  12518  0023AE  500F               	movf	readControlReg@ctrlreg,w,c
@@ -12939,7 +12939,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
  12530  0023B8  E0ED               	bz	l4683
  12531  0023BA                     l4689:
  12532                           
- 12533                           ;main.c: 784: return rv;
+ 12533                           ;main.c: 785: return rv;
  12534  0023BA  5010               	movf	readControlReg@rv,w,c
  12535  0023BC  0012               	return	
  12536  0023BE                     __end_of_readControlReg:
@@ -12966,7 +12966,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
  12557                           
  12558 ;; *************** function _vscp_readAppReg *****************
  12559 ;; Defined at:
- 12560 ;;		line 586 in file "../main.c"
+ 12560 ;;		line 587 in file "../main.c"
  12561 ;; Parameters:    Size  Location     Type
  12562 ;;  reg             1    wreg     unsigned char 
  12563 ;; Auto vars:     Size  Location     Type
@@ -13014,23 +13014,23 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
  12600  00277A  CFE8 F012          	movff	wreg,vscp_readAppReg@reg
  12601                           
  12602                           ; BSR set to: 0
- 12603                           ;main.c: 587: uint8_t rv;
- 12604                           ;main.c: 589: rv = 0x00;
+ 12603                           ;main.c: 588: uint8_t rv;
+ 12604                           ;main.c: 590: rv = 0x00;
  12605  00277E  6A11               	clrf	vscp_readAppReg@rv,c
  12606                           
  12607                           ; BSR set to: 0
- 12608                           ;main.c: 592: if ( 0 == vscp_page_select ) {
+ 12608                           ;main.c: 593: if ( 0 == vscp_page_select ) {
  12609  002780  5053               	movf	_vscp_page_select+1,w,c
  12610  002782  1052               	iorwf	_vscp_page_select,w,c
  12611  002784  E137               	bnz	l6339
  12612                           
  12613                           ; BSR set to: 0
- 12614                           ;main.c: 594: if ( reg == 0x00 ) {
+ 12614                           ;main.c: 595: if ( reg == 0x00 ) {
  12615  002786  6612               	tstfsz	vscp_readAppReg@reg,c
  12616  002788  D006               	goto	l6315
  12617                           
  12618                           ; BSR set to: 0
- 12619                           ;main.c: 595: rv = readEEPROM(0x21 + 0);
+ 12619                           ;main.c: 596: rv = readEEPROM(0x21 + 0);
  12620  00278A  6A09               	clrf	?_readEEPROM+1,c
  12621  00278C  0E21               	movlw	33
  12622  00278E  6E08               	movwf	?_readEEPROM,c
@@ -13039,12 +13039,12 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
  12625  002796                     l6315:
  12626                           
  12627                           ; BSR set to: 0
- 12628                           ;main.c: 598: else if ( reg == 0x01 ) {
+ 12628                           ;main.c: 599: else if ( reg == 0x01 ) {
  12629  002796  0412               	decf	vscp_readAppReg@reg,w,c
  12630  002798  E106               	bnz	l6319
  12631                           
  12632                           ; BSR set to: 0
- 12633                           ;main.c: 599: rv = readEEPROM(0x21 + 1);
+ 12633                           ;main.c: 600: rv = readEEPROM(0x21 + 1);
  12634  00279A  6A09               	clrf	?_readEEPROM+1,c
  12635  00279C  0E22               	movlw	34
  12636  00279E  6E08               	movwf	?_readEEPROM,c
@@ -13053,7 +13053,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
  12639  0027A6                     l6319:
  12640                           
  12641                           ; BSR set to: 0
- 12642                           ;main.c: 602: else if ( ( reg >= 5 ) && ( reg <= 22 ) ) {
+ 12642                           ;main.c: 603: else if ( ( reg >= 5 ) && ( reg <= 22 ) ) {
  12643  0027A6  0E04               	movlw	4
  12644  0027A8  6412               	cpfsgt	vscp_readAppReg@reg,c
  12645  0027AA  D00C               	goto	l6325
@@ -13064,8 +13064,8 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
  12650  0027B0  D009               	goto	l6325
  12651                           
  12652                           ; BSR set to: 0
- 12653                           ;main.c: 603: rv = readEEPROM( 0x21 + 5 +
- 12654                           ;main.c: 604: ( reg - 5 ) );
+ 12653                           ;main.c: 604: rv = readEEPROM( 0x21 + 5 +
+ 12654                           ;main.c: 605: ( reg - 5 ) );
  12655  0027B2  0E21               	movlw	33
  12656  0027B4  2412               	addwf	vscp_readAppReg@reg,w,c
  12657  0027B6  6E08               	movwf	?_readEEPROM,c
@@ -13077,65 +13077,65 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
  12663  0027C4                     l6325:
  12664                           
  12665                           ; BSR set to: 0
- 12666                           ;main.c: 607: else if ( reg == 2 ) {
+ 12666                           ;main.c: 608: else if ( reg == 2 ) {
  12667  0027C4  5012               	movf	vscp_readAppReg@reg,w,c
  12668  0027C6  0A02               	xorlw	2
  12669  0027C8  E104               	bnz	l6329
  12670                           
  12671                           ; BSR set to: 0
- 12672                           ;main.c: 608: rv = readControlReg( 0 );
+ 12672                           ;main.c: 609: rv = readControlReg( 0 );
  12673  0027CA  0E00               	movlw	0
  12674  0027CC  EC73  F011         	call	_readControlReg
  12675  0027D0  D01F               	goto	L44
  12676  0027D2                     l6329:
  12677                           
  12678                           ; BSR set to: 0
- 12679                           ;main.c: 611: else if ( reg == 3 ) {
+ 12679                           ;main.c: 612: else if ( reg == 3 ) {
  12680  0027D2  5012               	movf	vscp_readAppReg@reg,w,c
  12681  0027D4  0A03               	xorlw	3
  12682  0027D6  E104               	bnz	l6333
  12683                           
  12684                           ; BSR set to: 0
- 12685                           ;main.c: 612: rv = readControlReg( 1 );
+ 12685                           ;main.c: 613: rv = readControlReg( 1 );
  12686  0027D8  0E01               	movlw	1
  12687  0027DA  EC73  F011         	call	_readControlReg
  12688  0027DE  D018               	goto	L44
  12689  0027E0                     l6333:
  12690                           
  12691                           ; BSR set to: 0
- 12692                           ;main.c: 615: else if ( reg == 4 ) {
+ 12692                           ;main.c: 616: else if ( reg == 4 ) {
  12693  0027E0  5012               	movf	vscp_readAppReg@reg,w,c
  12694  0027E2  0A04               	xorlw	4
  12695  0027E4  E116               	bnz	l6345
  12696                           
  12697                           ; BSR set to: 0
- 12698                           ;main.c: 616: rv = readControlReg( 2 );
+ 12698                           ;main.c: 617: rv = readControlReg( 2 );
  12699  0027E6  0E02               	movlw	2
  12700  0027E8  EC73  F011         	call	_readControlReg
  12701  0027EC  6E11               	movwf	vscp_readAppReg@rv,c
  12702                           
- 12703                           ;main.c: 617: rv &= 0x03;
+ 12703                           ;main.c: 618: rv &= 0x03;
  12704  0027EE  0E03               	movlw	3
  12705  0027F0  1611               	andwf	vscp_readAppReg@rv,f,c
  12706  0027F2  D00F               	goto	l6345
  12707  0027F4                     l6339:
  12708                           
  12709                           ; BSR set to: 0
- 12710                           ;main.c: 621: else if ( 1 == vscp_page_select ) {
+ 12710                           ;main.c: 622: else if ( 1 == vscp_page_select ) {
  12711  0027F4  0452               	decf	_vscp_page_select,w,c
  12712  0027F6  1053               	iorwf	_vscp_page_select+1,w,c
  12713  0027F8  E10C               	bnz	l6345
  12714                           
  12715                           ; BSR set to: 0
- 12716                           ;main.c: 624: if ( ( reg >= 0 ) && ( reg <= ( 0 +
- 12717                           ;main.c: 625: ( 8 * 8 ) ) ) ) {
+ 12716                           ;main.c: 625: if ( ( reg >= 0 ) && ( reg <= ( 0 +
+ 12717                           ;main.c: 626: ( 8 * 8 ) ) ) ) {
  12718  0027FA  0E41               	movlw	65
  12719  0027FC  6012               	cpfslt	vscp_readAppReg@reg,c
  12720  0027FE  D009               	goto	l6345
  12721                           
  12722                           ; BSR set to: 0
- 12723                           ;main.c: 626: rv = readEEPROM(0x21 + 23 +
- 12724                           ;main.c: 627: ( reg - 0 ) );
+ 12723                           ;main.c: 627: rv = readEEPROM(0x21 + 23 +
+ 12724                           ;main.c: 628: ( reg - 0 ) );
  12725  002800  0E38               	movlw	56
  12726  002802  2412               	addwf	vscp_readAppReg@reg,w,c
  12727  002804  6E08               	movwf	?_readEEPROM,c
@@ -13147,9 +13147,9 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
  12733  002810  6E11               	movwf	vscp_readAppReg@rv,c
  12734  002812                     l6345:
  12735                           
- 12736                           ;main.c: 628: }
- 12737                           ;main.c: 630: }
- 12738                           ;main.c: 632: return rv;
+ 12736                           ;main.c: 629: }
+ 12737                           ;main.c: 631: }
+ 12738                           ;main.c: 633: return rv;
  12739  002812  5011               	movf	vscp_readAppReg@rv,w,c
  12740  002814  0012               	return	
  12741  002816                     __end_of_vscp_readAppReg:
@@ -13176,7 +13176,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
  12762                           
  12763 ;; *************** function _interrupt_at_low_vector *****************
  12764 ;; Defined at:
- 12765 ;;		line 111 in file "../main.c"
+ 12765 ;;		line 112 in file "../main.c"
  12766 ;; Parameters:    Size  Location     Type
  12767 ;;		None
  12768 ;; Auto vars:     Size  Location     Type
@@ -13220,7 +13220,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
  12801  00001C  CFE8 F006          	movff	wreg,??_interrupt_at_low_vector+1
  12802  000020  CFE0 F007          	movff	bsr,??_interrupt_at_low_vector+2
  12803  000024                     
- 12804                           ;main.c: 113: if ( INTCONbits.TMR0IF ) {
+ 12804                           ;main.c: 114: if ( INTCONbits.TMR0IF ) {
  12805  000024  A4F2               	btfss	intcon,2,c	;volatile
  12806  000026  D001               	goto	i1u546_21
  12807  000028  D001               	goto	i1u546_20
@@ -13228,25 +13228,25 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
  12809  00002A  D03E               	goto	i1l141
  12810  00002C                     i1u546_20:
  12811  00002C                     
- 12812                           ;main.c: 116: WriteTimer0(0xfb1d);
+ 12812                           ;main.c: 117: WriteTimer0(0xfb1d);
  12813  00002C  0EFB               	movlw	251
  12814  00002E  6E02               	movwf	?i1_WriteTimer0+1,c
  12815  000030  0E1D               	movlw	29
  12816  000032  6E01               	movwf	?i1_WriteTimer0,c
  12817  000034  EC8C  F017         	call	i1_WriteTimer0	;wreg free
  12818  000038                     
- 12819                           ;main.c: 118: vscp_timer++;
+ 12819                           ;main.c: 119: vscp_timer++;
  12820  000038  0100               	movlb	0	; () banked
  12821  00003A  4B66               	infsnz	_vscp_timer& (0+255),f,b	;volatile
  12822  00003C  2B67               	incf	(_vscp_timer+1)& (0+255),f,b	;volatile
  12823  00003E                     
  12824                           ; BSR set to: 0
- 12825                           ;main.c: 119: vscp_configtimer++;
+ 12825                           ;main.c: 120: vscp_configtimer++;
  12826  00003E  4B64               	infsnz	_vscp_configtimer& (0+255),f,b	;volatile
  12827  000040  2B65               	incf	(_vscp_configtimer+1)& (0+255),f,b	;volatile
  12828  000042                     
  12829                           ; BSR set to: 0
- 12830                           ;main.c: 120: measurement_clock++;
+ 12830                           ;main.c: 121: measurement_clock++;
  12831  000042  0E01               	movlw	1
  12832  000044  2760               	addwf	_measurement_clock& (0+255),f,b	;volatile
  12833  000046  0E00               	movlw	0
@@ -13257,7 +13257,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
  12838  000050  2363               	addwfc	(_measurement_clock+3)& (0+255),f,b	;volatile
  12839  000052                     
  12840                           ; BSR set to: 0
- 12841                           ;main.c: 123: if ( PORTCbits.RC0 ) {
+ 12841                           ;main.c: 124: if ( PORTCbits.RC0 ) {
  12842  000052  A082               	btfss	3970,0,c	;volatile
  12843  000054  D001               	goto	i1u547_21
  12844  000056  D001               	goto	i1u547_20
@@ -13266,26 +13266,26 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
  12847  00005A                     i1u547_20:
  12848  00005A                     
  12849                           ; BSR set to: 0
- 12850                           ;main.c: 124: vscp_initbtncnt = 0;
+ 12850                           ;main.c: 125: vscp_initbtncnt = 0;
  12851  00005A  6B6E               	clrf	_vscp_initbtncnt& (0+255),b	;volatile
  12852                           
- 12853                           ;main.c: 125: } else {
+ 12853                           ;main.c: 126: } else {
  12854  00005C  D001               	goto	i1l133
  12855  00005E                     i1l5539:
  12856                           
  12857                           ; BSR set to: 0
- 12858                           ;main.c: 127: vscp_initbtncnt++;
+ 12858                           ;main.c: 128: vscp_initbtncnt++;
  12859  00005E  2B6E               	incf	_vscp_initbtncnt& (0+255),f,b	;volatile
  12860  000060                     i1l133:
  12861                           
  12862                           ; BSR set to: 0
- 12863                           ;main.c: 128: }
- 12864                           ;main.c: 131: vscp_statuscnt++;
+ 12863                           ;main.c: 129: }
+ 12864                           ;main.c: 132: vscp_statuscnt++;
  12865  000060  2A58               	incf	_vscp_statuscnt,f,c	;volatile
  12866  000062                     
  12867                           ; BSR set to: 0
- 12868                           ;main.c: 132: if ( ( 0x02 == vscp_initledfunc ) &&
- 12869                           ;main.c: 133: ( vscp_statuscnt > 100 ) ) {
+ 12868                           ;main.c: 133: if ( ( 0x02 == vscp_initledfunc ) &&
+ 12869                           ;main.c: 134: ( vscp_statuscnt > 100 ) ) {
  12870  000062  5056               	movf	_vscp_initledfunc,w,c
  12871  000064  0A02               	xorlw	2
  12872  000066  A4D8               	btfss	status,2,c
@@ -13305,7 +13305,7 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
  12886  000078                     i1u549_20:
  12887  000078                     
  12888                           ; BSR set to: 0
- 12889                           ;main.c: 135: if ( PORTCbits.RC1 ) {
+ 12889                           ;main.c: 136: if ( PORTCbits.RC1 ) {
  12890  000078  A282               	btfss	3970,1,c	;volatile
  12891  00007A  D001               	goto	i1u550_21
  12892  00007C  D001               	goto	i1u550_20
@@ -13314,30 +13314,30 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
  12895  000080                     i1u550_20:
  12896  000080                     
  12897                           ; BSR set to: 0
- 12898                           ;main.c: 136: PORTCbits.RC1 = 0;
+ 12898                           ;main.c: 137: PORTCbits.RC1 = 0;
  12899  000080  9282               	bcf	3970,1,c	;volatile
  12900                           
- 12901                           ;main.c: 137: }
+ 12901                           ;main.c: 138: }
  12902  000082  D001               	goto	i1l136
  12903  000084                     i1l135:
  12904                           
  12905                           ; BSR set to: 0
- 12906                           ;main.c: 138: else {
- 12907                           ;main.c: 139: PORTCbits.RC1 = 1;
+ 12906                           ;main.c: 139: else {
+ 12907                           ;main.c: 140: PORTCbits.RC1 = 1;
  12908  000084  8282               	bsf	3970,1,c	;volatile
  12909  000086                     i1l136:
  12910                           
  12911                           ; BSR set to: 0
- 12912                           ;main.c: 140: }
- 12913                           ;main.c: 142: vscp_statuscnt = 0;
+ 12912                           ;main.c: 141: }
+ 12913                           ;main.c: 143: vscp_statuscnt = 0;
  12914  000086  6A58               	clrf	_vscp_statuscnt,c	;volatile
  12915                           
- 12916                           ;main.c: 144: }
+ 12916                           ;main.c: 145: }
  12917  000088  D00E               	goto	i1l137
  12918  00008A                     i1l5549:
  12919                           
  12920                           ; BSR set to: 0
- 12921                           ;main.c: 145: else if (0x01 == vscp_initledfunc) {
+ 12921                           ;main.c: 146: else if (0x01 == vscp_initledfunc) {
  12922  00008A  0456               	decf	_vscp_initledfunc,w,c
  12923  00008C  A4D8               	btfss	status,2,c
  12924  00008E  D001               	goto	i1u551_21
@@ -13347,18 +13347,18 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
  12928  000094                     i1u551_20:
  12929  000094                     
  12930                           ; BSR set to: 0
- 12931                           ;main.c: 146: PORTCbits.RC1 = 1;
+ 12931                           ;main.c: 147: PORTCbits.RC1 = 1;
  12932  000094  8282               	bsf	3970,1,c	;volatile
  12933                           
- 12934                           ;main.c: 147: vscp_statuscnt = 0;
+ 12934                           ;main.c: 148: vscp_statuscnt = 0;
  12935  000096  6A58               	clrf	_vscp_statuscnt,c	;volatile
  12936                           
- 12937                           ;main.c: 148: }
+ 12937                           ;main.c: 149: }
  12938  000098  D006               	goto	i1l137
  12939  00009A                     i1l138:
  12940                           
  12941                           ; BSR set to: 0
- 12942                           ;main.c: 149: else if (0x00 == vscp_initledfunc) {
+ 12942                           ;main.c: 150: else if (0x00 == vscp_initledfunc) {
  12943  00009A  6656               	tstfsz	_vscp_initledfunc,c
  12944  00009C  D001               	goto	i1u552_21
  12945  00009E  D001               	goto	i1u552_20
@@ -13367,16 +13367,16 @@ Microchip Technology Omniscient Code Generator (PRO mode) build 54009
  12948  0000A2                     i1u552_20:
  12949  0000A2                     
  12950                           ; BSR set to: 0
- 12951                           ;main.c: 150: PORTCbits.RC1 = 0;
+ 12951                           ;main.c: 151: PORTCbits.RC1 = 0;
  12952  0000A2  9282               	bcf	3970,1,c	;volatile
  12953                           
- 12954                           ;main.c: 151: vscp_statuscnt = 0;
+ 12954                           ;main.c: 152: vscp_statuscnt = 0;
  12955  0000A4  6A58               	clrf	_vscp_statuscnt,c	;volatile
  12956  0000A6                     i1l137:
  12957                           
  12958                           ; BSR set to: 0
- 12959                           ;main.c: 152: }
- 12960                           ;main.c: 154: INTCONbits.TMR0IF = 0;
+ 12959                           ;main.c: 153: }
+ 12960                           ;main.c: 155: INTCONbits.TMR0IF = 0;
  12961  0000A6  94F2               	bcf	intcon,2,c	;volatile
  12962  0000A8                     i1l141:
  12963  0000A8  C007  FFE0         	movff	??_interrupt_at_low_vector+2,bsr
@@ -14516,7 +14516,7 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V1.21 build 54009 
-Symbol Table                                                                                   Fri Apr 24 15:44:15 2015
+Symbol Table                                                                                   Wed May 20 22:40:25 2015
 
                 __end_of_vscp_readAppReg 2816                    __end_of_sendVSCPFrame 26CC  
                                      PL2 16E2                                       PL4 207C  
@@ -14705,53 +14705,53 @@ Symbol Table                                                                    
                                   i1l133 0060                                    i1l141 00A8  
                                   i1l135 0084                                    i1l136 0086  
                                   i1l137 00A6                                    i1l138 009A  
-                        sendCANFrame@dlc 003B                                    _MSEL0 000E79  
-                                  _MSEL1 000E7A                                    _MSEL2 000E7B  
-                                  _IRXIF 007BBF                         readControlReg@rv 0010  
-                                  _TMR0H 000FD7                                    _TMR0L 000FD6  
-     __end_of_vscp_readNicknamePermanent 2F5C               _vscp_readNicknamePermanent 2F52  
-                                  _PORTA 000F80                                    _PORTB 000F81  
-                                  _PORTC 000F82                                    _TRISA 000F92  
-                                  _TRISB 000F93                                    _TRISC 000F94  
-                       ?_vscp_getSubzone 0001                             _vscp_getGUID 2E98  
-                                  doDM@i 00B4                             _vscp_getZone 2F34  
-                     vscp_writeAppReg@rv 0016                                    _hours 0068  
-              _vscp_getRegisterPagesUsed 2F76                   __size_of_vscp_getEvent 002C  
-                           _vscp_setGUID 2D1C                                    tablat 000FF5  
-                _vscp_getSubMinorVersion 2F7C                                    plusw2 000FDB  
-                                  status 000FD8               __end_of_vscp_sendHeartBeat 2C66  
-                   _ECANSetOperationMode 2E42                          __initialization 2D7C  
-                           __end_of_doDM 16E2                             __end_of_main 1FBC  
-                           __end_of_init 2B32                        ??_writeControlReg 0012  
-                       ?_vscp_readAppReg 0001                  _interrupt_at_low_vector 0018  
-                         doDM@class_mask 00AB                        ??_ECANSendMessage 001A  
-                         ?i1_WriteTimer0 0001                                   ??_doDM 00A6  
-                       ?_vscp_readStdReg 0001                    getVSCPFrame@pvscptype 001E  
-                 ??_vscp_restoreDefaults 000F                                   ??_main 0052  
-                                 ??_init 000C            __size_of_vscp_handleHeartbeat 0040  
-               ??_vscp_getManufacturerId 000B                 ??_vscp_setManufacturerId 000C  
-               _vscp_handleProtocolEvent 0F22                            __activetblptr 000003  
-                      __RegsToCANID@type 000B                           __CFG_PLLCFG$ON 000000  
-                         __CFG_RETEN$OFF 000000               ECANReceiveMessage@msgFlags 0011  
-              __size_of__ECANPointBuffer 007E                                   _B0TXEN 0073EA  
-                                 _B1TXEN 0073EB                                   _B2TXEN 0073EC  
-                                 _B3TXEN 0073ED                                   _B4TXEN 0073EE  
-                                 _B5TXEN 0073EF               ECANReceiveMessage@savedPtr 0012  
-                                 _CANCON 000F6F                                   _EEDATA 000F73  
-                                 _EECON2 000F7E                                   _ANCON0 000F5D  
-                                 _ANCON1 000F5C                                   _CIOCON 000F70  
-                          doDM@type_mask 00AE                       vscp_writeStdReg@rv 0014  
-                          ?_init_app_ram 0001                                   _MDSEL0 007B96  
-                                 _MDSEL1 007B97                          __CFG_BBSIZ$BB2K 000000  
-                                 i1l5531 003E                                   i1l5541 0062  
-                                 i1l5533 0042                                   i1l5525 0024  
-                                 i1l5551 0094                                   i1l5543 006E  
-                                 i1l5535 0052                                   i1l5527 002C  
-                                 i1l5553 00A2                                   i1l5545 0078  
-                                 i1l5537 005A                                   i1l5529 0038  
-                             _OpenTimer0 2DD6                                   i1l5547 0080  
-                                 i1l5539 005E                                   i1l5549 008A  
-                         __CFG_WDTEN$OFF 000000                          _init_app_eeprom 26CC  
+                          __CFG_WDTEN$ON 000000                          sendCANFrame@dlc 003B  
+                                  _MSEL0 000E79                                    _MSEL1 000E7A  
+                                  _MSEL2 000E7B                                    _IRXIF 007BBF  
+                       readControlReg@rv 0010                                    _TMR0H 000FD7  
+                                  _TMR0L 000FD6       __end_of_vscp_readNicknamePermanent 2F5C  
+             _vscp_readNicknamePermanent 2F52                                    _PORTA 000F80  
+                                  _PORTB 000F81                                    _PORTC 000F82  
+                                  _TRISA 000F92                                    _TRISB 000F93  
+                                  _TRISC 000F94                         ?_vscp_getSubzone 0001  
+                           _vscp_getGUID 2E98                                    doDM@i 00B4  
+                           _vscp_getZone 2F34                       vscp_writeAppReg@rv 0016  
+                                  _hours 0068                _vscp_getRegisterPagesUsed 2F76  
+                 __size_of_vscp_getEvent 002C                             _vscp_setGUID 2D1C  
+                                  tablat 000FF5                  _vscp_getSubMinorVersion 2F7C  
+                                  plusw2 000FDB                                    status 000FD8  
+             __end_of_vscp_sendHeartBeat 2C66                     _ECANSetOperationMode 2E42  
+                        __initialization 2D7C                             __end_of_doDM 16E2  
+                           __end_of_main 1FBC                             __end_of_init 2B32  
+                      ??_writeControlReg 0012                         ?_vscp_readAppReg 0001  
+                _interrupt_at_low_vector 0018                           doDM@class_mask 00AB  
+                      ??_ECANSendMessage 001A                           ?i1_WriteTimer0 0001  
+                                 ??_doDM 00A6                         ?_vscp_readStdReg 0001  
+                  getVSCPFrame@pvscptype 001E                   ??_vscp_restoreDefaults 000F  
+                                 ??_main 0052                                   ??_init 000C  
+          __size_of_vscp_handleHeartbeat 0040                 ??_vscp_getManufacturerId 000B  
+               ??_vscp_setManufacturerId 000C                 _vscp_handleProtocolEvent 0F22  
+                          __activetblptr 000003                        __RegsToCANID@type 000B  
+                         __CFG_PLLCFG$ON 000000                           __CFG_RETEN$OFF 000000  
+             ECANReceiveMessage@msgFlags 0011                __size_of__ECANPointBuffer 007E  
+                                 _B0TXEN 0073EA                                   _B1TXEN 0073EB  
+                                 _B2TXEN 0073EC                                   _B3TXEN 0073ED  
+                                 _B4TXEN 0073EE                                   _B5TXEN 0073EF  
+             ECANReceiveMessage@savedPtr 0012                                   _CANCON 000F6F  
+                                 _EEDATA 000F73                                   _EECON2 000F7E  
+                                 _ANCON0 000F5D                                   _ANCON1 000F5C  
+                                 _CIOCON 000F70                            doDM@type_mask 00AE  
+                     vscp_writeStdReg@rv 0014                            ?_init_app_ram 0001  
+                                 _MDSEL0 007B96                                   _MDSEL1 007B97  
+                        __CFG_BBSIZ$BB2K 000000                                   i1l5531 003E  
+                                 i1l5541 0062                                   i1l5533 0042  
+                                 i1l5525 0024                                   i1l5551 0094  
+                                 i1l5543 006E                                   i1l5535 0052  
+                                 i1l5527 002C                                   i1l5553 00A2  
+                                 i1l5545 0078                                   i1l5537 005A  
+                                 i1l5529 0038                               _OpenTimer0 2DD6  
+                                 i1l5547 0080                                   i1l5539 005E  
+                                 i1l5549 008A                          _init_app_eeprom 26CC  
                                  _RXB0IF 007BB8                                   _RXB1IF 007BB9  
                                  _RXF1EN 007231                   ECANReceiveMessage@data 000F  
                  ECANReceiveMessage@mode 0016                   ECANReceiveMessage@temp 0017  

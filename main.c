@@ -36,7 +36,6 @@
 #include <p18cxxx.h>
 #include <timers.h>
 #include <delays.h>
-#include <eeprom.h>
 #include <inttypes.h>
 #include <ecan.h>
 #include <vscp_firmware.h>
@@ -53,6 +52,10 @@
 #pragma config RETEN = OFF      // Ultra low-power regulator is Disabled (Controlled by REGSLP bit).
 #pragma config INTOSCSEL = HIGH // LF-INTOSC in High-power mode during Sleep.
 #pragma config XINST = OFF      // No extended instruction set
+
+// CONFIG1H
+#pragma config FOSC = HS2       // Crystal 10 MHz
+#pragma config PLLCFG = ON      // 4 x PLL
 
 // CONFIG2H
 #pragma config WDTPS = 1048576  // Watchdog prescaler
@@ -71,11 +74,8 @@
 #ifdef DEBUG
 #pragma config WDTEN = OFF      // WDT disabled in hardware; SWDTEN bit disabled.
 #else
-#pragma config WDTEN = OFF      // WDT enabled in hardware; 
+#pragma config WDTEN = ON       // WDT enabled in hardware; 
 #endif
-#pragma config XINST = OFF      // No extended instruction set
-#pragma config FOSC = HS2       // Crystal 10 MHz
-#pragma config PLLCFG = ON      // 4 x PLL
 
 
 // Prototypes
@@ -181,9 +181,9 @@ void main()
     vscp_init();    // Initialize the VSCP functionality
 
     // Restore outputs
-    writeControlReg( CONTROL0, readEEPROM( VSCP_EEPROM_END + REG_CONTROL0 ) );
-    writeControlReg( CONTROL1, readEEPROM( VSCP_EEPROM_END + REG_CONTROL1 ) );
-    writeControlReg( CONTROL2, readEEPROM( VSCP_EEPROM_END + REG_CONTROL2 ) );
+    writeControlReg( CONTROL0, eeprom_read( VSCP_EEPROM_END + REG_CONTROL0 ) );
+    writeControlReg( CONTROL1, eeprom_read( VSCP_EEPROM_END + REG_CONTROL1 ) );
+    writeControlReg( CONTROL2, eeprom_read( VSCP_EEPROM_END + REG_CONTROL2 ) );
     
     while ( 1 ) {   // Loop Forever
 
@@ -194,7 +194,7 @@ void main()
 
             // Init. button pressed
             vscp_nickname = VSCP_ADDRESS_FREE;
-            writeEEPROM( VSCP_EEPROM_NICKNAME, VSCP_ADDRESS_FREE );
+            eeprom_write( VSCP_EEPROM_NICKNAME, VSCP_ADDRESS_FREE );
             vscp_init();
             
         }
@@ -264,7 +264,7 @@ void main()
             vscp_doOneSecondWork();
 
             // Temperature report timers are only updated if in active
-            // state guid_reset
+            // state GUID_reset
             if ( VSCP_STATE_ACTIVE == vscp_node_state ) {
 
                 // Do VSCP one second jobs
@@ -427,22 +427,22 @@ void init_app_eeprom(void)
 {
     unsigned char i, j;
 
-    writeEEPROM( VSCP_EEPROM_END + REG_ZONE, 0 );
-    writeEEPROM( VSCP_EEPROM_END + REG_SUBZONE, 0 );
+    eeprom_write( VSCP_EEPROM_END + REG_ZONE, 0 );
+    eeprom_write( VSCP_EEPROM_END + REG_SUBZONE, 0 );
     
     for ( i=3; i<21; i++ ) {
-        writeEEPROM( VSCP_EEPROM_END + REG_PIN3_SUBZONE + (i-3), i );
+        eeprom_write( VSCP_EEPROM_END + REG_PIN3_SUBZONE + (i-3), i );
     }
     
-    writeEEPROM( VSCP_EEPROM_END + REG_CONTROL0, 0 );
-    writeEEPROM( VSCP_EEPROM_END + REG_CONTROL1, 0 );
-    writeEEPROM( VSCP_EEPROM_END + REG_CONTROL2, 0 );
+    eeprom_write( VSCP_EEPROM_END + REG_CONTROL0, 0 );
+    eeprom_write( VSCP_EEPROM_END + REG_CONTROL1, 0 );
+    eeprom_write( VSCP_EEPROM_END + REG_CONTROL2, 0 );
     
     // * * * Decision Matrix * * *
     // All elements disabled.
     for ( i = 0; i < DESCION_MATRIX_ROWS; i++ ) {
         for ( j = 0; j < 8; j++ ) {
-            writeEEPROM( VSCP_EEPROM_END + REG_FIRST_PAGE_END + REG_DESCION_MATRIX + i * 8 + j, 0 );
+            eeprom_write( VSCP_EEPROM_END + REG_FIRST_PAGE_END + REG_DESCION_MATRIX + i * 8 + j, 0 );
         }
     }
 
@@ -494,7 +494,7 @@ unsigned char getSubMinorVersion()
 
 void vscp_setGUID(uint8_t idx, uint8_t data ) {
     if ( idx>15 ) return;
-    writeEEPROM(VSCP_EEPROM_REG_GUID + idx, data);
+    eeprom_write(VSCP_EEPROM_REG_GUID + idx, data);
 }
 #endif
 
@@ -506,7 +506,7 @@ void vscp_setGUID(uint8_t idx, uint8_t data ) {
 
 void vscp_setManufacturerId( uint8_t idx, uint8_t data ) {
     if ( idx>7 ) return;
-    writeEEPROM(VSCP_EEPROM_REG_MANUFACTUR_ID0 + idx, data);
+    eeprom_write(VSCP_EEPROM_REG_MANUFACTUR_ID0 + idx, data);
 }
 #endif
 
@@ -534,7 +534,7 @@ unsigned char getBufferSize(void)
 
 uint8_t vscp_readNicknamePermanent(void)
 {
-    return readEEPROM( VSCP_EEPROM_NICKNAME );
+    return eeprom_read( VSCP_EEPROM_NICKNAME );
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -543,7 +543,7 @@ uint8_t vscp_readNicknamePermanent(void)
 
 void vscp_writeNicknamePermanent(uint8_t nickname)
 {
-    writeEEPROM( VSCP_EEPROM_NICKNAME, nickname );
+    eeprom_write( VSCP_EEPROM_NICKNAME, nickname );
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -552,7 +552,7 @@ void vscp_writeNicknamePermanent(uint8_t nickname)
 
 uint8_t vscp_getZone(void)
 {
-    return readEEPROM( VSCP_EEPROM_END + REG_ZONE );
+    return eeprom_read( VSCP_EEPROM_END + REG_ZONE );
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -561,7 +561,7 @@ uint8_t vscp_getZone(void)
 
 uint8_t vscp_getSubzone(void)
 {
-    return readEEPROM( VSCP_EEPROM_END + REG_SUBZONE );
+    return eeprom_read( VSCP_EEPROM_END + REG_SUBZONE );
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -592,15 +592,15 @@ uint8_t vscp_readAppReg(uint8_t reg)
     if ( 0 == vscp_page_select ) {
         // Zone
         if ( reg == 0x00 ) {
-            rv = readEEPROM(VSCP_EEPROM_END + REG_ZONE);
+            rv = eeprom_read(VSCP_EEPROM_END + REG_ZONE);
         }
         // SubZone
         else if ( reg == 0x01 ) {
-            rv = readEEPROM(VSCP_EEPROM_END + REG_SUBZONE);
+            rv = eeprom_read(VSCP_EEPROM_END + REG_SUBZONE);
         }
         // SubZone for pins
         else if ( ( reg >= REG_PIN3_SUBZONE ) && ( reg <= REG_PIN20_SUBZONE ) ) {
-            rv = readEEPROM( VSCP_EEPROM_END + REG_PIN3_SUBZONE + 
+            rv = eeprom_read( VSCP_EEPROM_END + REG_PIN3_SUBZONE + 
                                 ( reg - REG_PIN3_SUBZONE ) );
         }
         // Control reg 0
@@ -623,7 +623,7 @@ uint8_t vscp_readAppReg(uint8_t reg)
         // DM REG_FIRST_PAGE_END + REG_DESCION_MATRIX + i * 8 + j
         if ( ( reg >= REG_DESCION_MATRIX ) && ( reg <= ( REG_DESCION_MATRIX + 
                 ( 8 * DESCION_MATRIX_ROWS ) ) ) ) {
-            rv = readEEPROM(VSCP_EEPROM_END + REG_FIRST_PAGE_END + 
+            rv = eeprom_read(VSCP_EEPROM_END + REG_FIRST_PAGE_END + 
                     ( reg - REG_DESCION_MATRIX ) );
         }
         
@@ -648,34 +648,34 @@ uint8_t vscp_writeAppReg( uint8_t reg, uint8_t val )
         
         // Zone
         if ( reg == REG_ZONE ) {
-            writeEEPROM(VSCP_EEPROM_END + REG_ZONE, val);
-            rv = readEEPROM(VSCP_EEPROM_END + REG_ZONE);
+            eeprom_write(VSCP_EEPROM_END + REG_ZONE, val);
+            rv = eeprom_read(VSCP_EEPROM_END + REG_ZONE);
         }
         else if ( reg == REG_SUBZONE ) {
             // SubZone
-            writeEEPROM(VSCP_EEPROM_END + REG_SUBZONE, val);
-            rv = readEEPROM(VSCP_EEPROM_END + REG_SUBZONE);
+            eeprom_write(VSCP_EEPROM_END + REG_SUBZONE, val);
+            rv = eeprom_read(VSCP_EEPROM_END + REG_SUBZONE);
         }
         // SubZone for pins
         else if ( ( reg >= REG_PIN3_SUBZONE ) && ( reg <= REG_PIN20_SUBZONE ) ) {
-            writeEEPROM(VSCP_EEPROM_END + REG_PIN3_SUBZONE + 
+            eeprom_write(VSCP_EEPROM_END + REG_PIN3_SUBZONE + 
                                 ( reg - REG_PIN3_SUBZONE ), val);
-            rv = readEEPROM( VSCP_EEPROM_END + REG_PIN3_SUBZONE + 
+            rv = eeprom_read( VSCP_EEPROM_END + REG_PIN3_SUBZONE + 
                                 ( reg - REG_PIN3_SUBZONE ) );
         }
         // Control reg 0
         else if ( reg == REG_CONTROL0 ) {
-            writeEEPROM(VSCP_EEPROM_END + REG_CONTROL0, val);
+            eeprom_write(VSCP_EEPROM_END + REG_CONTROL0, val);
             rv = writeControlReg( CONTROL0, val );
         }
         // Control reg 1
         else if ( reg == REG_CONTROL1 ) {
-            writeEEPROM(VSCP_EEPROM_END + REG_CONTROL1, val);
+            eeprom_write(VSCP_EEPROM_END + REG_CONTROL1, val);
             rv = writeControlReg( CONTROL1, val );
         }
         // Control reg 2
         else if ( reg == REG_CONTROL2 ) {
-            writeEEPROM(VSCP_EEPROM_END + REG_CONTROL2, val);
+            eeprom_write(VSCP_EEPROM_END + REG_CONTROL2, val);
             rv = writeControlReg( CONTROL2, val );
             rv &= 0x03; // Take away unused bits
         }
@@ -687,9 +687,9 @@ uint8_t vscp_writeAppReg( uint8_t reg, uint8_t val )
         // DM
         if ( ( reg >= REG_DESCION_MATRIX ) && ( reg <= ( REG_DESCION_MATRIX + 
                 ( 8 * DESCION_MATRIX_ROWS ) ) ) ) {
-            writeEEPROM(VSCP_EEPROM_END + REG_FIRST_PAGE_END + 
+            eeprom_write(VSCP_EEPROM_END + REG_FIRST_PAGE_END + 
                         ( reg - REG_DESCION_MATRIX ), val);
-            rv = readEEPROM(VSCP_EEPROM_END + REG_FIRST_PAGE_END + 
+            rv = eeprom_read(VSCP_EEPROM_END + REG_FIRST_PAGE_END + 
                         ( reg - REG_DESCION_MATRIX ) );
         }
         
@@ -815,8 +815,8 @@ void SendInformationEvent( unsigned char idx,
     idx -= 3;
     
     data[ 0 ] = idx; // Register
-    data[ 1 ] = readEEPROM( VSCP_EEPROM_END + REG_ZONE );
-    data[ 2 ] = readEEPROM( VSCP_EEPROM_END + REG_PIN3_SUBZONE + idx );
+    data[ 1 ] = eeprom_read( VSCP_EEPROM_END + REG_ZONE );
+    data[ 2 ] = eeprom_read( VSCP_EEPROM_END + REG_PIN3_SUBZONE + idx );
     sendVSCPFrame( eventClass,
                     eventTypeId,
                     vscp_nickname,
@@ -846,7 +846,7 @@ void doDM(void)
     for (i = 0; i < DESCION_MATRIX_ROWS; i++) {
 
         // Get DM flags for this row
-        dmflags = readEEPROM( VSCP_EEPROM_END + REG_FIRST_PAGE_END + 
+        dmflags = eeprom_read( VSCP_EEPROM_END + REG_FIRST_PAGE_END + 
                                     REG_DESCION_MATRIX + 1 + (8 * i) );
 
         // Is the DM row enabled?
@@ -854,7 +854,7 @@ void doDM(void)
 
             // Should the originating id be checked and if so is it the same?
             if ( ( dmflags & VSCP_DM_FLAG_CHECK_OADDR ) &&
-                    ( vscp_imsg.oaddr != readEEPROM( VSCP_EEPROM_END + REG_FIRST_PAGE_END + 
+                    ( vscp_imsg.oaddr != eeprom_read( VSCP_EEPROM_END + REG_FIRST_PAGE_END + 
                                                         REG_DESCION_MATRIX + (8 * i) ) ) ) {
                 continue;
             }
@@ -862,7 +862,7 @@ void doDM(void)
             // Check if zone should match and if so if it match
             if ( dmflags & VSCP_DM_FLAG_CHECK_ZONE ) {
                 if ( 255 != vscp_imsg.data[ 1 ] ) {
-                    if ( vscp_imsg.data[ 1 ] != readEEPROM( VSCP_EEPROM_END + REG_ZONE ) ) {
+                    if ( vscp_imsg.data[ 1 ] != eeprom_read( VSCP_EEPROM_END + REG_ZONE ) ) {
                         continue;
                     }
                 }
@@ -871,27 +871,27 @@ void doDM(void)
             // Check if sub zone should match and if so if it match
             if ( dmflags & VSCP_DM_FLAG_CHECK_SUBZONE ) {
                 if ( 255 != vscp_imsg.data[ 1 ] ) {
-                    if ( vscp_imsg.data[ 1 ] != readEEPROM( VSCP_EEPROM_END + REG_ZONE ) ) {
+                    if ( vscp_imsg.data[ 1 ] != eeprom_read( VSCP_EEPROM_END + REG_ZONE ) ) {
                         continue;
                     }
                 }
             }
             
             class_filter = ( dmflags & VSCP_DM_FLAG_CLASS_FILTER)*256 +
-                    readEEPROM( VSCP_EEPROM_END + REG_FIRST_PAGE_END + 
+                    eeprom_read( VSCP_EEPROM_END + REG_FIRST_PAGE_END + 
                                 REG_DESCION_MATRIX +
                                 (8 * i) +
                                 VSCP_DM_POS_CLASSFILTER);
             class_mask = ( dmflags & VSCP_DM_FLAG_CLASS_MASK)*256 +
-                    readEEPROM( VSCP_EEPROM_END + REG_FIRST_PAGE_END + 
+                    eeprom_read( VSCP_EEPROM_END + REG_FIRST_PAGE_END + 
                                     REG_DESCION_MATRIX +
                                     (8 * i) +
                                     VSCP_DM_POS_CLASSMASK);
-            type_filter = readEEPROM( VSCP_EEPROM_END + REG_FIRST_PAGE_END + 
+            type_filter = eeprom_read( VSCP_EEPROM_END + REG_FIRST_PAGE_END + 
                                         REG_DESCION_MATRIX + 
                                         (8 * i) +
                                         VSCP_DM_POS_TYPEFILTER);
-            type_mask = readEEPROM( VSCP_EEPROM_END + REG_FIRST_PAGE_END + 
+            type_mask = eeprom_read( VSCP_EEPROM_END + REG_FIRST_PAGE_END + 
                                         REG_DESCION_MATRIX +
                                         (8 * i) +
                                         VSCP_DM_POS_TYPEMASK);
@@ -900,7 +900,7 @@ void doDM(void)
                     !( ( type_filter ^ vscp_imsg.vscp_type ) & type_mask ) ) {
 
                 // OK Trigger this action
-                switch ( readEEPROM( VSCP_EEPROM_END + REG_FIRST_PAGE_END + 
+                switch ( eeprom_read( VSCP_EEPROM_END + REG_FIRST_PAGE_END + 
                                         REG_DESCION_MATRIX + (8 * i) + 
                                         VSCP_DM_POS_ACTION ) ) {
 
@@ -909,28 +909,28 @@ void doDM(void)
                         
                     case ACTION_SET: // Set pin to active state
                         actionSet( dmflags, 
-                                readEEPROM( VSCP_EEPROM_END + REG_FIRST_PAGE_END + 
+                                eeprom_read( VSCP_EEPROM_END + REG_FIRST_PAGE_END + 
                                                 REG_DESCION_MATRIX + (8 * i) + 
                                                 VSCP_DM_POS_ACTIONPARAM ) );
                         break;
 
                     case ACTION_CLR: // Set pin to inactive state
                         actionClr( dmflags, 
-                                readEEPROM( VSCP_EEPROM_END + REG_FIRST_PAGE_END + 
+                                eeprom_read( VSCP_EEPROM_END + REG_FIRST_PAGE_END + 
                                                 REG_DESCION_MATRIX + (8 * i) + 
                                                 VSCP_DM_POS_ACTIONPARAM ) );
                         break;
 
                     case ACTION_SETALL: // Activate all pins
                         actionSetAll( dmflags, 
-                                readEEPROM( VSCP_EEPROM_END + REG_FIRST_PAGE_END + 
+                                eeprom_read( VSCP_EEPROM_END + REG_FIRST_PAGE_END + 
                                                 REG_DESCION_MATRIX + (8 * i) + 
                                                 VSCP_DM_POS_ACTIONPARAM ) );
                         break;
 
                     case ACTION_CLRALL: // Inactivate all pins
                         actionClrAll( dmflags, 
-                                readEEPROM( VSCP_EEPROM_END + REG_FIRST_PAGE_END + 
+                                eeprom_read( VSCP_EEPROM_END + REG_FIRST_PAGE_END + 
                                                 REG_DESCION_MATRIX + (8 * i) + 
                                                 VSCP_DM_POS_ACTIONPARAM ) );
                         break;
@@ -956,7 +956,7 @@ void actionSet( uint8_t dmflags, uint8_t param )
         
         param &= 0x7f;
         
-        if ( readEEPROM( VSCP_EEPROM_END + REG_PIN3_SUBZONE + (param - 3) ) 
+        if ( eeprom_read( VSCP_EEPROM_END + REG_PIN3_SUBZONE + (param - 3) ) 
                 != vscp_imsg.data[ 2 ] )  {
                 return;
         }
@@ -1059,7 +1059,7 @@ void actionClr( uint8_t dmflags, uint8_t param )
         
         param &= 0x7f;
         
-        if ( readEEPROM( VSCP_EEPROM_END + REG_PIN3_SUBZONE + (param - 3) ) 
+        if ( eeprom_read( VSCP_EEPROM_END + REG_PIN3_SUBZONE + (param - 3) ) 
                 != vscp_imsg.data[ 2 ] )  {
                 return;
         }
@@ -1230,7 +1230,7 @@ unsigned char vscp_getSubMinorVersion()
 
 uint8_t vscp_getGUID(uint8_t idx)
 {
-    return readEEPROM( VSCP_EEPROM_REG_GUID + idx );
+    return eeprom_read( VSCP_EEPROM_REG_GUID + idx );
 }
 
 
@@ -1251,7 +1251,7 @@ uint8_t vscp_getMDF_URL(uint8_t idx)
 
 uint8_t vscp_getUserID(uint8_t idx)
 {
-    return readEEPROM( VSCP_EEPROM_REG_USERID + idx );
+    return eeprom_read( VSCP_EEPROM_REG_USERID + idx );
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -1260,7 +1260,7 @@ uint8_t vscp_getUserID(uint8_t idx)
 
 void vscp_setUserID(uint8_t idx, uint8_t data)
 {
-    writeEEPROM( idx + VSCP_EEPROM_REG_USERID, data );
+    eeprom_write( idx + VSCP_EEPROM_REG_USERID, data );
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -1271,7 +1271,7 @@ void vscp_setUserID(uint8_t idx, uint8_t data)
 
 uint8_t vscp_getManufacturerId(uint8_t idx)
 {
-    return readEEPROM( VSCP_EEPROM_REG_MANUFACTUR_ID0 + idx );
+    return eeprom_read( VSCP_EEPROM_REG_MANUFACTUR_ID0 + idx );
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -1299,7 +1299,7 @@ uint8_t vscp_getBufferSize(void)
 
 uint8_t vscp_getNickname(void)
 {
-    return readEEPROM(VSCP_EEPROM_NICKNAME);
+    return eeprom_read(VSCP_EEPROM_NICKNAME);
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -1308,7 +1308,7 @@ uint8_t vscp_getNickname(void)
 
 void vscp_setNickname(uint8_t nickname)
 {
-    writeEEPROM(VSCP_EEPROM_NICKNAME, nickname);
+    eeprom_write(VSCP_EEPROM_NICKNAME, nickname);
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -1317,7 +1317,7 @@ void vscp_setNickname(uint8_t nickname)
 
 uint8_t vscp_getSegmentCRC(void)
 {
-    return readEEPROM( VSCP_EEPROM_SEGMENT_CRC );
+    return eeprom_read( VSCP_EEPROM_SEGMENT_CRC );
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -1326,7 +1326,7 @@ uint8_t vscp_getSegmentCRC(void)
 
 void vscp_setSegmentCRC(uint8_t crc)
 {
-    writeEEPROM( VSCP_EEPROM_SEGMENT_CRC, crc );
+    eeprom_write( VSCP_EEPROM_SEGMENT_CRC, crc );
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -1335,7 +1335,7 @@ void vscp_setSegmentCRC(uint8_t crc)
 
 void vscp_setControlByte(uint8_t ctrl)
 {
-    writeEEPROM(VSCP_EEPROM_CONTROL, ctrl);
+    eeprom_write(VSCP_EEPROM_CONTROL, ctrl);
 }
 
 
@@ -1345,7 +1345,7 @@ void vscp_setControlByte(uint8_t ctrl)
 
 uint8_t vscp_getControlByte(void)
 {
-    return readEEPROM(VSCP_EEPROM_CONTROL);
+    return eeprom_read(VSCP_EEPROM_CONTROL);
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -1380,7 +1380,7 @@ void vscp_goBootloaderMode( uint8_t algorithm )
 
     // OK, We should enter boot loader mode
     // 	First, activate bootloader mode
-    writeEEPROM(VSCP_EEPROM_BOOTLOADER_FLAG, VSCP_BOOT_FLAG);
+    eeprom_write(VSCP_EEPROM_BOOTLOADER_FLAG, VSCP_BOOT_FLAG);
 
     // Reset processor
     Reset();
@@ -1560,7 +1560,7 @@ void calculateSetFilterMask( void )
     for ( i=0; i < DESCION_MATRIX_ROWS; i++ ) {
 
         // No need to check not active DM rows
-        if ( readEEPROM( VSCP_EEPROM_END + 8*i + 1 ) & 0x80 ) {
+        if ( eeprom_read( VSCP_EEPROM_END + 8*i + 1 ) & 0x80 ) {
 
             // build the mask
             // ==============
@@ -1571,28 +1571,28 @@ void calculateSetFilterMask( void )
 
             rowmask =
                     // Bit 9 of class mask
-                    ( (uint32_t)( readEEPROM( VSCP_EEPROM_END + 8*i + 1 ) & 2 ) << 23 ) |
+                    ( (uint32_t)( eeprom_read( VSCP_EEPROM_END + 8*i + 1 ) & 2 ) << 23 ) |
                     // Rest of class mask
-                    ( (uint32_t)readEEPROM( VSCP_EEPROM_END + 8*i + 2 ) << 16 ) |
+                    ( (uint32_t)eeprom_read( VSCP_EEPROM_END + 8*i + 2 ) << 16 ) |
                     // Type mask
-                    ( (uint32_t)readEEPROM( VSCP_EEPROM_END + 8*i + 4 ) << 8 ) |
+                    ( (uint32_t)eeprom_read( VSCP_EEPROM_END + 8*i + 4 ) << 8 ) |
 					// OID  - handle later
 					0xff;
-                    /*( ( readEEPROM( VSCP_EEPROM_END + 8*i + 1 ) & 0x20 ) << 20 )*/;   // Hardcoded bit
+                    /*( ( eeprom_read( VSCP_EEPROM_END + 8*i + 1 ) & 0x20 ) << 20 )*/;   // Hardcoded bit
 
             // build the filter
             // ================
 
             rowfilter =
                     // Bit 9 of class filter
-                    ( (uint32_t)( readEEPROM( VSCP_EEPROM_END + 8*i + 1 ) & 1 ) << 24 ) |
+                    ( (uint32_t)( eeprom_read( VSCP_EEPROM_END + 8*i + 1 ) & 1 ) << 24 ) |
                     // Rest of class filter
-                    ( (uint32_t)readEEPROM( VSCP_EEPROM_END + 8*i + 3 ) << 16 ) |
+                    ( (uint32_t)eeprom_read( VSCP_EEPROM_END + 8*i + 3 ) << 16 ) |
                     // Type filter
-                    ( (uint32_t)readEEPROM( VSCP_EEPROM_END + 8*i + 5 ) << 8 ) |
+                    ( (uint32_t)eeprom_read( VSCP_EEPROM_END + 8*i + 5 ) << 8 ) |
                     // OID Mask cleard if not same OID for all or one or more
                     // rows don't have OID check flag set.
-                    readEEPROM( VSCP_EEPROM_END + 8*i );
+                    eeprom_read( VSCP_EEPROM_END + 8*i );
 
             if ( 0 == i ) filter = rowfilter;   // Hack for first iteration loop
 
@@ -1617,7 +1617,7 @@ void calculateSetFilterMask( void )
             filter &= rowfilter;
 
             // Not check OID?
-            if ( !readEEPROM( VSCP_EEPROM_END + 8*i + 1 ) & 0x40 ) {
+            if ( !eeprom_read( VSCP_EEPROM_END + 8*i + 1 ) & 0x40 ) {
                 // No should not be checked for this position
                 // This mean that we can't filter on a specific OID
                 // so mask must be a don't care
@@ -1629,17 +1629,17 @@ void calculateSetFilterMask( void )
                 // we accept all
                 for (j = 0; j < 8; j++) {
                     if ((lastOID >> i & 1)
-                            != (readEEPROM(VSCP_EEPROM_END + 8 * i) >> i & 1)) {
+                            != (eeprom_read(VSCP_EEPROM_END + 8 * i) >> i & 1)) {
                         mask &= (1 << i);
                     }
                 }
 
-                lastOID = readEEPROM(VSCP_EEPROM_END + 8 * i);
+                lastOID = eeprom_read(VSCP_EEPROM_END + 8 * i);
 
             } 
             else {
                 // First round we just store the OID
-                lastOID = readEEPROM(VSCP_EEPROM_END + 8 * i);
+                lastOID = eeprom_read(VSCP_EEPROM_END + 8 * i);
             }
 
         }

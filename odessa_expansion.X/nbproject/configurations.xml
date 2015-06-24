@@ -25,7 +25,6 @@
       <itemPath>../main.c</itemPath>
       <itemPath>../ECAN.c</itemPath>
       <itemPath>../../vscp_firmware/common/vscp_firmware.c</itemPath>
-      <itemPath>../../vscp_firmware/pic/common/eeprom.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
