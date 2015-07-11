@@ -870,8 +870,8 @@ void doDM(void)
 
             // Check if sub zone should match and if so if it match
             if ( dmflags & VSCP_DM_FLAG_CHECK_SUBZONE ) {
-                if ( 255 != vscp_imsg.data[ 1 ] ) {
-                    if ( vscp_imsg.data[ 1 ] != eeprom_read( VSCP_EEPROM_END + REG_ZONE ) ) {
+                if ( 255 != vscp_imsg.data[ 2 ] ) {
+                    if ( vscp_imsg.data[ 2 ] != eeprom_read( VSCP_EEPROM_END + REG_ZONE ) ) {
                         continue;
                     }
                 }
