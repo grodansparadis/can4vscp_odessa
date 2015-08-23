@@ -1,0 +1,42 @@
+Odessa demo code
+================
+
+Registers
+=========
+0:00	Zone
+0:01	Subzone
+0:02	Control register Counter 0
+			Bit 0 - PIN 3
+			Bit 1 - PIN 4
+			Bit 2 - PIN 5
+			Bit 3 - PIN 6
+			Bit 4 - PIN 7
+			Bit 5 - PIN 8
+			Bit 6 - PIN 9
+			Bit 7 - PIN 10		
+0:03	Control register Counter 1
+			Bit 0 - PIN 11
+			Bit 1 - PIN 12
+			Bit 2 - PIN 13
+			Bit 3 - PIN 14
+			Bit 4 - PIN 15
+			Bit 5 - PIN 16
+			Bit 6 - PIN 17
+			Bit 7 - PIN 18
+0:04	Control register Counter 2
+			Bit 0 - PIN 19
+			Bit 1 - PIN 20
+			Bit 2 - Not used
+			Bit 3 - Not used
+			Bit 4 - Not used
+			Bit 5 - Not used
+			Bit 6 - Not used
+			Bit 7 - Not used		
+
+Actions
+=======
+0 - NOOP
+1 - SET (argument is pin 3-20)
+2 - RESET (argument is pin 3-20)
+3 - Reset all
+4 - Set all.

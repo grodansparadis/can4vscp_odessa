@@ -1,0 +1,7 @@
+Odessa
+======
+
+2015-04-20 - AKHE Removed power from VCAP pin  (!!!!! No reversion change !!!!! )
+2014-06-18 - AKHE Fixed dimensions
+2014-06-18 - AKHE Job away to factory
+2014-06-16 - AKHE Rev A done
