@@ -74,3 +74,4 @@
 /odessa_expansion.X/dist/Debug/debug/*.rlf
 /odessa_expansion.X/dist/Debug/debug/*.sdb
 /odessa_expansion.X/dist/Debug/debug/*.sym
+/odessa_expansion.X/nbproject/*.properties
