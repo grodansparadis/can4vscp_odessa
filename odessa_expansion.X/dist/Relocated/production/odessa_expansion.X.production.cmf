@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$/tmp/cgtJb7yzt.obj
+$/tmp/cgtHI5jbC.obj
 end_init CODE 0 8B6 8B6 4 1
 reset_vec CODE 0 800 800 4 1
 idloc IDLOC 0 200000 200000 8 1
@@ -1047,18 +1047,18 @@ $dist/Relocated/production/odessa_expansion.X.production.obj
 "/home/akhe/development/VSCP/can4vscp_odessa/main.c":487 2EFA text21 CODE
 "/home/akhe/development/VSCP/can4vscp_odessa/main.c":1329 2F16 text64 CODE
 "/home/akhe/development/VSCP/can4vscp_odessa/main.c":1330 2F1E text64 CODE
-"/tmp/cgtgMlLFO":2473 2F36 cinit CODE
-"/tmp/cgtgMlLFO":2474 2F3A cinit CODE
-"/tmp/cgtgMlLFO":2476 2F3C cinit CODE
-"/tmp/cgtgMlLFO":2477 2F3E cinit CODE
-"/tmp/cgtgMlLFO":2478 2F40 cinit CODE
-"/tmp/cgtgMlLFO":2481 2F42 cinit CODE
-"/tmp/cgtgMlLFO":2482 2F46 cinit CODE
-"/tmp/cgtgMlLFO":2484 2F48 cinit CODE
-"/tmp/cgtgMlLFO":2485 2F4A cinit CODE
-"/tmp/cgtgMlLFO":2486 2F4C cinit CODE
-"/tmp/cgtgMlLFO":2493 2F4E cinit CODE
-"/tmp/cgtgMlLFO":2494 2F50 cinit CODE
+"/tmp/cgt174pQO":2473 2F36 cinit CODE
+"/tmp/cgt174pQO":2474 2F3A cinit CODE
+"/tmp/cgt174pQO":2476 2F3C cinit CODE
+"/tmp/cgt174pQO":2477 2F3E cinit CODE
+"/tmp/cgt174pQO":2478 2F40 cinit CODE
+"/tmp/cgt174pQO":2481 2F42 cinit CODE
+"/tmp/cgt174pQO":2482 2F46 cinit CODE
+"/tmp/cgt174pQO":2484 2F48 cinit CODE
+"/tmp/cgt174pQO":2485 2F4A cinit CODE
+"/tmp/cgt174pQO":2486 2F4C cinit CODE
+"/tmp/cgt174pQO":2493 2F4E cinit CODE
+"/tmp/cgt174pQO":2494 2F50 cinit CODE
 "/home/akhe/development/VSCP/vscp_firmware/common/vscp_firmware.c":691 2F58 text16 CODE
 "/home/akhe/development/VSCP/vscp_firmware/common/vscp_firmware.c":692 2F5E text16 CODE
 "/home/akhe/development/VSCP/vscp_firmware/common/vscp_firmware.c":695 2F68 text16 CODE
@@ -1193,7 +1193,7 @@ __size_of_Write_b_eep 0 0 ABS 0 - dist/Relocated/production/odessa_expansion.X.p
 _main 2290 0 CODE 0 text0 dist/Relocated/production/odessa_expansion.X.production.obj
 __end_of_doDM 1810 0 CODE 0 text8 dist/Relocated/production/odessa_expansion.X.production.obj
 _init 2CDC 0 CODE 0 text68 dist/Relocated/production/odessa_expansion.X.production.obj
-start 8B6 0 CODE 0 init /tmp/cgtJb7yzt.obj
+start 8B6 0 CODE 0 init /tmp/cgtHI5jbC.obj
 vscp_getManufacturerId@idx A 0 COMRAM 1 cstackCOMRAM dist/Relocated/production/odessa_expansion.X.production.obj
 __size_of_vscp_getSubzone 0 0 ABS 0 - dist/Relocated/production/odessa_expansion.X.production.obj
 __size_of_vscp_getZone 0 0 ABS 0 - dist/Relocated/production/odessa_expansion.X.production.obj
@@ -1670,8 +1670,8 @@ vscp_sendEvent@rv 4B 0 COMRAM 1 cstackCOMRAM dist/Relocated/production/odessa_ex
 __pcinit 2F36 0 CODE 0 cinit dist/Relocated/production/odessa_expansion.X.production.obj
 _minutes 69 0 BANK0 1 bssBANK0 dist/Relocated/production/odessa_expansion.X.production.obj
 _RXM0EXIDM 77CB 0 ABS 0 - dist/Relocated/production/odessa_expansion.X.production.obj
-__ramtop F00 0 RAM 0 ramtop /tmp/cgtJb7yzt.obj
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst /tmp/cgtJb7yzt.obj
+__ramtop F00 0 RAM 0 ramtop /tmp/cgtHI5jbC.obj
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst /tmp/cgtHI5jbC.obj
 __size_of_vscp_error 0 0 ABS 0 - dist/Relocated/production/odessa_expansion.X.production.obj
 __size_of_vscp_handleSetNickname 0 0 ABS 0 - dist/Relocated/production/odessa_expansion.X.production.obj
 __size_of_main 0 0 ABS 0 - dist/Relocated/production/odessa_expansion.X.production.obj
@@ -2001,7 +2001,7 @@ _RXF1SIDL EE5 0 ABS 0 - dist/Relocated/production/odessa_expansion.X.production.
 _RXM0SIDL EF9 0 ABS 0 - dist/Relocated/production/odessa_expansion.X.production.obj
 _RXM1SIDL EFD 0 ABS 0 - dist/Relocated/production/odessa_expansion.X.production.obj
 __size_of_vscp_sendEvent 0 0 ABS 0 - dist/Relocated/production/odessa_expansion.X.production.obj
-__smallconst F00 0 SMALLCONST 0 smallconst /tmp/cgtJb7yzt.obj
+__smallconst F00 0 SMALLCONST 0 smallconst /tmp/cgtHI5jbC.obj
 __size_of_vscp_getMDF_URL 0 0 ABS 0 - dist/Relocated/production/odessa_expansion.X.production.obj
 __ECANPointBuffer@pt C 0 COMRAM 1 cstackCOMRAM dist/Relocated/production/odessa_expansion.X.production.obj
 ECANReceiveMessage@dataLen 10 0 COMRAM 1 cstackCOMRAM dist/Relocated/production/odessa_expansion.X.production.obj
@@ -2014,7 +2014,7 @@ _RXB1OVFL 7B8E 0 ABS 0 - dist/Relocated/production/odessa_expansion.X.production
 vscp_writeRegister@reg 19 0 COMRAM 1 cstackCOMRAM dist/Relocated/production/odessa_expansion.X.production.obj
 __size_of_vscp_check_pstorage 0 0 ABS 0 - dist/Relocated/production/odessa_expansion.X.production.obj
 sendVSCPFrame@pData 45 0 COMRAM 1 cstackCOMRAM dist/Relocated/production/odessa_expansion.X.production.obj
-__accesstop 60 0 ABS 0 - /tmp/cgtJb7yzt.obj
+__accesstop 60 0 ABS 0 - /tmp/cgtHI5jbC.obj
 _FIFOEMPTY 7B8F 0 ABS 0 - dist/Relocated/production/odessa_expansion.X.production.obj
 __end_of_vscp_getMajorVersion 317A 0 CODE 0 text37 dist/Relocated/production/odessa_expansion.X.production.obj
 vscp_readRegister@reg 1D 0 COMRAM 1 cstackCOMRAM dist/Relocated/production/odessa_expansion.X.production.obj
@@ -2022,16 +2022,16 @@ __Hintcode_body 0 0 ABS 0 intcode_body dist/Relocated/production/odessa_expansio
 __end_of_vscp_getMinorVersion 3178 0 CODE 0 text36 dist/Relocated/production/odessa_expansion.X.production.obj
 __Lintcode_body 0 0 ABS 0 intcode_body dist/Relocated/production/odessa_expansion.X.production.obj
 __end_of_vscp_writeNicknamePermanent 30B0 0 CODE 0 text65 dist/Relocated/production/odessa_expansion.X.production.obj
-intlevel0 0 0 CODE 0 text /tmp/cgtJb7yzt.obj
+intlevel0 0 0 CODE 0 text /tmp/cgtHI5jbC.obj
 _vscp_error 3162 0 CODE 0 text7 dist/Relocated/production/odessa_expansion.X.production.obj
 __end_of_vscp_newNodeOnline 2E56 0 CODE 0 text38 dist/Relocated/production/odessa_expansion.X.production.obj
 _vscp_probe_cnt 73 0 BANK0 1 bssBANK0 dist/Relocated/production/odessa_expansion.X.production.obj
 __end_of__CANIDToRegs 215C 0 CODE 0 text52 dist/Relocated/production/odessa_expansion.X.production.obj
-intlevel1 0 0 CODE 0 text /tmp/cgtJb7yzt.obj
+intlevel1 0 0 CODE 0 text /tmp/cgtHI5jbC.obj
 __end_of_vscp_init 2C6C 0 CODE 0 text40 dist/Relocated/production/odessa_expansion.X.production.obj
 _SendInformationEvent 2B7E 0 CODE 0 text13 dist/Relocated/production/odessa_expansion.X.production.obj
-intlevel2 0 0 CODE 0 text /tmp/cgtJb7yzt.obj
-intlevel3 0 0 CODE 0 text /tmp/cgtJb7yzt.obj
+intlevel2 0 0 CODE 0 text /tmp/cgtHI5jbC.obj
+intlevel3 0 0 CODE 0 text /tmp/cgtHI5jbC.obj
 ECANSendMessage@msgFlags 19 0 COMRAM 1 cstackCOMRAM dist/Relocated/production/odessa_expansion.X.production.obj
 vscp_writeAppReg@rv 16 0 COMRAM 1 cstackCOMRAM dist/Relocated/production/odessa_expansion.X.production.obj
 ECANReceiveMessage@data F 0 COMRAM 1 cstackCOMRAM dist/Relocated/production/odessa_expansion.X.production.obj

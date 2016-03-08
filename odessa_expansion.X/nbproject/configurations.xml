@@ -8,7 +8,6 @@
       <itemPath>../vscp_compiler.h</itemPath>
       <itemPath>../ECAN.h</itemPath>
       <itemPath>../ECAN.def</itemPath>
-      <itemPath>../../../../../vscp_firmware/pic/common/eeprom.h</itemPath>
       <itemPath>../../../../../vscp_firmware/common/vscp_firmware.h</itemPath>
       <itemPath>../version.h</itemPath>
       <itemPath>../odessa.h</itemPath>

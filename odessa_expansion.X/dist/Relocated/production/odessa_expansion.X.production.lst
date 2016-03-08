@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC18 PRO Macro Assembler V1.21 build 54009 
-                                                                                               Tue Mar  8 10:39:46 2016
+                                                                                               Tue Mar  8 17:26:06 2016
 
 Microchip Technology Omniscient Code Generator (PRO mode) build 54009
      1                           	processor	18F26K80
@@ -14158,7 +14158,7 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V1.21 build 54009 
-Symbol Table                                                                                   Tue Mar  8 10:39:46 2016
+Symbol Table                                                                                   Tue Mar  8 17:26:06 2016
 
                 __end_of_vscp_readAppReg 2A02                    __end_of_sendVSCPFrame 2966  
            ?_vscp_writeNicknamePermanent 0001              ??_vscp_getRegisterPagesUsed 0008  

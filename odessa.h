@@ -1,11 +1,12 @@
-// File:  main.h
-
 /* ******************************************************************************
- * VSCP (Very Simple Control Protocol)
- * http://www.vscp.org
+ * 	VSCP (Very Simple Control Protocol) 
+ * 	http://www.vscp.org
  *
- * Copyright (C) 1995-2005 Ake Hedman, eurosource
- * Copyright (C) 1995-2015 Ake Hedman, Grodans Paradis AB
+ *  Odessa expansion Module
+ *  ========================
+ *
+ *  Copyright (C)1995-2016 Ake Hedman, Grodans Paradis AB
+ *                          http://www.grodansparadis.com
  *                          <akhe@grodansparadis.com>
  *
  *  This work is licensed under the Creative Common 

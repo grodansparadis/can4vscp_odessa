@@ -1,5 +1,6 @@
 Odessa
 ======
 
+2016-03-08 AKHE - Adopted to 1.6 firmware.
 2015-11-17 AKHE - Reported decision matrix info was wrong
 2015-04-16 AKHE - Start of project
