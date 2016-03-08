@@ -8,7 +8,7 @@
   200008h - 2FFFFFh
   30000Eh - 30003Fh
   
- dist/Relocated/production\odessa_expansion.X.production.hex ranges:
+ dist/Relocated/production/odessa_expansion.X.production.hex ranges:
   800h - 803h
   818h - 8B9h
   F00h - 317Bh
@@ -26,7 +26,7 @@
   T = Trailing code
   & = Find & replace opcode
   X = Find & delete opcode
-  1 = dist/Relocated/production\odessa_expansion.X.production.hex
+  1 = dist/Relocated/production/odessa_expansion.X.production.hex
 00000000: ----------------------------------------------------------------
 00000800: 1111--------------------1111111111111111111111111111111111111111
 00000840: 1111111111111111111111111111111111111111111111111111111111111111
