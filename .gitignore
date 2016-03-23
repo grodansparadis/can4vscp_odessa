@@ -75,3 +75,5 @@
 /odessa_expansion.X/dist/Debug/debug/*.sdb
 /odessa_expansion.X/dist/Debug/debug/*.sym
 /odessa_expansion.X/nbproject/*.properties
+/eagle/*.b#1
+/eagle/*.s#1

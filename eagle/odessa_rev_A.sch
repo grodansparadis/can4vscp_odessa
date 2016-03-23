@@ -17678,7 +17678,7 @@ wide body 7.5 mm/JEDEC MO-119AA</description>
 <part name="R11" library="rcl" deviceset="R-EU_" device="R0805" value="1K"/>
 <part name="LED2" library="led" deviceset="LED" device="CHIP-LED0805" value="Red LED"/>
 <part name="P+9" library="SUPPLY1" deviceset="VCC" device=""/>
-<part name="C14" library="rcl" deviceset="C-EU" device="C0805" value="1 uF"/>
+<part name="C14" library="rcl" deviceset="C-EU" device="C0805" value="10 uF"/>
 <part name="GND32" library="SUPPLY1" deviceset="GND" device=""/>
 <part name="R17" library="rcl" deviceset="R-EU_" device="R0805" value="120"/>
 <part name="PAD1" library="wirepad" deviceset="1,6/0,8" device=""/>
@@ -17778,7 +17778,7 @@ IC3 is MCP2551</text>
 <instance part="P+9" gate="VCC" x="165.1" y="60.96"/>
 <instance part="C14" gate="G$1" x="10.16" y="193.04" smashed="yes" rot="R180">
 <attribute name="NAME" x="8.636" y="192.659" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="18.796" y="195.199" size="1.778" layer="96" rot="R180"/>
+<attribute name="VALUE" x="18.796" y="195.199" size="1.778" layer="91" rot="R180"/>
 </instance>
 <instance part="GND32" gate="1" x="10.16" y="182.88"/>
 <instance part="R17" gate="G$1" x="269.24" y="248.92" rot="R90"/>
