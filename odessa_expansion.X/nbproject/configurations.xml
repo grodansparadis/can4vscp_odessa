@@ -41,7 +41,7 @@
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
-    <conf name="Debug" type="2">
+    <conf name="Debug_26K80" type="2">
       <toolsSet>
         <developmentServer>localhost</developmentServer>
         <targetDevice>PIC18F26K80</targetDevice>
@@ -208,7 +208,7 @@
         <property key="stack-type" value="compiled"/>
       </XC8-config-global>
     </conf>
-    <conf name="Relocated" type="2">
+    <conf name="Relocated_26K80" type="2">
       <toolsSet>
         <developmentServer>localhost</developmentServer>
         <targetDevice>PIC18F26K80</targetDevice>

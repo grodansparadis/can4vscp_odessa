@@ -75,3 +75,5 @@
 /odessa_expansion.X/dist/Debug/debug/*.sdb
 /odessa_expansion.X/dist/Debug/debug/*.sym
 /odessa_expansion.X/nbproject/*.properties
+/odessa_expansion.X/build/Relocated_26K80/
+/odessa_expansion.X/dist/Relocated_26K80/
