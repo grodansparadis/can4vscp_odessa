@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Object files
 *.o
 *.ko
@@ -77,3 +78,84 @@
 /odessa_expansion.X/nbproject/*.properties
 /odessa_expansion.X/build/Relocated_26K80/
 /odessa_expansion.X/dist/Relocated_26K80/
+=======
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+
+# Debug files
+*.dSYM/
+/odessa_expansion.X/build/Debug/debug/_ext/1472/ECAN.p1
+/odessa_expansion.X/build/Debug/debug/_ext/1472/ECAN.p1.d
+/odessa_expansion.X/build/Debug/debug/_ext/1472/ECAN.pre
+/odessa_expansion.X/build/Debug/debug/_ext/1472/main.p1
+/odessa_expansion.X/build/Debug/debug/_ext/1472/main.p1.d
+/odessa_expansion.X/build/Debug/debug/_ext/1472/main.pre
+/odessa_expansion.X/build/Debug/debug/_ext/1554471087/eeprom.p1
+/odessa_expansion.X/build/Debug/debug/_ext/1554471087/eeprom.p1.d
+/odessa_expansion.X/build/Debug/debug/_ext/1554471087/eeprom.pre
+/odessa_expansion.X/build/Debug/debug/_ext/1935753226/vscp_firmware.p1
+/odessa_expansion.X/build/Debug/debug/_ext/1935753226/vscp_firmware.p1.d
+/odessa_expansion.X/build/Debug/debug/_ext/1935753226/vscp_firmware.pre
+/odessa_expansion.X/build/Debug/production/_ext/1472/ECAN.p1
+/odessa_expansion.X/build/Debug/production/_ext/1472/ECAN.p1.d
+/odessa_expansion.X/build/Debug/production/_ext/1472/ECAN.pre
+/odessa_expansion.X/build/Debug/production/_ext/1472/main.p1
+/odessa_expansion.X/build/Debug/production/_ext/1472/main.p1.d
+/odessa_expansion.X/build/Debug/production/_ext/1472/main.pre
+/odessa_expansion.X/build/Debug/production/_ext/1554471087/eeprom.p1
+/odessa_expansion.X/build/Debug/production/_ext/1554471087/eeprom.p1.d
+/odessa_expansion.X/build/Debug/production/_ext/1554471087/eeprom.pre
+/odessa_expansion.X/build/Debug/production/_ext/1767644135/vscp_firmware.pre
+/odessa_expansion.X/build/Debug/production/_ext/1935753226/vscp_firmware.p1
+/odessa_expansion.X/build/Debug/production/_ext/1935753226/vscp_firmware.p1.d
+/odessa_expansion.X/build/Debug/production/_ext/1935753226/vscp_firmware.pre
+/odessa_expansion.X/build/Debug/production/_ext/382426430/eeprom.pre
+/odessa_expansion.X/build/Release/debug/_ext/1472/*.p1
+/odessa_expansion.X/build/Release/debug/_ext/1472/*.d
+/odessa_expansion.X/build/Release/debug/_ext/1472/*.pre
+/odessa_expansion.X/build/Release/debug/_ext/1554471087/*.p1
+/odessa_expansion.X/build/Release/debug/_ext/1554471087/*.d
+/odessa_expansion.X/build/Release/debug/_ext/1554471087/*.pre
+/odessa_expansion.X/build/Release/debug/_ext/1935753226/*.p1
+/odessa_expansion.X/build/Release/debug/_ext/1935753226/*.d
+/odessa_expansion.X/build/Release/debug/_ext/1935753226/*.pre
+*.p1
+*.d
+*.pre
+/odessa_expansion.X/dist/Debug/debug/*.cmf
+/odessa_expansion.X/dist/Debug/debug/*.hxl
+/odessa_expansion.X/dist/Debug/debug/*.lst
+/odessa_expansion.X/dist/Debug/debug/*.map
+/odessa_expansion.X/dist/Debug/debug/*.rlf
+/odessa_expansion.X/dist/Debug/debug/*.sdb
+/odessa_expansion.X/dist/Debug/debug/*.sym
+/odessa_expansion.X/nbproject/*.properties
+/eagle/*.b#1
+/eagle/*.s#1
+>>>>>>> 10bd121a24f0ddd0e0986c7526cb9d7ef76f7951

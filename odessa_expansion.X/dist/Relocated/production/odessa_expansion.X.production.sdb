@@ -1,0 +1,1486 @@
+[p PRO_MODE GLOBOPT AUTOSTATIC LFSROK SPEEDOPT EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F26K80 ]
+"1505 C:\Users\akhe\development\can4vscp_odessa/main.c
+[e E18966 _ECAN_TX_MSG_FLAGS `uc
+ECAN_TX_PRIORITY_BITS 3
+ECAN_TX_PRIORITY_0 0
+ECAN_TX_PRIORITY_1 1
+ECAN_TX_PRIORITY_2 2
+ECAN_TX_PRIORITY_3 3
+ECAN_TX_FRAME_BIT 32
+ECAN_TX_STD_FRAME 0
+ECAN_TX_XTD_FRAME 32
+ECAN_TX_RTR_BIT 64
+ECAN_TX_NO_RTR_FRAME 0
+ECAN_TX_RTR_FRAME 64
+]
+[e E18242 _BOOL `uc
+FALSE 0
+TRUE 1
+]
+"1522
+[e E18984 _ECAN_RX_MSG_FLAGS `uc
+ECAN_RX_OVERFLOW 8
+ECAN_RX_INVALID_MSG 16
+ECAN_RX_XTD_FRAME 32
+ECAN_RX_RTR_FRAME 64
+ECAN_RX_DBL_BUFFERED 128
+]
+"1651
+[e E18997 _ECAN_OP_MODE `uc
+ECAN_OP_MODE_BITS 224
+ECAN_OP_MODE_NORMAL 0
+ECAN_OP_MODE_SLEEP 32
+ECAN_OP_MODE_LOOP 64
+ECAN_OP_MODE_LISTEN 96
+ECAN_OP_MODE_CONFIG 128
+]
+"171 C:\Users\akhe\development\can4vscp_odessa/ECAN.c
+[e E18989 _ECAN_OP_MODE `uc
+ECAN_OP_MODE_BITS 224
+ECAN_OP_MODE_NORMAL 0
+ECAN_OP_MODE_SLEEP 32
+ECAN_OP_MODE_LOOP 64
+ECAN_OP_MODE_LISTEN 96
+ECAN_OP_MODE_CONFIG 128
+]
+"617
+[e E18958 _ECAN_TX_MSG_FLAGS `uc
+ECAN_TX_PRIORITY_BITS 3
+ECAN_TX_PRIORITY_0 0
+ECAN_TX_PRIORITY_1 1
+ECAN_TX_PRIORITY_2 2
+ECAN_TX_PRIORITY_3 3
+ECAN_TX_FRAME_BIT 32
+ECAN_TX_STD_FRAME 0
+ECAN_TX_XTD_FRAME 32
+ECAN_TX_RTR_BIT 64
+ECAN_TX_NO_RTR_FRAME 0
+ECAN_TX_RTR_FRAME 64
+]
+[e E18242 _BOOL `uc
+FALSE 0
+TRUE 1
+]
+"803
+[e E18976 _ECAN_RX_MSG_FLAGS `uc
+ECAN_RX_OVERFLOW 8
+ECAN_RX_INVALID_MSG 16
+ECAN_RX_XTD_FRAME 32
+ECAN_RX_RTR_FRAME 64
+ECAN_RX_DBL_BUFFERED 128
+]
+"119 C:\Users\akhe\development/vscp_firmware/common/vscp_firmware.c
+[v _vscp_init vscp_init `(v  1 e 0 0 ]
+"171
+[v _vscp_check_pstorage vscp_check_pstorage `(uc  1 e 1 0 ]
+"202
+[v _vscp_error vscp_error `(v  1 e 0 0 ]
+"211
+[v _vscp_handleProbeState vscp_handleProbeState `(v  1 e 0 0 ]
+"333
+[v _vscp_handlePreActiveState vscp_handlePreActiveState `(v  1 e 0 0 ]
+"367
+[v _vscp_goActiveState vscp_goActiveState `(v  1 e 0 0 ]
+"387
+[v _vscp_sendHeartBeat vscp_sendHeartBeat `(v  1 e 0 0 ]
+"405
+[v _vscp_handleHeartbeat vscp_handleHeartbeat `(v  1 e 0 0 ]
+"414
+[v _vscp_handleSetNickname vscp_handleSetNickname `(v  1 e 0 0 ]
+"430
+[v _vscp_handleDropNickname vscp_handleDropNickname `(v  1 e 0 0 ]
+"496
+[v _vscp_newNodeOnline vscp_newNodeOnline `(v  1 e 0 0 ]
+"518
+[v _vscp_doOneSecondWork vscp_doOneSecondWork `(v  1 e 0 0 ]
+"555
+[v _vscp_readRegister vscp_readRegister `(uc  1 e 1 0 ]
+"569
+[v _vscp_readStdReg vscp_readStdReg `(uc  1 e 1 0 ]
+"695
+[v _vscp_writeRegister vscp_writeRegister `(uc  1 e 1 0 ]
+"709
+[v _vscp_writeStdReg vscp_writeStdReg `(uc  1 e 1 0 ]
+"794
+[v _vscp_handleProtocolEvent vscp_handleProtocolEvent `(v  1 e 0 0 ]
+"1285
+[v _vscp_sendEvent vscp_sendEvent `(uc  1 e 1 0 ]
+"1305
+[v _vscp_getEvent vscp_getEvent `(uc  1 e 1 0 ]
+"168 C:\Users\akhe\development\can4vscp_odessa/ECAN.c
+[v _ECANInitialize ECANInitialize `(v  1 e 0 0 ]
+"617
+[v _ECANSendMessage ECANSendMessage `(E18242  1 e 1 0 ]
+"803
+[v _ECANReceiveMessage ECANReceiveMessage `(E18242  1 e 1 0 ]
+"1012
+[v _ECANSetOperationMode ECANSetOperationMode `(v  1 e 0 0 ]
+"1099
+[v __CANIDToRegs _CANIDToRegs `(v  1 e 0 0 ]
+"1156
+[v __RegsToCANID _RegsToCANID `(v  1 e 0 0 ]
+"1207
+[v __ECANPointBuffer _ECANPointBuffer `(*.39uc  1 s 2 _ECANPointBuffer ]
+"103 C:\Users\akhe\development\can4vscp_odessa/main.c
+[v _interrupt_at_low_vector interrupt_at_low_vector `IIL(v  1 e 0 0 ]
+"160
+[v _main main `(v  1 e 0 0 ]
+"293
+[v _init init `(v  1 e 0 0 ]
+"401
+[v _init_app_ram init_app_ram `(v  1 e 0 0 ]
+"418
+[v _init_app_eeprom init_app_eeprom `(v  1 e 0 0 ]
+"447
+[v _doApplicationOneSecondWork doApplicationOneSecondWork `(v  1 e 0 0 ]
+"458
+[v _getMajorVersion getMajorVersion `(uc  1 e 1 0 ]
+"467
+[v _getMinorVersion getMinorVersion `(uc  1 e 1 0 ]
+"476
+[v _getSubMinorVersion getSubMinorVersion `(uc  1 e 1 0 ]
+"486
+[v _vscp_setGUID vscp_setGUID `(v  1 e 0 0 ]
+"498
+[v _vscp_setManufacturerId vscp_setManufacturerId `(v  1 e 0 0 ]
+"509
+[v _getBootLoaderAlgorithm getBootLoaderAlgorithm `(uc  1 e 1 0 ]
+"518
+[v _getBufferSize getBufferSize `(uc  1 e 1 0 ]
+"527
+[v _vscp_readNicknamePermanent vscp_readNicknamePermanent `(uc  1 e 1 0 ]
+"536
+[v _vscp_writeNicknamePermanent vscp_writeNicknamePermanent `(v  1 e 0 0 ]
+"545
+[v _vscp_getZone vscp_getZone `(uc  1 e 1 0 ]
+"554
+[v _vscp_getSubzone vscp_getSubzone `(uc  1 e 1 0 ]
+"565
+[v _doWork doWork `(v  1 e 0 0 ]
+"577
+[v _vscp_readAppReg vscp_readAppReg `(uc  1 e 1 0 ]
+"632
+[v _vscp_writeAppReg vscp_writeAppReg `(uc  1 e 1 0 ]
+"697
+[v _writeControlReg writeControlReg `(uc  1 e 1 0 ]
+"742
+[v _readControlReg readControlReg `(uc  1 e 1 0 ]
+"784
+[v _sendDMatrixInfo sendDMatrixInfo `(v  1 e 0 0 ]
+"804
+[v _SendInformationEvent SendInformationEvent `(v  1 e 0 0 ]
+"826
+[v _doDM doDM `(v  1 e 0 0 ]
+"944
+[v _actionSet actionSet `(v  1 e 0 0 ]
+"1047
+[v _actionClr actionClr `(v  1 e 0 0 ]
+"1151
+[v _actionSetAll actionSetAll `(v  1 e 0 0 ]
+"1170
+[v _actionClrAll actionClrAll `(v  1 e 0 0 ]
+"1194
+[v _vscp_getMajorVersion vscp_getMajorVersion `(uc  1 e 1 0 ]
+"1203
+[v _vscp_getMinorVersion vscp_getMinorVersion `(uc  1 e 1 0 ]
+"1212
+[v _vscp_getSubMinorVersion vscp_getSubMinorVersion `(uc  1 e 1 0 ]
+"1223
+[v _vscp_getGUID vscp_getGUID `(uc  1 e 1 0 ]
+"1235
+[v _vscp_getMDF_URL vscp_getMDF_URL `(uc  1 e 1 0 ]
+"1244
+[v _vscp_getUserID vscp_getUserID `(uc  1 e 1 0 ]
+"1253
+[v _vscp_setUserID vscp_setUserID `(v  1 e 0 0 ]
+"1264
+[v _vscp_getManufacturerId vscp_getManufacturerId `(uc  1 e 1 0 ]
+"1273
+[v _vscp_getBootLoaderAlgorithm vscp_getBootLoaderAlgorithm `(uc  1 e 1 0 ]
+"1282
+[v _vscp_getBufferSize vscp_getBufferSize `(uc  1 e 1 0 ]
+"1292
+[v _vscp_getNickname vscp_getNickname `(uc  1 e 1 0 ]
+"1301
+[v _vscp_setNickname vscp_setNickname `(v  1 e 0 0 ]
+"1329
+[v _vscp_setControlByte vscp_setControlByte `(v  1 e 0 0 ]
+"1340
+[v _vscp_getControlByte vscp_getControlByte `(uc  1 e 1 0 ]
+"1350
+[v _vscp_init_pstorage vscp_init_pstorage `(v  1 e 0 0 ]
+"1359
+[v _vscp_getEmbeddedMdfInfo vscp_getEmbeddedMdfInfo `(v  1 e 0 0 ]
+"1381
+[v _vscp_goBootloaderMode vscp_goBootloaderMode `(v  1 e 0 0 ]
+"1397
+[v _vscp_getMatrixInfo vscp_getMatrixInfo `(v  1 e 0 0 ]
+"1413
+[v _vscp_getFamilyCode vscp_getFamilyCode `(ul  1 e 4 0 ]
+"1422
+[v _vscp_getFamilyType vscp_getFamilyType `(ul  1 e 4 0 ]
+"1430
+[v _vscp_restoreDefaults vscp_restoreDefaults `(v  1 e 0 0 ]
+"1441
+[v _vscp_getRegisterPagesUsed vscp_getRegisterPagesUsed `(uc  1 e 1 0 ]
+"1455
+[v _sendVSCPFrame sendVSCPFrame `(uc  1 e 1 0 ]
+"1479
+[v _getVSCPFrame getVSCPFrame `(uc  1 e 1 0 ]
+"1500
+[v _sendCANFrame sendCANFrame `(uc  1 e 1 0 ]
+"1521
+[v _getCANFrame getCANFrame `(uc  1 e 1 0 ]
+"1551
+[v _calculateSetFilterMask calculateSetFilterMask `(v  1 e 0 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\common\abdiv.c
+[v ___abdiv __abdiv `(c  1 e 1 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\common\abmod.c
+[v ___abmod __abmod `(c  1 e 1 0 ]
+"32 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\common\abtofl.c
+[v ___abtofl __abtofl `(d  1 e 3 0 ]
+"34 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\common\abtoft.c
+[v ___abtoft __abtoft `(f  1 e 3 0 ]
+"10 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\common\aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
+"10 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\common\almod.c
+[v ___almod __almod `(l  1 e 4 0 ]
+"37 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\common\altofl.c
+[v ___altofl __altofl `(d  1 e 3 0 ]
+"43 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\common\altoft.c
+[v ___altoft __altoft `(f  1 e 3 0 ]
+"10 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\common\atdiv.c
+[v ___atdiv __atdiv `(m  1 e 3 0 ]
+"10 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\common\atmod.c
+[v ___atmod __atmod `(m  1 e 3 0 ]
+"38 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\common\attofl.c
+[v ___attofl __attofl `(d  1 e 3 0 ]
+"38 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\common\attoft.c
+[v ___attoft __attoft `(f  1 e 3 0 ]
+"10 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"10 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+"32 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\common\awtofl.c
+[v ___awtofl __awtofl `(d  1 e 3 0 ]
+"33 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\common\awtoft.c
+[v ___awtoft __awtoft `(f  1 e 3 0 ]
+"3 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\common\bmul.c
+[v ___bmul __bmul `(uc  1 e 1 0 ]
+"64 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\common\double.c
+[v ___flpack __flpack `(d  1 e 3 0 ]
+"89 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\common\fladd.c
+[v ___fladd __fladd `(d  1 e 3 0 ]
+"50 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\common\fldiv.c
+[v ___fldiv __fldiv `(d  1 e 3 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\common\flge.c
+[v ___flge __flge `(b  1 e 0 0 ]
+"51 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\common\flmul.c
+[v ___flmul __flmul `(d  1 e 3 0 ]
+"16 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\common\flneg.c
+[v ___flneg __flneg `(d  1 e 3 0 ]
+"63 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"22 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\common\flsub.c
+[v ___flsub __flsub `(d  1 e 3 0 ]
+"44 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\common\fltol.c
+[v ___fltol __fltol `(l  1 e 4 0 ]
+"87 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"50 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\common\ftge.c
+[v ___ftge __ftge `(b  1 e 0 0 ]
+"52 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+"16 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\common\ftneg.c
+[v ___ftneg __ftneg `(f  1 e 3 0 ]
+"22 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 3 0 ]
+"45 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\common\fttol.c
+[v ___fttol __fttol `(l  1 e 4 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\common\lbdiv.c
+[v ___lbdiv __lbdiv `(uc  1 e 1 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\common\lbmod.c
+[v ___lbmod __lbmod `(uc  1 e 1 0 ]
+"28 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\common\lbtofl.c
+[v ___lbtofl __lbtofl `(d  1 e 3 0 ]
+"28 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\common\lbtoft.c
+[v ___lbtoft __lbtoft `(f  1 e 3 0 ]
+"10 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\common\lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+"10 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\common\llmod.c
+[v ___llmod __llmod `(ul  1 e 4 0 ]
+"31 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\common\lltofl.c
+[v ___lltofl __lltofl `(d  1 e 3 0 ]
+"36 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\common\lltoft.c
+[v ___lltoft __lltoft `(f  1 e 3 0 ]
+"3 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\common\lmul.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"10 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\common\ltdiv.c
+[v ___ltdiv __ltdiv `(um  1 e 3 0 ]
+"10 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\common\ltmod.c
+[v ___ltmod __ltmod `(um  1 e 3 0 ]
+"31 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\common\lttofl.c
+[v ___lttofl __lttofl `(d  1 e 3 0 ]
+"31 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\common\lttoft.c
+[v ___lttoft __lttoft `(f  1 e 3 0 ]
+"10 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"10 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+"29 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\common\lwtofl.c
+[v ___lwtofl __lwtofl `(d  1 e 3 0 ]
+"29 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\common\lwtoft.c
+[v ___lwtoft __lwtoft `(f  1 e 3 0 ]
+"3 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\common\tmul.c
+[v ___tmul __tmul `(um  1 e 3 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\common\wmul.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\pic18\asfladd.c
+[v ___asfladd __asfladd `(d  1 e 3 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\pic18\asfldiv.c
+[v ___asfldiv __asfldiv `(d  1 e 3 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\pic18\asflmul.c
+[v ___asflmul __asflmul `(d  1 e 3 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\pic18\asflsub.c
+[v ___asflsub __asflsub `(d  1 e 3 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\pic18\asftadd.c
+[v ___asftadd __asftadd `(f  1 e 3 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\pic18\asftdiv.c
+[v ___asftdiv __asftdiv `(f  1 e 3 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\pic18\asftmul.c
+[v ___asftmul __asftmul `(f  1 e 3 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\pic18\asftsub.c
+[v ___asftsub __asftsub `(f  1 e 3 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\pic18\aslmul.c
+[v ___aslmul __aslmul `(ul  1 e 4 0 ]
+"13 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\pic18\plib\EEP\busy_eep.c
+[v _Busy_eep Busy_eep `(v  1 e 0 0 ]
+"36 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\pic18\plib\EEP\read_B.c
+[v _Read_b_eep Read_b_eep `(uc  1 e 1 0 ]
+"50 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\pic18\plib\EEP\write_B.c
+[v _Write_b_eep Write_b_eep `(v  1 e 0 0 ]
+"19 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\pic18\plib\Timers\t0open.c
+[v _OpenTimer0 OpenTimer0 `(v  1 e 0 0 ]
+"17 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\pic18\plib\Timers\t0write.c
+[v _WriteTimer0 WriteTimer0 `(v  1 e 0 0 ]
+[v i1_WriteTimer0 WriteTimer0 `(v  1 e 0 0 ]
+[v i1_WriteTimer0 WriteTimer0 `(v  1 e 0 0 ]
+"63 C:\Users\akhe\development/vscp_firmware/common/vscp_firmware.c
+[v _vscp_nickname vscp_nickname `uc  1 e 1 0 ]
+"65
+[v _vscp_errorcnt vscp_errorcnt `uc  1 e 1 0 ]
+"66
+[v _vscp_alarmstatus vscp_alarmstatus `uc  1 e 1 0 ]
+"68
+[v _vscp_node_state vscp_node_state `uc  1 e 1 0 ]
+"69
+[v _vscp_node_substate vscp_node_substate `uc  1 e 1 0 ]
+"71
+[v _vscp_probe_cnt vscp_probe_cnt `uc  1 e 1 0 ]
+[s S193 . 14 `uc 1 flags 1 0 `uc 1 priority 1 1 `us 1 vscp_class 2 2 `uc 1 vscp_type 1 4 `uc 1 oaddr 1 5 `[8]uc 1 data 8 6 ]
+"74
+[v _vscp_imsg vscp_imsg `S193  1 e 14 0 ]
+"77
+[v _vscp_omsg vscp_omsg `S193  1 e 14 0 ]
+"79
+[v _vscp_probe_address vscp_probe_address `uc  1 e 1 0 ]
+"80
+[v _vscp_initledfunc vscp_initledfunc `uc  1 e 1 0 ]
+"82
+[v _vscp_timer vscp_timer `VEus  1 e 2 0 ]
+"89
+[v _vscp_initbtncnt vscp_initbtncnt `VEuc  1 e 1 0 ]
+"92
+[v _vscp_statuscnt vscp_statuscnt `VEuc  1 e 1 0 ]
+"95
+[v _vscp_configtimer vscp_configtimer `VEus  1 e 2 0 ]
+"99
+[v _vscp_page_select vscp_page_select `us  1 e 2 0 ]
+"106
+[v _vscp_guid_reset vscp_guid_reset `uc  1 e 1 0 ]
+"109
+[v _vscp_second vscp_second `uc  1 e 1 0 ]
+"110
+[v _vscp_minute vscp_minute `uc  1 e 1 0 ]
+"111
+[v _vscp_hour vscp_hour `uc  1 e 1 0 ]
+[s S642 . 1 `uc 1 b0 1 0 :1:0 
+`uc 1 b1 1 0 :1:1 
+`uc 1 b2 1 0 :1:2 
+`uc 1 b3 1 0 :1:3 
+`uc 1 b4 1 0 :1:4 
+`uc 1 b5 1 0 :1:5 
+`uc 1 b6 1 0 :1:6 
+`uc 1 b7 1 0 :1:7 
+]
+"56 C:\Users\akhe\development\can4vscp_odessa/ECAN.c
+[u S651 . 1 `uc 1 Val 1 0 `S642 1 bits 1 0 ]
+[v __ECANRxFilterHitInfo _ECANRxFilterHitInfo `S651  1 e 1 0 ]
+"86 C:\Users\akhe\development\can4vscp_odessa/main.c
+[v _vscp_deviceURL vscp_deviceURL `C[32]uc  1 e 32 0 ]
+"88
+[v _measurement_clock measurement_clock `VEul  1 e 4 0 ]
+"91
+[v _seconds seconds `uc  1 e 1 0 ]
+"92
+[v _minutes minutes `uc  1 e 1 0 ]
+"93
+[v _hours hours `uc  1 e 1 0 ]
+"182 C:\Program Files (x86)\Microchip\xc8\v1.21\include\pic18f26k80.h
+[v _BRGCON1 BRGCON1 `VEuc  1 e 1 @3651 ]
+"257
+[v _BRGCON2 BRGCON2 `VEuc  1 e 1 @3652 ]
+"341
+[v _BRGCON3 BRGCON3 `VEuc  1 e 1 @3653 ]
+"393
+[v _RXFCON0 RXFCON0 `VEuc  1 e 1 @3654 ]
+"454
+[v _RXFCON1 RXFCON1 `VEuc  1 e 1 @3655 ]
+"5956
+[v _RXFBCON0 RXFBCON0 `VEuc  1 e 1 @3697 ]
+"6039
+[v _RXFBCON1 RXFBCON1 `VEuc  1 e 1 @3698 ]
+"6122
+[v _RXFBCON2 RXFBCON2 `VEuc  1 e 1 @3699 ]
+"6205
+[v _RXFBCON3 RXFBCON3 `VEuc  1 e 1 @3700 ]
+"6288
+[v _RXFBCON4 RXFBCON4 `VEuc  1 e 1 @3701 ]
+"6371
+[v _RXFBCON5 RXFBCON5 `VEuc  1 e 1 @3702 ]
+"6454
+[v _RXFBCON6 RXFBCON6 `VEuc  1 e 1 @3703 ]
+"6537
+[v _RXFBCON7 RXFBCON7 `VEuc  1 e 1 @3704 ]
+"6620
+[v _MSEL0 MSEL0 `VEuc  1 e 1 @3705 ]
+"6707
+[v _MSEL1 MSEL1 `VEuc  1 e 1 @3706 ]
+"6794
+[v _MSEL2 MSEL2 `VEuc  1 e 1 @3707 ]
+"6968
+[v _BSEL0 BSEL0 `VEuc  1 e 1 @3709 ]
+"7155
+[v _B0CON B0CON `VEuc  1 e 1 @3712 ]
+"8910
+[v _B1CON B1CON `VEuc  1 e 1 @3728 ]
+"10665
+[v _B2CON B2CON `VEuc  1 e 1 @3744 ]
+"12429
+[v _B3CON B3CON `VEuc  1 e 1 @3760 ]
+"14193
+[v _B4CON B4CON `VEuc  1 e 1 @3776 ]
+"15957
+[v _B5CON B5CON `VEuc  1 e 1 @3792 ]
+"17721
+[v _RXF0SIDH RXF0SIDH `VEuc  1 e 1 @3808 ]
+"17861
+[v _RXF0SIDL RXF0SIDL `VEuc  1 e 1 @3809 ]
+"17980
+[v _RXF0EIDH RXF0EIDH `VEuc  1 e 1 @3810 ]
+"18120
+[v _RXF0EIDL RXF0EIDL `VEuc  1 e 1 @3811 ]
+"18260
+[v _RXF1SIDH RXF1SIDH `VEuc  1 e 1 @3812 ]
+"18400
+[v _RXF1SIDL RXF1SIDL `VEuc  1 e 1 @3813 ]
+"18519
+[v _RXF1EIDH RXF1EIDH `VEuc  1 e 1 @3814 ]
+"18659
+[v _RXF1EIDL RXF1EIDL `VEuc  1 e 1 @3815 ]
+"20955
+[v _RXM0SIDH RXM0SIDH `VEuc  1 e 1 @3832 ]
+"21095
+[v _RXM0SIDL RXM0SIDL `VEuc  1 e 1 @3833 ]
+"21214
+[v _RXM0EIDH RXM0EIDH `VEuc  1 e 1 @3834 ]
+"21354
+[v _RXM0EIDL RXM0EIDL `VEuc  1 e 1 @3835 ]
+"21494
+[v _RXM1SIDH RXM1SIDH `VEuc  1 e 1 @3836 ]
+"21634
+[v _RXM1SIDL RXM1SIDL `VEuc  1 e 1 @3837 ]
+"21753
+[v _RXM1EIDH RXM1EIDH `VEuc  1 e 1 @3838 ]
+"21893
+[v _RXM1EIDL RXM1EIDL `VEuc  1 e 1 @3839 ]
+"22033
+[v _TXB2CON TXB2CON `VEuc  1 e 1 @3840 ]
+"23552
+[v _TXB1CON TXB1CON `VEuc  1 e 1 @3856 ]
+"25071
+[v _TXB0CON TXB0CON `VEuc  1 e 1 @3872 ]
+"26590
+[v _RXB1CON RXB1CON `VEuc  1 e 1 @3888 ]
+[s S738 . 1 `uc 1 FILHIT0 1 0 :1:0 
+`uc 1 FILHIT1 1 0 :1:1 
+`uc 1 FILHIT2 1 0 :1:2 
+`uc 1 RXRTRRO_FILHIT3 1 0 :1:3 
+`uc 1 FILHIT4 1 0 :1:4 
+`uc 1 RXM0_RTRRO 1 0 :1:5 
+`uc 1 RXM1 1 0 :1:6 
+`uc 1 RXFUL 1 0 :1:7 
+]
+"26658
+[s S747 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 RXRTRRO 1 0 :1:3 
+`uc 1 . 1 0 :1:4 
+`uc 1 RXM0 1 0 :1:5 
+]
+[s S752 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 FILHIT3 1 0 :1:3 
+`uc 1 . 1 0 :1:4 
+`uc 1 RTRRO 1 0 :1:5 
+]
+[s S757 . 1 `uc 1 RXB1FILHIT0 1 0 :1:0 
+]
+[s S759 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 RXB1FILHIT1 1 0 :1:1 
+]
+[s S762 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 RXB1FILHIT2 1 0 :1:2 
+]
+[s S765 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 RXB1FILHIT3 1 0 :1:3 
+]
+[s S768 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 RXB1FILHIT4 1 0 :1:4 
+]
+[s S771 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 RXB1FUL 1 0 :1:7 
+]
+[s S774 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 RXB1M0 1 0 :1:5 
+]
+[s S777 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 RXB1M1 1 0 :1:6 
+]
+[s S780 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 RXB1RTRR0 1 0 :1:3 
+]
+[s S783 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 RXB1RTRRO 1 0 :1:5 
+]
+[u S786 . 1 `S738 1 . 1 0 `S747 1 . 1 0 `S752 1 . 1 0 `S757 1 . 1 0 `S759 1 . 1 0 `S762 1 . 1 0 `S765 1 . 1 0 `S768 1 . 1 0 `S771 1 . 1 0 `S774 1 . 1 0 `S777 1 . 1 0 `S780 1 . 1 0 `S783 1 . 1 0 ]
+[v _RXB1CONbits RXB1CONbits `VES786  1 e 1 @3888 ]
+"29287
+[v _ANCON1 ANCON1 `VEuc  1 e 1 @3932 ]
+"29344
+[v _ANCON0 ANCON0 `VEuc  1 e 1 @3933 ]
+"30051
+[v _RXB0CON RXB0CON `VEuc  1 e 1 @3936 ]
+"31603
+[v _CANCON CANCON `VEuc  1 e 1 @3951 ]
+"31694
+[v _CIOCON CIOCON `VEuc  1 e 1 @3952 ]
+"31844
+[v _ECANCON ECANCON `VEuc  1 e 1 @3954 ]
+"31920
+[v _EEDATA EEDATA `VEuc  1 e 1 @3955 ]
+"31939
+[v _EEADR EEADR `VEuc  1 e 1 @3956 ]
+"31958
+[v _EEADRH EEADRH `VEuc  1 e 1 @3957 ]
+"32353
+[v _EECON2 EECON2 `VEuc  1 e 1 @3966 ]
+[s S1138 . 1 `uc 1 RD 1 0 :1:0 
+`uc 1 WR 1 0 :1:1 
+`uc 1 WREN 1 0 :1:2 
+`uc 1 WRERR 1 0 :1:3 
+`uc 1 FREE 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 CFGS 1 0 :1:6 
+`uc 1 EEPGD 1 0 :1:7 
+]
+"32393
+[s S1147 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 EEFS 1 0 :1:6 
+]
+[u S1150 . 1 `S1138 1 . 1 0 `S1147 1 . 1 0 ]
+[v _EECON1bits EECON1bits `VES1150  1 e 1 @3967 ]
+"32437
+[v _PORTA PORTA `VEuc  1 e 1 @3968 ]
+[s S266 . 1 `uc 1 RA0 1 0 :1:0 
+`uc 1 RA1 1 0 :1:1 
+`uc 1 RA2 1 0 :1:2 
+`uc 1 RA3 1 0 :1:3 
+`uc 1 . 1 0 :1:4 
+`uc 1 RA5 1 0 :1:5 
+`uc 1 RA6 1 0 :1:6 
+`uc 1 RA7 1 0 :1:7 
+]
+"32469
+[s S275 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 LVDIN 1 0 :1:5 
+]
+[s S278 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 RA4 1 0 :1:4 
+]
+[s S281 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 RJPU 1 0 :1:7 
+]
+[s S284 . 1 `uc 1 ULPWUIN 1 0 :1:0 
+]
+[u S286 . 1 `S266 1 . 1 0 `S275 1 . 1 0 `S278 1 . 1 0 `S281 1 . 1 0 `S284 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES286  1 e 1 @3968 ]
+"32528
+[v _PORTB PORTB `VEuc  1 e 1 @3969 ]
+[s S313 . 1 `uc 1 RB0 1 0 :1:0 
+`uc 1 RB1 1 0 :1:1 
+`uc 1 RB2 1 0 :1:2 
+`uc 1 RB3 1 0 :1:3 
+`uc 1 RB4 1 0 :1:4 
+`uc 1 RB5 1 0 :1:5 
+`uc 1 RB6 1 0 :1:6 
+`uc 1 RB7 1 0 :1:7 
+]
+"32549
+[s S322 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 CCP2_PA2 1 0 :1:3 
+]
+[u S325 . 1 `S313 1 . 1 0 `S322 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES325  1 e 1 @3969 ]
+"32598
+[v _PORTC PORTC `VEuc  1 e 1 @3970 ]
+[s S105 . 1 `uc 1 RC0 1 0 :1:0 
+`uc 1 RC1 1 0 :1:1 
+`uc 1 RC2 1 0 :1:2 
+`uc 1 RC3 1 0 :1:3 
+`uc 1 RC4 1 0 :1:4 
+`uc 1 RC5 1 0 :1:5 
+`uc 1 RC6 1 0 :1:6 
+`uc 1 RC7 1 0 :1:7 
+]
+"32627
+[s S114 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 CCP2 1 0 :1:1 
+]
+[s S117 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 PA1 1 0 :1:2 
+]
+[s S120 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 PA2 1 0 :1:1 
+]
+[u S123 . 1 `S105 1 . 1 0 `S114 1 . 1 0 `S117 1 . 1 0 `S120 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES123  1 e 1 @3970 ]
+"33491
+[v _TRISA TRISA `VEuc  1 e 1 @3986 ]
+"33547
+[v _TRISB TRISB `VEuc  1 e 1 @3987 ]
+"33608
+[v _TRISC TRISC `VEuc  1 e 1 @3988 ]
+"38648
+[v _T0CON T0CON `VEuc  1 e 1 @4053 ]
+[s S1307 . 1 `uc 1 T0PS 1 0 :3:0 
+`uc 1 PSA 1 0 :1:3 
+`uc 1 T0SE 1 0 :1:4 
+`uc 1 T0CS 1 0 :1:5 
+`uc 1 T08BIT 1 0 :1:6 
+`uc 1 TMR0ON 1 0 :1:7 
+]
+"38668
+[s S1314 . 1 `uc 1 T0PS0 1 0 :1:0 
+`uc 1 T0PS1 1 0 :1:1 
+`uc 1 T0PS2 1 0 :1:2 
+]
+"38668
+[u S1318 . 1 `S1307 1 . 1 0 `S1314 1 . 1 0 ]
+"38668
+"38668
+[v _T0CONbits T0CONbits `VES1318  1 e 1 @4053 ]
+"38723
+[v _TMR0L TMR0L `VEuc  1 e 1 @4054 ]
+"38742
+[v _TMR0H TMR0H `VEuc  1 e 1 @4055 ]
+[s S21 . 1 `uc 1 RBIF 1 0 :1:0 
+`uc 1 INT0IF 1 0 :1:1 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 RBIE 1 0 :1:3 
+`uc 1 INT0IE 1 0 :1:4 
+`uc 1 TMR0IE 1 0 :1:5 
+`uc 1 PEIE_GIEL 1 0 :1:6 
+`uc 1 GIE_GIEH 1 0 :1:7 
+]
+"39549
+[s S30 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 INT0F 1 0 :1:1 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 INT0E 1 0 :1:4 
+`uc 1 T0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+"39549
+[s S39 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 GIEL 1 0 :1:6 
+`uc 1 GIEH 1 0 :1:7 
+]
+"39549
+"39549
+"39549
+[u S56 . 1 `S21 1 . 1 0 `S30 1 . 1 0 `S39 1 . 1 0 `S30 1 . 1 0 `S39 1 . 1 0 ]
+"39549
+"39549
+[v _INTCONbits INTCONbits `VES56  1 e 1 @4082 ]
+"40364
+[v _B0RXFUL B0RXFUL `VEb  1 e 0 @29703 ]
+"40398
+[v _B0TXEN B0TXEN `VEb  1 e 0 @29674 ]
+"40604
+[v _B1RXFUL B1RXFUL `VEb  1 e 0 @29831 ]
+"40638
+[v _B1TXEN B1TXEN `VEb  1 e 0 @29675 ]
+"40846
+[v _B2RXFUL B2RXFUL `VEb  1 e 0 @29959 ]
+"40880
+[v _B2TXEN B2TXEN `VEb  1 e 0 @29676 ]
+"41088
+[v _B3RXFUL B3RXFUL `VEb  1 e 0 @30087 ]
+"41122
+[v _B3TXEN B3TXEN `VEb  1 e 0 @29677 ]
+"41330
+[v _B4RXFUL B4RXFUL `VEb  1 e 0 @30215 ]
+"41364
+[v _B4TXEN B4TXEN `VEb  1 e 0 @29678 ]
+"41572
+[v _B5RXFUL B5RXFUL `VEb  1 e 0 @30343 ]
+"41606
+[v _B5TXEN B5TXEN `VEb  1 e 0 @29679 ]
+"42200
+[v _FIFOEMPTY FIFOEMPTY `VEb  1 e 0 @31631 ]
+"42418
+[v _IRXIF IRXIF `VEb  1 e 0 @31679 ]
+"42548
+[v _MDSEL0 MDSEL0 `VEb  1 e 0 @31638 ]
+"42550
+[v _MDSEL1 MDSEL1 `VEb  1 e 0 @31639 ]
+"43058
+[v _RXB0FILHIT0 RXB0FILHIT0 `VEb  1 e 0 @31488 ]
+"43068
+[v _RXB0FUL RXB0FUL `VEb  1 e 0 @31495 ]
+"43070
+[v _RXB0IF RXB0IF `VEb  1 e 0 @31672 ]
+"43078
+[v _RXB0OVFL RXB0OVFL `VEb  1 e 0 @31631 ]
+"43302
+[v _RXB1IF RXB1IF `VEb  1 e 0 @31673 ]
+"43310
+[v _RXB1OVFL RXB1OVFL `VEb  1 e 0 @31630 ]
+"43836
+[v _RXF1EN RXF1EN `VEb  1 e 0 @29233 ]
+"44394
+[v _RXM0EXIDM RXM0EXIDM `VEb  1 e 0 @30667 ]
+"44454
+[v _RXM1EXIDEN RXM1EXIDEN `VEb  1 e 0 @30699 ]
+"160 C:\Users\akhe\development\can4vscp_odessa/main.c
+[v _main main `(v  1 e 0 0 ]
+{
+"286
+} 0
+"565
+[v _doWork doWork `(v  1 e 0 0 ]
+{
+"570
+} 0
+"447
+[v _doApplicationOneSecondWork doApplicationOneSecondWork `(v  1 e 0 0 ]
+{
+"449
+} 0
+"518 C:\Users\akhe\development/vscp_firmware/common/vscp_firmware.c
+[v _vscp_doOneSecondWork vscp_doOneSecondWork `(v  1 e 0 0 ]
+{
+"548
+} 0
+"387
+[v _vscp_sendHeartBeat vscp_sendHeartBeat `(v  1 e 0 0 ]
+{
+[v vscp_sendHeartBeat@zone zone `uc  1 a 1 75 ]
+[v vscp_sendHeartBeat@zone zone `uc  1 a 1 75 ]
+[v vscp_sendHeartBeat@subzone subzone `uc  1 p 1 20 ]
+"398
+} 0
+"554 C:\Users\akhe\development\can4vscp_odessa/main.c
+[v _vscp_getSubzone vscp_getSubzone `(uc  1 e 1 0 ]
+{
+"556
+} 0
+"545
+[v _vscp_getZone vscp_getZone `(uc  1 e 1 0 ]
+{
+"547
+} 0
+"202 C:\Users\akhe\development/vscp_firmware/common/vscp_firmware.c
+[v _vscp_error vscp_error `(v  1 e 0 0 ]
+{
+"204
+} 0
+"826 C:\Users\akhe\development\can4vscp_odessa/main.c
+[v _doDM doDM `(v  1 e 0 0 ]
+{
+"830
+[v doDM@class_mask class_mask `us  1 a 2 27 ]
+"829
+[v doDM@class_filter class_filter `us  1 a 2 25 ]
+"827
+[v doDM@i i `uc  1 a 1 36 ]
+"828
+[v doDM@dmflags dmflags `uc  1 a 1 35 ]
+"832
+[v doDM@type_mask type_mask `uc  1 a 1 30 ]
+"831
+[v doDM@type_filter type_filter `uc  1 a 1 29 ]
+"934
+} 0
+"1170
+[v _actionClrAll actionClrAll `(v  1 e 0 0 ]
+{
+[v actionClrAll@dmflags dmflags `uc  1 a 1 0 ]
+"1175
+[v actionClrAll@i i `i  1 a 2 79 ]
+"1170
+[v actionClrAll@dmflags dmflags `uc  1 a 1 0 ]
+[v actionClrAll@param param `uc  1 p 1 78 ]
+"1180
+} 0
+"1151
+[v _actionSetAll actionSetAll `(v  1 e 0 0 ]
+{
+[v actionSetAll@dmflags dmflags `uc  1 a 1 0 ]
+"1156
+[v actionSetAll@i i `i  1 a 2 79 ]
+"1151
+[v actionSetAll@dmflags dmflags `uc  1 a 1 0 ]
+[v actionSetAll@param param `uc  1 p 1 78 ]
+"1161
+} 0
+"1047
+[v _actionClr actionClr `(v  1 e 0 0 ]
+{
+[v actionClr@dmflags dmflags `uc  1 a 1 0 ]
+[v actionClr@dmflags dmflags `uc  1 a 1 0 ]
+[v actionClr@param param `uc  1 p 1 78 ]
+"1141
+} 0
+"944
+[v _actionSet actionSet `(v  1 e 0 0 ]
+{
+[v actionSet@dmflags dmflags `uc  1 a 1 0 ]
+[v actionSet@dmflags dmflags `uc  1 a 1 0 ]
+[v actionSet@param param `uc  1 p 1 78 ]
+"1038
+} 0
+"804
+[v _SendInformationEvent SendInformationEvent `(v  1 e 0 0 ]
+{
+[v SendInformationEvent@idx idx `uc  1 a 1 77 ]
+"805
+[v SendInformationEvent@data data `[3]uc  1 a 3 74 ]
+"804
+[v SendInformationEvent@idx idx `uc  1 a 1 77 ]
+[v SendInformationEvent@eventClass eventClass `uc  1 p 1 20 ]
+[v SendInformationEvent@eventTypeId eventTypeId `uc  1 p 1 21 ]
+"817
+} 0
+"794 C:\Users\akhe\development/vscp_firmware/common/vscp_firmware.c
+[v _vscp_handleProtocolEvent vscp_handleProtocolEvent `(v  1 e 0 0 ]
+{
+"985
+[v vscp_handleProtocolEvent@bytes bytes `uc  1 a 1 33 ]
+"1232
+[v vscp_handleProtocolEvent@page_save_1133 page_save `us  1 a 2 29 ]
+"1231
+[v vscp_handleProtocolEvent@i_1132 i `uc  1 a 1 39 ]
+"1155
+[v vscp_handleProtocolEvent@bytes_1128 bytes `us  1 a 2 43 ]
+[v vscp_handleProtocolEvent@page_save page_save `us  1 a 2 27 ]
+"1156
+[v vscp_handleProtocolEvent@byte byte `uc  1 a 1 42 ]
+"1157
+[v vscp_handleProtocolEvent@cb cb `uc  1 a 1 38 ]
+[v vscp_handleProtocolEvent@bytes_this_time bytes_this_time `uc  1 a 1 37 ]
+"1078
+[v vscp_handleProtocolEvent@j j `uc  1 a 1 47 ]
+[v vscp_handleProtocolEvent@i_1124 i `uc  1 a 1 45 ]
+[v vscp_handleProtocolEvent@k k `uc  1 a 1 40 ]
+"1011
+[v vscp_handleProtocolEvent@i_1121 i `uc  1 a 1 41 ]
+"1013
+[v vscp_handleProtocolEvent@len_1123 len `uc  1 a 1 36 ]
+"1012
+[v vscp_handleProtocolEvent@pos_1122 pos `uc  1 a 1 35 ]
+"975
+[v vscp_handleProtocolEvent@i i `uc  1 a 1 46 ]
+"978
+[v vscp_handleProtocolEvent@len len `uc  1 a 1 34 ]
+"976
+[v vscp_handleProtocolEvent@pos pos `uc  1 a 1 32 ]
+"977
+[v vscp_handleProtocolEvent@offset offset `uc  1 a 1 31 ]
+"1277
+} 0
+"5 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\common\lbmod.c
+[v ___lbmod __lbmod `(uc  1 e 1 0 ]
+{
+[v ___lbmod@dividend dividend `uc  1 a 1 8 ]
+"6
+[v ___lbmod@rem rem `uc  1 a 1 10 ]
+"7
+[v ___lbmod@counter counter `uc  1 a 1 9 ]
+"5
+[v ___lbmod@dividend dividend `uc  1 a 1 8 ]
+[v ___lbmod@divisor divisor `uc  1 p 1 7 ]
+"18
+} 0
+"695 C:\Users\akhe\development/vscp_firmware/common/vscp_firmware.c
+[v _vscp_writeRegister vscp_writeRegister `(uc  1 e 1 0 ]
+{
+[v vscp_writeRegister@reg reg `uc  1 a 1 24 ]
+[v vscp_writeRegister@reg reg `uc  1 a 1 24 ]
+[v vscp_writeRegister@value value `uc  1 p 1 23 ]
+"702
+} 0
+"709
+[v _vscp_writeStdReg vscp_writeStdReg `(uc  1 e 1 0 ]
+{
+[v vscp_writeStdReg@reg reg `uc  1 a 1 21 ]
+"710
+[v vscp_writeStdReg@rv rv `uc  1 a 1 20 ]
+"709
+[v vscp_writeStdReg@reg reg `uc  1 a 1 21 ]
+[v vscp_writeStdReg@value value `uc  1 p 1 15 ]
+"787
+} 0
+"1430 C:\Users\akhe\development\can4vscp_odessa/main.c
+[v _vscp_restoreDefaults vscp_restoreDefaults `(v  1 e 0 0 ]
+{
+"1433
+} 0
+"1253
+[v _vscp_setUserID vscp_setUserID `(v  1 e 0 0 ]
+{
+[v vscp_setUserID@idx idx `uc  1 a 1 12 ]
+[v vscp_setUserID@idx idx `uc  1 a 1 12 ]
+[v vscp_setUserID@data data `uc  1 p 1 11 ]
+"1255
+} 0
+"498
+[v _vscp_setManufacturerId vscp_setManufacturerId `(v  1 e 0 0 ]
+{
+[v vscp_setManufacturerId@idx idx `uc  1 a 1 12 ]
+[v vscp_setManufacturerId@idx idx `uc  1 a 1 12 ]
+[v vscp_setManufacturerId@data data `uc  1 p 1 11 ]
+"501
+} 0
+"486
+[v _vscp_setGUID vscp_setGUID `(v  1 e 0 0 ]
+{
+[v vscp_setGUID@idx idx `uc  1 a 1 12 ]
+[v vscp_setGUID@idx idx `uc  1 a 1 12 ]
+[v vscp_setGUID@data data `uc  1 p 1 11 ]
+"489
+} 0
+"632
+[v _vscp_writeAppReg vscp_writeAppReg `(uc  1 e 1 0 ]
+{
+[v vscp_writeAppReg@reg reg `uc  1 a 1 22 ]
+"633
+[v vscp_writeAppReg@rv rv `uc  1 a 1 21 ]
+"632
+[v vscp_writeAppReg@reg reg `uc  1 a 1 22 ]
+[v vscp_writeAppReg@val val `uc  1 p 1 20 ]
+"690
+} 0
+"697
+[v _writeControlReg writeControlReg `(uc  1 e 1 0 ]
+{
+[v writeControlReg@ctrlreg ctrlreg `uc  1 a 1 18 ]
+"698
+[v writeControlReg@rv rv `uc  1 a 1 19 ]
+"697
+[v writeControlReg@ctrlreg ctrlreg `uc  1 a 1 18 ]
+[v writeControlReg@val val `uc  1 p 1 16 ]
+"734
+} 0
+"555 C:\Users\akhe\development/vscp_firmware/common/vscp_firmware.c
+[v _vscp_readRegister vscp_readRegister `(uc  1 e 1 0 ]
+{
+[v vscp_readRegister@reg reg `uc  1 a 1 28 ]
+[v vscp_readRegister@reg reg `uc  1 a 1 28 ]
+"562
+} 0
+"569
+[v _vscp_readStdReg vscp_readStdReg `(uc  1 e 1 0 ]
+{
+[v vscp_readStdReg@reg reg `uc  1 a 1 27 ]
+"669
+[v vscp_readStdReg@code_1106 code `ul  1 a 4 20 ]
+"670
+[v vscp_readStdReg@idx_1107 idx `uc  1 a 1 25 ]
+"662
+[v vscp_readStdReg@code code `ul  1 a 4 16 ]
+"663
+[v vscp_readStdReg@idx idx `uc  1 a 1 24 ]
+"570
+[v vscp_readStdReg@rv rv `uc  1 a 1 26 ]
+"569
+[v vscp_readStdReg@reg reg `uc  1 a 1 27 ]
+"688
+} 0
+"1441 C:\Users\akhe\development\can4vscp_odessa/main.c
+[v _vscp_getRegisterPagesUsed vscp_getRegisterPagesUsed `(uc  1 e 1 0 ]
+{
+"1443
+} 0
+"1422
+[v _vscp_getFamilyType vscp_getFamilyType `(ul  1 e 4 0 ]
+{
+"1424
+} 0
+"1413
+[v _vscp_getFamilyCode vscp_getFamilyCode `(ul  1 e 4 0 ]
+{
+"1415
+} 0
+"1282
+[v _vscp_getBufferSize vscp_getBufferSize `(uc  1 e 1 0 ]
+{
+"1284
+} 0
+"1273
+[v _vscp_getBootLoaderAlgorithm vscp_getBootLoaderAlgorithm `(uc  1 e 1 0 ]
+{
+"1275
+} 0
+"1264
+[v _vscp_getManufacturerId vscp_getManufacturerId `(uc  1 e 1 0 ]
+{
+[v vscp_getManufacturerId@idx idx `uc  1 a 1 9 ]
+[v vscp_getManufacturerId@idx idx `uc  1 a 1 9 ]
+"1266
+} 0
+"1244
+[v _vscp_getUserID vscp_getUserID `(uc  1 e 1 0 ]
+{
+[v vscp_getUserID@idx idx `uc  1 a 1 9 ]
+[v vscp_getUserID@idx idx `uc  1 a 1 9 ]
+"1246
+} 0
+"1235
+[v _vscp_getMDF_URL vscp_getMDF_URL `(uc  1 e 1 0 ]
+{
+[v vscp_getMDF_URL@idx idx `uc  1 a 1 8 ]
+[v vscp_getMDF_URL@idx idx `uc  1 a 1 8 ]
+"1237
+} 0
+"1223
+[v _vscp_getGUID vscp_getGUID `(uc  1 e 1 0 ]
+{
+[v vscp_getGUID@idx idx `uc  1 a 1 9 ]
+[v vscp_getGUID@idx idx `uc  1 a 1 9 ]
+"1225
+} 0
+"1212
+[v _vscp_getSubMinorVersion vscp_getSubMinorVersion `(uc  1 e 1 0 ]
+{
+"1214
+} 0
+"1203
+[v _vscp_getMinorVersion vscp_getMinorVersion `(uc  1 e 1 0 ]
+{
+"1205
+} 0
+"1194
+[v _vscp_getMajorVersion vscp_getMajorVersion `(uc  1 e 1 0 ]
+{
+"1196
+} 0
+"496 C:\Users\akhe\development/vscp_firmware/common/vscp_firmware.c
+[v _vscp_newNodeOnline vscp_newNodeOnline `(v  1 e 0 0 ]
+{
+"511
+} 0
+"430
+[v _vscp_handleDropNickname vscp_handleDropNickname `(v  1 e 0 0 ]
+{
+"431
+[v vscp_handleDropNickname@bytes bytes `uc  1 a 1 12 ]
+"489
+} 0
+"119
+[v _vscp_init vscp_init `(v  1 e 0 0 ]
+{
+"161
+} 0
+"527 C:\Users\akhe\development\can4vscp_odessa/main.c
+[v _vscp_readNicknamePermanent vscp_readNicknamePermanent `(uc  1 e 1 0 ]
+{
+"529
+} 0
+"414 C:\Users\akhe\development/vscp_firmware/common/vscp_firmware.c
+[v _vscp_handleSetNickname vscp_handleSetNickname `(v  1 e 0 0 ]
+{
+"423
+} 0
+"405
+[v _vscp_handleHeartbeat vscp_handleHeartbeat `(v  1 e 0 0 ]
+{
+"407
+} 0
+"1397 C:\Users\akhe\development\can4vscp_odessa/main.c
+[v _vscp_getMatrixInfo vscp_getMatrixInfo `(v  1 e 0 0 ]
+{
+[v vscp_getMatrixInfo@pData pData `*.30uc  1 a 1 0 ]
+[v vscp_getMatrixInfo@pData pData `*.30uc  1 a 1 0 ]
+"1407
+} 0
+"1381
+[v _vscp_goBootloaderMode vscp_goBootloaderMode `(v  1 e 0 0 ]
+{
+[v vscp_goBootloaderMode@algorithm algorithm `uc  1 a 1 11 ]
+[v vscp_goBootloaderMode@algorithm algorithm `uc  1 a 1 11 ]
+"1390
+} 0
+"211 C:\Users\akhe\development/vscp_firmware/common/vscp_firmware.c
+[v _vscp_handleProbeState vscp_handleProbeState `(v  1 e 0 0 ]
+{
+"326
+} 0
+"367
+[v _vscp_goActiveState vscp_goActiveState `(v  1 e 0 0 ]
+{
+"378
+} 0
+"1285
+[v _vscp_sendEvent vscp_sendEvent `(uc  1 e 1 0 ]
+{
+"1286
+[v vscp_sendEvent@rv rv `uc  1 a 1 74 ]
+"1298
+} 0
+"1455 C:\Users\akhe\development\can4vscp_odessa/main.c
+[v _sendVSCPFrame sendVSCPFrame `(uc  1 e 1 0 ]
+{
+"1456
+[v sendVSCPFrame@id id `ul  1 a 4 70 ]
+"1455
+[v sendVSCPFrame@vscpclass vscpclass `us  1 p 2 62 ]
+[v sendVSCPFrame@vscptype vscptype `uc  1 p 1 64 ]
+[v sendVSCPFrame@nodeid nodeid `uc  1 p 1 65 ]
+[v sendVSCPFrame@priority priority `uc  1 p 1 66 ]
+[v sendVSCPFrame@size size `uc  1 p 1 67 ]
+[v sendVSCPFrame@pData pData `*.39uc  1 p 2 68 ]
+"1466
+} 0
+"1500
+[v _sendCANFrame sendCANFrame `(uc  1 e 1 0 ]
+{
+[v sendCANFrame@id id `ul  1 p 4 54 ]
+[v sendCANFrame@dlc dlc `uc  1 p 1 58 ]
+[v sendCANFrame@pdata pdata `*.39uc  1 p 2 59 ]
+"1514
+} 0
+"617 C:\Users\akhe\development\can4vscp_odessa/ECAN.c
+[v _ECANSendMessage ECANSendMessage `(E18242  1 e 1 0 ]
+{
+"630
+[v ECANSendMessage@pb pb `[9]*.39uc  1 a 18 26 ]
+"629
+[v ECANSendMessage@ptr ptr `*.39uc  1 a 2 52 ]
+[v ECANSendMessage@tempPtr tempPtr `*.39uc  1 a 2 48 ]
+"628
+[v ECANSendMessage@i i `uc  1 a 1 51 ]
+"631
+[v ECANSendMessage@temp temp `uc  1 a 1 50 ]
+[s S642 . 1 `uc 1 b0 1 0 :1:0 
+`uc 1 b1 1 0 :1:1 
+`uc 1 b2 1 0 :1:2 
+`uc 1 b3 1 0 :1:3 
+`uc 1 b4 1 0 :1:4 
+`uc 1 b5 1 0 :1:5 
+`uc 1 b6 1 0 :1:6 
+`uc 1 b7 1 0 :1:7 
+]
+"634
+[u S651 . 1 `uc 1 Val 1 0 `S642 1 bits 1 0 ]
+[v ECANSendMessage@tempBSEL0 tempBSEL0 `S651  1 a 1 47 ]
+"628
+[v ECANSendMessage@j j `uc  1 a 1 46 ]
+"620
+[v ECANSendMessage@buffers buffers `uc  1 a 1 45 ]
+"619
+[v ECANSendMessage@mode mode `uc  1 a 1 44 ]
+"617
+[v ECANSendMessage@id id `ul  1 p 4 17 ]
+[v ECANSendMessage@data data `*.39uc  1 p 2 21 ]
+[v ECANSendMessage@dataLen dataLen `uc  1 p 1 23 ]
+[v ECANSendMessage@msgFlags msgFlags `E18958  1 p 1 24 ]
+"761
+} 0
+"1099
+[v __CANIDToRegs _CANIDToRegs `(v  1 e 0 0 ]
+{
+[s S878 . 1 `uc 1 SIDL 1 0 :3:0 
+`uc 1 SIDH 1 0 :5:3 
+]
+"1100
+[s S881 . 1 `uc 1 SIDHU 1 0 :3:0 
+`uc 1 EIDL_LN 1 0 :5:3 
+]
+[s S884 . 1 `uc 1 EIDL_UN 1 0 :3:0 
+`uc 1 EIDH_LN 1 0 :5:3 
+]
+[s S887 . 1 `uc 1 EIDH_UN 1 0 :3:0 
+`uc 1 EIDHU 1 0 :2:3 
+`uc 1 . 1 0 :3:5 
+]
+[s S891 . 4 `S878 1 BYTE1 1 0 `S881 1 BYTE2 1 1 `S884 1 BYTE3 1 2 `S887 1 BYTE4 1 3 ]
+[s S896 . 4 `uc 1 BYTE_1 1 0 `uc 1 BYTE_2 1 1 `uc 1 BYTE_3 1 2 `uc 1 BYTE_4 1 3 ]
+[u S901 _CAN_MESSAGE_ID 4 `ul 1 ID 4 0 `S891 1 ID_VALS 4 0 `S896 1 BYTES 4 0 ]
+[v __CANIDToRegs@Value Value `*.29S901  1 a 1 16 ]
+"1099
+[v __CANIDToRegs@ptr ptr `*.39uc  1 p 2 7 ]
+[v __CANIDToRegs@val val `ul  1 p 4 9 ]
+[v __CANIDToRegs@type type `uc  1 p 1 13 ]
+"1127
+} 0
+"1305 C:\Users\akhe\development/vscp_firmware/common/vscp_firmware.c
+[v _vscp_getEvent vscp_getEvent `(uc  1 e 1 0 ]
+{
+"1306
+[v vscp_getEvent@rv rv `uc  1 a 1 43 ]
+"1327
+} 0
+"1479 C:\Users\akhe\development\can4vscp_odessa/main.c
+[v _getVSCPFrame getVSCPFrame `(uc  1 e 1 0 ]
+{
+[v getVSCPFrame@pvscpclass pvscpclass `*.30us  1 a 1 38 ]
+"1480
+[v getVSCPFrame@id id `ul  1 a 4 39 ]
+"1479
+[v getVSCPFrame@pvscpclass pvscpclass `*.30us  1 a 1 38 ]
+[v getVSCPFrame@pvscptype pvscptype `*.30uc  1 p 1 29 ]
+[v getVSCPFrame@pNodeId pNodeId `*.30uc  1 p 1 30 ]
+[v getVSCPFrame@pPriority pPriority `*.30uc  1 p 1 31 ]
+[v getVSCPFrame@pSize pSize `*.30uc  1 p 1 32 ]
+[v getVSCPFrame@pData pData `*.30uc  1 p 1 33 ]
+"1492
+} 0
+"1521
+[v _getCANFrame getCANFrame `(uc  1 e 1 0 ]
+{
+[v getCANFrame@pid pid `*.29ul  1 a 1 27 ]
+"1522
+[v getCANFrame@flags flags `E18984  1 a 1 28 ]
+"1521
+[v getCANFrame@pid pid `*.29ul  1 a 1 27 ]
+[v getCANFrame@pdlc pdlc `*.30uc  1 p 1 25 ]
+[v getCANFrame@pdata pdata `*.30uc  1 p 1 26 ]
+"1541
+} 0
+"803 C:\Users\akhe\development\can4vscp_odessa/ECAN.c
+[v _ECANReceiveMessage ECANReceiveMessage `(E18242  1 e 1 0 ]
+{
+[v ECANReceiveMessage@id id `*.29ul  1 a 1 19 ]
+"808
+[v ECANReceiveMessage@ptr ptr `*.39uc  1 a 2 23 ]
+[v ECANReceiveMessage@savedPtr savedPtr `*.39uc  1 a 2 17 ]
+[s S642 . 1 `uc 1 b0 1 0 :1:0 
+`uc 1 b1 1 0 :1:1 
+`uc 1 b2 1 0 :1:2 
+`uc 1 b3 1 0 :1:3 
+`uc 1 b4 1 0 :1:4 
+`uc 1 b5 1 0 :1:5 
+`uc 1 b6 1 0 :1:6 
+`uc 1 b7 1 0 :1:7 
+]
+"810
+[u S651 . 1 `uc 1 Val 1 0 `S642 1 bits 1 0 ]
+[v ECANReceiveMessage@temp temp `S651  1 a 1 22 ]
+"805
+[v ECANReceiveMessage@mode mode `uc  1 a 1 21 ]
+"809
+[v ECANReceiveMessage@i i `uc  1 a 1 20 ]
+"803
+[v ECANReceiveMessage@id id `*.29ul  1 a 1 19 ]
+[v ECANReceiveMessage@data data `*.30uc  1 p 1 14 ]
+[v ECANReceiveMessage@dataLen dataLen `*.30uc  1 p 1 15 ]
+[v ECANReceiveMessage@msgFlags msgFlags `*.29E18976  1 p 1 16 ]
+"991
+} 0
+"1156
+[v __RegsToCANID _RegsToCANID `(v  1 e 0 0 ]
+{
+[s S878 . 1 `uc 1 SIDL 1 0 :3:0 
+`uc 1 SIDH 1 0 :5:3 
+]
+"1157
+[s S881 . 1 `uc 1 SIDHU 1 0 :3:0 
+`uc 1 EIDL_LN 1 0 :5:3 
+]
+[s S884 . 1 `uc 1 EIDL_UN 1 0 :3:0 
+`uc 1 EIDH_LN 1 0 :5:3 
+]
+[s S887 . 1 `uc 1 EIDH_UN 1 0 :3:0 
+`uc 1 EIDHU 1 0 :2:3 
+`uc 1 . 1 0 :3:5 
+]
+[s S891 . 4 `S878 1 BYTE1 1 0 `S881 1 BYTE2 1 1 `S884 1 BYTE3 1 2 `S887 1 BYTE4 1 3 ]
+[s S896 . 4 `uc 1 BYTE_1 1 0 `uc 1 BYTE_2 1 1 `uc 1 BYTE_3 1 2 `uc 1 BYTE_4 1 3 ]
+[u S901 _CAN_MESSAGE_ID 4 `ul 1 ID 4 0 `S891 1 ID_VALS 4 0 `S896 1 BYTES 4 0 ]
+[v __RegsToCANID@Value Value `*.29S901  1 a 1 13 ]
+"1156
+[v __RegsToCANID@ptr ptr `*.39uc  1 p 2 7 ]
+[v __RegsToCANID@val val `*.29ul  1 p 1 9 ]
+[v __RegsToCANID@type type `uc  1 p 1 10 ]
+"1185
+} 0
+"1207
+[v __ECANPointBuffer _ECANPointBuffer `(*.39uc  1 s 2 _ECANPointBuffer ]
+{
+[v __ECANPointBuffer@b b `uc  1 a 1 10 ]
+"1208
+[v __ECANPointBuffer@pt pt `*.39uc  1 a 2 11 ]
+"1207
+[v __ECANPointBuffer@b b `uc  1 a 1 10 ]
+"1238
+} 0
+"171 C:\Users\akhe\development/vscp_firmware/common/vscp_firmware.c
+[v _vscp_check_pstorage vscp_check_pstorage `(uc  1 e 1 0 ]
+{
+"195
+} 0
+"1350 C:\Users\akhe\development\can4vscp_odessa/main.c
+[v _vscp_init_pstorage vscp_init_pstorage `(v  1 e 0 0 ]
+{
+"1352
+} 0
+"418
+[v _init_app_eeprom init_app_eeprom `(v  1 e 0 0 ]
+{
+"419
+[v init_app_eeprom@i i `uc  1 a 1 14 ]
+[v init_app_eeprom@j j `uc  1 a 1 13 ]
+"440
+} 0
+"1340
+[v _vscp_getControlByte vscp_getControlByte `(uc  1 e 1 0 ]
+{
+[v vscp_getControlByte@idx idx `uc  1 a 1 9 ]
+[v vscp_getControlByte@idx idx `uc  1 a 1 9 ]
+"1343
+} 0
+"36 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\pic18\plib\EEP\read_B.c
+[v _Read_b_eep Read_b_eep `(uc  1 e 1 0 ]
+{
+[v Read_b_eep@badd badd `ui  1 p 2 7 ]
+"45
+} 0
+"1329 C:\Users\akhe\development\can4vscp_odessa/main.c
+[v _vscp_setControlByte vscp_setControlByte `(v  1 e 0 0 ]
+{
+[v vscp_setControlByte@idx idx `uc  1 a 1 12 ]
+[v vscp_setControlByte@idx idx `uc  1 a 1 12 ]
+[v vscp_setControlByte@ctrl ctrl `uc  1 p 1 11 ]
+"1332
+} 0
+"536
+[v _vscp_writeNicknamePermanent vscp_writeNicknamePermanent `(v  1 e 0 0 ]
+{
+[v vscp_writeNicknamePermanent@nickname nickname `uc  1 a 1 11 ]
+[v vscp_writeNicknamePermanent@nickname nickname `uc  1 a 1 11 ]
+"538
+} 0
+"50 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\pic18\plib\EEP\write_B.c
+[v _Write_b_eep Write_b_eep `(v  1 e 0 0 ]
+{
+"51
+[v Write_b_eep@GIE_BIT_VAL GIE_BIT_VAL `uc  1 a 1 10 ]
+"50
+[v Write_b_eep@badd badd `ui  1 p 2 7 ]
+[v Write_b_eep@bdat bdat `uc  1 p 1 9 ]
+"66
+} 0
+"13 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\pic18\plib\EEP\busy_eep.c
+[v _Busy_eep Busy_eep `(v  1 e 0 0 ]
+{
+"15
+} 0
+"293 C:\Users\akhe\development\can4vscp_odessa/main.c
+[v _init init `(v  1 e 0 0 ]
+{
+"394
+} 0
+"168 C:\Users\akhe\development\can4vscp_odessa/ECAN.c
+[v _ECANInitialize ECANInitialize `(v  1 e 0 0 ]
+{
+"500
+} 0
+"1012
+[v _ECANSetOperationMode ECANSetOperationMode `(v  1 e 0 0 ]
+{
+[v ECANSetOperationMode@mode mode `E18989  1 a 1 7 ]
+[v ECANSetOperationMode@mode mode `E18989  1 a 1 7 ]
+"1017
+} 0
+"19 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\pic18\plib\Timers\t0open.c
+[v _OpenTimer0 OpenTimer0 `(v  1 e 0 0 ]
+{
+[v OpenTimer0@config config `uc  1 a 1 7 ]
+[v OpenTimer0@config config `uc  1 a 1 7 ]
+"31
+} 0
+"401 C:\Users\akhe\development\can4vscp_odessa/main.c
+[v _init_app_ram init_app_ram `(v  1 e 0 0 ]
+{
+"410
+} 0
+"17 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\pic18\plib\Timers\t0write.c
+[v _WriteTimer0 WriteTimer0 `(v  1 e 0 0 ]
+{
+[u S1341 Timers 2 `ui 1 lt 2 0 `[2]uc 1 bt 2 0 ]
+"18
+[v WriteTimer0@timer timer `S1341  1 a 2 9 ]
+"17
+[v WriteTimer0@timer0 timer0 `ui  1 p 2 7 ]
+"24
+} 0
+"742 C:\Users\akhe\development\can4vscp_odessa/main.c
+[v _readControlReg readControlReg `(uc  1 e 1 0 ]
+{
+[v readControlReg@ctrlreg ctrlreg `uc  1 a 1 14 ]
+"743
+[v readControlReg@rv rv `uc  1 a 1 15 ]
+"742
+[v readControlReg@ctrlreg ctrlreg `uc  1 a 1 14 ]
+"776
+} 0
+"577
+[v _vscp_readAppReg vscp_readAppReg `(uc  1 e 1 0 ]
+{
+[v vscp_readAppReg@reg reg `uc  1 a 1 17 ]
+"578
+[v vscp_readAppReg@rv rv `uc  1 a 1 16 ]
+"577
+[v vscp_readAppReg@reg reg `uc  1 a 1 17 ]
+"625
+} 0
+"103
+[v _interrupt_at_low_vector interrupt_at_low_vector `IIL(v  1 e 0 0 ]
+{
+"152
+} 0
+"17 C:\Program Files (x86)\Microchip\xc8\v1.21\sources\pic18\plib\Timers\t0write.c
+[v i1_WriteTimer0 WriteTimer0 `(v  1 e 0 0 ]
+{
+[u S1341 Timers 2 `ui 1 lt 2 0 `[2]uc 1 bt 2 0 ]
+[v i1WriteTimer0@timer WriteTimer0 `S1341  1 a 2 2 ]
+[v i1WriteTimer0@timer0 timer0 `ui  1 p 2 0 ]
+"24
+} 0
