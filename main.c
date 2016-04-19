@@ -52,7 +52,7 @@
 // CONFIG2H
 #pragma config WDTPS = 1048576  // Watchdog prescaler
 #pragma config BOREN = SBORDIS  // Brown out enabled
-#pragma config BORV  = 1        // 2.7V
+#pragma config BORV  = 0        // 3V
 
 // CONFIG3H
 #pragma config CANMX = PORTB    // ECAN TX and RX pins are located on RB2 and RB3, respectively.
@@ -115,7 +115,8 @@ void interrupt low_priority  interrupt_at_low_vector( void )
         // Check for init button
         if ( INIT_BUTTON ) {
             vscp_initbtncnt = 0;
-        } else {
+        } 
+        else {
             // Active
             vscp_initbtncnt++;
         }
@@ -309,7 +310,7 @@ void init()
     // RA3/AN3  - Output
     // RA4      - Unused/VCAP
     // RA5/AN4  - Output
-    TRISA = 0x00;
+    TRISA = 0x10;
     PORTA = 0x00;
 
     // PortB
@@ -1397,13 +1398,13 @@ void vscp_getMatrixInfo(char *pData)
 {
     uint8_t i;
 
-    vscp_omsg.data[ 0 ] = DESCION_MATRIX_ROWS;  // Matrix is seven rows
-    vscp_omsg.data[ 1 ] = REG_DESCION_MATRIX;   // Matrix start offset
-    vscp_omsg.data[ 2 ] = 0;                    // Matrix start page
-    vscp_omsg.data[ 3 ] = DESCION_MATRIX_PAGE;
-    vscp_omsg.data[ 4 ] = 0;                    // Matrix end page
-    vscp_omsg.data[ 5 ] = DESCION_MATRIX_PAGE;
-    vscp_omsg.data[ 6 ] = 0;
+    pData[ 0 ] = DESCION_MATRIX_ROWS;  // Matrix is seven rows
+    pData[ 1 ] = REG_DESCION_MATRIX;   // Matrix start offset
+    pData[ 2 ] = 0;                    // Matrix start page
+    pData[ 3 ] = DESCION_MATRIX_PAGE;
+    pData[ 4 ] = 0;                    // Matrix end page
+    pData[ 5 ] = DESCION_MATRIX_PAGE;
+    pData[ 6 ] = 0;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
