@@ -1,6 +1,9 @@
 Odessa
 ======
 
+2020-05-15 AKHE - Version 1.0.3 VSCP firmware core 1.6.3
+2020-05-15 AKHE - Init. timer now is set to 2500 ms instea dof 250 ms
+                  Seconds timer fixed.
 2016-04-11 AKHE - vscp_getMatrixInfo nw use the pointer supplied by the framework.
 2016-03-23 AKHE - Release 1.0.2-----------------------------------------------
 2016-03-23 AKHE - Adopted to 1.6.1 firmware.

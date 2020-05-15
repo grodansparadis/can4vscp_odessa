@@ -5,7 +5,7 @@
  *  Odessa expansion Module
  *  ========================
  *
- *  Copyright (C)1995-2016 Ake Hedman, Grodans Paradis AB
+ *  Copyright (C)1995-2020 Ake Hedman, Grodans Paradis AB
  *                          http://www.grodansparadis.com
  *                          <akhe@grodansparadis.com>
  *
@@ -29,7 +29,7 @@
 
 #define FIRMWARE_MAJOR_VERSION		1
 #define FIRMWARE_MINOR_VERSION		0
-#define FIRMWARE_SUB_MINOR_VERSION	2
+#define FIRMWARE_SUB_MINOR_VERSION	3
 
 
 // * * * History * * *
