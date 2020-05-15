@@ -5,7 +5,7 @@
 	<name>Odessa demo firmware</name>
 	<model>A</model>
 	<version>1.0.0</version>
-	<changed>2015-04-23</changed>
+	<changed>2020-05-15</changed>
 	<description lang="en">
 		With this VSCP module it is possible to control up to control 18
 		different binary output pins.
@@ -17,7 +17,7 @@
 		<address>
 			<street>Brattbergavägen 17</street>
 			<city>Los</city>
-			<postcode>82050</postcode>
+			<postcode>82770</postcode>
 			<country>Sweden</country>
 		</address>
 		<telephone>
@@ -50,7 +50,23 @@
 	</picture>
 	
 	<!-- Firmware for the device -->
-	<firmware path="http://www.auto.grodansparadis.com/odessa/download/firmware_odessa_1_0_0.hex" 
+	<files>
+	
+	<firmware target="pic18f26k80"
+	        path="http://www.auto.grodansparadis.com/odessa/download/firmware_odessa_1_0_0.hex" 
+		format="intelhex8"
+		size="32000"
+		date="2020-05-15"
+		version_major="1"
+		version_minor="0"
+		version_subminor="3">
+		<description lang="en" >
+			Firmware version 1.0.3 for the Odessa module with pic18f25k80.
+		</description> 
+	</firmware>
+	
+	<firmware target="pic18f26k80"
+	        path="http://www.auto.grodansparadis.com/odessa/download/firmware_odessa_1_0_0.hex" 
 		format="intelhex8"
 		size="32000"
 		date="2015-04-21"
@@ -58,9 +74,11 @@
 		version_minor="0"
 		version_subminor="0">
 		<description lang="en" >
-			Firmware version 1.0.0 for the Odessa module.
+			Firmware version 1.0.0 for the Odessa module  with pic18f25k80.
 		</description> 
 	</firmware>
+	
+	</files>
 
 	<!-- Full documentation for the device -->
 	<manual path="http://www.grodansparadis.com/odessa/manual/doku.php?id=start" 	
