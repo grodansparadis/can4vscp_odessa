@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 0)
+  (lib (name "odessa_rev_A-eagle-import")(type "KiCad")(uri "${KIPRJMOD}/odessa_rev_A-eagle-import.kicad_sym")(options "")(descr ""))
+)

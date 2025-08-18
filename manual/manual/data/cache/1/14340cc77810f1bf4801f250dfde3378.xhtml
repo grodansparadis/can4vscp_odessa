@@ -1,0 +1,326 @@
+
+<h1 class="sectionedit1" id="hardware">Hardware</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT1 SECTION "Hardware" [1-24] -->
+<h2 class="sectionedit2" id="most_current_information">Most current information</h2>
+<div class="level2">
+
+<p>
+You can find the most current information about the Frankfurt RS-232 module at <br/>
+<a href="http://www.grodansparadis.com/frankfurt/rs232/frankfurt-rs232.html" class="urlextern" title="http://www.grodansparadis.com/frankfurt/rs232/frankfurt-rs232.html"  rel="nofollow">http://www.grodansparadis.com/frankfurt/rs232/frankfurt-rs232.html</a>. On the site you can also find links to the latest firmware, drivers and schematics etc for its use. 
+</p>
+
+</div>
+<!-- EDIT2 SECTION "Most current information" [25-319] -->
+<h2 class="sectionedit3" id="the_raw_facts">The raw facts</h2>
+<div class="level2">
+<div class="table sectionedit4"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0"> Parameter </th><th class="col1"> Value </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0"> Current hardware reversion </td><td class="col1"> B </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"> Current firmware version </td><td class="col1"> 1.0.0 </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"> Supply voltage </td><td class="col1"> +9-+28 VDC </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"> PCB Size </td><td class="col1"> 42mm x 72mm </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"> Power requirements </td><td class="col1"> 0.1W </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0"> Communication: CAN4VSCP (CAN) </td><td class="col1"> 125 kbps </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0"> Communication: RS-232 </td><td class="col1"> 115200 baud N81 </td>
+	</tr>
+</table></div>
+<!-- EDIT4 TABLE [349-620] -->
+</div>
+<!-- EDIT3 SECTION "The raw facts" [320-621] -->
+<h2 class="sectionedit5" id="schematics">Schematics</h2>
+<div class="level2">
+
+<p>
+<a href="/frankfurt/rs232/manual/lib/exe/detail.php?id=hardware&amp;media=frankfurt-schema-rev-b.png" class="media" title="frankfurt-schema-rev-b.png"><img src="/frankfurt/rs232/manual/lib/exe/fetch.php?w=600&amp;tok=750536&amp;media=frankfurt-schema-rev-b.png" class="media" alt="" width="600" /></a>
+</p>
+
+<p>
+Schematics: Rev B
+</p>
+
+</div>
+<!-- EDIT5 SECTION "Schematics" [622-704] -->
+<h2 class="sectionedit6" id="connectors">Connectors</h2>
+<div class="level2">
+
+<p>
+<a href="/frankfurt/rs232/manual/lib/exe/detail.php?id=hardware&amp;media=prototype2_connectors.png" class="media" title="prototype2_connectors.png"><img src="/frankfurt/rs232/manual/lib/exe/fetch.php?w=600&amp;tok=47444b&amp;media=prototype2_connectors.png" class="media" alt="" width="600" /></a>
+</p>
+
+</div>
+<!-- EDIT6 SECTION "Connectors" [705-767] -->
+<h3 class="sectionedit7" id="rj-xx_pin-out">RJ-XX pin-out</h3>
+<div class="level3">
+
+<p>
+The unit is powered over the CAN4VSCP bus. The CAN4VSCP normally uses CAT5 or better twisted pair cable. You can use other cables if you which. The important thing is that the CANH and CANL signals uses a twisted cable. For connectors you can use RJ10, RJ11, RJ12 or the most common RJ45 connectors.
+</p>
+
+<p>
+Recommended connector is RJ-34/RJ-12 or RJ-11 with pin out as in this table.
+</p>
+<div class="table sectionedit8"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0"> Pin </th><th class="col1"> Use </th><th class="col2"> RJ-11 </th><th class="col3"> RJ-12 </th><th class="col4"> RJ-45 </th><th class="col5"> Patch Cable wire color T568B </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0"> 1 </td><td class="col1 leftalign"> +9-28V DC	</td><td class="col2"> </td><td class="col3"> </td><td class="col4"> RJ-45 </td><td class="col5"> Orange/White </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"> 2 1 </td><td class="col1"> +9-28V DC </td><td class="col2"> </td><td class="col3"> RJ-12 </td><td class="col4"> RJ-45 </td><td class="col5"> Orange </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 leftalign"> 3 2 1	</td><td class="col1"> +9-28V DC </td><td class="col2"> RJ-11 </td><td class="col3"> RJ-12 </td><td class="col4"> RJ-45 </td><td class="col5"> Green/White </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0 leftalign"> 4 3 2	</td><td class="col1"> CANH </td><td class="col2"> RJ-11 </td><td class="col3"> RJ-12 </td><td class="col4"> RJ-45 </td><td class="col5"> Blue </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0 leftalign"> 5 4 3	</td><td class="col1"> CANL </td><td class="col2"> RJ-11 </td><td class="col3"> RJ-12 </td><td class="col4"> RJ-45 </td><td class="col5"> Blue/White </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0 leftalign"> 6 5 4	</td><td class="col1"> GND </td><td class="col2"> RJ-11 </td><td class="col3"> RJ-12 </td><td class="col4"> RJ-45 </td><td class="col5"> Green </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0"> 7 6 </td><td class="col1"> GND </td><td class="col2"> </td><td class="col3"> RJ-12 </td><td class="col4"> RJ-45 </td><td class="col5"> Brown/White </td>
+	</tr>
+	<tr class="row8">
+		<td class="col0"> 8 </td><td class="col1"> GND </td><td class="col2 leftalign">  </td><td class="col3 leftalign">  </td><td class="col4"> RJ-45 </td><td class="col5"> Brown </td>
+	</tr>
+</table></div>
+<!-- EDIT8 TABLE [1172-1622] -->
+<p>
+<a href="/frankfurt/rs232/manual/lib/exe/detail.php?id=hardware&amp;media=rj45.jpg" class="media" title="rj45.jpg"><img src="/frankfurt/rs232/manual/lib/exe/fetch.php?w=300&amp;tok=c581d4&amp;media=rj45.jpg" class="mediacenter" title="RJ-11/12/45 pin-out" alt="RJ-11/12/45 pin-out" width="300" /></a>
+<strong>RJ-11/12/45 pin-out</strong>
+</p>
+
+<p>
+<img src="/frankfurt/rs232/manual/lib/images/smileys/icon_exclaim.gif" class="icon" alt=":!:" /> Always use a pair of twisted wires for CANH/CANL for best noise immunity. If the EIA/<abbr title="Thanks in advance">TIA</abbr> 56B standard is used this condition will be satisfied. This is good as most Ethernet networks already is wired this way. 
+</p>
+
+</div>
+<!-- EDIT7 SECTION "RJ-XX pin-out" [768-1904] -->
+<h3 class="sectionedit9" id="rs-232_connector_pin-out">RS-232 connector pin-out</h3>
+<div class="level3">
+
+<p>
+The RS-232 connectors is not mounted on the TTL versions of this product.
+</p>
+
+<p>
+The RS-232 female is numbered like this if you look into it
+</p>
+
+<p>
+<a href="/frankfurt/rs232/manual/lib/exe/detail.php?id=hardware&amp;media=2000px-rs232_buchse_9pol_male.svg.png" class="media" title="2000px-rs232_buchse_9pol_male.svg.png"><img src="/frankfurt/rs232/manual/lib/exe/fetch.php?w=300&amp;tok=9cc89a&amp;media=2000px-rs232_buchse_9pol_male.svg.png" class="media" alt="" width="300" /></a>
+</p>
+
+<p>
+coupled like this
+</p>
+
+<p>
+<a href="/frankfurt/rs232/manual/lib/exe/detail.php?id=hardware&amp;media=rs232_femail_connector.png" class="media" title="rs232_femail_connector.png"><img src="/frankfurt/rs232/manual/lib/exe/fetch.php?w=300&amp;tok=6f603b&amp;media=rs232_femail_connector.png" class="media" alt="" width="300" /></a>
+</p>
+<div class="table sectionedit10"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0 leftalign"> pin  </th><th class="col1 leftalign"> Description  </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0"> 1 </td><td class="col1"> unconnected </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"> 2 </td><td class="col1"> Transmit data from Frankfurt RS-232 </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"> 3 </td><td class="col1"> Receive data to Frankfurt RS-232 </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"> 4 </td><td class="col1"> unconnected </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"> 5 </td><td class="col1"> Signal ground </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0"> 6 </td><td class="col1"> unconnected </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0"> 7 </td><td class="col1"> RTS (Request to send) </td>
+	</tr>
+	<tr class="row8">
+		<td class="col0"> 8 </td><td class="col1"> CTS (Clear to send) </td>
+	</tr>
+	<tr class="row9">
+		<td class="col0"> 1 </td><td class="col1"> unconnected </td>
+	</tr>
+</table></div>
+<!-- EDIT10 TABLE [2183-2451] -->
+<p>
+<img src="/frankfurt/rs232/manual/lib/images/smileys/icon_exclaim.gif" class="icon" alt=":!:" /> RTS/CTS is currently not used.
+</p>
+
+<p>
+Connect to host like this
+</p>
+
+<p>
+<a href="/frankfurt/rs232/manual/lib/exe/detail.php?id=hardware&amp;media=e-8wwww-17-grus-000.gif" class="media" title="e-8wwww-17-grus-000.gif"><img src="/frankfurt/rs232/manual/lib/exe/fetch.php?w=400&amp;tok=753b28&amp;media=e-8wwww-17-grus-000.gif" class="media" alt="" width="400" /></a>
+</p>
+
+<p>
+a standard straight RS-232 cable will work fine.
+</p>
+
+</div>
+<!-- EDIT9 SECTION "RS-232 connector pin-out" [1905-2602] -->
+<h3 class="sectionedit11" id="ttl_connector">TTL Connector</h3>
+<div class="level3">
+
+<p>
+<img src="/frankfurt/rs232/manual/lib/images/smileys/icon_exclaim.gif" class="icon" alt=":!:" /> The TTL connector have use only on the TTL versions of the module. 
+</p>
+<div class="table sectionedit12"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0"> Pin </th><th class="col1">Description </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0"> 1 </td><td class="col1"> Power from CAN4VSCP bus </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"> 2 </td><td class="col1"> TTL level RX </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"> 3 </td><td class="col1"> TTL level TX </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"> 4 </td><td class="col1"> GND </td>
+	</tr>
+</table></div>
+<!-- EDIT12 TABLE [2701-2807] -->
+<p>
+<br/>
+
+</p>
+
+<p>
+<a href="/frankfurt/rs232/manual/lib/exe/detail.php?id=hardware&amp;media=prototype1_conn_ttl.png" class="media" title="prototype1_conn_ttl.png"><img src="/frankfurt/rs232/manual/lib/exe/fetch.php?w=600&amp;tok=8c62c1&amp;media=prototype1_conn_ttl.png" class="mediacenter" alt="" width="600" /></a>
+</p>
+
+</div>
+<!-- EDIT11 SECTION "TTL Connector" [2603-2852] -->
+<h3 class="sectionedit13" id="pic_programming_connector">PIC programming Connector</h3>
+<div class="level3">
+<div class="table sectionedit14"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0 leftalign"> pin  </th><th class="col1 leftalign"> Description  </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0"> 1 </td><td class="col1"> Reset </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"> 2 </td><td class="col1"> VCC </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"> 3 </td><td class="col1"> GND </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"> 4 </td><td class="col1"> PGD </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"> 5 </td><td class="col1"> PGC </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0"> 6 </td><td class="col1"> LWPGM </td>
+	</tr>
+</table></div>
+<!-- EDIT14 TABLE [2890-2989] -->
+<p>
+<br/>
+
+</p>
+
+<p>
+<a href="/frankfurt/rs232/manual/lib/exe/detail.php?id=hardware&amp;media=prototype3_prg_conn.png" class="media" title="prototype3_prg_conn.png"><img src="/frankfurt/rs232/manual/lib/exe/fetch.php?w=600&amp;tok=cb3a53&amp;media=prototype3_prg_conn.png" class="media" alt="" width="600" /></a>
+</p>
+
+</div>
+<!-- EDIT13 SECTION "PIC programming Connector" [2853-3032] -->
+<h3 class="sectionedit15" id="functionality_of_the_status_led">Functionality of the status LED</h3>
+<div class="level3">
+
+<p>
+The LED is used to indicate a working device. It will light steady when the firmware is running and no faults are detected and it will blink with different frequency when there are bus errors and warnings as of the table below.
+</p>
+<div class="table sectionedit16"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0"> LED </th><th class="col1"> Description </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0"> Steady Powered. </td><td class="col1"> No error. Firmware running. </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"> Slow blinking </td><td class="col1"> Bus error warning. Something is wrong on the CAN4VSCP bus. </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"> Fast blinking </td><td class="col1"> Bus passive. The node will not flag errors on the bus anymore but will still send and receive. </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"> Very fast blinking </td><td class="col1"> Bus off. Something is very wrong of the CAN4VSCP bus and the driver to the bus has unconnected itself from the bus. When the bus behaves as normal again it will automatically connect again. The problem can typically be shorted CANH/CANL, only one devices on the bus, a device with wrong bitrate on the bus. To not terminate both ends of the bus with a 120 ohm resistor can also give this problem. </td>
+	</tr>
+</table></div>
+<!-- EDIT16 TABLE [3305-3992] -->
+</div>
+<!-- EDIT15 SECTION "Functionality of the status LED" [3033-3994] -->
+<h3 class="sectionedit17" id="can">CAN</h3>
+<div class="level3">
+
+<p>
+CAN4VSCP is a CAN based bus running at 125 kbps with the addition of DC power. If you are interested in how CAN works you have a pretty good intro <a href="http://www.eeherald.com/section/design-guide/esmod9.html" class="urlextern" title="http://www.eeherald.com/section/design-guide/esmod9.html"  rel="nofollow">here</a>.
+</p>
+
+<p>
+CAN is known to be robust and is there for used in vehicles and in the industry.
+</p>
+
+<p>
+<br/>
+
+</p>
+<hr />
+
+<p>
+Copyright © 2000-2015 <a href="mailto:&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#x69;&#x6e;&#x66;&#x6f;&#x40;&#x67;&#x72;&#x6f;&#x64;&#x61;&#x6e;&#x73;&#x70;&#x61;&#x72;&#x61;&#x64;&#x69;&#x73;&#x2e;&#x63;&#x6f;&#x6d;" class="mail" title="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#x69;&#x6e;&#x66;&#x6f;&#x40;&#x67;&#x72;&#x6f;&#x64;&#x61;&#x6e;&#x73;&#x70;&#x61;&#x72;&#x61;&#x64;&#x69;&#x73;&#x2e;&#x63;&#x6f;&#x6d;">Contact</a>, <a href="http://www.grodansparadis.com" class="urlextern" title="http://www.grodansparadis.com"  rel="nofollow">Paradise of the Frog / Grodans Paradis AB</a>
+</p>
+
+</div>
+<!-- EDIT17 SECTION "CAN" [3995-] -->

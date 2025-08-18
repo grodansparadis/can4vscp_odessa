@@ -1,0 +1,62 @@
+
+<h1 class="sectionedit1" id="the_can4vscp_mode">The CAN4VSCP mode</h1>
+<div class="level1">
+
+<p>
+This mode export a <a href="http://www.vscp.org/docs/vscpspec/doku.php?id=physical_level_lower_level_protocols#vscp_over_a_serial_channel_rs-232" class="urlextern" title="http://www.vscp.org/docs/vscpspec/doku.php?id=physical_level_lower_level_protocols#vscp_over_a_serial_channel_rs-232"  rel="nofollow">standard VSCP serial interface</a>. The CAN4VSCP driver can be used to export this interface to a <a href="http://www.vscp.org/docs/vscpd/doku.php?id=canal_interface_specification" class="urlextern" title="http://www.vscp.org/docs/vscpd/doku.php?id=canal_interface_specification"  rel="nofollow">CANAL interface</a> which in turn can be used by the <a href="http://www.vscp.org/docs/vscpd/doku.php?id=start" class="urlextern" title="http://www.vscp.org/docs/vscpd/doku.php?id=start"  rel="nofollow">VSCP daemon</a>, <a href="http://www.vscp.org/docs/vscpworks/doku.php?id=start" class="urlextern" title="http://www.vscp.org/docs/vscpworks/doku.php?id=start"  rel="nofollow">VSCP Works</a> and other software that can work with a CANAL interface.
+</p>
+
+<p>
+An end user does not have to worry about any of this of course. He/she just use the <a href="http://www.vscp.org/docs/vscpd/doku.php?id=level1_driver_can4vscp" class="urlextern" title="http://www.vscp.org/docs/vscpd/doku.php?id=level1_driver_can4vscp"  rel="nofollow">CAN4VSCP driver</a> that is available both for Windows and Linux.
+</p>
+
+<p>
+The CAN4VSCP driver is installed with the <a href="https://sourceforge.net/projects/m2m/files/VSCP%20Software/" class="urlextern" title="https://sourceforge.net/projects/m2m/files/VSCP%20Software/"  rel="nofollow">VSCP &amp; Friends</a> package on windows and with the <a href="https://github.com/grodansparadis/vscp_software" class="urlextern" title="https://github.com/grodansparadis/vscp_software"  rel="nofollow">source package</a> on Linux
+</p>
+
+</div>
+<!-- EDIT1 SECTION "The CAN4VSCP mode" [1-1033] -->
+<h2 class="sectionedit2" id="available_commands_for_driver">Available commands for driver</h2>
+<div class="level2">
+<div class="table sectionedit3"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0"> Code </th><th class="col1 rightalign">  Command </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0"> 0 </td><td class="col1"> NOOP - No operation. </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"> 1 </td><td class="col1"> Open connection to CAN4VSCP bus in normal mode. </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"> 2 </td><td class="col1"> Open connection to CAN4VSCP bus in listen only mode. </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"> 3 </td><td class="col1"> Open connection to CAN4VSCP bus in loopback mode. </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"> 4 </td><td class="col1"> Close connection to CAN4VSCP bus. </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0"> 5 </td><td class="col1"> Set filter. </td>
+	</tr>
+</table></div>
+<!-- EDIT3 TABLE [1077-1362] -->
+<p>
+For all of the above a command reply frame (op=254) is replied from the node with a 0 (==OK) as payload if the operation was carried out.
+</p>
+
+<p>
+<br/>
+
+</p>
+<hr />
+
+<p>
+Copyright © 2000-2015 <a href="mailto:&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#x69;&#x6e;&#x66;&#x6f;&#x40;&#x67;&#x72;&#x6f;&#x64;&#x61;&#x6e;&#x73;&#x70;&#x61;&#x72;&#x61;&#x64;&#x69;&#x73;&#x2e;&#x63;&#x6f;&#x6d;" class="mail" title="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#x69;&#x6e;&#x66;&#x6f;&#x40;&#x67;&#x72;&#x6f;&#x64;&#x61;&#x6e;&#x73;&#x70;&#x61;&#x72;&#x61;&#x64;&#x69;&#x73;&#x2e;&#x63;&#x6f;&#x6d;">Contact</a>, <a href="http://www.grodansparadis.com" class="urlextern" title="http://www.grodansparadis.com"  rel="nofollow">Paradise of the Frog / Grodans Paradis AB</a>
+</p>
+
+</div>
+<!-- EDIT2 SECTION "Available commands for driver" [1034-] -->

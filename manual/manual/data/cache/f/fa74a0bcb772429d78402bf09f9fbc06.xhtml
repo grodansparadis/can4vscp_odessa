@@ -1,0 +1,49 @@
+
+<h1 class="sectionedit1" id="getting_started">Getting started</h1>
+<div class="level1">
+
+<p>
+You need
+</p>
+<ul>
+<li class="level1"><div class="li"> RJ-45 patch cables or similar.</div>
+</li>
+<li class="level1"><div class="li"> A stable +9V- +28V DC power source.</div>
+</li>
+<li class="level1"><div class="li"> At least one additional CAN4VSCP module.</div>
+</li>
+<li class="level1"><div class="li"> A host computer with a serial or USB interface.</div>
+</li>
+</ul>
+
+<p>
+The Frankfurt RS-232 is powered from the CAN4VSCP bus. <a href="http://www.grodansparadis.com/wiki/doku.php?id=connecting_can4vscp_devices_together" class="urlextern" title="http://www.grodansparadis.com/wiki/doku.php?id=connecting_can4vscp_devices_together"  rel="nofollow">This article</a> have information on how the bus is powered and set up. Follow it for a reliable setup. Don&#039;t forget the 120 ohm terminators at each end of the bus. <em class="u">They are important!</em>  You can activate the on board terminator on the Frankfurt RS-232 if it is located at one end of your bus.
+</p>
+
+<p>
+When you power the module by inserting the Rj-45 cable the red LED on the board should light up to indicate it is alive. This is not just a power indicator LED. It used to indicate certain bus errors as well
+</p>
+
+<p>
+Remember that there need to be <em class="u">at least two</em> CAN4VSCP (or other CAN device set to 125kbps) devices (one additional if you have the Frankfurt RS-232) on the bus to be able to communicate. A single device can&#039;t talk by itself on a bus. It&#039;s an error.
+</p>
+
+<p>
+The Frankfurt RS-232 is delivered with a USB serial adapter. So just connect it to to your computer. The adapter is found automatically by most systems and if not you may need to use the supplied driver disc to install driver for your system.
+</p>
+
+<p>
+If you want to connect the adapter to a device using RS-232 use a straight serial cable that at least have TX, RX and ground. RTS/CTS is not used at the moment but may be available in future firmware upgrades so it&#039;s good if the cable have them to. Most cables you buy in a store have. You will find a female DB9 connector on the device so your cable should have  a DB9 male connector at one end and a suitable connector for the device you want to connect the Franfurt RS-232 to on the other end.
+</p>
+
+<p>
+<br/>
+
+</p>
+<hr />
+
+<p>
+Copyright © 2000-2015 <a href="mailto:&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#x69;&#x6e;&#x66;&#x6f;&#x40;&#x67;&#x72;&#x6f;&#x64;&#x61;&#x6e;&#x73;&#x70;&#x61;&#x72;&#x61;&#x64;&#x69;&#x73;&#x2e;&#x63;&#x6f;&#x6d;" class="mail" title="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#x69;&#x6e;&#x66;&#x6f;&#x40;&#x67;&#x72;&#x6f;&#x64;&#x61;&#x6e;&#x73;&#x70;&#x61;&#x72;&#x61;&#x64;&#x69;&#x73;&#x2e;&#x63;&#x6f;&#x6d;">Contact</a>, <a href="http://www.grodansparadis.com" class="urlextern" title="http://www.grodansparadis.com"  rel="nofollow">Paradise of the Frog / Grodans Paradis AB</a>
+</p>
+
+</div>

@@ -1,0 +1,78 @@
+
+<h1 class="sectionedit1" id="introduction">Introduction</h1>
+<div class="level1">
+
+<p>
+<a href="/frankfurt/rs232/manual/lib/exe/detail.php?id=introduction&amp;media=004.png" class="media" title="004.png"><img src="/frankfurt/rs232/manual/lib/exe/fetch.php?w=600&amp;tok=ff739a&amp;media=004.png" class="mediacenter" title=" The picture is the first hand soldered prototype of the Frankfurt RS-232 module " alt=" The picture is the first hand soldered prototype of the Frankfurt RS-232 module " width="600" /></a>
+</p>
+
+<p>
+Frankfurt RS-232 interfaces serial RS-232 to the CAN4VSCP bus and is powered from the CAN4VSCP bus. It is delivered with a USB to serial adapter free of charge so it can also be connected to host computers that does not have a RS-232 port. It is also possible to order the Frankfurt RS-232 module in a 3.3V TTL version (and at special orders as a 5V TTL version) that works with hardware that does not got true RS-232 signalling levels for there serial interface such as Raspberry Pi, Beaglebone or Carambola etc.
+</p>
+
+<p>
+The Frankfurt RS-232 is designed to be mounted on a DIN rail or screwed on to a wall or used in an other installed fashion. This module is as our other modules designed to do its work behind the scenes. It is a powerful and reliable workhorse that does not need to be in the center of the spotlights to do the work it is designed for.
+</p>
+
+<p>
+It is important to note that Frankfurt RS-232 is not a general CAN interface. The CAN speed of the device is fixed to 125 kbps and the serial speed is fixed at 115200 baud 8N1. This is because the Frankfurt RS-232 is made for the CAN4VSCP bus and VSCP and therefore does not need the variable speeds. If you need a general CAN adapter please look at the USB2CAN adapter which we carry in our store or any of the other adapters available for general use on the market.
+</p>
+
+<p>
+<a href="/frankfurt/rs232/manual/lib/exe/detail.php?id=introduction&amp;media=prototype1_conn_ttl.png" class="media" title="prototype1_conn_ttl.png"><img src="/frankfurt/rs232/manual/lib/exe/fetch.php?w=600&amp;tok=8c62c1&amp;media=prototype1_conn_ttl.png" class="mediacenter" alt="" width="600" /></a> <br/>
+
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Introduction" [2-1493] -->
+<h2 class="sectionedit2" id="frankfurt_rs-232_have_three_working_modes">Frankfurt RS-232 have three working modes:</h2>
+<div class="level2">
+
+<p>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT2 SECTION "Frankfurt RS-232 have three working modes:" [1494-1553] -->
+<h1 class="sectionedit3" id="verbose_mode">Verbose mode</h1>
+<div class="level1">
+
+<p>
+In this mode easy to remember and use text based commands can be issued to control the device. It is possible to find VSCP nodes on the connected CAN4VSCP bus, read and write registers and many other of the common functions needed to diagnose a CAN4VSCP system. The mode is created for users that need to check up on a CAN4VSCP network and get diagnostic information etc. It is possible to go to this mode from any of the other modes at any time and therefore get the most out of each modes available functionality.
+</p>
+
+</div>
+<!-- EDIT3 SECTION "Verbose mode" [1554-2098] -->
+<h1 class="sectionedit4" id="can4vscp_mode">CAN4VSCP mode</h1>
+<div class="level1">
+
+<p>
+This mode uses the efficient and secure VSCP serial protocol to talk to a host computer. Drivers for Windows and Linux is readably available and it is a turn key solution to connect any CAN4VSCP bus to a host. The driver follows the CANAL standard so both the VSCP Daemon and the VSCP Works programs can be used.
+</p>
+
+</div>
+<!-- EDIT4 SECTION "CAN4VSCP mode" [2099-2441] -->
+<h1 class="sectionedit5" id="slcan_mode">SLCAN mode</h1>
+<div class="level1">
+
+<p>
+The Swedish company Lawicel AB and Lars Wictorsson created a serial protocol for CAN adapters that since been a standard for such devices. The SLCAN mode of Frankfurt RS-232 support a limited set of commands from this standard so that the module can be connected to the Socketcan system available for Linux. Se the manual for the commands that are implemented. Also in this case the CAN speed is fixed at 125 kbps and the serial speed is fixed at 115200 kbps.
+</p>
+
+<p>
+It is possible to have hundreds of Frankfurt RS-232 modules connected to a host computer where each in turn is connected to hundreds of nodes, thereby building very large and complex systems. Together with cards like Raspberry Pi and Beaglebone it is possible to have distributed control systems controlled over Ethernet and TCP/IP. 
+</p>
+
+<p>
+<br/>
+
+</p>
+<hr />
+
+<p>
+Copyright © 2000-2015 <a href="mailto:&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#x69;&#x6e;&#x66;&#x6f;&#x40;&#x67;&#x72;&#x6f;&#x64;&#x61;&#x6e;&#x73;&#x70;&#x61;&#x72;&#x61;&#x64;&#x69;&#x73;&#x2e;&#x63;&#x6f;&#x6d;" class="mail" title="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#x69;&#x6e;&#x66;&#x6f;&#x40;&#x67;&#x72;&#x6f;&#x64;&#x61;&#x6e;&#x73;&#x70;&#x61;&#x72;&#x61;&#x64;&#x69;&#x73;&#x2e;&#x63;&#x6f;&#x6d;">Contact</a>, <a href="http://www.grodansparadis.com" class="urlextern" title="http://www.grodansparadis.com"  rel="nofollow">Paradise of the Frog / Grodans Paradis AB</a>
+</p>
+
+</div>
+<!-- EDIT5 SECTION "SLCAN mode" [2442-] -->

@@ -1,0 +1,8 @@
+====== Installing the module ======
+
+
+
+
+\\ 
+----
+Copyright (c) 2000-2015 [[mailto:akhe@grodansparadis.com|Åke Hedman]], [[http://www.grodansparadis.com|Paradise of the Frog / Grodans Paradis AB]]

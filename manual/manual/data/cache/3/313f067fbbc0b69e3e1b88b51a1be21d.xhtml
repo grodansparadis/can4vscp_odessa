@@ -1,0 +1,160 @@
+
+<h1 class="sectionedit1" id="updating_the_firmware">Updating the firmware</h1>
+<div class="level1">
+
+<p>
+New firmware is released from time to time for all our modules. We expect this to be true also for the Frankfurt RS-232 as it is an active project. The process of updating the firmware of the module is a simple one. Just follow the steps outlined here.
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Updating the firmware" [1-291] -->
+<h2 class="sectionedit2" id="the_bootloader_application">The bootloader application</h2>
+<div class="level2">
+
+<p>
+First you should download and install <a href="http://www.grodansparadis.com/downloads/Serial_Bootloader_AN1310_v1.05r.exe" class="urlextern" title="http://www.grodansparadis.com/downloads/Serial_Bootloader_AN1310_v1.05r.exe"  rel="nofollow">this file</a>.  You can uninstall the file as soon as you are done uploading the firmware of the Frankfurt RS-232 module.
+</p>
+
+<p>
+<a href="/frankfurt/rs232/manual/lib/exe/detail.php?id=replacing_the_firmware&amp;media=bootloader0.png" class="media" title="bootloader0.png"><img src="/frankfurt/rs232/manual/lib/exe/fetch.php?w=300&amp;tok=4cfa18&amp;media=bootloader0.png" class="mediacenter" alt="" width="300" /></a>
+</p>
+
+<p>
+After install you can find the executable under the Microchip folder in the startup menu.
+</p>
+
+</div>
+<!-- EDIT2 SECTION "The bootloader application" [292-689] -->
+<h2 class="sectionedit3" id="where_is_the_firmware">Where is the firmware?</h2>
+<div class="level2">
+
+<p>
+As with all our modules you can find the firmware for the Frankfurt RS-232 on <a href="http://www.grodansparadis.com/frankfurt/rs232/frankfurt-rs232.html" class="urlextern" title="http://www.grodansparadis.com/frankfurt/rs232/frankfurt-rs232.html"  rel="nofollow">the product page</a> under the firmware tab. If in doubt which version to download use the latest.  
+</p>
+
+</div>
+<!-- EDIT3 SECTION "Where is the firmware?" [690-972] -->
+<h2 class="sectionedit4" id="setting_communication_parameters">Setting communication parameters</h2>
+<div class="level2">
+
+<p>
+You should  set communication parameters to use before you start. You find them under the menu /program/start of the bootloader program. This will bring up this dialog
+</p>
+
+<p>
+<a href="/frankfurt/rs232/manual/lib/exe/detail.php?id=replacing_the_firmware&amp;media=bootloader5.png" class="media" title="bootloader5.png"><img src="/frankfurt/rs232/manual/lib/exe/fetch.php?w=600&amp;tok=d9070c&amp;media=bootloader5.png" class="mediacenter" alt="" width="600" /></a>
+</p>
+
+<p>
+This is the recommended settings but you may need to lower the bootloader baudrated  if you have problem finding the module or problems with the loading of the code. For most uses 115200 should work fine. The Frankfurt RS-232 bootloader have an autobaudrate detector so any baudrate will do. Note however that the application baudrate is locked to 115200 baud and should not be changed.
+</p>
+
+</div>
+<!-- EDIT4 SECTION "Setting communication parameters" [973-1604] -->
+<h2 class="sectionedit5" id="setting_the_module_into_bootloader_mode">Setting the module into bootloader mode</h2>
+<div class="level2">
+
+<p>
+You set the module into bootloader mode by restarting (turning of and turning on) the module while the <em>break/Reset application firmware</em> button of the bootloader application is pressed.  You can also do the same thing with the <em>BOOT command</em> in the verbose mode of the module. 
+</p>
+
+<p>
+<a href="/frankfurt/rs232/manual/lib/exe/detail.php?id=replacing_the_firmware&amp;media=bootloader2.png" class="media" title="bootloader2.png"><img src="/frankfurt/rs232/manual/lib/exe/fetch.php?w=600&amp;tok=46038c&amp;media=bootloader2.png" class="mediacenter" alt="" width="600" /></a>
+</p>
+
+<p>
+while the break button is depressed then restart the board.
+</p>
+
+<p>
+When the module is restarted you should press the <em>enter boot loader mode</em> to activate the bootloader connection.
+</p>
+
+<p>
+<a href="/frankfurt/rs232/manual/lib/exe/detail.php?id=replacing_the_firmware&amp;media=bootloader4.png" class="media" title="bootloader4.png"><img src="/frankfurt/rs232/manual/lib/exe/fetch.php?w=600&amp;tok=1361ca&amp;media=bootloader4.png" class="mediacenter" alt="" width="600" /></a>
+</p>
+
+<p>
+If you have set the wrong port, a baudrate tat does not work or the module did not enter the bootloader firmware it wil show here. Change settings and try again.
+</p>
+
+<p>
+If all goes well you will get a new screen
+</p>
+
+<p>
+<a href="/frankfurt/rs232/manual/lib/exe/detail.php?id=replacing_the_firmware&amp;media=bootloader6.png" class="media" title="bootloader6.png"><img src="/frankfurt/rs232/manual/lib/exe/fetch.php?w=600&amp;tok=988117&amp;media=bootloader6.png" class="mediacenter" alt="" width="600" /></a>
+</p>
+
+<p>
+It just show an empty flash memory. 
+</p>
+
+<p>
+At this point you need the firmware code so load it by selecting the hex file under the /file/open menu. 
+</p>
+
+<p>
+<a href="/frankfurt/rs232/manual/lib/exe/detail.php?id=replacing_the_firmware&amp;media=bootloader7.png" class="media" title="bootloader7.png"><img src="/frankfurt/rs232/manual/lib/exe/fetch.php?w=600&amp;tok=2abe1b&amp;media=bootloader7.png" class="mediacenter" alt="" width="600" /></a>
+</p>
+
+<p>
+After the hex file is loaded you should see code at offset 0x400 and forward. 
+</p>
+
+<p>
+<a href="/frankfurt/rs232/manual/lib/exe/detail.php?id=replacing_the_firmware&amp;media=bootloader8.png" class="media" title="bootloader8.png"><img src="/frankfurt/rs232/manual/lib/exe/fetch.php?w=600&amp;tok=230d77&amp;media=bootloader8.png" class="mediacenter" alt="" width="600" /></a>
+</p>
+
+<p>
+To program the module click <em>Write Device</em>
+</p>
+
+<p>
+<a href="/frankfurt/rs232/manual/lib/exe/detail.php?id=replacing_the_firmware&amp;media=bootloader9.png" class="media" title="bootloader9.png"><img src="/frankfurt/rs232/manual/lib/exe/fetch.php?w=600&amp;tok=e3a721&amp;media=bootloader9.png" class="mediacenter" alt="" width="600" /></a>
+</p>
+
+<p>
+and the firmware will be written to the device.
+</p>
+
+<p>
+You may get a complaint like this 
+</p>
+
+<p>
+<a href="/frankfurt/rs232/manual/lib/exe/detail.php?id=replacing_the_firmware&amp;media=verify_error.png" class="media" title="verify_error.png"><img src="/frankfurt/rs232/manual/lib/exe/fetch.php?w=300&amp;tok=070456&amp;media=verify_error.png" class="mediacenter" alt="" width="300" /></a>
+</p>
+
+<p>
+after the code is loaded but this is no problem it s due to code protection.  Run the verify under the /program/verify menu to make sure the write of the firmware was OK.
+</p>
+
+<p>
+Thats it!
+</p>
+
+<p>
+<a href="/frankfurt/rs232/manual/lib/exe/detail.php?id=replacing_the_firmware&amp;media=bootloader11.png" class="media" title="bootloader11.png"><img src="/frankfurt/rs232/manual/lib/exe/fetch.php?w=600&amp;tok=36240a&amp;media=bootloader11.png" class="mediacenter" alt="" width="600" /></a>
+</p>
+
+<p>
+Now select <em>run application firmware</em> and restart the board again and the Frankfurt RS-232 application will run.
+</p>
+
+<p>
+<a href="/frankfurt/rs232/manual/lib/exe/detail.php?id=replacing_the_firmware&amp;media=bootloader12.png" class="media" title="bootloader12.png"><img src="/frankfurt/rs232/manual/lib/exe/fetch.php?w=600&amp;tok=ccc325&amp;media=bootloader12.png" class="mediacenter" alt="" width="600" /></a>
+</p>
+
+<p>
+<br/>
+
+</p>
+<hr />
+
+<p>
+Copyright © 2000-2015 <a href="mailto:&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#x69;&#x6e;&#x66;&#x6f;&#x40;&#x67;&#x72;&#x6f;&#x64;&#x61;&#x6e;&#x73;&#x70;&#x61;&#x72;&#x61;&#x64;&#x69;&#x73;&#x2e;&#x63;&#x6f;&#x6d;" class="mail" title="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#x69;&#x6e;&#x66;&#x6f;&#x40;&#x67;&#x72;&#x6f;&#x64;&#x61;&#x6e;&#x73;&#x70;&#x61;&#x72;&#x61;&#x64;&#x69;&#x73;&#x2e;&#x63;&#x6f;&#x6d;">Contact</a>, <a href="http://www.grodansparadis.com" class="urlextern" title="http://www.grodansparadis.com"  rel="nofollow">Paradise of the Frog / Grodans Paradis AB</a>
+</p>
+
+</div>
+<!-- EDIT5 SECTION "Setting the module into bootloader mode" [1605-] -->
