@@ -1,4 +1,4 @@
-# Connecting CAN4VSCP devices
+
 
 ## Cable length
 

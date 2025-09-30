@@ -1,4 +1,3 @@
-# Hardware
 
 ## Most current information
 

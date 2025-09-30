@@ -1,4 +1,3 @@
-# Decision Matrix
 
 The full functionality of the decision matrix is explained [in the
 specification](https://grodansparadis.github.io/vscp-doc-spec/#/./vscp_decision_matrix).

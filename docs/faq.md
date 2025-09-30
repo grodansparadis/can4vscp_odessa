@@ -1,4 +1,4 @@
-# faq - Frequently Asked Questions
+
 
 t.b.d.
 
