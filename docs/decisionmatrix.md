@@ -71,22 +71,13 @@ The row will look like this in the decision matrix
 
 You can load a register file
 [here](https://github.com/grodansparadis/can4vscp-odessa/docs/downloads/odessa_dm_demo1.reg)
-that can be loaded in VSCP works with decision matrix entries to turn
-on/off pin3 from TurnOn/TurnOff events.
+that can be loaded in VSCP works with decision matrix entries to turn on/off pin3 from TurnOn/TurnOff events.
 
-You can also download a transmission set for VSCP Works
-[here](http://www.grodansparadis.com/odessa/downloads/odessa_on_off3.txd)
+You can also download a transmission set for VSCP Works [here](http://www.grodansparadis.com/odessa/downloads/odessa_on_off3.txd) that can be loaded.
 that can be loaded.
 
 This is how it looks in the session window.
 
-![](/odessa_on_off_text.png){width="600" query="?600"}
+![](images/odessa_on_off_text.png)
 
-\
-\-\-\-- ![](/grodan_logo.png){.align-center width="100" query="?100"}\
-`<center>`{=html} **Paradise of the Frog AB** Brattbergavägen 17 820 50
-LOS SWEDEN\
-**email:** [info@grodansparadis.com](info@grodansparadis.com) **phone:**
-+46 (0)8 40011835\
-**web:**<http://www.grodansparadis.com>\
-`</center>`{=html}
+[filename](./bottom-copyright.md ':include')
