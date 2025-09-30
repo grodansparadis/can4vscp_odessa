@@ -1,6 +1,7 @@
 Odessa
 ======
 
+2025-09-30 AKHE - Manual moved to Markdown files in docs folder.
 2020-05-15 AKHE - Version 1.0.3 VSCP firmware core 1.6.3
 2020-05-15 AKHE - Init. timer now is set to 2500 ms instea dof 250 ms
                   Seconds timer fixed.

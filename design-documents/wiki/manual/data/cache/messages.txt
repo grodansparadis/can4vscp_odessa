@@ -1,3 +1,0 @@
-Hotfix release available: 2014-09-29d "Hrun".
-          <a href="http://download.dokuwiki.org">upgrade now!</a> [46.4] <a href="http://www.dokuwiki.org/update_check">(what's this?)</a>
-%
