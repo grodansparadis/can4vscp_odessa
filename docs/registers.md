@@ -8,14 +8,7 @@ Note that this is just some demo code for test of the Odessa module.
 | ---------- | ------ | ----------- |
 | 0          | 0      | The zone this module belongs to |
 | 1          | 0      | The sub zone this module belongs to |
-| 2          | 0      | Writing a value to the control register will activate/deactivate the output. <br>**0** - The output is inactivated.<br>**1** - The output is activated.<br>                    Reading a value from the control register is read as a one if the output is activated and as a zero if the output is deactivated.<br>**Bit 0** - Output on pin 3.<br>
-                    **Bit 1** - Output on pin 4.<br>
-                    **Bit 2** - Output on pin 5.<br>
-                    **Bit 3** - Output on pin 6.<br>
-                    **Bit 4** - Output on pin 7.<br>
-                    **Bit 5** - Output on pin 8.<br>
-                    **Bit 6** - Output on pin 9.<br>
-                    **Bit 7** - Output on pin 10. |
+| 2          | 0      | Writing a value to the control register will activate/deactivate the output. <br>**0** - The output is inactivated.<br>**1** - The output is activated.<br>                    Reading a value from the control register is read as a one if the output is activated and as a zero if the output is deactivated.<br>**Bit 0** - Output on pin 3.<br>**Bit 1** - Output on pin 4.<br>**Bit 2** - Output on pin 5.<br>**Bit 3** - Output on pin 6.<br>**Bit 4** - Output on pin 7.<br>**Bit 5** - Output on pin 8.<br>**Bit 6** - Output on pin 9.<br>**Bit 7** - Output on pin 10. |
   | 3     |     0      | Writing a value to the control register will activate/deactivate the output.
                     \
                     **0** - The output is inactivated.\
