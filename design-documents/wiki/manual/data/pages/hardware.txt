@@ -1,7 +1,7 @@
 ====== Hardware ======
 
 =====  Most current information ===== 
-You can find the most current information about the Odessa module at \\ [[http://www.grodansparadis.com/odessa/odessa.html]]. On the site you can also find links to the latest firmware, drivers and schematics etc for its use. 
+You can find the most current information about the Odessa module at \\ [[https://github.com/grodansparadis/can4vscp-odessa]]. On the site you can also find links to the latest firmware, drivers and schematics etc for its use. 
 
 =====  The raw facts ===== 
 

@@ -5,12 +5,12 @@ You need
   * A stable +9V - +28V DC power source.
   * A host computer with a serial or USB interface.
 
-The Accra module is powered from the CAN4VSCP bus. [This
+The Odessa module is powered from the CAN4VSCP bus. [This
 article](https://github.com/grodansparadis/vscp/wiki/Connecting-CAN4VSCP-devices-together)
 have information on how the bus is powered and set up. Follow it for a
 reliable setup. Don't forget the 120 ohm terminators at each end of the
 bus. <span class="underline">They are important\!</span> You can
-activate the on board terminator on the Accra module if it is located at
+activate the on board terminator on the Odessa module if it is located at
 one end of your bus.
 
 When you power the module by inserting the RJ-45 cable the red LED on

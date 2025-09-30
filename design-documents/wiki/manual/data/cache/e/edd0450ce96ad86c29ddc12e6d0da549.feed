@@ -137,7 +137,7 @@ CAN4VSCP always communicate with 125kbps. This means that if you use a good qual
 Most current information
 
 You can find the most current information about the Odessa module at 
-&lt;http://www.grodansparadis.com/odessa/odessa.html&gt;. On the site you can also find links to the latest firmware, drivers and schematics etc for its use. 
+&lt;https://github.com/grodansparadis/can4vscp-odessa&gt;. On the site you can also find links to the latest firmware, drivers and schematics etc for its use. 
 
 The raw facts
  Parameter  Value  Current hardware reversion</description>

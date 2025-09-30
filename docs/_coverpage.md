@@ -2,7 +2,7 @@
 
 ![VSCP logo](./images/logo_100.png)
 
-# Manual for the Accra module
+# Manual for the Odessa module
 
 Scroll down to view docs.
 

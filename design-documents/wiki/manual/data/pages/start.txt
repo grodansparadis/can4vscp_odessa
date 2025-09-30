@@ -5,7 +5,7 @@ Copyright © 2000-2015 [[http://www.grodansparadis.com|Grodans Paradis AB]], <[[
 
 {{ :odessa12.png?600 | Odessa }}
 
-This documentation is for the [[http://www.grodansparadis.com/odessa/odessa.html|Odessa module]]. The module is available for international purchase from the [[http://www.frogshop.se|FrogShop]].
+This documentation is for the [[https://github.com/grodansparadis/can4vscp-odessa|Odessa module]]. The module is available for international purchase from the [[http://www.frogshop.se|FrogShop]].
 
   * [[Introduction]]
   * [[Getting Started]]

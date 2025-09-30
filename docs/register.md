@@ -1,35 +1,30 @@
 # Registers
 
-The Odessa module comes with a firmware sample that have 18 output pins
-that can be controlled with VSCP. The pins can be controlled by writing
-values to one of three control registers or program the [decision
-matrix](decisionmatrix) to react on some specified event(s) present in
-the system.
+The Odessa module comes with a firmware sample that have 18 output pins that can be controlled with VSCP. The pins can be controlled by writing values to one of three control registers or program the [decision matrix](decisionmatrix) to react on some specified event(s) present in the system.
 
 Note that this is just some demo code for test of the Odessa module.
 
-  ------------------------------------------------------------------------------------------------------------------------------------------------------
-  Register   Page   Description
-  ---------- ------ ------------------------------------------------------------------------------------------------------------------------------------
-  0          0      The zone this module belongs to
+| Register   | Page   | Description |
+| ---------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------ |
+| 0          | 0      | The zone this module belongs to
 
-  1          0      The sub zone this module belongs to
+| 1          | 0      | The sub zone this module belongs to
 
-  2          0      Writing a value to the control register will activate/deactivate the output.\
-                    \
-                    **0** - The output is inactivated.\
-                    **1** - The output is activated.\
-                    \
-                    Reading a value from the control register is read as a one if the output is activated and as a zero if the output is deactivated.\
-                    \
-                    **Bit 0** - Output on pin 3.\
-                    **Bit 1** - Output on pin 4.\
-                    **Bit 2** - Output on pin 5.\
-                    **Bit 3** - Output on pin 6.\
-                    **Bit 4** - Output on pin 7.\
-                    **Bit 5** - Output on pin 8.\
-                    **Bit 6** - Output on pin 9.\
-                    **Bit 7** - Output on pin 10.
+| 2          | 0      | Writing a value to the control register will activate/deactivate the output. <br \>
+                    <br \>
+                    **0** - The output is inactivated.<br \>
+                    **1** - The output is activated.<br \>
+                    <br \>
+                    Reading a value from the control register is read as a one if the output is activated and as a zero if the output is deactivated.<br \>
+                    <br \>
+                    **Bit 0** - Output on pin 3.<br \>
+                    **Bit 1** - Output on pin 4.<br \>
+                    **Bit 2** - Output on pin 5.<br \>
+                    **Bit 3** - Output on pin 6.<br \>
+                    **Bit 4** - Output on pin 7.<br \>
+                    **Bit 5** - Output on pin 8.<br \>
+                    **Bit 6** - Output on pin 9.<br \>
+                    **Bit 7** - Output on pin 10. |
 
   3          0      Writing a value to the control register will activate/deactivate the output.\
                     \
@@ -102,11 +97,4 @@ Note that this is just some demo code for test of the Odessa module.
   0          1      Decision matrix starts here
   ------------------------------------------------------------------------------------------------------------------------------------------------------
 
-\
-\-\-\-- ![](/grodan_logo.png){.align-center width="100" query="?100"}\
-`<center>`{=html} **Paradise of the Frog AB** Brattbergavägen 17 820 50
-LOS SWEDEN\
-**email:** [info@grodansparadis.com](info@grodansparadis.com) **phone:**
-+46 (0)8 40011835\
-**web:**<http://www.grodansparadis.com>\
-`</center>`{=html}
+[filename](./bottom-copyright.md ':include')

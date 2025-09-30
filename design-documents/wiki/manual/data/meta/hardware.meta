@@ -3,7 +3,7 @@ a:2:{s:7:"current";a:9:{s:4:"date";a:2:{s:7:"created";i:1425587832;s:8:"modified
 Most current information
 
 You can find the most current information about the Odessa module at 
-<http://www.grodansparadis.com/odessa/odessa.html>. On the site you can also find links to the latest firmware, drivers and schematics etc for its use. 
+<https://github.com/grodansparadis/can4vscp-odessa>. On the site you can also find links to the latest firmware, drivers and schematics etc for its use. 
 
 The raw facts
  Parameter  Value  Current hardware reversion";}s:8:"relation";a:2:{s:5:"media";a:6:{s:20:"odessa_sch_rev_a.png";b:1;s:21:"odessa_connectors.png";b:1;s:8:"rj45.jpg";b:1;s:33:"odessa_inter_module_connector.png";b:1;s:32:"odessa_programming_connector.png";b:1;s:15:"grodan_logo.png";b:1;}s:10:"firstimage";s:20:"odessa_sch_rev_a.png";}s:8:"internal";a:2:{s:5:"cache";b:1;s:3:"toc";b:1;}}s:10:"persistent";a:5:{s:4:"date";a:2:{s:7:"created";i:1425587832;s:8:"modified";i:1447774987;}s:7:"creator";s:10:"Ake Hedman";s:4:"user";s:5:"admin";s:11:"last_change";b:0;s:11:"contributor";a:1:{s:5:"admin";s:10:"Ake Hedman";}}}

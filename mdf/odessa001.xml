@@ -10,7 +10,7 @@
 		With this VSCP module it is possible to control up to control 18
 		different binary output pins.
 	</description>
-	<infourl>http://www.grodansparadis.com/odessa/odessa.html</infourl>
+	<infourl>https://github.com/grodansparadis/can4vscp-odessa</infourl>
 	<buffersize>8</buffersize>
 	<manufacturer>
 		<name>Grodans Paradis AB</name>
