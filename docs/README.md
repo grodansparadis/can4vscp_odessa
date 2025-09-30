@@ -1,29 +1,25 @@
 
-## Manual for the Accra module
+## Manual for the Odessa module
 
 **Document version:** ${/var/document-version} - ${/var/creation-time}
 [HISTORY](./history.md)
 
 
-![Accra](/images/accra3.png)
+![Odessa](/images/odessa17.png)
 
-Accra is a module that have four counter channels that each can count
-pulses and measure frequency. Each channel can have alarms set for going
-over a counter level or when counting down to zero and for a frequency
-that goes outside of a specified frequency window.
+Odessa is a board that have a [Zeus expansion interface](https://github.com/grodansparadis/vscp/wiki/Zeus-expansion-interface) and normally is the base for other products with an expansion board permanently mounted for some particular use. However. as the module also can be useful as a starting point for custom projects it is also useful on its own. All you need to do is to add your custom expansion card to the module and write the code to interface it or use it as a general I/O module
 
-It has a built-in linear calculation algorithm that can translate pulse
-to real world measurement units. This can for example be used for
-utility meter measurements and gives the correct measurement value sent
-out on the VSCP bus.
+The module comes with a GUID and programmed with a bootloader and VSCP module functionality that out of the box (as a sample) work as a digital output module but which easily can be extended to set up with your own functionality.
+
+The module have a [[http://www.microchip.com/wwwproducts/Devices.aspx?product=PIC18F26K80|PIC18F26K80]] installed which have 64 Kbytes of Flash, 1Kbytes of EEPROM and 3,648 bytes of ram. 
 
 The module comes with a GUID and is programmed with a bootloader and
 VSCP module functionality that works right out of the box.
 
-* [Repository for the module](https://github.com/grodansparadis/can4vscp-accra)
-  * This manual is available [here](https://grodansparadis.github.io/can4vscp-accra/)
+* [Repository for the module](https://github.com/grodansparadis/can4vscp-odessa)
+  * This manual is available [here](https://grodansparadis.github.io/can4vscp-odessa/)
   * Latest schema for the module is available [here](https://github.com/grodansparadis/can4vscp-accra/tree/master/eagle)
-  * Latest firmware for the module is available [here](https://github.com/grodansparadis/can4vscp-accra/tree/master/firmware)
+  * Latest firmware for the module is available [here](https://github.com/grodansparadis/can4vscp-odessa/tree/master/firmware)
   * [MDF for the module](https://github.com/grodansparadis/can4vscp-accra/tree/master/mdf)
 
 

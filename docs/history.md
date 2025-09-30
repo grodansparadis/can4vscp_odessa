@@ -1,12 +1,6 @@
-# Change Log for Accra
+# Change Log for Odessa module
 
 Change log for the module is at
-[here](https://github.com/grodansparadis/can4vscp-accra/blob/master/HISTORY.txt)
-
-| Date | By | Description |
-| ---- | -- | ----------  |
-| 250113 | akhe | Fixed some links |
-| 220602 | akhe | Transferred to Markdown format |
-
+[here](https://github.com/grodansparadis/can4vscp-odessa/blob/master/HISTORY.txt)
   
 [filename](./bottom-copyright.md ':include')
